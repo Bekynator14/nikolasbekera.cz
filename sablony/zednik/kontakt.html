@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kontakt - Zednictví Atelier</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-container": "#5a666d",
+                        "surface-container": "#f0edec",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed": "#380d00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#001d34",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "secondary": "#546067",
+                        "surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#9acbff",
+                        "tertiary": "#00629e",
+                        "on-surface-variant": "#5b4137",
+                        "tertiary-fixed": "#cfe5ff",
+                        "primary": "#a93800",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#ff5e13",
+                        "secondary-fixed-dim": "#bbc8d0",
+                        "tertiary-container": "#0099f2",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-container": "#541800",
+                        "outline": "#8f7066",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#111d23",
+                        "surface-tint": "#a93800",
+                        "inverse-primary": "#ffb59b",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#d7e4ec",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed": "#ffdbcf",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#004a78",
+                        "surface-container-high": "#ebe7e7",
+                        "secondary-container": "#d7e4ec",
+                        "outline-variant": "#e4beb2",
+                        "on-primary-fixed-variant": "#812900",
+                        "on-secondary-fixed-variant": "#3c494f",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-container": "#002e4e",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-fixed-dim": "#ffb59b",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#313030",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .industrial-gradient {
+            background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%);
+        }
+        
+        .shadow-ambient {
+            box-shadow: 0 10px 40px -10px rgba(28, 27, 27, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/15">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-on-surface font-headline uppercase">
+                Zednictví Atelier
+            </div>
+<ul class="hidden md:flex space-x-8 font-headline font-bold tracking-tight">
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="index.html">Domů</a></li>
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="sluzby.html">Služby</a></li>
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="portfolio.html">Portfolio</a></li>
+<li><a class="text-primary border-b-2 border-primary pb-1" href="kontakt.html">Kontakt</a></li>
+</ul>
+<a class="hidden md:inline-flex industrial-gradient text-on-primary font-label font-semibold px-6 py-3 rounded hover:scale-105 transition-transform duration-200 ease-in-out ambient-shadow" href="kontakt.html">
+                Poptávka
+            </a>
+<button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center pt-24 pb-32 overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-15 mix-blend-multiply" data-alt="Close up macro shot of trowel spreading grey mortar on a rough textured brick wall, shallow depth of field, warm dramatic side lighting emphasizing texture and craft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjC_6UFjNH4bZDfk0x3bAVAJD0gq2wjNTusdsgmigVIJPok6ZwMZHbbJJR-nSxXSRYcjLt9_TAaI10C2smevPxiqY40bPLJ5_CZ__au6X5Ov86u6grfs49dKxnZDHrqDx9Z-FOHM6J9R1EqOK326mqpTUyvKCpAIAPFriQp-j5L7v_2qPCG7Nnpr4zSJWYK87wwy0yHJ2TFjNUfipkn21cvS6fekzQT9kZMpz2RlnT-KsgBuW_hRwAq2h8H5EQg_5JBol0gyzCBiQ"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<h1 class="font-headline text-[3.5rem] leading-[1.1] font-extrabold tracking-[-0.02em] text-on-surface mb-6">
+                        Kontaktujte <br/><span class="text-primary">Mistry</span>
+</h1>
+<p class="font-body text-xl text-secondary max-w-2xl leading-relaxed">
+                        Projednejte s námi svůj projekt. Poskytujeme precizní řemeslné zpracování a transparentní jednání od prvního nákresu po finální úklid.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Contact Info & Form Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 -mt-24 relative z-20 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Contact Info Column -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Info Card -->
+<div class="bg-surface-container-lowest p-10 rounded-DEFAULT shadow-ambient border border-outline-variant/15">
+<h2 class="font-headline text-2xl font-bold mb-8 text-on-surface">Naše Údaje</h2>
+<ul class="space-y-8">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mt-1 mr-4" style="font-variation-settings: 'FILL' 1;">call</span>
+<div>
+<span class="block font-label text-sm text-secondary uppercase tracking-wider mb-1">Telefon</span>
+<a class="font-headline text-lg font-bold text-on-surface hover:text-primary transition-colors" href="tel:+420123456789">+420 123 456 789</a>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mt-1 mr-4" style="font-variation-settings: 'FILL' 1;">mail</span>
+<div>
+<span class="block font-label text-sm text-secondary uppercase tracking-wider mb-1">Email</span>
+<a class="font-headline text-lg font-bold text-on-surface hover:text-primary transition-colors" href="mailto:info@zednictviatelier.cz">info@zednictviatelier.cz</a>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mt-1 mr-4" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<span class="block font-label text-sm text-secondary uppercase tracking-wider mb-1">Kancelář &amp; Sklad</span>
+<address class="font-body text-base text-on-surface not-italic">
+                                        Průmyslová 123/45<br/>
+                                        100 00 Praha 10<br/>
+                                        Česká republika
+                                    </address>
+</div>
+</li>
+</ul>
+<div class="mt-12 pt-8 border-t border-surface-variant">
+<span class="block font-label text-sm text-secondary uppercase tracking-wider mb-2">Pracovní doba</span>
+<div class="flex justify-between font-body text-on-surface mb-1">
+<span>Po - Pá:</span>
+<span class="font-medium">7:00 - 17:00</span>
+</div>
+<div class="flex justify-between font-body text-secondary">
+<span>So - Ne:</span>
+<span>Dle dohody</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Form Column -->
+<div class="lg:col-span-8">
+<div class="bg-surface p-10 lg:p-14 rounded-DEFAULT shadow-ambient border border-outline-variant/15">
+<h2 class="font-headline text-3xl font-bold mb-2 text-on-surface">Začněte svůj projekt</h2>
+<p class="font-body text-secondary mb-10">Vyplňte formulář níže a ozveme se vám s nezávaznou nabídkou.</p>
+<form action="#" class="space-y-8" method="POST" onsubmit="event.preventDefault();alert(\'Toto je ukázková šablona — formulář není funkční.\');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Name -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface mb-2" for="name">Jméno a příjmení</label>
+<input class="w-full bg-surface-container-high border-0 border-b-2 border-surface-variant focus:border-primary focus:ring-0 px-4 py-3 font-body text-on-surface transition-colors" id="name" name="name" placeholder="Jan Novák" type="text"/>
+</div>
+<!-- Phone -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface mb-2" for="phone">Telefonní číslo</label>
+<input class="w-full bg-surface-container-high border-0 border-b-2 border-surface-variant focus:border-primary focus:ring-0 px-4 py-3 font-body text-on-surface transition-colors" id="phone" name="phone" placeholder="+420 ..." type="tel"/>
+</div>
+</div>
+<!-- Service Type -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface mb-2" for="service">Typ služby</label>
+<select class="w-full bg-surface-container-high border-0 border-b-2 border-surface-variant focus:border-primary focus:ring-0 px-4 py-3 font-body text-on-surface appearance-none transition-colors" id="service" name="service">
+<option disabled="" selected="" value="">Vyberte oblast zájmu</option>
+<option value="rekonstrukce">Kompletní rekonstrukce</option>
+<option value="hruba_stavba">Hrubá stavba</option>
+<option value="fasady">Fasády a zateplení</option>
+<option value="obklady">Obklady a dlažby</option>
+<option value="jine">Jiné / Konzultace</option>
+</select>
+</div>
+<!-- Project Description -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface mb-2" for="message">Popis projektu</label>
+<textarea class="w-full bg-surface-container-high border-0 border-b-2 border-surface-variant focus:border-primary focus:ring-0 px-4 py-3 font-body text-on-surface resize-none transition-colors" id="message" name="message" placeholder="Stručně popište rozsah prací, představu o termínu realizace..." rows="5"></textarea>
+</div>
+<!-- File Upload -->
+<div class="border-2 border-dashed border-outline-variant/30 p-8 text-center rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-3 group-hover:text-primary transition-colors">upload_file</span>
+<div class="font-body text-sm text-on-surface mb-1">
+<span class="font-semibold text-primary">Klikněte pro nahrání</span> nebo přetáhněte soubor
+                                </div>
+<p class="font-label text-xs text-secondary">Podporované formáty: PDF, JPG, PNG (Max 10MB pro plány/fotografie)</p>
+<input class="hidden" type="file"/>
+</div>
+<!-- Submit -->
+<div class="pt-4 flex justify-end">
+<button class="industrial-gradient text-on-primary px-8 py-4 rounded-DEFAULT font-label font-bold tracking-wide hover:scale-[1.02] transition-transform shadow-ambient flex items-center" type="submit">
+                                    Odeslat poptávku
+                                    <span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-4">Časté dotazy</h2>
+<p class="font-body text-secondary text-lg">Transparentnost je základem našeho řemesla. Zde jsou odpovědi na nejčastější otázky ohledně naší spolupráce.</p>
+</div>
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="bg-surface p-8 border border-outline-variant/15 shadow-sm">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-0.5">help</span>
+                            Jak dlouho dopředu musím projekt poptat?
+                        </h3>
+<p class="font-body text-secondary ml-10">
+                            Pro menší zakázky (např. obklady koupelny) doporučujeme poptávku minimálně 1-2 měsíce předem. U kompletních rekonstrukcí nebo hrubých staveb doporučujeme rezervaci termínu 3-6 měsíců před plánovaným začátkem.
+                        </p>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface p-8 border border-outline-variant/15 shadow-sm">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-0.5">payments</span>
+                            Je cenová nabídka závazná a konečná?
+                        </h3>
+<p class="font-body text-secondary ml-10">
+                            Naše kalkulace jsou maximálně přesné na základě dodaných podkladů a prohlídky místa. Cena je konečná, pokud nedojde ke skrytým vadám (časté u starých objektů) nebo k vašemu požadavku na změnu materiálů či rozsahu během stavby. O každé případné změně vždy ihned informujeme.
+                        </p>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface p-8 border border-outline-variant/15 shadow-sm">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-0.5">verified_user</span>
+                            Jaké poskytujete záruky na provedené dílo?
+                        </h3>
+<p class="font-body text-secondary ml-10">
+                            Stojíme si za kvalitou naší práce. Na stavební dílo poskytujeme standardní záruku 60 měsíců (5 let). Na použité materiály se vztahují záruky přímo od výrobců. Jsme plně pojištěni proti případným škodám způsobeným naší činností.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-stone-900 w-full py-16 px-8 mt-32 space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline font-bold text-on-surface text-xl mb-4">
+                    Zednictví Atelier
+                </div>
+<p class="font-body text-sm text-secondary mb-6 max-w-xs">
+                    Mistrovské zednické práce pro klienty vyžadující maximální kvalitu a preciznost detailu.
+                </p>
+</div>
+<div>
+<h4 class="font-label text-sm uppercase tracking-widest text-primary mb-6 font-semibold">Rychlé Odkazy</h4>
+<ul class="space-y-4">
+<li><a class="font-body text-secondary hover:text-primary transition-colors" href="#">Ochrana údajů</a></li>
+<li><a class="font-body text-secondary hover:text-primary transition-colors" href="#">Obchodní podmínky</a></li>
+<li><a class="font-body text-secondary hover:text-primary transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-sm uppercase tracking-widest text-primary mb-6 font-semibold">Sociální sítě</h4>
+<div class="flex space-x-4">
+<a class="w-10 h-10 bg-surface flex items-center justify-center rounded-DEFAULT text-secondary hover:text-primary border border-outline-variant/20 transition-colors" href="#">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+<a class="w-10 h-10 bg-surface flex items-center justify-center rounded-DEFAULT text-secondary hover:text-primary border border-outline-variant/20 transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 border-t border-outline-variant/20">
+<p class="font-body text-sm text-secondary">
+                © 2024 Zednictví Atelier. Všechna práva vyhrazena.
+            </p>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

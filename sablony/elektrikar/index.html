@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elektroinstalace - Domů</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#9acbff",
+                    "tertiary": "#00629e",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#0099f2",
+                    "surface-variant": "#e5e2e1",
+                    "primary-container": "#ff5e13",
+                    "surface-tint": "#a93800",
+                    "surface-container-high": "#ebe7e7",
+                    "on-secondary-container": "#5a666d",
+                    "on-error": "#ffffff",
+                    "primary": "#a93800",
+                    "background": "#fcf9f8",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#bbc8d0",
+                    "secondary-container": "#d7e4ec",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary-fixed": "#111d23",
+                    "on-surface": "#1c1b1b",
+                    "outline-variant": "#e4beb2",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-low": "#f6f3f2",
+                    "outline": "#8f7066",
+                    "on-surface-variant": "#5b4137",
+                    "on-primary-fixed-variant": "#812900",
+                    "on-primary-container": "#541800",
+                    "on-background": "#1c1b1b",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-fixed": "#001d34",
+                    "secondary": "#546067",
+                    "surface-container": "#f0edec",
+                    "inverse-surface": "#313030",
+                    "secondary-fixed": "#d7e4ec",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-fixed-variant": "#3c494f",
+                    "tertiary-fixed": "#cfe5ff",
+                    "primary-fixed-dim": "#ffb59b",
+                    "primary-fixed": "#ffdbcf",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004a78",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#380d00",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#002e4e",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#ffb59b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-102:hover { transform: scale(1.02); }
+        .detail-loupe-image {
+            clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="bg-slate-900/80 backdrop-blur-md dark:bg-slate-950/80 docked full-width top-0 sticky z-50 shadow-2xl shadow-black/20">
+<nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-black text-white dark:text-white tracking-tighter">ELEKTRO ATELIÉR</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-manrope font-bold tracking-tight uppercase text-sm text-[#FF5E13] border-b-2 border-[#FF5E13] pb-1" href="index.html">Domů</a>
+<a class="font-manrope font-bold tracking-tight uppercase text-sm text-slate-300 hover:text-[#FF5E13] transition-colors duration-300" href="sluzby.html">Služby</a>
+<a class="font-manrope font-bold tracking-tight uppercase text-sm text-slate-300 hover:text-[#FF5E13] transition-colors duration-300" href="portfolio.html">Portfolio</a>
+<a class="font-manrope font-bold tracking-tight uppercase text-sm text-slate-300 hover:text-[#FF5E13] transition-colors duration-300" href="kontakt.html">Kontakt</a>
+</div>
+<a href="kontakt.html" class="hidden md:inline-flex bg-gradient-to-br from-[#a93800] to-[#ff5e13] text-white px-6 py-2.5 rounded-lg font-manrope font-bold tracking-tight uppercase text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                Poptat revizi
+            </a>
+            <button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</nav>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</header>
+<main class="">
+<!-- Hero Section: Precision & Craft -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="text-primary font-headline font-extrabold tracking-[0.3em] text-xs uppercase mb-6 block">Precizní Inženýrství</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold text-on-surface leading-[0.9] tracking-tighter mb-8">
+                        Mistři <br/><span class="text-primary">Elektrického</span> <br/>Řemesla
+                    </h1>
+<p class="text-on-surface-variant max-w-lg text-lg font-light leading-relaxed mb-10">
+                        Od inteligentních domácích systémů po robustní průmyslové rozvody. Přinášíme světlo a sílu tam, kde na kvalitě záleží nejvíce.
+                    </p>
+<div class="flex gap-4">
+<a href="kontakt.html" class="bg-primary text-white px-10 py-5 rounded-lg font-headline font-bold uppercase tracking-widest text-sm scale-102 transition-all shadow-xl">
+                            Naplánovat Revizi
+                        </a>
+<a href="portfolio.html" class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-lg font-headline font-bold uppercase tracking-widest text-sm transition-all">
+                            Naše Práce
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] relative overflow-hidden rounded-xl shadow-2xl">
+<img class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="close-up of professional electrician installing a modern architectural lighting fixture with precise tools and warm directional light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoQwkJlTI-AA3MlF1SKo6N0ZAM1T-ClgwIwUnnd2HU_HopDGEwq6ztQxzA_n35nCQEvyryhS8MMqQAJoqf8tHz0Ls1zaASKRLsEo72rPwsCmzVGuxkByryq32ac-kLV7zVWY2_jScajMZDFkJsDGJNcEj42-O3EaCAQZ0yUGuiCLnH7xlPo5Ls3g2j2hZY3Vl6fbKdggoJF5VsFqhu4dOh3v7TX-55EsyMoEXkPBv6lpBRcRaVdzw5lQgNh7H_yZg_Se0fAAnvacQ"/>
+</div>
+<div class="absolute -bottom-12 -left-12 bg-white p-8 shadow-2xl max-w-xs border-l-8 border-primary">
+<h3 class="font-headline font-bold text-lg mb-2">Chytrá Domácnost</h3>
+<p class="text-xs text-secondary leading-tight">Integrace systémů Loxone a KNX pro maximální komfort a úspory.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us: Asymmetric Layout -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<h2 class="font-headline text-5xl font-black leading-none tracking-tighter lg:w-1/2">Proč zvolit <br/>The Atelier?</h2>
+<p class="text-secondary lg:w-1/3 text-sm leading-relaxed border-l border-outline-variant pl-8">
+                        Věříme, že elektroinstalace je víc než jen kabely ve zdi. Je to nervová soustava vašeho domova i podniku.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<!-- Feature 1 -->
+<div class="space-y-6">
+<span class="material-symbols-outlined text-4xl text-primary">home_iot_device</span>
+<h4 class="font-headline text-2xl font-bold">Chytrá řešení</h4>
+<p class="text-on-surface-variant font-light">Navrhujeme systémy, které přemýšlejí za vás. Automatizace osvětlení, vytápění a bezpečnosti v jednom celku.</p>
+</div>
+<!-- Feature 2 -->
+<div class="space-y-6 mt-12 md:mt-24">
+<span class="material-symbols-outlined text-4xl text-primary">precision_manufacturing</span>
+<h4 class="font-headline text-2xl font-bold">Precizní inženýrství</h4>
+<p class="text-on-surface-variant font-light">Čistota práce v rozvaděčích je naší vizitkou. Každý spoj je proveden s průmyslovou přesností.</p>
+</div>
+<!-- Feature 3 -->
+<div class="space-y-6">
+<span class="material-symbols-outlined text-4xl text-primary">health_and_safety</span>
+<h4 class="font-headline text-2xl font-bold">Bezpečnost především</h4>
+<p class="text-on-surface-variant font-light">Nejpřísnější standardy a certifikované revize jsou základem každého našeho projektu bez kompromisů.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Works: Bento Grid Portfolio -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-black uppercase tracking-tight">Realizace</h2>
+<div class="h-1 w-24 bg-primary mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+<!-- Work 1: Smart Home -->
+<div class="md:col-span-8 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="modern minimalist living room with integrated smart LED lighting and wall-mounted control panel in soft evening light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdCoesvTxiOf4Vh8aiUl4vjYoZI7zCV1xD4XHjH-JHIUGkqcDjC_UCKFQPPO5sLknQEhvAit6Yd4FzuPOjDhck1e_j9DUHVb-ZoBNL207YhuDDGaD-vVHEbgyFTnyt-4RHnEO_P1gzmswh5ANJwCizu_HECY5dFASUtp26NbPMWxhR2DkVajqxR1ha9IsfLFbdgCeH64F3yK8dr1LaMJ7TAO11uSkAv7psr4P7cXs_Ktxp-crHAGvnhV9OX7nS08j5NjB1l62EZY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="text-primary-container font-headline font-bold text-xs uppercase tracking-widest mb-2">Rezidenční</span>
+<h3 class="text-white font-headline text-3xl font-black">Smart Home Loft Praha</h3>
+</div>
+</div>
+<!-- Work 2: Industrial -->
+<div class="md:col-span-4 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="complex industrial electrical panel with organized wiring and circuit breakers in a factory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYPlLmcy2NvJa8076O4SX0jlhhijmH81uzyEmdl5R6DT5VU1237DQ0zIVR9R0zTW8hZnFWqsE7fankEZ94_f5w6w6rwdO7-X2Mbtr86uS2YEMiludxgQ4LES-wAtjv0nsxKLYKyABUw-J35Ke69wX5uzQ4wCfxLJmC5uw1d22iwHpVPn5kxlM_JQkQP4KWGvxcuNBPUUtanqjIALGmCpMi6VZJJ6fJPJiMBMW1xSZp6LaZvWyj0-K1nXjJ2JERYtmVLuXA0L9mc6I"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary-container font-headline font-bold text-xs uppercase tracking-widest mb-2">Průmyslové</span>
+<h3 class="text-white font-headline text-xl font-black">Tovární Hala Brno</h3>
+</div>
+</div>
+<!-- Work 3: Detail -->
+<div class="md:col-span-4 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="macro shot of high-end brass light switches mounted on a dark textured wall background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJU1Ul2jMhq7-OkSanSZI9pE8gEdUDcjLXslSuEwR_u21fIlfUim28hxvZ9lcDpv_7kKPjQukO5AaHhWnsHTHpK13nSOjJ-eGCAxR7c2AntHih2IC4wg5A1t3-s6UjxE32YZzzIJJG9wc1xSb9-4-H8bqpXqY1R-vilfsgrZFlVGIT93wuOCcTh9NdFaDpH_YXA0rFVDEwOMBnfHh-APFs--N9rmxHdIAwhR1bTFzUtN7NqMYH85l6kCYUThhPOgTCuLKNHvO6RkE"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary-container font-headline font-bold text-xs uppercase tracking-widest mb-2">Detaily</span>
+<h3 class="text-white font-headline text-xl font-black">Zakázkový Design</h3>
+</div>
+</div>
+<!-- Work 4: Safety -->
+<div class="md:col-span-8 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="engineer performing safety inspection of electrical systems using digital tablet in professional environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnuWOq5Rg7DTrAJLgfYEzu8MOQKPB1jprkTOTFpVtuhD_KV7R8CzH_RifxsnU9uQtx4BNhvlxbZp1RQBTD2j50IkEHH3ebi2mG3YCwyb6cfembLoAQ9-_4ElXd4W70JNVxb-mdIogQeL0ifDP5E0CUmV4TiC8Y4-FpB_MwHaj08-AQGWSbG0JwBQv86F-VgI0ttWJ5hMuSpNeaD26FxRNx5OiSzi0tK5w_6nCIrJ40xYRKg5KMJW1iLowC9gbgrHnE9vrNqdmksGs"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="text-primary-container font-headline font-bold text-xs uppercase tracking-widest mb-2">Bezpečnost</span>
+<h3 class="text-white font-headline text-3xl font-black">Kompletní Revize Skladu</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detail Loupe Section: The Signature Component -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1">
+<div class="relative w-full aspect-square">
+<!-- Background shape -->
+<div class="absolute inset-0 bg-surface-container-high translate-x-8 translate-y-8 rounded-lg"></div>
+<!-- Main image with custom mask -->
+<img class="absolute inset-0 w-full h-full object-cover detail-loupe-image shadow-2xl" data-alt="macro extreme close-up of perfectly aligned copper wires inside a modern industrial junction box" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9FQ59GoZo43Z40N4bBovG_ot3p8S0AvPr08tMV1woNgw_g__c6luUdYKSGw9dZq-34XByJmTCOo-e4w-v2TpUs7czaoliU6HYRd7WJRer03G3qZbnyoj_HcOm5wLRCAEtpiIVR4p8_YFz5NVFl-f82rs8VjkcBGXPgJoULPAC4H3R8ARUgm8Y3NVpOfoGlXsMHGQ1yYVikqcUQuk2DGceWrSsne7DF4T8YV-p7TILjnUWEA6kRvt6__gjIb_2nNlDi4zDj8y7GrA"/>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline text-5xl font-black leading-[1.1] mb-8">Dokonalost v detailu.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Naše práce nekončí u funkčnosti. Dbáme na estetiku a logiku každého zapojení. Protože v průmyslovém i rezidenčním světě, čisté rozvody znamenají bezpečné rozvody.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                            Popisky pro každý okruh
+                        </li>
+<li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                            Měření izolačních odporů
+                        </li>
+<li class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                            Doživotní technická podpora
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Final CTA: The Atmosphere Shadow -->
+<section class="py-32 bg-surface-container-lowest">
+<div class="max-w-5xl mx-auto px-8">
+<div class="bg-surface p-12 md:p-24 rounded-lg text-center shadow-[0_40px_60px_-15px_rgba(28,27,27,0.06)] border border-outline-variant/15">
+<span class="text-primary font-headline font-black tracking-widest text-xs uppercase mb-6 block">Kontaktujte nás</span>
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-10 tracking-tighter">Připraveni na bezpečnější <br/>a chytřejší domov?</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<a href="kontakt.html" class="bg-gradient-to-br from-primary to-primary-container text-white px-12 py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-transform">
+                            Naplánovat Revizi
+                        </a>
+<a class="bg-surface-container-highest text-on-surface px-12 py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3" href="tel:+420123456789">
+<span class="material-symbols-outlined">call</span>
+                            +420 123 456 789
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-slate-950 w-full border-t border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-white mb-4 tracking-tighter">ELEKTRO ATELIÉR</div>
+<p class="font-inter text-xs text-slate-500 uppercase tracking-widest max-w-xs">Profesionální elektroinstalace se zárukou nejvyšší kvality a bezpečnosti.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-inter text-xs text-slate-500 uppercase tracking-widest hover:text-[#FF5E13] transition-colors opacity-80 hover:opacity-100" href="#">Obchodní podmínky</a>
+<a class="font-inter text-xs text-slate-500 uppercase tracking-widest hover:text-[#FF5E13] transition-colors opacity-80 hover:opacity-100" href="#">Ochrana údajů</a>
+<a class="font-inter text-xs text-slate-500 uppercase tracking-widest hover:text-[#FF5E13] transition-colors opacity-80 hover:opacity-100" href="#">Certifikace</a>
+</div>
+<div class="text-right">
+<p class="font-inter text-xs text-slate-500 uppercase tracking-widest">© 2024 ELEKTRO ATELIÉR. Všechna práva vyhrazena.</p>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

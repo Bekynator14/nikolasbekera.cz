@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potřebuje živnostník web v roce 2026? — Nikolas Bekera</title>
+  <meta name="description" content="Má ještě smysl dělat web, když jsou tady sociální sítě? Proč web stále funguje lépe než Facebook nebo Instagram pro lokální živnostníky.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://nikolasbekera.cz/blog/potrebuje-zivnostnik-web.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nikolasbekera.cz/blog/potrebuje-zivnostnik-web.html">
+  <meta property="og:title" content="Potřebuje živnostník web v roce 2026? — Nikolas Bekera">
+  <meta property="og:description" content="Má ještě smysl dělat web, když jsou tady sociální sítě? Proč web stále funguje lépe než Facebook nebo Instagram pro lokální živnostníky.">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+  <meta property="article:published_time" content="2026-05-06">
+  <meta property="article:author" content="Nikolas Bekera">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Potřebuje živnostník web v roce 2026? — Nikolas Bekera">
+  <meta name="twitter:description" content="Má ještě smysl dělat web, když jsou tady sociální sítě? Proč web stále funguje lépe než Facebook nebo Instagram pro lokální živnostníky.">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #0A0A0A; --paper: #FAFAF7; --concrete: #6B6B6B; --signal: #FF4D1E; --line: #E5E5E2; --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--signal); color: var(--paper); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+    .logo { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; }
+    .nav-links a { color: var(--concrete); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-family: var(--mono); font-size: 12px; padding: 8px 16px; background: var(--ink); color: var(--paper); text-decoration: none; border-radius: 4px; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--signal); }
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+    .article-header { padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--line); max-width: 780px; }
+    .breadcrumb { font-family: var(--mono); font-size: 12px; color: var(--concrete); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 8px; }
+    .article-tag { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 20px; }
+    .article-header .lead { font-size: 18px; color: var(--concrete); line-height: 1.6; max-width: 620px; margin-bottom: 24px; }
+    .article-meta-bar { font-family: var(--mono); font-size: 12px; color: var(--concrete); display: flex; gap: 20px; flex-wrap: wrap; }
+    .article-body { padding: 3.5rem 0 5rem; }
+    .prose { max-width: 720px; }
+    .prose h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.025em; margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+    .prose h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.015em; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p { margin-bottom: 1.2rem; font-size: 16px; line-height: 1.7; color: var(--ink); }
+    .prose p.muted { color: var(--concrete); }
+    .prose ul { margin: 0 0 1.2rem 1.2rem; }
+    .prose ul li { font-size: 16px; line-height: 1.65; margin-bottom: 6px; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: none; border-bottom: 0.5px solid currentColor; }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 2rem 0; }
+    @media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; } }
+    .stat-box { border: 0.5px solid var(--line); border-radius: 10px; padding: 20px; text-align: center; }
+    .stat-num { font-size: 32px; font-weight: 500; letter-spacing: -0.04em; color: var(--signal); display: block; margin-bottom: 6px; }
+    .stat-label { font-size: 13px; color: var(--concrete); line-height: 1.4; }
+    .callout { margin: 2rem 0; padding: 20px 24px; background: #F4EFE5; border-radius: 10px; font-size: 15px; line-height: 1.65; }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 13px; font-family: var(--mono); letter-spacing: 0.5px; color: var(--concrete); text-transform: uppercase; }
+    .article-cta { margin-top: 3.5rem; padding: 36px; background: var(--ink); border-radius: 12px; color: var(--paper); }
+    .article-cta h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .article-cta p { color: rgba(250,250,247,0.65); font-size: 15px; margin-bottom: 20px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 6px; transition: all 0.2s; background: var(--signal); color: var(--paper); }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .article-cta .btn { color: var(--paper); }
+
+    .related-articles { margin-top: 3rem; padding-top: 2.5rem; border-top: 0.5px solid var(--line); }
+    .related-label { font-family: var(--mono); font-size: 11px; color: var(--concrete); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .related-links { display: grid; gap: 2px; }
+    .related-links a { display: block; padding: 13px 16px; border: 0.5px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; transition: background 0.15s; letter-spacing: -0.01em; }
+    .related-links a:hover { background: #F4EFE5; }
+    .related-links a span { color: var(--signal); font-family: var(--mono); }
+    footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 12px; color: var(--concrete); border-top: 0.5px solid var(--line); }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Potřebuje živnostník web v roce 2026?",
+    "description": "Má ještě smysl dělat web, když jsou tady sociální sítě? Proč web stále funguje lépe než Facebook nebo Instagram pro lokální živnostníky.",
+    "author": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "datePublished": "2026-05-06",
+    "dateModified": "2026-05-06",
+    "url": "https://nikolasbekera.cz/blog/potrebuje-zivnostnik-web.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nikolasbekera.cz/blog/potrebuje-zivnostnik-web.html"
+    },
+    "inLanguage": "cs"
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="../sablony/">šablony</a>
+        <a href="index.html" class="active">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="article-header">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a><span>/</span>
+        <a href="index.html">blog</a><span>/</span>
+        potřebuje živnostník web
+      </div>
+      <div class="article-tag">pro živnostníky</div>
+      <h1>Potřebuje živnostník web v roce 2026?</h1>
+      <p class="lead">Máte Facebook, Instagram a zákazníci vás doporučují z doslechu. Má ještě smysl investovat do vlastního webu? Krátká odpověď: ano. Delší odpověď je níže.</p>
+      <div class="article-meta-bar">
+        <span>Nikolas Bekera</span><span>·</span><span>Květen 2026</span><span>·</span><span>4 min čtení</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="prose">
+
+        <p>Tahle otázka mi přijde pravidelně. Živnostník má zaběhnutou klientelu, šíří se hlavně přes doporučení a na Facebooku má pár set sledujících. <em>"K čemu mi web, když to takto funguje?"</em></p>
+
+        <p>Je to legitimní otázka. A odpověď závisí na tom, odkud chcete brát nové zákazníky v příštích pěti letech.</p>
+
+        <h2>Kde zákazníci hledají řemeslníky dnes</h2>
+
+        <div class="stat-row">
+          <div class="stat-box">
+            <span class="stat-num">78 %</span>
+            <span class="stat-label">zákazníků hledá lokální služby přes Google</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">3×</span>
+            <span class="stat-label">vyšší důvěryhodnost firmy s vlastním webem</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">0 Kč</span>
+            <span class="stat-label">měsíčně za organické vyhledávání přes Google</span>
+          </div>
+        </div>
+
+        <p>Doporučení od přátel jsou skvělá — ale zákazník, který vás dostane doporučený, stejně zabrousí na Google, aby si ověřil, kdo jste. Pokud nenajde web, může doporučení padnout. Nebo najde konkurenta s webem.</p>
+
+        <h2>Co vám Facebook nedá</h2>
+
+        <p>Facebook a Instagram jsou výborné nástroje pro udržování kontaktu s existujícími zákazníky. Pro získávání nových mají ale zásadní slabinu: <strong>zákazník vás musí aktivně hledat nebo na vás narazit v feedu</strong>.</p>
+
+        <p>Google funguje opačně. Zákazník zadá problém — <em>"instalatér Pardubice"</em> nebo <em>"oprava střechy cena"</em> — a Google mu zobrazí řešení. Vy se mu ukážete ve chvíli, kdy vás potřebuje. To Facebook nedokáže.</p>
+
+        <ul>
+          <li>Facebook <strong>algoritmus rozhoduje</strong>, kolik lidí váš příspěvek uvidí</li>
+          <li>Organický dosah firemních stránek klesá rok od roku</li>
+          <li>Bez placené reklamy vás vidí stále méně lidí</li>
+          <li>Facebook stránka se v Google výsledcích zobrazí, ale ne tak dobře jako vlastní web</li>
+        </ul>
+
+        <h2>Web jako prodejce, který nikdy nespí</h2>
+
+        <p>Zákazníci hledají služby ve chvíli, kdy mají problém — v neděli večer, ve tři ráno, na dovolené. Web funguje 24 hodin denně, 7 dní v týdnu. Facebook příspěvek z minulého týdne zákazník nenajde.</p>
+
+        <p>Dobře navržený web odpoví na základní otázky za zákazníka bez toho, aby mu musel volat:</p>
+        <ul>
+          <li>Co přesně děláte?</li>
+          <li>V jakém městě/regionu působíte?</li>
+          <li>Vypadáte jako profesionál?</li>
+          <li>Jak vás kontaktovat?</li>
+        </ul>
+
+        <h2>Kolik stojí být bez webu?</h2>
+
+        <p>Těžko se to počítá přímo, ale zkuste si to představit jinak: jeden zákazník na rekonstrukci koupelny nebo elektrické instalace vydělá 15 000–50 000 Kč. Pokud vás za rok web přivede jednoho takového zákazníka navíc, zaplatil se vícenásobně.</p>
+
+        <div class="callout">
+          <strong>Praktický tip</strong>
+          Zaregistrujte se do Google Business Profile (zdarma) ještě před spuštěním webu. Vaše firma se začne zobrazovat na mapách Google — a to je místo, kde zákazníci lokální řemeslníky hledají nejčastěji.
+        </div>
+
+        <h2>Takže — potřebuje živnostník web?</h2>
+
+        <p>Pokud chcete zákazníky jen od přátel a doporučení — možná ne. Ale pokud chcete být vidět pro zákazníky, kteří vás ještě neznají a hledají vás na Googlu — pak ano, web potřebujete.</p>
+
+        <p class="muted">A nejde o složitý web. Stačí jedna stránka s jasným obsahem: kdo jste, co děláte, kde působíte, jak vás kontaktovat. Taková stránka se dá postavit za pár dní a vydělá se za první zákazníky.</p>
+
+
+        <div class="related-articles">
+          <div class="related-label">Mohlo by vás zajímat</div>
+          <div class="related-links">
+            <a href="proc-vas-web-nenajdou-zakaznici.html"><span>→</span> Proč váš web nenajdou zákazníci na Googlu?</a>
+            <a href="kolik-stoji-web-pro-remeslnika.html"><span>→</span> Kolik stojí web pro řemeslníka v roce 2026?</a>
+          </div>
+        </div>
+
+                <div class="article-cta">
+          <h3>Chcete zjistit, jak by vypadal váš web?</h3>
+          <p>Napište mi co děláte a kde působíte — navrhnu vám konkrétní řešení a cenu do 24 hodin.</p>
+          <a href="../#kontakt" class="btn">nezávazně se zeptat →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Nikolas Bekera · IČO 09209620</div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="index.html">← zpět na blog</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak fotit pro web sám? Tipy pro řemeslníky | Nikolas Bekera</title>
+  <meta name="description" content="Dobré fotky rozhodují o tom, jestli zákazník zavolá nebo odejde. Přitom není potřeba fotograf — stačí telefon a pár jednoduchých pravidel.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="canonical" href="https://nikolasbekera.cz/blog/jak-delat-fotky-pro-web.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nikolasbekera.cz/blog/jak-delat-fotky-pro-web.html">
+  <meta property="og:title" content="Jak fotit pro web sám? Tipy pro řemeslníky — Nikolas Bekera">
+  <meta property="og:description" content="Dobré fotky rozhodují o tom, jestli zákazník zavolá nebo odejde. Přitom není potřeba fotograf — stačí telefon a pár jednoduchých pravidel.">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+  <meta property="article:published_time" content="2026-02-10">
+  <meta property="article:author" content="Nikolas Bekera">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jak fotit pro web sám? Tipy pro řemeslníky — Nikolas Bekera">
+  <meta name="twitter:description" content="Dobré fotky rozhodují o tom, jestli zákazník zavolá nebo odejde. Stačí telefon a pár jednoduchých pravidel.">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #0A0A0A; --paper: #FAFAF7; --concrete: #6B6B6B; --signal: #FF4D1E; --line: #E5E5E2; --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--signal); color: var(--paper); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+    .logo { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; }
+    .nav-links a { color: var(--concrete); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-family: var(--mono); font-size: 12px; padding: 8px 16px; background: var(--ink); color: var(--paper); text-decoration: none; border-radius: 4px; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--signal); }
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+    .article-header { padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--line); max-width: 780px; }
+    .breadcrumb { font-family: var(--mono); font-size: 12px; color: var(--concrete); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 8px; }
+    .article-tag { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 20px; }
+    .article-header .lead { font-size: 18px; color: var(--concrete); line-height: 1.6; max-width: 620px; margin-bottom: 24px; }
+    .article-meta-bar { font-family: var(--mono); font-size: 12px; color: var(--concrete); display: flex; gap: 20px; flex-wrap: wrap; }
+    .article-body { padding: 3.5rem 0 5rem; }
+    .prose { max-width: 720px; }
+    .prose h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.025em; margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+    .prose p { margin-bottom: 1.2rem; font-size: 16px; line-height: 1.7; color: var(--ink); }
+    .prose p.muted { color: var(--concrete); }
+    .prose ul { margin: 0 0 1.2rem 1.2rem; }
+    .prose ul li { font-size: 16px; line-height: 1.65; margin-bottom: 6px; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: none; border-bottom: 0.5px solid currentColor; }
+    .dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); border: 0.5px solid var(--line); border-radius: 10px; overflow: hidden; margin: 1.5rem 0; }
+    .val-good, .val-bad { padding: 20px 24px; }
+    .val-good { background: var(--paper); }
+    .val-bad { background: #FDF6F4; }
+    .val-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+    .val-good .val-label { color: #2D7D46; }
+    .val-bad .val-label { color: var(--signal); }
+    .val-good ul, .val-bad ul { list-style: none; padding: 0; margin: 0; }
+    .val-good ul li, .val-bad ul li { font-size: 14px; line-height: 1.55; padding: 6px 0; border-bottom: 0.5px solid var(--line); color: var(--ink); }
+    .val-good ul li:last-child, .val-bad ul li:last-child { border-bottom: none; }
+    .val-good ul li::before { content: '✓ '; color: #2D7D46; font-weight: 600; }
+    .val-bad ul li::before { content: '✕ '; color: var(--signal); font-weight: 600; }
+    @media (max-width: 580px) { .dos-donts { grid-template-columns: 1fr; } }
+    .callout { margin: 2rem 0; padding: 20px 24px; background: #F4EFE5; border-radius: 10px; font-size: 15px; line-height: 1.65; }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 13px; font-family: var(--mono); letter-spacing: 0.5px; color: var(--concrete); text-transform: uppercase; }
+    .article-cta { margin-top: 3.5rem; padding: 36px; background: var(--ink); border-radius: 12px; color: var(--paper); }
+    .article-cta h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .article-cta p { color: rgba(250,250,247,0.65); font-size: 15px; margin-bottom: 20px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 6px; transition: all 0.2s; background: var(--signal); color: var(--paper); }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .article-cta .btn { color: var(--paper); }
+    .related-articles { margin-top: 3rem; padding-top: 2.5rem; border-top: 0.5px solid var(--line); }
+    .related-label { font-family: var(--mono); font-size: 11px; color: var(--concrete); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .related-links { display: grid; gap: 2px; }
+    .related-links a { display: block; padding: 13px 16px; border: 0.5px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; transition: background 0.15s; letter-spacing: -0.01em; }
+    .related-links a:hover { background: #F4EFE5; }
+    .related-links a span { color: var(--signal); font-family: var(--mono); }
+    footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 12px; color: var(--concrete); border-top: 0.5px solid var(--line); }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak fotit pro web sám? Tipy pro řemeslníky",
+    "description": "Dobré fotky rozhodují o tom, jestli zákazník zavolá nebo odejde. Přitom není potřeba fotograf — stačí telefon a pár jednoduchých pravidel.",
+    "author": { "@type": "Person", "name": "Nikolas Bekera", "url": "https://nikolasbekera.cz" },
+    "publisher": { "@type": "Person", "name": "Nikolas Bekera", "url": "https://nikolasbekera.cz" },
+    "datePublished": "2026-02-10",
+    "dateModified": "2026-02-10",
+    "url": "https://nikolasbekera.cz/blog/jak-delat-fotky-pro-web.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nikolasbekera.cz/blog/jak-delat-fotky-pro-web.html" },
+    "inLanguage": "cs"
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="../sablony/">šablony</a>
+        <a href="index.html" class="active">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="article-header">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a><span>/</span>
+        <a href="index.html">blog</a><span>/</span>
+        jak fotit pro web
+      </div>
+      <div class="article-tag">praktický průvodce</div>
+      <h1>Jak fotit pro web sám? Tipy pro řemeslníky</h1>
+      <p class="lead">Zákazník se na vašem webu rozhoduje do 15 sekund. Fotky jsou to první, co vidí — a špatná fotka kazí i nejlepší práci. Přitom není potřeba profesionální fotograf. Stačí telefon a pár pravidel.</p>
+      <div class="article-meta-bar">
+        <span>Nikolas Bekera</span>
+        <span>·</span>
+        <span>Únor 2026</span>
+        <span>·</span>
+        <span>4 min čtení</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="prose">
+
+        <p>Moderní telefon fotí lépe, než fotoaparáty za desítky tisíc korun před deseti lety. Problém nebývá v technice, ale v tom, co a jak se fotí. Pár základních pravidel udělá z průměrné fotky přesvědčivý vizuál.</p>
+
+        <h2>Co dělat a co ne</h2>
+
+        <div class="dos-donts">
+          <div class="val-good">
+            <div class="val-label">Funguje</div>
+            <ul>
+              <li>Přirozené denní světlo z okna nebo venku</li>
+              <li>Čistý prostor — uklidit před focením</li>
+              <li>Fotky před a po dokončení práce</li>
+              <li>Horizontální (na šířku) pro galerie</li>
+              <li>Detail materiálu nebo spoje — ukazuje řemeslo</li>
+            </ul>
+          </div>
+          <div class="val-bad">
+            <div class="val-label">Nefunguje</div>
+            <ul>
+              <li>Záblesk — plochý obraz, odlesky</li>
+              <li>Nepořádek nebo nářadí v pozadí</li>
+              <li>Rozmazané nebo tmavé fotky</li>
+              <li>Stock fotografie z internetu</li>
+              <li>Příliš malé rozlišení (pod 1000px)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Nejdůležitější pravidlo: světlo</h2>
+
+        <p>Světlo je 80 % úspěchu dobré fotky. Nejjednodušší a nejlevnější světlo je přirozené denní světlo — buď venku, nebo u okna. Vyhněte se přímému slunci, které tvoří tvrdé stíny, a záblesku, který plošti obraz.</p>
+
+        <p>Optimální čas na focení interiérů je dopoledne nebo odpoledne, kdy světlo přichází z boku. Frontální světlo (záblesk, přímé slunce zepředu) maže strukturu materiálu — přijdete o dřevěnou texturu, povrchovou úpravu nebo zednický spoj.</p>
+
+        <h2>Formát fotek pro web</h2>
+
+        <p>Na web se hodí fotky v těchto rozměrech:</p>
+
+        <ul>
+          <li><strong>Galerie a hero obrázky:</strong> minimálně 1200 × 800 px, horizontální formát</li>
+          <li><strong>Portréty a detaily:</strong> 800 × 1000 px, vertikální</li>
+          <li><strong>Velikost souboru:</strong> ideálně pod 300 KB — větší soubory zpomalují web</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Tip — komprese zdarma</strong>
+          Fotky z telefonu mívají 3–8 MB. Před nahráním na web je zkomprimujte přes squoosh.app (zdarma, v prohlížeči) — ušetříte 80–90 % velikosti bez viditelné ztráty kvality.
+        </div>
+
+        <h2>Co fotit — checklist pro řemeslníky</h2>
+
+        <ul>
+          <li><strong>Před a po</strong> — nejsilnější kombinace pro ukázku přidané hodnoty</li>
+          <li><strong>Průběh práce</strong> — zákazníci rádi vidí, jak probíhá realizace</li>
+          <li><strong>Detail řemesla</strong> — spoj, povrch, materiál — ukazuje kvalitu</li>
+          <li><strong>Celkový pohled</strong> — hotový výsledek v kontextu prostoru</li>
+          <li><strong>Vy při práci</strong> — osobní fotka buduje důvěru</li>
+        </ul>
+
+        <p class="muted">Fotit před a po každé zakázce by měla být rutina. Za rok budete mít desítky přesvědčivých ukázek práce — a to je nejlepší obsah, který na web můžete dát.</p>
+
+        <div class="related-articles">
+          <div class="related-label">Mohlo by vás zajímat</div>
+          <div class="related-links">
+            <a href="web-pro-malire.html"><span>→</span> Web pro malíře — proč jsou fotky klíčové</a>
+            <a href="jak-napsat-texty-na-web.html"><span>→</span> Jak napsat texty na web sám?</a>
+            <a href="web-pro-zahradnika.html"><span>→</span> Web pro zahradníka — co na něm nesmí chybět</a>
+          </div>
+        </div>
+
+        <div class="article-cta">
+          <h3>Máte fotky, ale chybí vám web, kde je ukázat?</h3>
+          <p>Napište mi — postavím vám web s galerií, který zákazníci najdou na Googlu a kde vaše práce vynikne.</p>
+          <a href="../#kontakt" class="btn">nezávazně se zeptat →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Nikolas Bekera · IČO 09209620</div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="index.html">← zpět na blog</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

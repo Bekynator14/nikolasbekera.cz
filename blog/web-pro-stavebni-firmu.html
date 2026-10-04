@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web pro stavební firmu nebo zedníka | Nikolas Bekera</title>
+  <meta name="description" content="Web pro stavební firmu nebo zedníka musí zákazníkovi rychle říct: co stavíte, kde působíte a jestli jste profesionál. Co konkrétně musí web obsahovat?">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://nikolasbekera.cz/blog/web-pro-stavebni-firmu.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nikolasbekera.cz/blog/web-pro-stavebni-firmu.html">
+  <meta property="og:title" content="Web pro stavební firmu nebo zedníka — co na něm nesmí chybět — Nikolas Bekera">
+  <meta property="og:description" content="Web pro stavební firmu nebo zedníka musí zákazníkovi rychle říct: co stavíte, kde působíte a jestli jste profesionál. Co konkrétně musí web obsahovat?">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+  <meta property="article:published_time" content="2026-05-06">
+  <meta property="article:author" content="Nikolas Bekera">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web pro stavební firmu nebo zedníka — co na něm nesmí chybět — Nikolas Bekera">
+  <meta name="twitter:description" content="Web pro stavební firmu nebo zedníka musí zákazníkovi rychle říct: co stavíte, kde působíte a jestli jste profesionál. Co konkrétně musí web obsahovat?">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #0A0A0A; --paper: #FAFAF7; --concrete: #6B6B6B; --signal: #FF4D1E; --line: #E5E5E2; --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--signal); color: var(--paper); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+    .logo { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; }
+    .nav-links a { color: var(--concrete); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-family: var(--mono); font-size: 12px; padding: 8px 16px; background: var(--ink); color: var(--paper); text-decoration: none; border-radius: 4px; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--signal); }
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+    .article-header { padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--line); max-width: 780px; }
+    .breadcrumb { font-family: var(--mono); font-size: 12px; color: var(--concrete); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 8px; }
+    .article-tag { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 20px; }
+    .article-header .lead { font-size: 18px; color: var(--concrete); line-height: 1.6; max-width: 620px; margin-bottom: 24px; }
+    .article-meta-bar { font-family: var(--mono); font-size: 12px; color: var(--concrete); display: flex; gap: 20px; flex-wrap: wrap; }
+    .article-body { padding: 3.5rem 0 5rem; }
+    .prose { max-width: 720px; }
+    .prose h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.025em; margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+    .prose h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.015em; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p { margin-bottom: 1.2rem; font-size: 16px; line-height: 1.7; color: var(--ink); }
+    .prose p.muted { color: var(--concrete); }
+    .prose ul { margin: 0 0 1.2rem 1.2rem; }
+    .prose ul li { font-size: 16px; line-height: 1.65; margin-bottom: 6px; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: none; border-bottom: 0.5px solid currentColor; }
+    .checklist { list-style: none; margin: 1.5rem 0; padding: 0; display: grid; gap: 2px; background: var(--line); border: 0.5px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .checklist li { background: var(--paper); padding: 16px 20px 16px 48px; font-size: 15px; line-height: 1.5; position: relative; }
+    .checklist li::before { content: '—'; position: absolute; left: 20px; color: var(--signal); font-family: var(--mono); }
+    .checklist li strong { display: block; font-weight: 500; margin-bottom: 2px; }
+    .checklist li span { color: var(--concrete); font-size: 14px; }
+    .callout { margin: 2rem 0; padding: 20px 24px; background: #F4EFE5; border-radius: 10px; font-size: 15px; line-height: 1.65; }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 13px; font-family: var(--mono); letter-spacing: 0.5px; color: var(--concrete); text-transform: uppercase; }
+    .article-cta { margin-top: 3.5rem; padding: 36px; background: var(--ink); border-radius: 12px; color: var(--paper); }
+    .article-cta h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .article-cta p { color: rgba(250,250,247,0.65); font-size: 15px; margin-bottom: 20px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 6px; transition: all 0.2s; background: var(--signal); color: var(--paper); }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .article-cta .btn { color: var(--paper); }
+
+    .related-articles { margin-top: 3rem; padding-top: 2.5rem; border-top: 0.5px solid var(--line); }
+    .related-label { font-family: var(--mono); font-size: 11px; color: var(--concrete); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .related-links { display: grid; gap: 2px; }
+    .related-links a { display: block; padding: 13px 16px; border: 0.5px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; transition: background 0.15s; letter-spacing: -0.01em; }
+    .related-links a:hover { background: #F4EFE5; }
+    .related-links a span { color: var(--signal); font-family: var(--mono); }
+    footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 12px; color: var(--concrete); border-top: 0.5px solid var(--line); }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Web pro stavební firmu nebo zedníka — co na něm nesmí chybět",
+    "description": "Web pro stavební firmu nebo zedníka musí zákazníkovi rychle říct: co stavíte, kde působíte a jestli jste profesionál. Co konkrétně musí web obsahovat?",
+    "author": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "datePublished": "2026-05-06",
+    "dateModified": "2026-05-06",
+    "url": "https://nikolasbekera.cz/blog/web-pro-stavebni-firmu.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nikolasbekera.cz/blog/web-pro-stavebni-firmu.html"
+    },
+    "inLanguage": "cs"
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="../sablony/">šablony</a>
+        <a href="index.html" class="active">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="article-header">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a><span>/</span>
+        <a href="index.html">blog</a><span>/</span>
+        web pro stavební firmu
+      </div>
+      <div class="article-tag">pro řemeslníky</div>
+      <h1>Web pro stavební firmu nebo zedníka — co na něm nesmí chybět</h1>
+      <p class="lead">Stavební práce jsou jednou z nejhledanějších kategorií na Googlu. Web, který zákazníka přesvědčí, musí ukázat práci, region a kontakt — přehledně a rychle.</p>
+      <div class="article-meta-bar">
+        <span>Nikolas Bekera</span><span>·</span><span>Květen 2026</span><span>·</span><span>4 min čtení</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="prose">
+
+        <p>Zákazník, který plánuje rekonstrukci nebo výstavbu, prochází obvykle víc firem najednou. Porovnává, kdo vypadá profesionálně, kde působí a jak snadné je se s nimi domluvit. Tento výběr probíhá z velké části online — na Googlu, v mapách, a na webech firem.</p>
+
+        <p>Stavební firma bez webu jednoduše v tomto výběru chybí.</p>
+
+        <h2>Co musí být na webu stavební firmy</h2>
+
+        <ul class="checklist">
+          <li>
+            <strong>Fotogalerie realizací</strong>
+            <span>Stavební práce se prodávají vizuálně. Zákazník chce vidět, co umíte — před a po, různé typy prací, reálné projekty. Fotky z telefonu jsou lepší než žádné.</span>
+          </li>
+          <li>
+            <strong>Přesný seznam služeb</strong>
+            <span>Zedničina, rekonstrukce, přístavby, zateplení, obklady — každá položka je klíčové slovo pro Google. Čím konkrétnější, tím lépe.</span>
+          </li>
+          <li>
+            <strong>Oblast působení</strong>
+            <span>Konkrétně: "Hradec Králové, Pardubice a okolí do 50 km". Zákazník musí vědět, jestli k němu přijedete, bez nutnosti volat.</span>
+          </li>
+          <li>
+            <strong>Kontaktní číslo prominentně</strong>
+            <span>U stavebních prací zákazníci obvykle volají — ne píší. Číslo musí být viditelné na první pohled a klikací na mobilu.</span>
+          </li>
+          <li>
+            <strong>Reference nebo hodnocení</strong>
+            <span>Citát od spokojené zákaznice, nebo odkaz na Google hodnocení. Stavební práce jsou drahé — zákazník chce mít jistotu, že si vybírá správně.</span>
+          </li>
+          <li>
+            <strong>IČO a základní firemní údaje</strong>
+            <span>Firma s IČO a uvedenou adresou působí důvěryhodněji než anonymní kontakt. Pro zákazníka to signalizuje stabilní podnik.</span>
+          </li>
+        </ul>
+
+        <h2>Proč jsou fotky tak důležité právě u stavebních prací?</h2>
+
+        <p>Zákazník, který zvažuje rekonstrukci koupelny nebo stavbu přístavby, investuje desítky tisíc korun. Při takové investici chce mít jistotu. Fotky z reálných projektů jsou nejsilnějším argumentem, který web může nabídnout.</p>
+
+        <p>Nemáte fotky? Začněte fotit hned od dalšího projektu. Stačí telefon — výsledek práce, průběh stavby, detail obkladů nebo hotová místnost. Za půl roku budete mít solidní galerii.</p>
+
+        <h2>Jak zákazníci stavební firmy hledají?</h2>
+
+        <p>Nejčastější vyhledávací dotazy pro stavební firmy:</p>
+
+        <ul>
+          <li><em>"zedník [město]"</em></li>
+          <li><em>"rekonstrukce koupelny cena"</em></li>
+          <li><em>"stavební firma [kraj]"</em></li>
+          <li><em>"zateplení domu cena"</em></li>
+          <li><em>"přístavba domu"</em></li>
+        </ul>
+
+        <p>Tyto výrazy by se měly přirozeně objevovat v nadpisech a textech vašeho webu. Pokud jsou tam, Google ví, co nabízíte, a zobrazí vás zákazníkům, kteří tyto věci hledají.</p>
+
+        <div class="callout">
+          <strong>Tip pro stavební firmy</strong>
+          Vytvořte si profil na Google Business (zdarma) a požádejte spokojené zákazníky o zanechání hodnocení. Stavební firmy s dobrým hodnocením a fotkami z realizací dominují lokálním výsledkům vyhledávání.
+        </div>
+
+        <h2>Jak velký web stavební firma potřebuje?</h2>
+
+        <p>Pro živnostníka nebo menší stavební partičku stačí jednostránkový web — landing page s galerií, službami, oblastí a kontaktem. Pro firmu s více zaměstnanci a různými typy zakázek může být lepší vícestránkový web s dělenou galerií podle typů prací.</p>
+
+        <p class="muted">Jednostránkový web začíná na 5 000–8 000 Kč. Vícestránkový s galerií a filtrem projektů vychází na 10 000–18 000 Kč. Oba se zaplatí prvním zákazníkem z Googlu.</p>
+
+
+        <div class="related-articles">
+          <div class="related-label">Mohlo by vás zajímat</div>
+          <div class="related-links">
+            <a href="web-pro-instalatere.html"><span>→</span> Web pro instalatéra — co na něm nesmí chybět</a>
+            <a href="web-pro-elektrikare.html"><span>→</span> Web pro elektrikáře — co na něm nesmí chybět</a>
+            <a href="proc-vas-web-nenajdou-zakaznici.html"><span>→</span> Proč váš web nenajdou zákazníci na Googlu?</a>
+          </div>
+        </div>
+
+                <div class="article-cta">
+          <h3>Jste stavební firma nebo zedník a chcete web?</h3>
+          <p>Napište mi — postavím vám web s galerií realizací, který zákazníci najdou na Googlu.</p>
+          <a href="../#kontakt" class="btn">nezávazně se zeptat →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Nikolas Bekera · IČO 09209620</div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="index.html">← zpět na blog</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

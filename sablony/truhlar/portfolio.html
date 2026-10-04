@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb59b",
+                    "tertiary-fixed-dim": "#9acbff",
+                    "on-secondary-fixed": "#111d23",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1c1b1b",
+                    "on-primary-container": "#541800",
+                    "on-surface-variant": "#5b4137",
+                    "on-tertiary-container": "#002e4e",
+                    "tertiary-fixed": "#cfe5ff",
+                    "primary": "#a93800",
+                    "surface": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313030",
+                    "inverse-primary": "#ffb59b",
+                    "on-primary-fixed": "#380d00",
+                    "outline": "#8f7066",
+                    "surface-bright": "#fcf9f8",
+                    "surface-tint": "#a93800",
+                    "primary-container": "#ff5e13",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#546067",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-container": "#f0edec",
+                    "secondary-fixed-dim": "#bbc8d0",
+                    "error-container": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "tertiary-container": "#0099f2",
+                    "surface-container-high": "#ebe7e7",
+                    "secondary-container": "#d7e4ec",
+                    "on-tertiary-fixed-variant": "#004a78",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-background": "#1c1b1b",
+                    "tertiary": "#00629e",
+                    "on-primary-fixed-variant": "#812900",
+                    "surface-container-low": "#f6f3f2",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "on-secondary-container": "#5a666d",
+                    "outline-variant": "#e4beb2",
+                    "on-secondary-fixed-variant": "#3c494f",
+                    "on-tertiary-fixed": "#001d34",
+                    "secondary-fixed": "#d7e4ec",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#ffdbcf"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .no-border-rule { border: none !important; }
+        .tonal-shift { background: rgba(252, 249, 248, 0.8); }
+        .bg-orange-forged { background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md no-border bg-gradient-to-b from-[#e5e2e1]/20 to-transparent">
+<div class="flex justify-between items-center px-8 py-6 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#1c1b1b] dark:text-[#fcf9f8] font-headline uppercase">
+                TRUHLÁŘSTVÍ
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#546067] dark:text-[#e5e2e1] hover:text-[#a93800]" href="index.html">Domů</a>
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#546067] dark:text-[#e5e2e1] hover:text-[#a93800]" href="sluzby.html">Služby</a>
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#a93800] dark:text-[#ff5e13] border-b-2 border-[#a93800] pb-1" href="portfolio.html">Portfolio</a>
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#546067] dark:text-[#e5e2e1] hover:text-[#a93800]" href="kontakt.html">Kontakt</a>
+</div>
+<button class="hidden md:inline-flex bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-3 font-headline font-bold tracking-tighter uppercase rounded hover:scale-105 transition-transform duration-300 active:scale-95 active:duration-100 shadow-lg shadow-primary/20">
+                Poptat projekt
+            </button>
+<button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section / Title -->
+<section class="px-6 md:px-12 mb-24">
+<div class="max-w-7xl mx-auto border-l-4 border-primary pl-8 py-4">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl tracking-tighter uppercase leading-tight">
+                    Galerie <br/>našich děl
+                </h1>
+<p class="mt-6 text-secondary max-w-xl font-light text-lg">
+                    Precizní práce s ušlechtilými materiály. Každý kus nábytku je originálem vytesaným z vize a řemeslné dovednosti.
+                </p>
+</div>
+</section>
+<!-- Filterable Gallery -->
+<section class="px-6 md:px-12 mb-32">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap gap-4 mb-16 items-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Filtr projektů:</span>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface font-headline font-bold uppercase text-[10px] tracking-widest rounded-full hover:bg-primary hover:text-white transition-all">Vše</button>
+<button class="px-6 py-2 bg-primary text-white font-headline font-bold uppercase text-[10px] tracking-widest rounded-full transition-all shadow-md">Kuchyně</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface font-headline font-bold uppercase text-[10px] tracking-widest rounded-full hover:bg-primary hover:text-white transition-all">Ložnice</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface font-headline font-bold uppercase text-[10px] tracking-widest rounded-full hover:bg-primary hover:text-white transition-all">Kanceláře</button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Project 1 -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low aspect-[16/9]">
+<img alt="Moderní kuchyně" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist kitchen with dark oak cabinetry, integrated brass hardware, and white marble countertop in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14JH1uviAt7LzKYV9uo0TKSfQfUbB4MrspMF1TyVPFkAwsu8TbXJUElqTlz68XdO6LfaSm_XMHAS1NkJfsELNzy7L0-XDQeMU29S-Vz4iHgIuhcB3zNjPVK-s-nRxwIOrGpBXS0vvvS4DIS-LfF4VQ7wODldly2l7yEcYLgS9WuweK6wHWNUWVIg-_fp6ihlfsMWTSGuleeMSSeU33bmM8ysBosjlTaMurU9YZfBQu6H_HFUGE9ODa_x2lb1Rh8uZ3nngrrrkDSo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-12">
+<span class="text-primary font-bold uppercase tracking-widest text-xs mb-2">Portfolio / Kuchyně</span>
+<h3 class="text-white text-3xl font-headline font-black uppercase">Rezidence Smíchov</h3>
+</div>
+</div>
+<!-- Detail Loupe 1 -->
+<div class="md:col-span-4 bg-surface-container-high p-8 flex flex-col justify-center">
+<div class="w-full aspect-square overflow-hidden mb-6 -mt-16 ml-8 shadow-2xl relative z-10">
+<img alt="Detail dubu" class="w-full h-full object-cover" data-alt="Macro close-up of dark stained solid oak wood grain with fine sanding marks and matte finish texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2rvzYB-9DSjR351PTU8mxPpAQzRjAKoNsIjnqHGEgLRJH_KBzW3ckc_T_4cuXfIZBtztLQZRJb3kenlX5tKabP4gr7ITuFD7uLud0sx88wJAF7pW3c9OBrYjfJj5wl1daxAoZKKMsntRwqBYfV3BjQ9a_j_zpDg_vndFeg_wPKnJVTiIiEWs9odNeMOGaZV587EPgy32By785lgOvc_OU89-3wFpFNaFwecmjYqQx32aYOvtPGxnXY61dFBIRgBboYLWtei3pRp0"/>
+</div>
+<h4 class="font-headline font-bold text-lg uppercase mb-4">Materiálový list</h4>
+<ul class="space-y-3 text-sm text-secondary">
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> Masivní kouřový dub</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> Ručně kovaná mosaz</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> Přírodní kámen</li>
+</ul>
+</div>
+<!-- Project 2 -->
+<div class="md:col-span-4 bg-surface-container-high p-8 flex flex-col justify-between order-2 md:order-1">
+<div>
+<h3 class="text-2xl font-headline font-black uppercase mb-4">Ložnice v ořechu</h3>
+<p class="text-sm text-secondary leading-relaxed mb-8">
+                                Minimalistické řešení pro klidný spánek. Skryté úložné prostory a integrované osvětlení.
+                            </p>
+</div>
+<div class="w-full h-48 overflow-hidden">
+<img alt="Ložnice" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Luxury bedroom interior featuring a walnut wood platform bed and floating nightstands with warm indirect LED lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZmYzLh0qj_ETwX9llOP_3LP7zQheolNu2-QELn3RkZbnWzcWcOZpj2Kcq57ngQHd1t3aAkwQGsQ8ZioQCa4j06hoM5ytaJQEDCmdsAB63YhAr6e411LuNvPCTLN8wcH2rNMR1YY9U_MWXUSM6Wuh19Onp9ZLdwRgNCnNiLbqPL2MNUxt0_CwdwUZxi4Rt7XNzs3gOhx39I9ZrYcaBq40HG2e47JOuPrt9ootNgwIAdnUKhs4S65fzazgzSdAvHKaI_kez71YvPu4"/>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="md:col-span-8 aspect-[21/9] group relative overflow-hidden bg-surface-container-low order-1 md:order-2">
+<img alt="Kancelář" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sleek executive office desk made of polished walnut and metal accents in a bright modern workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSSV04Ge5959jga8NKUPXst7YmfCCAFbBgkFz5k7KTUf6z4lzC7w-agayGBfHSbi0COZLudtlXawOaqe6MuhRK1HHet_3KSszQHOuWYVnIfSi4NajiwaIXF6DBbrSJHDOezbzSP0ROFFor-sUT5aObwyA8xJxgGAE3LFm5GL3RRO-fkyP7PvTw7WmYz0vgZbWF5bHNMT1YvodQSRS4fT38EvsD2tW6jsAkYUxS9dEfGsnUg8DgsgqiafWeh_WtcTHJm50fPdfkso0"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+<div class="absolute bottom-12 right-12 text-right">
+<h3 class="text-white text-4xl font-headline font-black uppercase tracking-tighter text-shadow-sm">Ateliér Karlín</h3>
+<span class="text-white/80 font-label uppercase text-[10px] tracking-[0.3em]">Industriální workspace</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-surface-container-highest py-32">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="mb-16">
+<span class="text-primary font-bold uppercase tracking-[0.3em] text-[10px]">Reference</span>
+<h2 class="text-4xl font-headline font-black uppercase mt-4">Hlasy našich klientů</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="italic text-lg text-on-surface leading-relaxed">
+                            "Truhlářství, kde slovo 'nemožné' neexistuje. Kuchyně z ořechu předčila všechna naše očekávání."
+                        </p>
+<div>
+<p class="font-headline font-bold uppercase text-sm">Jan Novotný</p>
+<p class="text-[10px] uppercase tracking-widest text-secondary">Architekt, Praha</p>
+</div>
+</div>
+<div class="space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="italic text-lg text-on-surface leading-relaxed">
+                            "Preciznost v každém detailu. Od prvního návrhu až po finální montáž naprostá profesionalita."
+                        </p>
+<div>
+<p class="font-headline font-bold uppercase text-sm">Marie Svobodová</p>
+<p class="text-[10px] uppercase tracking-widest text-secondary">Interiérová designérka</p>
+</div>
+</div>
+<div class="space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="italic text-lg text-on-surface leading-relaxed">
+                            "Restaurování našeho rodinného dědictví dopadlo úžasně. Cit pro dřevo je v této dílně znát."
+                        </p>
+<div>
+<p class="font-headline font-bold uppercase text-sm">Petr Dvořák</p>
+<p class="text-[10px] uppercase tracking-widest text-secondary">Soukromý sběratel</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-6 md:px-12">
+<div class="max-w-5xl mx-auto bg-on-surface text-surface py-24 px-12 relative overflow-hidden">
+<!-- Background decoration -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img alt="Workshop background" class="w-full h-full object-cover" data-alt="Abstract dark background of a carpenter's workshop with wood shavings and tools in soft shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxj_xPrxfwFINkVIdgbyhnSNco-b1cAGVV7u8jxfobCIVNjjK0spAsG0RGycG_6mrSQ-TTZd5idjdT6FSiyFhBQ3k5CPX67OB3mxNZ06B8ht76GAki7ygOKzRNt2Da5HmxjVbMXj-EXBA4iPeF7oAN3hvkDtScz7A4zKHmsoRmeA2jruANcz65xK3jb_EDrk9wMyFbbtBoLVDWhJ61ZtZ3YJoYoMMIkmnZ8fQ07RWgEh1Ww04Bvv6fPjOsNOHcoF0Zd1byZ29uSd8"/>
+</div>
+<div class="relative z-10 text-center md:text-left">
+<h2 class="text-4xl md:text-6xl font-headline font-black uppercase mb-8 leading-tight">
+                        Začněte svůj <br/>vlastní projekt
+                    </h2>
+<p class="text-surface/60 mb-12 max-w-lg font-light">
+                        Máte vizi? My máme nástroje a zkušenosti k její realizaci. Domluvte si nezávaznou konzultaci ve naší dílně.
+                    </p>
+<button class="bg-orange-forged text-white px-10 py-4 font-headline font-bold uppercase text-sm tracking-[0.2em] hover:scale-105 transition-transform flex items-center gap-4 mx-auto md:mx-0">
+                        Poptat realizaci
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-24 pb-12 bg-[#e5e2e1] dark:bg-[#121111] tonal-shift-bg-only">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 px-12 max-w-7xl mx-auto">
+<div>
+<div class="font-['Manrope'] font-black text-lg text-[#1c1b1b] dark:text-[#fcf9f8] mb-6">LUXUSNÍ TRUHLÁŘSTVÍ</div>
+<p class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] leading-relaxed">
+                    © 2024 LUXUSNÍ TRUHLÁŘSTVÍ. <br/>ŘEMESLNÁ PRECIZNOST.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Zakázkový nábytek</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Interiéry</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Restaurování</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Instagram</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Ochrana údajů</a>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end">
+<div class="text-right">
+<p class="font-headline font-bold text-sm mb-2">Showroom Praha</p>
+<p class="text-xs text-secondary mb-1">Dřevařská 12, Praha 7</p>
+<p class="text-xs text-secondary">+420 777 888 999</p>
+</div>
+<div class="flex gap-4 mt-8">
+<div class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

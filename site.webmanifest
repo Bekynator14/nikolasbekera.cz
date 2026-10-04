@@ -1,0 +1,38 @@
+{
+  "name": "Nikolas Bekera — tvorba webových stránek",
+  "short_name": "nikolas bekera.",
+  "description": "Freelance web developer z Mlázovic. Rychlé, ručně kódované weby pro řemeslníky a malé firmy od 5 000 Kč.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FAFAF7",
+  "theme_color": "#FF4D1E",
+  "lang": "cs",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

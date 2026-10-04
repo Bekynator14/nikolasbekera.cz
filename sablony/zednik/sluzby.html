@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio - Zednictví Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-container": "#5a666d",
+                        "surface-container": "#f0edec",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed": "#380d00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#001d34",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "secondary": "#546067",
+                        "surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#9acbff",
+                        "tertiary": "#00629e",
+                        "on-surface-variant": "#5b4137",
+                        "tertiary-fixed": "#cfe5ff",
+                        "primary": "#a93800",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#ff5e13",
+                        "secondary-fixed-dim": "#bbc8d0",
+                        "tertiary-container": "#0099f2",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-container": "#541800",
+                        "outline": "#8f7066",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#111d23",
+                        "surface-tint": "#a93800",
+                        "inverse-primary": "#ffb59b",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#d7e4ec",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed": "#ffdbcf",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#004a78",
+                        "surface-container-high": "#ebe7e7",
+                        "secondary-container": "#d7e4ec",
+                        "outline-variant": "#e4beb2",
+                        "on-primary-fixed-variant": "#812900",
+                        "on-secondary-fixed-variant": "#3c494f",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-container": "#002e4e",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-fixed-dim": "#ffb59b",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#313030",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .industrial-gradient {
+            background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%);
+        }
+        .industrial-shadow {
+            box-shadow: 0 10px 40px -10px rgba(28, 27, 27, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/15">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-on-surface font-headline uppercase">
+                Zednictví Atelier
+            </div>
+<ul class="hidden md:flex space-x-8 font-headline font-bold tracking-tight">
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="index.html">Domů</a></li>
+<li><a class="text-primary border-b-2 border-primary pb-1" href="sluzby.html">Služby</a></li>
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="portfolio.html">Portfolio</a></li>
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="kontakt.html">Kontakt</a></li>
+</ul>
+<a class="hidden md:inline-flex industrial-gradient text-on-primary font-label font-semibold px-6 py-3 rounded hover:scale-105 transition-transform duration-200 ease-in-out ambient-shadow" href="kontakt.html">
+                Poptávka
+            </a>
+<button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative pt-32 pb-48 px-8 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-16 items-center">
+<div class="max-w-2xl">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-background leading-tight mb-6">
+                        Naše Realizace
+                    </h1>
+<p class="font-body text-secondary text-lg leading-relaxed mb-10">
+                        Přehled našich nejlepších prací. Od drobných rekonstrukcí po rozsáhlé novostavby a precizní historické fasády. Každý projekt je důkazem našeho řemeslného umu.
+                    </p>
+<div class="flex gap-4">
+<button class="industrial-gradient text-on-primary px-8 py-4 rounded-md font-label font-bold hover:scale-[1.02] transition-transform industrial-shadow">
+                            Zahájit projekt
+                        </button>
+</div>
+</div>
+<div class="relative h-[600px] rounded-lg overflow-hidden industrial-shadow">
+<img alt="Stavební detaily" class="absolute inset-0 w-full h-full object-cover" data-alt="Macro shot of wet concrete being troweled with a steel float, showing rich texture and industrial lighting, warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5SzEVl78cFppHVGlKoeBR5vExtT6ze837P5SdpN9IV-axlaLgcHbL8CdSImPhzpkmQV_3vR37VUsllLj4_NvJoH_KqvgVCSUdDC5j6gx53uLXrjb83A-LmhIpTFlIcwo6x3Jk2JHqy-IgCD8xFUIdFhqYvge_pn7nRYQ3DIZTKZ4sDIIlC0Sf8pEYRq6fPUeR3_WJWHfgSqt7VTnyGesxprf90xZ36tccJXcoQHe5DfVsFp643MPlJor3KUIWPRNDWpWt5P4k-5w"/>
+</div>
+</div>
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container -skew-x-12 transform origin-top-right z-0 opacity-50"></div>
+</section>
+<!-- Filter & Portfolio Grid -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 mb-16 border-b border-surface-variant pb-6">
+<button class="text-primary font-label font-semibold text-lg border-b-2 border-primary pb-2 px-4">Vše</button>
+<button class="text-secondary hover:text-on-background font-label font-medium text-lg pb-2 px-4 transition-colors">Novostavby</button>
+<button class="text-secondary hover:text-on-background font-label font-medium text-lg pb-2 px-4 transition-colors">Fasády</button>
+<button class="text-secondary hover:text-on-background font-label font-medium text-lg pb-2 px-4 transition-colors">Rekonstrukce</button>
+</div>
+<!-- Bento Grid Portfolio -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[400px]">
+<!-- Item 1 (Large) -->
+<div class="md:col-span-8 relative group overflow-hidden bg-surface-container-low rounded-lg">
+<img alt="Rodinná vila Brno" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern architectural home exterior with clean lines, large windows, and sharp concrete finishes at dusk, warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-primary text-on-primary text-xs font-label font-bold uppercase tracking-widest px-3 py-1 mb-3">Novostavba</span>
+<h3 class="font-headline text-3xl font-bold text-on-primary mb-2">Rodinná vila Brno</h3>
+<p class="font-body text-surface-variant max-w-md">Kompletní realizace hrubé stavby a vnitřních omítek pro moderní dvoupodlažní vilu.</p>
+</div>
+</div>
+<!-- Item 2 (Small) -->
+<div class="md:col-span-4 relative group overflow-hidden bg-surface-container-low rounded-lg">
+<img alt="Historická fasáda Praha" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of intricate historical building facade restoration in Prague, detailed stonework and fresh stucco, bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVgaTGaYVh3w4hFdwjlhZzDxjWrmaV8qxyTbSVPEpJq9zkQMVvAj2l4qGTMVROPHZIlZwrKaXWg3ba6XwF2LkY4ZFa6UmSvuCBmLHOYSuFYXcoctFkRIzYUWRys3NnYxiyPBz-Q-XgFmqLW5C-_3gf__OT1PCY78hOb7GDEBEFKNU4eJG7PCT52fz3eywBguZFnDG1fLNbHnN_EuerhyVCZHqVNTfaAbBfpaPVdWJ2JdMK5zXIUr-oGyPAL-HiXraYamNUWNZwPE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-surface-container-highest text-on-surface text-xs font-label font-bold uppercase tracking-widest px-3 py-1 mb-3">Fasády</span>
+<h3 class="font-headline text-2xl font-bold text-on-primary mb-2">Historická fasáda Praha</h3>
+</div>
+</div>
+<!-- Item 3 (Small) -->
+<div class="md:col-span-4 relative group overflow-hidden bg-surface-container-low rounded-lg">
+<img alt="Rekonstrukce bytu Ostrava" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Interior view of a modern loft apartment undergoing renovation, exposed brick wall and fresh white plastering, industrial feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArgSl3EOtiazd9dyo0ekLOisx_bOOl-Hl0XGJ1D4_svENc79nstUDK5Oam3tX1-Nuhh10zKogQUlOCtnWL8rkY3CeijaHkUMlz2OhEArBCp4XvA_8xwn1Yzjj2rnt4wSuEH2_GkUws3mBILiMQW6iaxGIBDdDgX8pGju2q6rJXR0zwKCS7FF_-G8Bbn-Z3dXtfvSfGYc-9NnKXyVtod0WDJn_uQYZHURYPsEnUljORIxs0EV28IxdP4vh62ceSrkDV2Y8Y00YU3Ms"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-surface-container-highest text-on-surface text-xs font-label font-bold uppercase tracking-widest px-3 py-1 mb-3">Rekonstrukce</span>
+<h3 class="font-headline text-2xl font-bold text-on-primary mb-2">Rekonstrukce bytu Ostrava</h3>
+</div>
+</div>
+<!-- Item 4 (Medium) -->
+<div class="md:col-span-8 relative group overflow-hidden bg-surface-container-low rounded-lg">
+<img alt="Opěrné zdi a terénní úpravy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Construction site showing massive concrete retaining walls being built, heavy machinery in background, dramatic sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJdUhJB-WP30em9sr6yPxG1lBEdkLVvo9IofqXReS4vlxHZay2iwfoev9VYx0j_ERLwqcGJglb-2Zw6nFNFsBIAvq14S7PHKwiklydWnKhzog21QH3O02wYR5yfrN2EdCAbsDtJrzOynYYVwLPlysgv_Spy6KHxC-O-NIcOcWpdumKqATLN_xxMP1X4-2WZDedIfmUAWJx0i57kkPnVFO-SDnkgY1TgYVT-deQv0agSX4yK32lqyvfNF-NjLB-BciKGe8tV0eIE80"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-primary text-on-primary text-xs font-label font-bold uppercase tracking-widest px-3 py-1 mb-3">Novostavba</span>
+<h3 class="font-headline text-3xl font-bold text-on-primary mb-2">Opěrné zdi a terénní úpravy</h3>
+<p class="font-body text-surface-variant max-w-md">Betonáž masivních opěrných zdí pro rozlehlý pozemek ve svahu.</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-md font-label font-bold hover:bg-surface-variant transition-colors inline-flex items-center gap-2">
+                        Načíst další projekty
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-32 px-8 bg-surface-container-lowest border-t border-outline-variant/15">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-extrabold text-on-background tracking-tight">Co říkají klienti</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface p-10 rounded-lg industrial-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-secondary">format_quote</span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
+                            "Zednictví Atelier prokázalo neuvěřitelný smysl pro detail při rekonstrukci našeho bytu. Dodrželi termíny a komunikace byla bezchybná."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+<img alt="Jan Novák" class="w-full h-full object-cover" data-alt="Portrait of a middle-aged man with short beard, warm smile, blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-0D-sBabhlg6etU5_hJaGQVljDJU3jiUt9FHTKNrHT0-nqCTzXC3bFLhFIJGVX0Q5xl0SyQrvVWYAc05wkpETJCQbsDAD8Pg_M_4YlT5st9XMsSrwusLJ4YD5weNby7hTCclPTuGWpSlruOvOdcOtHoDbZ9irR9aE4VivLDpEqOvcDUPEb_M2RDf4QMyLBYv6hsnjWciEeDBYrUUqhzOpFwBg7_zqsIfBESJun0lJ9ePngoCB-vGcnnKLdoDNk7VM_BeoUVZdyUs"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-background">Jan Novák</h4>
+<p class="font-label text-sm text-secondary">Rekonstrukce bytu</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface p-10 rounded-lg industrial-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-secondary">format_quote</span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
+                            "Při stavbě rodinného domu jsme hledali spolehlivého partnera na hrubou stavbu. Jejich přístup a kvalita odvedené práce nás přesvědčila, že jsme vybrali správně."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+<img alt="Petra Svobodová" class="w-full h-full object-cover" data-alt="Portrait of a woman with short dark hair, smiling gently, outdoors with natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsaRvQjLHpqJ3aSxYMYT6Wg63_XmKkkKo1q0AhhR1_Uj8Yths_XcMoJfif-Qp-dpM2G1fFucPmyNo_eA4KdhI1cPtc8i-JOVshtiBPct3iEabv3RoU_bniGUlhFOzbozH2YdrGSFRDHldSHDB1xLOEddcHPz0oycNl0DIBm2luxi5Is5j5FO5DJMp_DXO7VQ6agf8YPoPpEidtDEyXdzKVAFqzCFJFomm-3hWg60ayYgFFKXuMyhlABUZcNR8lLZrU-gF5g4Dwl-g"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-background">Petra Svobodová</h4>
+<p class="font-label text-sm text-secondary">Novostavba vily</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface p-10 rounded-lg industrial-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-secondary">format_quote</span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
+                            "Oprava historické fasády vyžadovala specifické znalosti a citlivý přístup. Výsledek je ohromující a budova opět září novotou při zachování jejího charakteru."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+<img alt="Tomáš Dvořák" class="w-full h-full object-cover" data-alt="Portrait of a mature man with glasses, serious but friendly expression, wearing a smart casual jacket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyFk_UU_mFG-czpFHbrNVdv896rkXGIwnTl0gOqwyk17OEMC1WKuXDkHoWwGlJhf1LMiAfWEYO7bGcQRb2Ve1hhWfJclZpe85h8Klpwc9PJRNfhzhbaKq9SEtHFBHrj9rupov7x-Eo6M7dILEPsvzawl5yiTMgByvfcB6dLRmQ6irqQC8J4YeeSK_pOZh_DP_qCP98BR7-P--2t28C4LgcE9YqS9GfrjEnnIcu7bBa6C-X-gAhqhx_97p3AF9zLK02jk-VJCw-FcA"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-background">Tomáš Dvořák</h4>
+<p class="font-label text-sm text-secondary">Obnova fasády</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-stone-100 dark:bg-stone-900 w-full py-16 px-8 mt-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+<div class="flex flex-col space-y-4">
+<span class="font-['Manrope'] font-bold text-stone-900 dark:text-stone-50 text-xl">
+                    Zednictví Atelier
+                </span>
+<p class="font-['Inter'] text-sm text-stone-500 dark:text-stone-400">
+                    Mistrovská práce, která přetrvá generace.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-['Inter'] text-sm uppercase tracking-widest text-stone-900 dark:text-stone-50 font-bold mb-2">Odkazy</h4>
+<a class="font-['Inter'] text-sm text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors uppercase tracking-widest" href="#">Ochrana údajů</a>
+<a class="font-['Inter'] text-sm text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors uppercase tracking-widest" href="#">Obchodní podmínky</a>
+<a class="font-['Inter'] text-sm text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors uppercase tracking-widest" href="#">Cookies</a>
+</div>
+<div class="flex flex-col space-y-4 md:items-end justify-end">
+<p class="font-['Inter'] text-sm text-stone-500 dark:text-stone-400">
+                    © 2024 Zednictví Atelier. Všechna práva vyhrazena.
+                </p>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

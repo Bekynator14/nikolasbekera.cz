@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zednictví - Domů</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#9acbff",
+                    "tertiary": "#00629e",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#0099f2",
+                    "surface-variant": "#e5e2e1",
+                    "primary-container": "#ff5e13",
+                    "surface-tint": "#a93800",
+                    "surface-container-high": "#ebe7e7",
+                    "on-secondary-container": "#5a666d",
+                    "on-error": "#ffffff",
+                    "primary": "#a93800",
+                    "background": "#fcf9f8",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#bbc8d0",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-container": "#d7e4ec",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary-fixed": "#111d23",
+                    "on-surface": "#1c1b1b",
+                    "outline-variant": "#e4beb2",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-low": "#f6f3f2",
+                    "outline": "#8f7066",
+                    "on-surface-variant": "#5b4137",
+                    "on-primary-fixed-variant": "#812900",
+                    "on-primary-container": "#541800",
+                    "on-background": "#1c1b1b",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-fixed": "#001d34",
+                    "secondary": "#546067",
+                    "surface-container": "#f0edec",
+                    "inverse-surface": "#313030",
+                    "secondary-fixed": "#d7e4ec",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-fixed-variant": "#3c494f",
+                    "tertiary-fixed": "#cfe5ff",
+                    "primary-fixed-dim": "#ffb59b",
+                    "primary-fixed": "#ffdbcf",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004a78",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#380d00",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#002e4e",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#ffb59b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-industrial {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .orange-gradient-bg {
+            background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%);
+        }
+        .industrial-gradient {
+            background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%);
+        }
+        .active-nav-link {
+            border-bottom: 2px solid #a93800;
+            padding-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/15">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-on-surface font-headline uppercase">
+                Zednictví Atelier
+            </div>
+<ul class="hidden md:flex space-x-8 font-headline font-bold tracking-tight">
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="index.html">Domů</a></li>
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="sluzby.html">Služby</a></li>
+<li><a class="text-primary border-b-2 border-primary pb-1" href="portfolio.html">Portfolio</a></li>
+<li><a class="text-secondary hover:text-on-surface transition-colors pb-1" href="kontakt.html">Kontakt</a></li>
+</ul>
+<a class="hidden md:inline-flex industrial-gradient text-on-primary font-label font-semibold px-6 py-3 rounded hover:scale-105 transition-transform duration-200 ease-in-out ambient-shadow" href="kontakt.html">
+                Poptávka
+            </a>
+<button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Mistrovská zednická práce" class="w-full h-full object-cover grayscale-[0.2] brightness-50" data-alt="Impressive shot of a brick house under construction with scaffolding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGHYoJ59g21VepRV3iY-qxNSZ48N7E8QbJbAoJ7nVQfT7kGwNwjrTScjIpLaTiL-YFPnxyILQZZcp_75Hq52u2EsaMFx0_J8F6sHxtHRpH7J82NLeN-IICZSCmJgNcf-HfNllY0JTiTDhbQoMr9RfPkzelrnOlaZGekhJQkbzJeVBJWfJoXYaDv61AYGH5TBsr04dqndiMPDf3a47k0CetFxXa7W6QHXgAg4TZbOMfugx-xdtJJIQm2SenlBT1-E9gL46GMcjkqk8"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<div class="flex items-center gap-4 mb-6">
+<span class="h-px w-12 bg-primary"></span>
+<span class="text-primary font-headline uppercase tracking-[0.3em] text-sm font-bold">Poctivé řemeslo</span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 text-shadow-industrial uppercase">
+                        Stavíme na <span class="text-primary">integritě</span>
+</h1>
+<p class="text-stone-300 text-lg md:text-xl max-w-xl leading-relaxed mb-12 font-light">
+                        Precizní zednické práce, které přetrvají generace. Od strukturálních základů po estetické fasády, vracíme do stavebnictví skutečnou hodnotu a technickou dokonalost.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="orange-gradient-bg text-on-primary px-10 py-5 rounded-md font-headline font-black uppercase tracking-widest text-sm hover:scale-102 transition-transform">
+                            Začít stavět
+                        </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-md font-headline font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all">
+                            Naše portfolio
+                        </button>
+</div>
+</div>
+</div>
+<!-- Detail Loupe Decorative -->
+<div class="hidden lg:block absolute bottom-0 right-0 w-1/3 aspect-square translate-y-1/4 translate-x-1/4 border-[1px] border-primary/20 rounded-full flex items-center justify-center p-12">
+<div class="w-full h-full rounded-full overflow-hidden border-8 border-surface-container shadow-2xl">
+<img alt="Detail zednické práce" class="w-full h-full object-cover" data-alt="Close up of red bricks and mortar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy5fHJZgILm8CLCznkD_5ySDL_OdJZ-mxOCWNJMhEnuUQD5P4nUNkQY6Li1-jEnxD0nL_POau4FhNsZI--slMG_B4QLCP0Ea1l3Fuun3UyYBscuvpJ39Pv5eJi9VeWFdxRD9Q_4fxoSvgEtqEngWsPXFIOeObpZvSFG78V-vWWZx74qDj8XxaTuxOWbLwNDfVab8lFkz6MrJxQf6dA6aQXf_7gvXFwyQQEJEC3DlUAdDrrLLS3AupR72x6z5O14I58CUokBe-7Uc4"/>
+</div>
+</div>
+</section>
+<!-- Why Choose Us - Asymmetric Layout -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5 sticky top-32">
+<h2 class="font-headline text-5xl font-black text-on-surface leading-none mb-8 uppercase tracking-tighter">
+                            Proč zvolit naše <br/><span class="text-primary">mistrovství?</span>
+</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                            Věříme v průmyslovou přesnost a úctu k tradičním materiálům. Každá cihla, kterou položíme, je součástí většího příběhu o odolnosti.
+                        </p>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="verified">verified</span>
+<h4 class="font-headline text-xl font-bold mb-2 uppercase">Certifikovaná Kvalita</h4>
+<p class="text-sm text-on-secondary-container">Dodržujeme nejpřísnější evropské normy pro strukturální bezpečnost a trvanlivost staveb.</p>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-24">
+<!-- Feature 1 -->
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<h3 class="font-headline text-3xl font-black mb-4 uppercase tracking-tight">Strukturální odolnost</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                    Naše zdivo není jen o vzhledu. Projektujeme a realizujeme konstrukce, které odolávají času, klimatickým změnám a mechanickému namáhání.
+                                </p>
+</div>
+<div class="w-full md:w-1/2 aspect-square bg-surface-container-highest overflow-hidden order-1 md:order-2">
+<img alt="Strukturální odolnost" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Mason laying bricks on a construction site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKMfu4RFs6MQEJa9PAgAPHHn4y3KY2xuAKgaeXIpJJhae0kzHu7hGk2Kul-9w2PremThdnzO_EYZxshCMNiN2GGZBFxlMjst4lXVbcfrMt0SLoqhRWfRbpu4loH5eKDQJKr_kgSYd81Ac96pVB7cdXy1wfDeynC_Tp15mcneQdAJ71KRK0XVDF0NpolEoNKZ35HpwKx-18iuj-PKFy50I3L-_OG6H1GeMnVL_gt46RSrGaFgg8t1vsHG7vFUaHVWWL1X1YvJWkdxI"/>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2 aspect-square bg-surface-container-highest overflow-hidden">
+<img alt="Tradiční techniky" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Masonry tools and brick wall construction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM2YOa59lyxx0wLsbaCOQF09US98dxLJ5DCWHTGHEOKn59Y2CDJjYMhUna4_OSN1t7-1n83xOGrEitwX0cI98r7IobK3tABTfc9NSywpol2f9m5aweC6sLlRxlFceDRfrwfPy0eGBY1YX-dkXVhOH-Fa_RtmbUu2EyMqIk0hpgwQj8PdeRY30ZiLQOHlsD6CsZLteqCAEZTrLktfz3JWYqkBYrDV5qcmx6OFeEA67LMTpp9ym_mqQYCqXNrnDE64vh_XtmCdI6E6A"/>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="font-headline text-3xl font-black mb-4 uppercase tracking-tight">Tradiční techniky</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                    Kombinujeme historické řemeslné postupy s moderními materiály. Výsledkem je stavba s duší a parametry 21. století.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Works - Bento Grid Style -->
+<section class="py-32 bg-stone-900 text-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<span class="text-primary font-headline uppercase tracking-widest text-xs font-bold mb-4 block">Naše reference</span>
+<h2 class="font-headline text-5xl font-black uppercase leading-none tracking-tighter">Poslední projekty</h2>
+</div>
+<p class="max-w-md text-stone-400 font-light italic">
+                        "Detail je to, co odlišuje stavbu od architektury."
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Modern Facade -->
+<div class="md:col-span-8 group relative overflow-hidden h-[500px]">
+<img alt="Moderní cihlová fasáda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Finished modern red brick wall facade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9uqmzsYS_D2FNWfZ_L2dn4AMDVFvWXY-KH41MFcSZFOqIQPHmmulYdFLuiBShkE0kJ7uWBSU1l9Tkdb6KSxDVcLX9dJOKIllvg7s-2J7MXdx7hy1zVB-7liiWM72tsjDXcZ24TnBdenCVcWmgEAuFjJgsFLi48Lol53dkxRwma7OPZS5YPziNcajr_1z1glyrHGcpW3sg6ksLTv0B4R93cioQAA1Zncdbq8wIjB1mJs-qfJo-XgnWcMzl1ZlcoZXNYWdrVJbPksw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+<span class="text-primary font-bold text-xs uppercase mb-2">Exteriér</span>
+<h4 class="text-2xl font-black uppercase">Moderní cihlová fasáda</h4>
+<p class="text-sm text-stone-300 mt-2">Strukturální vyzdívka a lícové zdivo, Praha 2023</p>
+</div>
+</div>
+<!-- Renovation -->
+<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<img alt="Strukturální rekonstrukce" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Interior loft with exposed brick walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe3zc2xZFbSyPP6HGuToEB1c7VjJzDDQaVZrBPcqTQ2NmN1867_Bmzw6ds6QWxrSLa3MavsRPaWrTeXB7HXsDdssiLdXqQiG-Fhb3XGc23jrrtABAZWZZeBbb4rc8MHXhcEtjCaZ92zFuR1KmBDOYJavqQJTK6HpoQJhkdQEYv4IlgFDhH4rVx2OlPRrJ13TB9yDr7BWQ0CaipEc14IxtFP41_-08mm_1swqCsbjDQ6f8uIjAFSJyoG1Cqmi7zWb0VxZh_aXsHBnc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+<span class="text-primary font-bold text-xs uppercase mb-2">Rekonstrukce</span>
+<h4 class="text-2xl font-black uppercase">Průmyslový Loft</h4>
+<p class="text-sm text-stone-300 mt-2">Obnova nosného zdiva, Brno</p>
+</div>
+</div>
+<!-- Small Detail 1 -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px]">
+<img alt="Kamenické práce" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Close up of a mason trowel and mortar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAam6HZ_3GaSbgZ2g1FFOgOVSURr8tne7eAhVdUuayeB6sLRfuIFJRbyzAJ5oyIUyEK1GhqzyQCDj3yOp2AmZRqXk4ujtDiaFeQzH3Q9FznhoNbjpbsyKTQzh0qgZgQ_aBHD26VtI3PTwDnqsOxbTzo7m-PTBoCR5Evcs_1JgcSvoo654X8PaRELMmG7QLj2YUzSvsxCUBWrrxMXV735zfeH0Le1Feg6RCCK-UsIj9QpmwfO3uUuJZJXbYj9mgxTWIi7o8HyqwV9BQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<h4 class="text-xl font-black uppercase">Kamenický detail</h4>
+</div>
+</div>
+<!-- Small Detail 2 -->
+<div class="md:col-span-8 group relative overflow-hidden h-[300px]">
+<img alt="Průmyslová hala" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Industrial construction site with brickwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD04L3-iwLGQSokzr5LRxANNrF2E103bcohfmHkTamN9SK8p06NYfkSiXQ6CmD8yeFEhuWn1NCVaWeJvyhtduHbEG8tzR0AHZN0f0CqLj3MiPt6O3ZwxeppMMKquJgMAwUg1520aE8ISYBDf_fljTXqFZbXN3XeIdTBYp8Vn80Kx7fhALGd4lgrV9vb4oHiVAjbwuKuepVxTDcD9hJpomKIJBnY0FbKUJI11rHWuQZuTFOaa3Ldf9H2bzfsmQd5Ny8zDB1DlXNbZu4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<h4 class="text-xl font-black uppercase">Hrubá stavba haly</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none">
+                    Máte projekt, který vyžaduje <br/><span class="text-primary">přesnost?</span>
+</h2>
+<p class="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto">
+                    Ať už jde o základy rodinného domu nebo komplexní rekonstrukci, jsme připraveni dodat kvalitu, na kterou se můžete spolehnout.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="orange-gradient-bg text-on-primary px-12 py-6 rounded-md font-headline font-black uppercase tracking-widest text-lg hover:scale-105 transition-transform shadow-xl">
+                        Začít stavět
+                    </button>
+<a class="flex items-center justify-center gap-3 px-12 py-6 font-headline font-black uppercase tracking-widest text-lg text-on-surface hover:text-primary transition-colors" href="tel:+420000000000">
+<span class="material-symbols-outlined" data-icon="phone">phone</span>
+                        +420 123 456 789
+                    </a>
+</div>
+</div>
+<!-- Subtle geometric watermark -->
+<div class="absolute bottom-0 right-0 opacity-[0.03] pointer-events-none select-none">
+<span class="font-headline text-[25rem] font-black leading-none uppercase">Mason</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 mt-32 bg-stone-100 dark:bg-stone-900 space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-['Manrope'] font-bold text-stone-900 dark:text-stone-50 text-lg uppercase mb-2">
+                    ZEDNICTVÍ ATELIER
+                </div>
+<p class="font-['Inter'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-400">
+                    © 2024 Zednictví Atelier. Všechna práva vyhrazena.
+                </p>
+</div>
+<div class="flex flex-wrap gap-10 justify-center md:justify-start">
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors opacity-100 hover:opacity-70" href="#">Ochrana údajů</a>
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors opacity-100 hover:opacity-70" href="#">Obchodní podmínky</a>
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors opacity-100 hover:opacity-70" href="#">Cookies</a>
+</div>
+<div class="flex gap-6 justify-center md:justify-end">
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors opacity-100 hover:opacity-70" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-400 transition-colors opacity-100 hover:opacity-70" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

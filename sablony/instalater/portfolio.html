@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE INDUSTRIAL ATELIER — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#cfe5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#a93800",
+                    "on-surface": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "background": "#fcf9f8",
+                    "surface-bright": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#111d23",
+                    "tertiary-fixed-dim": "#9acbff",
+                    "outline-variant": "#e4beb2",
+                    "on-primary-container": "#541800",
+                    "secondary-fixed-dim": "#bbc8d0",
+                    "primary-fixed": "#ffdbcf",
+                    "surface-dim": "#dcd9d9",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#00629e",
+                    "surface-tint": "#a93800",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "primary-fixed-dim": "#ffb59b",
+                    "on-tertiary-fixed-variant": "#004a78",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-container": "#002e4e",
+                    "on-surface-variant": "#5b4137",
+                    "on-primary-fixed": "#380d00",
+                    "tertiary-container": "#0099f2",
+                    "on-primary-fixed-variant": "#812900",
+                    "secondary": "#546067",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313030",
+                    "primary-container": "#ff5e13",
+                    "surface-container-high": "#ebe7e7",
+                    "inverse-primary": "#ffb59b",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#001d34",
+                    "outline": "#8f7066",
+                    "on-secondary-fixed-variant": "#3c494f",
+                    "secondary-container": "#d7e4ec",
+                    "surface-container": "#f0edec",
+                    "on-secondary-container": "#5a666d",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed": "#d7e4ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-industrial-gradient {
+            background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%);
+        }
+        .no-line-rule { border: none !important; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm no-line-rule">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-black tracking-tighter text-stone-900 dark:text-stone-50 uppercase font-headline">
+                THE INDUSTRIAL ATELIER
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="index.html">Domů</a>
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="sluzby.html">Služby</a>
+<a class="font-headline font-bold tracking-tight text-orange-700 dark:text-orange-500 border-b-2 border-orange-700 dark:border-orange-500 pb-1" href="portfolio.html">Portfolio</a>
+<a class="font-headline font-bold tracking-tight text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="kontakt.html">Kontakt</a>
+</div>
+<a class="hidden md:inline-flex bg-industrial-gradient text-white px-6 py-2.5 rounded-md font-headline font-bold tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-95" href="kontakt.html">
+                Poptat služby
+            </a>
+            <button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-8 max-w-7xl mx-auto mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-8">
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Naše řemeslo</span>
+<h1 class="font-headline font-black text-6xl md:text-8xl tracking-tighter leading-[0.9] text-on-surface mb-8">
+                        PRECIZNÍ<br/>INSTALACE.
+                    </h1>
+<p class="text-secondary max-w-xl text-lg leading-relaxed">
+                        Od luxusních koupelen po komplexní průmyslové vytápění. Přistupujeme ke každému spoji s inženýrskou přesností a estetickým citem.
+                    </p>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<div class="w-full h-64 bg-surface-container-high relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="Macro close-up of a perfectly welded copper pipe joint with metallic reflections and shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjlA1YNmwoiekzkl1Q_WpRdlkrJGuo2qlC41N1xoaCoT1HptztEAvqbY3I_DEl0lMKtYLbaJwdHigXxz2H8zCAb--Kxi2ZxNSD3eeFAavLlLh2iOSDwBCwUEMs5ZtgcGDCtXF97TgZExel245QFBTLHkjxrAJIjePvYGyIUcKQYcwd8DxACTpnWbqx6YxIN6-yFkLjbE_QIojVngmonb7t1VSn_qKydCLvnCzxDjcey4iUoXoPwLyZEe0491HQ-SJujekrFMYHYwc"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Grid: Asymmetric Layout -->
+<section class="px-8 max-w-7xl mx-auto space-y-32">
+<!-- Project 1: Luxury Bathroom -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 order-2 md:order-1">
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="Modern luxury bathroom with matte black fixtures, grey stone tiles, and dramatic moody lighting in a high-end residence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRKgDbBEPTtM_X9ZdUCgbZaeoYcmU9s8xNyLsD-tpfq8_cNOxHZsdjIhE0ag8ajiyXonFw816h288a3eLkSzBLFEp9Q0XifnYD7_ZTTMePDURQg4lVAij24EtwM8fWo0b-bQEZs1zXSWJ7zTu3oftpa_UMrv-tyWDJdGiAflWzthDPBBT-8mw6XbcOcmNdCDsTzzuln9Qj0CXTbj_JhOoJUreLLvah61KiyNAdSfq58sqdH1w3XkYlhEEc-SdFaxG4BL8Q68LB3g8"/>
+</div>
+<!-- Detail Loupe -->
+<div class="absolute -bottom-12 -right-12 hidden lg:block w-64 h-64 border-[12px] border-background shadow-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Extreme close-up macro of a designer water faucet with water droplets, showing the fine texture of brushed metal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrkSgJ97CJBPw7Le_B_slYUBg8w2PgNL1tqQCeYYxmLa8sx2UWtZwIi1OFg4zSSD2oR7H3xfgOW2UxgLxbdaARYxronXQe-pzx3LiDTxoOsDBgGj_lM_b7g_70nP7DU2yUiPnagw4R_zxC3UBY3XoOew7t9BFvLAaOWNkIS4_mYz85iNWx4jLXX3zllmqJ9ilQoRAxAi4QavG6raIadTuK6GxIbhibm8calnffEgAYK3SnxCdgtzFgHvJ30ANS1Ces1yvut9p_IA4"/>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 order-1 md:order-2 md:pl-12">
+<span class="text-secondary font-mono text-sm mb-4 block tracking-tighter">PROJEKT Č. 01 — REZIDENČNÍ</span>
+<h2 class="font-headline font-extrabold text-4xl mb-6 tracking-tight">Rekonstrukce luxusních koupelen</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Kompletní proměna koupelnových prostor v minimalistickém industriálním stylu. Implementace podomítkových systémů a zakázkových měděných rozvodů, které doplňují estetiku surového betonu.
+                    </p>
+<div class="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-primary group cursor-pointer">
+                        Prohlédnout detaily
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 2: Industrial Heating -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 md:pr-12">
+<span class="text-secondary font-mono text-sm mb-4 block tracking-tighter">PROJEKT Č. 02 — PRŮMYSL</span>
+<h2 class="font-headline font-extrabold text-4xl mb-6 tracking-tight">Vytápění v průmyslových halách</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Návrh a realizace vysokokapacitních otopných soustav pro logistické centrum o rozloze 5 000 m². Důraz na energetickou efektivitu a extrémní mechanickou odolnost armatur.
+                    </p>
+<div class="bg-surface-container-high p-8 border-l-4 border-primary">
+<p class="font-headline font-bold text-lg italic text-on-surface">"Naprostá spolehlivost i při plném provozu haly."</p>
+<p class="text-sm mt-2 text-secondary">— Technický ředitel, Prologis</p>
+</div>
+</div>
+<div class="md:col-span-7">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="Wide shot of a massive industrial hall ceiling with complex networks of red and silver pipes and ventilation systems" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZHuQq1cwFKs85MsVUSEpbFpPaL6ZIAX8zw1pCu73G8WBLUnIl7JlP3L9ZjDWg4i5ANlF-B9xhkPJRdGu-or0887W-bN-k1FEfYk3gnUdHvk_LmVhcJ4s9V7qwmU84EFHh3GFDfE-ypLsQJ08VoECLhvOxlJFrPmpPlJfJPUWFuZg"/>
+</div>
+</div>
+</div>
+<!-- Project 3: Smart Protection -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 order-2 md:order-1">
+<div class="bg-surface-container-highest p-12 grid grid-cols-2 gap-4">
+<div class="bg-white p-6 shadow-sm flex flex-col justify-between h-48">
+<span class="material-symbols-outlined text-primary text-4xl">shield_with_heart</span>
+<span class="font-headline font-bold text-sm">STÁLÝ MONITORING</span>
+</div>
+<div class="bg-on-surface p-6 shadow-sm flex flex-col justify-between h-48 text-white translate-y-8">
+<span class="material-symbols-outlined text-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="font-headline font-bold text-sm">CHYTRÝ UZÁVĚR</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 order-1 md:order-2 md:pl-12">
+<span class="text-secondary font-mono text-sm mb-4 block tracking-tighter">PROJEKT Č. 03 — TECHNOLOGIE</span>
+<h2 class="font-headline font-extrabold text-4xl mb-6 tracking-tight">Chytrá ochrana před únikem</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Instalace inteligentních senzorů a automatických ventilů do administrativní budovy. Systém detekuje i mikrotrhliny v potrubí a okamžitě uzavírá hlavní přívod vody přes cloudové rozhraní.
+                    </p>
+<button class="bg-on-surface text-white px-8 py-4 font-headline font-bold tracking-tight hover:bg-stone-800 transition-colors">
+                        Technická specifikace
+                    </button>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="mt-48 bg-surface-container-low py-32 px-8 overflow-hidden relative">
+<div class="max-w-7xl mx-auto relative z-10">
+<h2 class="font-headline font-black text-5xl tracking-tighter mb-20 text-center">CO ŘÍKAJÍ NAŠI KLIENTI</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<div class="p-12 bg-surface-bright border-r border-outline-variant/10">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 italic">"V dnešní době je těžké najít řemeslníka, který po sobě uklidí a práce vypadá jako z katalogu. Industrial Atelier to splnil na 100 %."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container"></div>
+<div>
+<p class="font-bold text-sm">Jan Novák</p>
+<p class="text-xs text-secondary">Majitel rodinného domu, Praha</p>
+</div>
+</div>
+</div>
+<div class="p-12 bg-surface-bright border-r border-outline-variant/10 md:translate-y-8">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 italic">"Řešení průmyslového vytápění bylo navrženo s ohledem na dlouhodobou úsporu. Jejich technické znalosti jsou na špičkové úrovni."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container"></div>
+<div>
+<p class="font-bold text-sm">Ing. Marek Svoboda</p>
+<p class="text-xs text-secondary">Technický ředitel, Industry Park</p>
+</div>
+</div>
+</div>
+<div class="p-12 bg-surface-bright border-outline-variant/10 md:translate-y-16">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 italic">"Chytrá ochrana proti vytopení nám zachránila podlahy už po měsíci od instalace. Investice, která se okamžitě vrátila."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed"></div>
+<div>
+<p class="font-bold text-sm">Petra Dvořáková</p>
+<p class="text-xs text-secondary">Správa nemovitostí Loftify</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Texture watermark -->
+<div class="absolute top-0 right-0 text-[15rem] font-black opacity-[0.03] select-none leading-none -mr-20 -mt-20">QUOTES</div>
+</section>
+<!-- Certifications/Trust Elements -->
+<section class="max-w-7xl mx-auto py-24 px-8 border-t border-outline-variant/20 mt-32">
+<div class="flex flex-wrap justify-between items-center gap-12 grayscale opacity-40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">verified</span>
+<span class="font-headline font-bold uppercase tracking-widest text-sm">Certifikace ISO 9001</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+<span class="font-headline font-bold uppercase tracking-widest text-sm">Autorizovaný partner Viessmann</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">security</span>
+<span class="font-headline font-bold uppercase tracking-widest text-sm">Pojištění do 50 mil. Kč</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">timer</span>
+<span class="font-headline font-bold uppercase tracking-widest text-sm">15 let na trhu</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full mt-0">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 max-w-7xl mx-auto">
+<div>
+<div class="text-lg font-bold text-stone-800 dark:text-stone-200 mb-6 font-headline">THE INDUSTRIAL ATELIER</div>
+<p class="text-stone-500 dark:text-stone-400 font-body text-sm leading-relaxed max-w-xs">
+                    Mistrovské instalace a inženýrská řešení v oblasti vody, plynu a vytápění. Definujeme standard moderního řemesla.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-stone-900 dark:text-stone-100 font-semibold text-sm">Navigace</span>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="index.html">Domů</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="sluzby.html">Služby</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="portfolio.html">Portfolio</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="kontakt.html">Kontakt</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-stone-900 dark:text-stone-100 font-semibold text-sm">Právní</span>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="#">Obchodní podmínky</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="#">Ochrana údajů</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="#">Certifikace</a>
+</div>
+</div>
+<div>
+<span class="text-stone-900 dark:text-stone-100 font-semibold text-sm block mb-6">Kontakt</span>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-2">Průmyslová 1422, 102 00 Praha</p>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-2">+420 777 123 456</p>
+<p class="text-stone-500 dark:text-stone-400 text-sm">atelier@industrial.cz</p>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 px-12 py-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body text-sm tracking-wide text-stone-500 dark:text-stone-400">© 2024 The Industrial Atelier. Všechna práva vyhrazena.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-stone-400 hover:text-primary transition-colors cursor-pointer">language</span>
+<span class="material-symbols-outlined text-stone-400 hover:text-primary transition-colors cursor-pointer">share</span>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

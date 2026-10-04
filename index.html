@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tvorba webových stránek | Nikolas Bekera — Webový designer</title>
+  <meta name="description"
+    content="Tvorba webových stránek pro řemeslníky a malé firmy v Královéhradeckém kraji. Rychlé, ručně kódované weby od 5 000 Kč. Hotovo za 14 dní. Žádné měsíční paušály.">
+  <link rel="canonical" href="https://nikolasbekera.cz/">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#FF4D1E">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nikolasbekera.cz/">
+  <meta property="og:title" content="Tvorba webových stránek | Nikolas Bekera — Královéhradecký kraj">
+  <meta property="og:description" content="Freelance web developer z Mlázovic. Rychlé, ručně kódované weby od 5 000 Kč.">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nikolas Bekera — tvorba webových stránek">
+  <meta name="twitter:description" content="Freelance web developer z Mlázovic. Rychlé, ručně kódované weby od 5 000 Kč.">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #0A0A0A;
+      --paper: #FAFAF7;
+      --concrete: #6B6B6B;
+      --signal: #FF4D1E;
+      --line: #E5E5E2;
+      --line-strong: #1C1C1A;
+      --sans: 'Geist', system-ui, sans-serif;
+      --mono: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01", "cv11";
+    }
+
+    ::selection {
+      background: var(--signal);
+      color: var(--paper);
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 247, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--line);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .logo span {
+      color: var(--signal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .nav-links a {
+      color: var(--concrete);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 8px 16px;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--signal);
+    }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 3.5rem 0 5rem;
+      border-bottom: 0.5px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, var(--line) 0.5px, transparent 0.5px);
+      background-size: 64px 64px;
+      opacity: 0.5;
+      mask-image: radial-gradient(ellipse at 70% 30%, black, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 60px;
+      align-items: end;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+      margin-bottom: 36px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 3px rgba(255, 77, 30, 0.15);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 3px rgba(255, 77, 30, 0.15);
+      }
+
+      50% {
+        box-shadow: 0 0 0 7px rgba(255, 77, 30, 0.05);
+      }
+    }
+
+    h1.display {
+      font-size: clamp(44px, 7vw, 88px);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.96;
+      margin-bottom: 28px;
+    }
+
+    h1.display .accent {
+      color: var(--signal);
+    }
+
+    h1.display em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--concrete);
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      color: var(--concrete);
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.55;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn-primary:hover {
+      background: var(--signal);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary .arrow {
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover .arrow {
+      transform: translateX(3px);
+    }
+
+    .btn-ghost {
+      color: var(--ink);
+      border-bottom: 0.5px solid var(--ink);
+      border-radius: 0;
+      padding: 14px 4px;
+    }
+
+    .btn-ghost:hover {
+      color: var(--signal);
+      border-color: var(--signal);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 24px;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 0.5px solid rgba(250, 250, 247, 0.12);
+    }
+
+    .hero-meta-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .hero-meta-label {
+      color: rgba(250, 250, 247, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-meta-value {
+      font-weight: 500;
+    }
+
+    .hero-meta-value .sig {
+      color: var(--signal);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-meta {
+        max-width: 320px;
+      }
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section {
+      padding: 6rem 0;
+      border-bottom: 0.5px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3.5rem;
+      padding-bottom: 20px;
+      border-bottom: 0.5px solid var(--line);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: '— ';
+      color: var(--signal);
+      margin-right: 4px;
+    }
+
+    .section-count {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    /* ===== SLUŽBY ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 0.5px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .service {
+      padding: 32px;
+      border-bottom: 0.5px solid var(--line);
+      border-right: 0.5px solid var(--line);
+      background: var(--paper);
+      transition: background 0.2s;
+    }
+
+    .service:hover {
+      background: #F4EFE5;
+    }
+
+    .service:nth-child(2n) {
+      border-right: none;
+    }
+
+    .service:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .service-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--signal);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .service h3 {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: var(--concrete);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 720px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        border-right: none !important;
+      }
+
+      .service:nth-last-child(1) {
+        border-bottom: none;
+      }
+
+      .service:nth-last-child(2) {
+        border-bottom: 0.5px solid var(--line);
+      }
+    }
+
+    /* ===== PROCES ===== */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-top: 32px;
+      border-top: 1px solid var(--ink);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: -14px;
+      left: 0;
+      background: var(--paper);
+      padding-right: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--signal);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .step h4 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--concrete);
+      line-height: 1.55;
+    }
+
+    .step .step-dur {
+      display: block;
+      margin-top: 14px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--concrete);
+    }
+
+    @media (max-width: 900px) {
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .process {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== CENÍK ===== */
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .plan {
+      padding: 32px 28px;
+      background: var(--paper);
+      border: 0.5px solid var(--line);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .plan.featured {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -11px;
+      left: 24px;
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      background: var(--signal);
+      color: var(--paper);
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    .plan-name {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .plan.featured .plan-name {
+      color: rgba(250, 250, 247, 0.55);
+    }
+
+    .plan-price {
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+
+    .plan-price .currency {
+      font-size: 17px;
+      color: var(--concrete);
+    }
+
+    .plan.featured .plan-price .currency {
+      color: rgba(250, 250, 247, 0.55);
+    }
+
+    .plan-price .period {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--concrete);
+      letter-spacing: 0;
+      margin-left: 4px;
+    }
+
+    .plan-price a, .plan-price a:visited,
+    .hero-meta-value a, .hero-meta-value a:visited {
+      color: inherit;
+      text-decoration: none;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .plan-desc {
+      font-size: 14px;
+      color: var(--concrete);
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 0.5px solid var(--line);
+      line-height: 1.55;
+    }
+
+    .plan.featured .plan-desc {
+      border-color: rgba(250, 250, 247, 0.12);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+
+    .plan-features li {
+      font-size: 14px;
+      padding: 8px 0 8px 22px;
+      position: relative;
+    }
+
+    .plan-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 10px;
+      height: 1.5px;
+      background: var(--signal);
+    }
+
+    .plan .btn {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .plan.featured .btn-primary {
+      background: var(--signal);
+    }
+
+    .plan.featured .btn-primary:hover {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .plan.outline .btn-primary {
+      background: transparent;
+      color: var(--ink);
+      border: 0.5px solid var(--ink);
+    }
+
+    .plan.outline .btn-primary:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    @media (max-width: 900px) {
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== REALIZACE ===== */
+    .works {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 28px;
+    }
+
+    .work {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .work-preview {
+      aspect-ratio: 4 / 3;
+      background: var(--ink);
+      border-radius: 10px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .work-preview img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .work:hover .work-preview {
+      transform: translateY(-3px);
+    }
+
+    .work-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 10, 0.6) 100%);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .work-preview-label {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      right: 20px;
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      z-index: 2;
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--concrete);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .work h4 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .work p {
+      font-size: 14px;
+      color: var(--concrete);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 720px) {
+      .works {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== O MNĚ ===== */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 18px;
+      max-width: 480px;
+    }
+
+    .about-text p.muted {
+      color: var(--concrete);
+    }
+
+    .about-stack {
+      display: grid;
+      gap: 16px;
+      padding: 28px;
+      background: #F4EFE5;
+      border-radius: 10px;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .stack-row {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      border-bottom: 0.5px solid rgba(10, 10, 10, 0.1);
+    }
+
+    .stack-row:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+
+    .stack-label {
+      color: var(--concrete);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 11px;
+    }
+
+    .stack-value {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      max-width: 780px;
+    }
+
+    details {
+      padding: 22px 0;
+      border-bottom: 0.5px solid var(--line);
+      cursor: pointer;
+    }
+
+    details summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::after {
+      content: '+';
+      font-family: var(--mono);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--signal);
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details p {
+      margin-top: 14px;
+      color: var(--concrete);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* ===== KONTAKT CTA ===== */
+    .cta-block {
+      padding: 6rem 0;
+      background: var(--ink);
+      color: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(250, 250, 247, 0.03) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, rgba(250, 250, 247, 0.03) 0.5px, transparent 0.5px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at 30% 50%, black, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-block .container {
+      position: relative;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .cta-block h2 {
+      color: var(--paper);
+      font-size: clamp(32px, 5vw, 56px);
+    }
+
+    .cta-block h2 .accent {
+      color: var(--signal);
+    }
+
+    .cta-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: rgba(250, 250, 247, 0.08);
+      border-radius: 10px;
+      padding: 2px;
+    }
+
+    .cta-channel {
+      padding: 20px 24px;
+      background: var(--ink);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: var(--paper);
+      transition: background 0.15s;
+    }
+
+    .cta-channel:hover {
+      background: #1C1C1A;
+    }
+
+    .cta-channel-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(250, 250, 247, 0.55);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cta-channel-value {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .cta-channel-arrow {
+      font-family: var(--mono);
+      color: var(--signal);
+      transition: transform 0.2s;
+    }
+
+    .cta-channel:hover .cta-channel-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    @media (max-width: 900px) {
+      .cta-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* ===== BLOG PREVIEW ===== */
+    .blog-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 0.5px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    @media (max-width: 720px) {
+      .blog-preview-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 2.5rem 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a {
+      color: var(--concrete);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jak dlouho bude trvat, než bude web hotový?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "U balíčku Start počítejte se 7–14 dny od podpisu poptávky. U vícestránkového webu obvykle 2–3 týdny. Přesný termín se dozvíte v cenové nabídce — a drží."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Můžu si web sám upravovat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Záleží na variantě. U statických webů vyměňuji texty a fotky za vás na základě vaší zprávy. U varianty Pro můžu nastavit jednoduchý admin, kde si upravíte, co potřebujete."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co se stane, když budu chtít později změnu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Napíšete mi. Menší úpravy (texty, fotky, nová sekce) řeším rychle a na faktury za reálně odpracované hodiny. Žádné předplacené balíčky, které musíte utratit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Musím mít vlastní doménu a hosting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ne nutně. Pokud ještě nic nemáte, pomůžu s výběrem a registrací. Pokud máte starou doménu a chcete ji přenést, zařídím to taky."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funguje to i pro firmy mimo Královéhradecký kraj?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ano. Drtivá většina komunikace probíhá mailem nebo přes video hovor. Osobní schůzka není nutná — ale pokud jste z východních Čech, rád se stavím."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nikolas Bekera — tvorba webových stránek",
+    "description": "Tvorba webových stránek pro řemeslníky a malé firmy v Královéhradeckém kraji. Rychlé, ručně kódované weby od 5 000 Kč.",
+    "url": "https://nikolasbekera.cz",
+    "telephone": "+420731212219",
+    "email": "nik.bekera@gmail.com",
+    "priceRange": "5000–20000 Kč",
+    "currenciesAccepted": "CZK",
+    "paymentAccepted": "Bankovní převod",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mlázovice",
+      "addressRegion": "Královéhradecký kraj",
+      "addressCountry": "CZ"
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Královéhradecký kraj"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Česká republika"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/nikolasbekera.cz/",
+      "https://www.facebook.com/profile.php?id=61583860717752"
+    ],
+    "serviceType": [
+      "Tvorba webových stránek",
+      "Webdesign",
+      "SEO optimalizace",
+      "Weby pro řemeslníky",
+      "Weby pro malé firmy"
+    ],
+    "openingHours": "Mo-Fr 08:00-17:00"
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#sluzby">služby</a>
+        <a href="#proces">proces</a>
+        <a href="#cenik">ceník</a>
+        <a href="#realizace">realizace</a>
+        <a href="sablony/">šablony</a>
+        <a href="blog/index.html">blog</a>
+      </div>
+      <a href="#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="status-chip">
+          <span class="status-dot"></span>
+          <span>k dispozici pro nové projekty · 2026</span>
+        </div>
+
+        <h1 class="display">
+          Rychlé, čisté,<br>
+          ručně kódované<br>
+          weby<span class="accent">.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Freelance web developer z Mlázovic v Královéhradeckém kraji. Stavím weby pro řemeslníky a malé firmy, které
+          chtějí vypadat moderně a nechtějí platit agenturu. Žádné šablony z Webnode, žádné paušály navždy.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#kontakt" class="btn btn-primary">
+            <span>domluvit nezávaznou schůzku</span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="#realizace" class="btn btn-ghost">podívat se na realizace</a>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div class="hero-meta-row">
+          <span class="hero-meta-label">stack</span>
+          <span class="hero-meta-value">HTML · CSS · JS</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-label">doba</span>
+          <span class="hero-meta-value">~ 2 týdny</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-label">cena od</span>
+          <span class="hero-meta-value"><span class="sig">5 000 Kč</span></span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="hero-meta-label">lokace</span>
+          <span class="hero-meta-value">Mlázovice · CZ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLUŽBY ============ -->
+  <section class="section" id="sluzby">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">co dělám</span>
+        <span class="section-count">01 / 05</span>
+      </div>
+
+      <div style="margin-bottom: 4rem; max-width: 680px;">
+        <h2>Weby, které vypadají, že za nimi <em
+            style="color: var(--concrete); font-style: italic; font-weight: 400;">stojí někdo, kdo tomu rozumí</em>.
+        </h2>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <div class="service-num">— 01</div>
+          <h3>Firemní prezentace</h3>
+          <p>Jednostránkový nebo vícestránkový web pro řemeslníky, hotely, advokáty nebo kohokoliv, kdo potřebuje
+            profesionální vizitku na internetu. Responsivní, rychlý, SEO-friendly.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">— 02</div>
+          <h3>Redesign zastaralého webu</h3>
+          <p>Máte Webnode z roku 2014 a víte, že to takhle dál nejde? Udělám moderní verzi vašeho webu na vlastním
+            hostingu, bez cizích šablon a bez omezení.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">— 03</div>
+          <h3>Úpravy a doplnění</h3>
+          <p>Potřebujete později přidat sekci, vyměnit fotky nebo upravit texty? Menší úpravy řeším rychle a za férové
+            hodinové sazby. Žádné vázání smlouvou.</p>
+        </div>
+        <div class="service">
+          <div class="service-num">— 04</div>
+          <h3>Hosting a doména</h3>
+          <p>Pomůžu s registrací domény, nastavením hostingu u Wedosu nebo Forpsi, SSL certifikátem a mailovými
+            schránkami. Kompletně na klíč.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCES ============ -->
+  <section class="section" id="proces">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">jak to probíhá</span>
+        <span class="section-count">02 / 05</span>
+      </div>
+
+      <div style="margin-bottom: 4rem; max-width: 680px;">
+        <h2>Od poptávky k hotovému webu za <em style="color: var(--signal); font-style: italic; font-weight: 500;">14
+            dní</em>.</h2>
+      </div>
+
+      <div class="process">
+        <div class="step">
+          <h4>Úvodní kontakt</h4>
+          <p>Zjistíme, co potřebujete a jak Vám můžu pomoct. Můžeme si krátce zavolat, napsat e-mail, nebo se i potkat u
+            kafe.</p>
+          <span class="step-dur">30 minut</span>
+        </div>
+        <div class="step">
+          <h4>Návrh a cenovka</h4>
+          <p>Dostanete strukturu webu, barevné a typografické varianty a pevnou cenu. Žádné skryté položky.</p>
+          <span class="step-dur">2–3 dny</span>
+        </div>
+        <div class="step">
+          <h4>Kódování</h4>
+          <p>Stavím web ručně od nuly. Během práce dostáváte průběžné náhledy a můžete připomínkovat.</p>
+          <span class="step-dur">7–10 dní</span>
+        </div>
+        <div class="step">
+          <h4>Spuštění</h4>
+          <p>Nasadím web na váš hosting, nastavím domény, SSL, Google business a předám vám klíče.</p>
+          <span class="step-dur">1 den</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CENÍK ============ -->
+  <section class="section" id="cenik">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">ceník</span>
+        <span class="section-count">03 / 05</span>
+      </div>
+
+      <div style="margin-bottom: 4rem; max-width: 680px;">
+        <h2>Tři varianty podle toho, <em style="color: var(--concrete); font-style: italic; font-weight: 400;">kolik
+            webu potřebujete</em>.</h2>
+        <p style="color: var(--concrete); font-size: 16px; margin-top: 12px;">Vyberte si variantu, která sedí vašim
+          potřebám. Konkrétní cenu v rámci rozsahu domluvíme podle rozsahu projektu.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="plan outline">
+          <div class="plan-name">Základní vizitka</div>
+          <div class="plan-price">5 000 – 12 000 <span class="currency">Kč</span></div>
+          <div class="plan-desc">Nejlevnější varianta pro řemeslníky a drobné živnostníky, kteří potřebují profesionální
+            vizitku na internetu.</div>
+          <ul class="plan-features">
+            <li>Jednostránkový web</li>
+            <li>Jednoduchý vizuál</li>
+            <li>Základní SEO s AI</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-primary">mám zájem</a>
+        </div>
+
+        <div class="plan featured">
+          <div class="plan-badge">DOPORUČUJI</div>
+          <div class="plan-name">Basic+</div>
+          <div class="plan-price">8 000 – 20 000 <span class="currency">Kč</span></div>
+          <div class="plan-desc">Vícestránkový web pro firmy, které potřebují víc než úvodku — sekce, galerie, ceník,
+            kontakty.</div>
+          <ul class="plan-features">
+            <li>2–3 podstránky</li>
+            <li>Jednoduchý design</li>
+            <li>SEO optimalizace</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-primary">mám zájem</a>
+        </div>
+
+        <div class="plan outline">
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">15 000 – 40 000 <span class="currency">Kč</span></div>
+          <div class="plan-desc">Robustnější prezentace s propracovaným designem a rozšířeným SEO pro firmy, které
+            chtějí maximum.</div>
+          <ul class="plan-features">
+            <li>Vícestránkový web</li>
+            <li>Rozšířený design</li>
+            <li>Rozšířené SEO &amp; texty s AI</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-primary">mám zájem</a>
+        </div>
+      </div>
+
+      <div
+        style="margin-top: 3rem; padding: 24px; background: #F4EFE5; border-radius: 10px; font-size: 14px; color: var(--concrete); font-family: var(--mono); line-height: 1.7;">
+        <strong style="color: var(--ink); font-weight: 500;">// poznámka:</strong> konečná cena vždy zohledňuje rozsah a
+        složitost projektu · domluvíme ji v rámci nezávazné konzultace
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REALIZACE ============ -->
+  <section class="section" id="realizace">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">vybrané realizace</span>
+        <span class="section-count">04 / 05</span>
+      </div>
+
+      <div style="margin-bottom: 4rem; max-width: 680px;">
+        <h2>Weby, které žijí a pracují pro své majitele.</h2>
+      </div>
+
+      <div class="works">
+        <a href="https://nipealies.cz" target="_blank" rel="noopener" class="work">
+          <div class="work-preview" style="background-color: #0A2938;">
+            <img src="obrazky/nipealies.jpg" alt="NiPeAlies — e-shop pro ručně šité oblečení do vody, tvorba webových stránek Nikolas Bekera" loading="lazy">
+            <div class="work-preview-label">nipealies.cz</div>
+          </div>
+          <div class="work-meta">
+            <span>2025</span>
+            <span>e-commerce · móda</span>
+          </div>
+          <h4>NiPeAlies</h4>
+          <p>Prezentace značky ručně šitého oblečení do vody i na vodu. Tmavý minimalistický design, který staví na
+            emoci a produktové fotografii.</p>
+        </a>
+
+        <a href="https://hotelhradec.eu" target="_blank" rel="noopener" class="work">
+          <div class="work-preview" style="background-color: #3A4A3E;">
+            <img src="obrazky/hotelhradec.jpg" alt="Hotel Hradec Mlázovice — web pro rodinný hotel v Královéhradeckém kraji, tvorba webových stránek Nikolas Bekera" loading="lazy">
+            <div class="work-preview-label">hotelhradec.eu</div>
+          </div>
+          <div class="work-meta">
+            <span>2025</span>
+            <span>ubytování · služby</span>
+          </div>
+          <h4>Hotel Hradec Mlázovice</h4>
+          <p>Web pro rodinný hotel v Českém ráji. Galerie pokojů, ceník, kontakty a prezentace okolí jako výletní
+            destinace.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O MNĚ ============ -->
+  <section class="section" id="o-mne">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">o mně</span>
+        <span class="section-count">05 / 05</span>
+      </div>
+
+      <div class="about">
+        <div class="about-text">
+          <h2 style="margin-bottom: 28px;">Nikolas Bekera<span class="accent" style="color: var(--signal);">.</span>
+          </h2>
+          <p>Jsem freelance web developer z Mlázovic v Královéhradeckém kraji. Věnuji se tvorbě moderních webových
+            stránek pro řemeslníky, malé firmy a živnostníky v celé České republice.</p>
+          <p>Weby stavím ručně — HTML, CSS a JavaScript. Žádné WordPress šablony, žádné Webnode. Výsledkem je web, který
+            načítá pod sekundu, vypadá přesně tak, jak si to představujete, a je 100 % váš.</p>
+        </div>
+
+        <div class="about-stack">
+          <div class="stack-row">
+            <span class="stack-label">lokace</span>
+            <span class="stack-value">Mlázovice · CZ</span>
+          </div>
+          <div class="stack-row">
+            <span class="stack-label">specializace</span>
+            <span class="stack-value">static sites · landing pages</span>
+          </div>
+          <div class="stack-row">
+            <span class="stack-label">stack</span>
+            <span class="stack-value">HTML · CSS · JS · Git</span>
+          </div>
+          <div class="stack-row">
+            <span class="stack-label">hosting</span>
+            <span class="stack-value">Wedos · Forpsi · Netlify</span>
+          </div>
+          <div class="stack-row">
+            <span class="stack-label">jazyky</span>
+            <span class="stack-value">čeština · angličtina</span>
+          </div>
+          <div class="stack-row">
+            <span class="stack-label">ičo</span>
+            <span class="stack-value">09209620</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="padding-top: 4rem;">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">časté otázky</span>
+        <span class="section-count">+</span>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Jak dlouho bude trvat, než bude web hotový?</summary>
+          <p>U balíčku Start počítejte se 7–14 dny od podpisu poptávky. U vícestránkového webu obvykle 2–3 týdny. Přesný
+            termín se dozvíte v cenové nabídce — a drží.</p>
+        </details>
+        <details>
+          <summary>Můžu si web sám upravovat?</summary>
+          <p>Záleží na variantě. U statických webů vyměňuji texty a fotky za vás na základě vaší zprávy. U varianty Pro
+            můžu nastavit jednoduchý admin, kde si upravíte, co potřebujete.</p>
+        </details>
+        <details>
+          <summary>Co se stane, když budu chtít později změnu?</summary>
+          <p>Napíšete mi. Menší úpravy (texty, fotky, nová sekce) řeším rychle a na faktury za reálně odpracované
+            hodiny. Žádné předplacené balíčky, které musíte utratit.</p>
+        </details>
+        <details>
+          <summary>Musím mít vlastní doménu a hosting?</summary>
+          <p>Ne nutně. Pokud ještě nic nemáte, pomůžu s výběrem a registrací. Pokud máte starou doménu a chcete ji
+            přenést, zařídím to taky.</p>
+        </details>
+        <details>
+          <summary>Funguje to i pro firmy mimo Královéhradecký kraj?</summary>
+          <p>Ano. Drtivá většina komunikace probíhá mailem nebo přes video hovor. Osobní schůzka není nutná — ale pokud
+            jste z východních Čech, rád se stavím.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG ============ -->
+  <section class="section" id="blog" style="padding: 4rem 0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">blog</span>
+        <a href="blog/index.html" style="font-family: var(--mono); font-size: 12px; color: var(--concrete); text-decoration: none;">všechny články →</a>
+      </div>
+      <div class="blog-preview-grid">
+        <a href="blog/kolik-stoji-web-pro-remeslnika.html" style="background: var(--paper); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#F4EFE5'" onmouseout="this.style.background='var(--paper)'">
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase;">ceník &amp; ceny</span>
+          <strong style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3;">Kolik stojí web pro řemeslníka v roce 2026?</strong>
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); margin-top: auto; padding-top: 14px; border-top: 0.5px solid var(--line);">číst →</span>
+        </a>
+        <a href="blog/webnode-vs-web-na-miru.html" style="background: var(--paper); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#F4EFE5'" onmouseout="this.style.background='var(--paper)'">
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase;">srovnání</span>
+          <strong style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3;">Webnode vs. web na míru — co se vyplatí?</strong>
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); margin-top: auto; padding-top: 14px; border-top: 0.5px solid var(--line);">číst →</span>
+        </a>
+        <a href="blog/proc-vas-web-nenajdou-zakaznici.html" style="background: var(--paper); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#F4EFE5'" onmouseout="this.style.background='var(--paper)'">
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase;">SEO &amp; viditelnost</span>
+          <strong style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3;">Proč váš web nenajdou zákazníci na Googlu?</strong>
+          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); margin-top: auto; padding-top: 14px; border-top: 0.5px solid var(--line);">číst →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT ============ -->
+  <section class="cta-block" id="kontakt">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <div class="section-label" style="color: var(--signal); margin-bottom: 24px;">začneme<span
+              style="color: rgba(250, 250, 247, 0.4);"> · </span>kontakt</div>
+          <h2>Máte projekt? <span class="accent">Napište mi</span> a obvykle se ozvu do 24 hodin.</h2>
+          <p
+            style="color: rgba(250, 250, 247, 0.6); font-size: 16px; line-height: 1.6; margin-top: 20px; max-width: 440px;">
+            Stačí pár vět o tom, co potřebujete. Ozvu se zpět a navrhnu jednoduchý postup + odhad.</p>
+        </div>
+
+        <div class="cta-channels">
+          <a href="mailto:nik.bekera@gmail.com" class="cta-channel">
+            <div>
+              <div class="cta-channel-label">email</div>
+              <div class="cta-channel-value">nik.bekera@gmail.com</div>
+            </div>
+            <span class="cta-channel-arrow">↗</span>
+          </a>
+          <a href="tel:+420731212219" class="cta-channel">
+            <div>
+              <div class="cta-channel-label">telefon</div>
+              <div class="cta-channel-value">+420 731 212 219</div>
+            </div>
+            <span class="cta-channel-arrow">↗</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener" class="cta-channel">
+            <div>
+              <div class="cta-channel-label">facebook</div>
+              <div class="cta-channel-value">Nikolas Bekera</div>
+            </div>
+            <span class="cta-channel-arrow">↗</span>
+          </a>
+          <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener" class="cta-channel">
+            <div>
+              <div class="cta-channel-label">instagram</div>
+              <div class="cta-channel-value">@nikolasbekera.cz</div>
+            </div>
+            <span class="cta-channel-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        <span>© 2026 Nikolas Bekera</span>
+        <span style="margin: 0 8px; color: var(--line);">·</span>
+        <span>IČO 09209620</span>
+        <span style="margin: 0 8px; color: var(--line);">·</span>
+        <span>Mlázovice, Náměstí 54</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="/zasady-ochrany-osobnich-udaju.html">zásady ochrany osobních údajů</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <span>v2.0 — 04.2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+
+</html>

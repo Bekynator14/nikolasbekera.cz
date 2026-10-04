@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak rychlý musí být web? Co ovlivňuje rychlost stránek | Nikolas Bekera</title>
+  <meta name="description" content="Pomalý web ztrácí zákazníky ještě dřív, než stránka vůbec načte. Co konkrétně ovlivňuje rychlost webu a jak poznat, jestli je váš web dostatečně rychlý?">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="canonical" href="https://nikolasbekera.cz/blog/jak-rychly-ma-byt-web.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nikolasbekera.cz/blog/jak-rychly-ma-byt-web.html">
+  <meta property="og:title" content="Jak rychlý musí být web? Co ovlivňuje rychlost stránek — Nikolas Bekera">
+  <meta property="og:description" content="Pomalý web ztrácí zákazníky ještě dřív, než stránka vůbec načte. Co konkrétně ovlivňuje rychlost webu a jak poznat, jestli je váš web dostatečně rychlý?">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+  <meta property="article:published_time" content="2026-03-27">
+  <meta property="article:author" content="Nikolas Bekera">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jak rychlý musí být web? Co ovlivňuje rychlost stránek — Nikolas Bekera">
+  <meta name="twitter:description" content="Pomalý web ztrácí zákazníky ještě dřív, než stránka vůbec načte. Co konkrétně ovlivňuje rychlost webu a jak poznat, jestli je váš web dostatečně rychlý?">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --ink: #0A0A0A; --paper: #FAFAF7; --concrete: #6B6B6B; --signal: #FF4D1E; --line: #E5E5E2; --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--signal); color: var(--paper); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+    .logo { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; }
+    .nav-links a { color: var(--concrete); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-family: var(--mono); font-size: 12px; padding: 8px 16px; background: var(--ink); color: var(--paper); text-decoration: none; border-radius: 4px; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--signal); }
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+
+    .article-header { padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--line); max-width: 780px; }
+    .breadcrumb { font-family: var(--mono); font-size: 12px; color: var(--concrete); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 8px; }
+    .article-tag { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 20px; }
+    .article-header .lead { font-size: 18px; color: var(--concrete); line-height: 1.6; max-width: 620px; margin-bottom: 24px; }
+    .article-meta-bar { font-family: var(--mono); font-size: 12px; color: var(--concrete); display: flex; gap: 20px; flex-wrap: wrap; }
+
+    .article-body { padding: 3.5rem 0 5rem; }
+    .prose { max-width: 720px; }
+    .prose h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.025em; margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+    .prose h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.015em; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p { margin-bottom: 1.2rem; font-size: 16px; line-height: 1.7; color: var(--ink); }
+    .prose p.muted { color: var(--concrete); }
+    .prose ul { margin: 0 0 1.2rem 1.2rem; }
+    .prose ul li { font-size: 16px; line-height: 1.65; margin-bottom: 6px; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: none; border-bottom: 0.5px solid currentColor; }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 0.5px solid var(--line); border-radius: 10px; overflow: hidden; margin: 1.5rem 0; }
+    .stat-box { background: var(--paper); padding: 24px 20px; text-align: center; }
+    .stat-box .stat-num { font-size: 32px; font-weight: 500; letter-spacing: -0.04em; color: var(--signal); line-height: 1; margin-bottom: 8px; }
+    .stat-box .stat-label { font-size: 13px; color: var(--concrete); line-height: 1.4; }
+    @media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; } }
+
+    .checklist { list-style: none; margin: 1.5rem 0; padding: 0; display: grid; gap: 2px; background: var(--line); border: 0.5px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .checklist li { background: var(--paper); padding: 16px 20px 16px 48px; font-size: 15px; line-height: 1.5; position: relative; }
+    .checklist li::before { content: '—'; position: absolute; left: 20px; color: var(--signal); font-family: var(--mono); }
+    .checklist li strong { display: block; font-weight: 500; margin-bottom: 2px; }
+    .checklist li span { color: var(--concrete); font-size: 14px; }
+
+    .callout { margin: 2rem 0; padding: 20px 24px; background: #F4EFE5; border-radius: 10px; font-size: 15px; line-height: 1.65; }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 13px; font-family: var(--mono); letter-spacing: 0.5px; color: var(--concrete); text-transform: uppercase; }
+
+    .article-cta { margin-top: 3.5rem; padding: 36px; background: var(--ink); border-radius: 12px; color: var(--paper); }
+    .article-cta h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .article-cta p { color: rgba(250,250,247,0.65); font-size: 15px; margin-bottom: 20px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 6px; transition: all 0.2s; background: var(--signal); color: var(--paper); }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .article-cta .btn { color: var(--paper); }
+
+    .related-articles { margin-top: 3rem; padding-top: 2.5rem; border-top: 0.5px solid var(--line); }
+    .related-label { font-family: var(--mono); font-size: 11px; color: var(--concrete); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .related-links { display: grid; gap: 2px; }
+    .related-links a { display: block; padding: 13px 16px; border: 0.5px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; transition: background 0.15s; letter-spacing: -0.01em; }
+    .related-links a:hover { background: #F4EFE5; }
+    .related-links a span { color: var(--signal); font-family: var(--mono); }
+    footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 12px; color: var(--concrete); border-top: 0.5px solid var(--line); }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak rychlý musí být web? Co ovlivňuje rychlost stránek",
+    "description": "Pomalý web ztrácí zákazníky ještě dřív, než stránka vůbec načte. Co konkrétně ovlivňuje rychlost webu a jak poznat, jestli je váš web dostatečně rychlý?",
+    "author": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "datePublished": "2026-03-27",
+    "dateModified": "2026-03-27",
+    "url": "https://nikolasbekera.cz/blog/jak-rychly-ma-byt-web.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nikolasbekera.cz/blog/jak-rychly-ma-byt-web.html"
+    },
+    "inLanguage": "cs"
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="../sablony/">šablony</a>
+        <a href="index.html" class="active">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="article-header">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a><span>/</span>
+        <a href="index.html">blog</a><span>/</span>
+        jak rychlý má být web
+      </div>
+      <div class="article-tag">SEO &amp; viditelnost</div>
+      <h1>Jak rychlý musí být web? Co ovlivňuje rychlost stránek</h1>
+      <p class="lead">Pomalý web stojí zákazníky. Studie Google ukázaly, že při načítání delším než 3 sekundy odejde více než polovina mobilních návštěvníků. Co rychlost webu ovlivňuje a jak to zlepšit?</p>
+      <div class="article-meta-bar">
+        <span>Nikolas Bekera</span>
+        <span>·</span>
+        <span>Březen 2026</span>
+        <span>·</span>
+        <span>4 min čtení</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="prose">
+
+        <p>Rychlost webu není jen technická záležitost — přímo ovlivňuje, kolik zákazníků na vašem webu zůstane a jestli vám napíše nebo zavolá. Navíc Google rychlost webu bere jako jeden z faktorů hodnocení — pomalé weby se zobrazují níže ve výsledcích.</p>
+
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-num">53 %</div>
+            <div class="stat-label">mobilních uživatelů opustí web, který se nenačte do 3 sekund</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">1 s</div>
+            <div class="stat-label">zpoždění načtení snižuje konverze průměrně o 7 %</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">2,5 s</div>
+            <div class="stat-label">je hranice, kam by LCP (největší prvek na stránce) měl načíst</div>
+          </div>
+        </div>
+
+        <h2>Co nejvíc zpomaluje web?</h2>
+
+        <ul class="checklist">
+          <li>
+            <strong>Nekomprimované obrázky</strong>
+            <span>Nejčastější příčina pomalého webu. Fotka z telefonu má 3–8 MB — web by měl mít obrázky pod 200 KB. Stačí je správně zkomprimovat při přidání na web.</span>
+          </li>
+          <li>
+            <strong>Špatný hosting</strong>
+            <span>Levný hosting na přetíženém serveru zpomalí web i přes veškerou optimalizaci. Server musí rychle odpovídat — ideálně do 200 ms (TTFB).</span>
+          </li>
+          <li>
+            <strong>Zbytečné pluginy a skripty (WordPress)</strong>
+            <span>Každý plugin přidává kód, který se musí stáhnout. WordPress web s 30 pluginy načítá desítky souborů navíc oproti čistě kódovanému webu.</span>
+          </li>
+          <li>
+            <strong>Nenačtené nebo blokující fonty</strong>
+            <span>Google Fonts a jiné webové fonty se stahují z externího serveru — pokud se stáhnou pozdě, text se zobrazí až po nich a web vypadá pomalý.</span>
+          </li>
+          <li>
+            <strong>Video nebo mapy vložené přímo do stránky</strong>
+            <span>YouTube embed nebo Google Maps načítají desítky externích souborů. Nahraďte je lazy-loaded variantou, která se načte až po kliknutí.</span>
+          </li>
+        </ul>
+
+        <h2>Jak změřit rychlost svého webu?</h2>
+
+        <p>Google zdarma nabízí nástroj <strong>PageSpeed Insights</strong> — stačí zadat adresu webu a dostanete skóre 0–100 pro mobil i desktop. Nad 90 je výborné, 70–90 je dobré, pod 70 je prostor ke zlepšení.</p>
+
+        <p>Výsledky rozděluje do čtyř kategorií (Core Web Vitals):</p>
+
+        <ul>
+          <li><strong>LCP</strong> — jak rychle se načte největší prvek na stránce (ideálně do 2,5 s)</li>
+          <li><strong>INP</strong> — jak rychle web reaguje na kliknutí (ideálně do 200 ms)</li>
+          <li><strong>CLS</strong> — jestli se prvky na stránce neposkakují při načítání (ideálně 0)</li>
+          <li><strong>FCP</strong> — kdy se začne zobrazovat první obsah (ideálně do 1,8 s)</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Tip</strong>
+          Testujte vždy mobilní verzi — většina zákazníků hledá na telefonu. Desktop skóre bývá výrazně lepší a neodráží reálný zážitek vašich zákazníků.
+        </div>
+
+        <h2>Statický web vs. WordPress — jaký vliv má na rychlost?</h2>
+
+        <p>Statický HTML web (jako tento) je ze své podstaty rychlý — server pošle hotový soubor bez jakéhokoliv zpracování. WordPress musí pro každé načtení spustit PHP, dotázat se databáze a sestavit stránku — to trvá déle.</p>
+
+        <p>Dobře optimalizovaný WordPress může být rychlý — ale vyžaduje cache plugin, správný hosting a pravidelnou údržbu. Statický web je rychlý bez jakékoliv optimalizace.</p>
+
+        <p class="muted">Pro web živnostníka nebo malé firmy, kde se obsah mění zřídka, je statický web jednoznačně rychlejší a levněji udržovatelná volba.</p>
+
+        <div class="related-articles">
+          <div class="related-label">Mohlo by vás zajímat</div>
+          <div class="related-links">
+            <a href="wordpress-vs-web-na-miru.html"><span>→</span> WordPress vs. web na míru — co je lepší pro malou firmu?</a>
+            <a href="proc-vas-web-nenajdou-zakaznici.html"><span>→</span> Proč váš web nenajdou zákazníci na Googlu?</a>
+            <a href="co-je-hosting.html"><span>→</span> Hosting a doména — co to je a kolik to stojí?</a>
+          </div>
+        </div>
+
+        <div class="article-cta">
+          <h3>Chcete rychlý web, který zákazníci najdou?</h3>
+          <p>Weby, které tvořím, jsou ručně psané HTML — bez zbytečného kódu, bez pluginů. Výsledkem je web, který se načte okamžitě na jakémkoliv zařízení.</p>
+          <a href="../#kontakt" class="btn">nezávazně se zeptat →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Nikolas Bekera · IČO 09209620</div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="index.html">← zpět na blog</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

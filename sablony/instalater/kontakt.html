@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE INDUSTRIAL ATELIER — Kontakt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#cfe5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#a93800",
+                    "on-surface": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "background": "#fcf9f8",
+                    "surface-bright": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#111d23",
+                    "tertiary-fixed-dim": "#9acbff",
+                    "outline-variant": "#e4beb2",
+                    "on-primary-container": "#541800",
+                    "secondary-fixed-dim": "#bbc8d0",
+                    "primary-fixed": "#ffdbcf",
+                    "surface-dim": "#dcd9d9",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#00629e",
+                    "surface-tint": "#a93800",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "primary-fixed-dim": "#ffb59b",
+                    "on-tertiary-fixed-variant": "#004a78",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-container": "#002e4e",
+                    "on-surface-variant": "#5b4137",
+                    "on-primary-fixed": "#380d00",
+                    "tertiary-container": "#0099f2",
+                    "on-primary-fixed-variant": "#812900",
+                    "secondary": "#546067",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313030",
+                    "primary-container": "#ff5e13",
+                    "surface-container-high": "#ebe7e7",
+                    "inverse-primary": "#ffb59b",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#001d34",
+                    "outline": "#8f7066",
+                    "on-secondary-fixed-variant": "#3c494f",
+                    "secondary-container": "#d7e4ec",
+                    "surface-container": "#f0edec",
+                    "on-secondary-container": "#5a666d",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed": "#d7e4ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-industrial-gradient {
+            background: linear-gradient(135deg, #a93800 0%, #ff5e13 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-stone-950/50">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-black tracking-tighter text-stone-900 dark:text-stone-50 font-headline">
+            THE INDUSTRIAL ATELIER
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors font-headline font-bold tracking-tight" href="index.html">Domů</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors font-headline font-bold tracking-tight" href="sluzby.html">Služby</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors font-headline font-bold tracking-tight" href="portfolio.html">Portfolio</a>
+<a class="text-orange-700 dark:text-orange-500 border-b-2 border-orange-700 dark:border-orange-500 pb-1 font-headline font-bold tracking-tight" href="kontakt.html">Kontakt</a>
+</div>
+<a class="bg-industrial-gradient text-on-primary px-6 py-2.5 rounded font-headline font-bold tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-95" href="#formular">
+            Poptat služby
+        </a>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Header -->
+<header class="px-8 max-w-7xl mx-auto mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-none mb-6">KONTAKT</h1>
+<p class="text-secondary text-lg max-w-md leading-relaxed">
+                        Spojte se s mistry svého oboru. Od havarijních oprav po precizní instalace v průmyslovém standardu.
+                    </p>
+</div>
+<div class="bg-surface-container-highest p-1 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary px-4" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label text-xs font-bold tracking-widest uppercase pr-6">Certifikovaná kvalita</span>
+</div>
+</div>
+</header>
+<!-- Contact Cards Section - Asymmetric Layout -->
+<section class="px-8 max-w-7xl mx-auto mb-32 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-10 flex flex-col justify-between aspect-square hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="call">call</span>
+<div>
+<h3 class="font-headline font-bold text-2xl mb-2">Telefon</h3>
+<p class="text-secondary font-medium">+420 777 123 456</p>
+<p class="text-xs text-stone-400 mt-4 font-label tracking-widest uppercase">Dostupnost 24/7 pro havárie</p>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-10 flex flex-col justify-between aspect-square shadow-xl translate-y-4">
+<span class="material-symbols-outlined text-4xl mb-8" data-icon="mail">mail</span>
+<div>
+<h3 class="font-headline font-bold text-2xl mb-2">Email</h3>
+<p class="font-medium">atelier@industrial.cz</p>
+<p class="text-xs text-primary-fixed-dim mt-4 font-label tracking-widest uppercase">Odpovídáme do 2 hodin</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 flex flex-col justify-between aspect-square hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="location_on">location_on</span>
+<div>
+<h3 class="font-headline font-bold text-2xl mb-2">Ateliér</h3>
+<p class="text-secondary font-medium">Průmyslová 1402/8<br/>102 00 Praha 10</p>
+<p class="text-xs text-stone-400 mt-4 font-label tracking-widest uppercase">Showroom technologií</p>
+</div>
+</div>
+</section>
+<!-- Inquiry Form & Image Detail -->
+<section class="px-8 max-w-7xl mx-auto mb-40 flex flex-col lg:flex-row gap-20" id="formular">
+<div class="flex-1">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-12">POPTÁVKOVÝ FORMULÁŘ</h2>
+<form class="space-y-10" onsubmit="event.preventDefault();alert(\'Toto je ukázková šablona — formulář není funkční.\');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="block text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Jméno a příjmení</label>
+<input class="w-full bg-transparent border-none border-b-2 border-stone-200 focus:border-primary focus:ring-0 px-0 py-3 transition-colors text-lg" placeholder="Jan Novák" type="text"/>
+</div>
+<div class="relative group">
+<label class="block text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Telefonní číslo</label>
+<input class="w-full bg-transparent border-none border-b-2 border-stone-200 focus:border-primary focus:ring-0 px-0 py-3 transition-colors text-lg" placeholder="+420 ..." type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="block text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Typ služby</label>
+<select class="w-full bg-transparent border-none border-b-2 border-stone-200 focus:border-primary focus:ring-0 px-0 py-3 transition-colors text-lg appearance-none">
+<option>Havarijní oprava</option>
+<option>Nová instalace</option>
+<option>Rekonstrukce rozvodů</option>
+<option>Revize a údržba</option>
+</select>
+</div>
+<div class="relative group">
+<label class="block text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Urgence</label>
+<div class="flex gap-4 py-3">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="text-primary focus:ring-primary" name="urgency" type="radio"/>
+<span class="text-sm font-medium">Standardní</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="text-primary focus:ring-primary" name="urgency" type="radio"/>
+<span class="text-sm font-medium text-error font-bold">HAVÁRIE</span>
+</label>
+</div>
+</div>
+</div>
+<div class="relative group">
+<label class="block text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">Popis požadavku</label>
+<textarea class="w-full bg-transparent border-none border-b-2 border-stone-200 focus:border-primary focus:ring-0 px-0 py-3 transition-colors text-lg resize-none" placeholder="Popište nám váš problém nebo projekt..." rows="4"></textarea>
+</div>
+<button class="bg-industrial-gradient text-on-primary px-12 py-5 rounded-sm font-bold text-lg tracking-tight hover:scale-[1.02] transition-transform duration-200 shadow-lg shadow-primary/20" type="submit">
+                        Odeslat nezávaznou poptávku
+                    </button>
+</form>
+</div>
+<!-- Detail Loupe Image Component -->
+<div class="lg:w-1/3 relative">
+<div class="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover" data-alt="Close-up of high-quality copper plumbing pipes and expert soldering joint with industrial lighting and shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlMgwSmbtbJy1KQSYYukAb60iftN0dhCvaAOBqnXjv9BjSEvO0Z0miLzamq1edPV2XoRB4jFO-DUw1wxRc2iseA49cljmaZTsOh8NTZgVgJ1huD3VD3ka-6zg4IFmPIxrEV0r2aFG5uXRq6RCyyuHXZt4MGNEIFhW9cvoCr7ejqAp6mwBPt_86rLevgHRrWMvfiWhQudpuTicEin1A-WtrSkqJvMYZrTBfJ159ytm0EzE4y56GlV-OUlu0mibSH-gUUN6Zd__v21k"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 shadow-2xl max-w-xs">
+<span class="text-primary font-headline font-black text-4xl block mb-2">0.1mm</span>
+<p class="text-xs font-label text-secondary leading-relaxed tracking-wide">
+                        Tolerance, se kterou pracujeme u každého spoje. Naše práce není jen řemeslo, je to technická disciplína.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[600px] bg-surface-container-low relative overflow-hidden group">
+<div class="absolute inset-0 bg-stone-900/10 z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-500"></div>
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Minimalist dark grey satellite map view of an industrial district in Prague with clean lines and high contrast" data-location="Prague, Czech Republic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1G8_0aALO46zZHq21QoOc83DixOpWEdbt9QAAs5wcz81DmYjIr4PCrVPL27gStt7Nfv9O1jw_caTys4vwfwYUq-CT_-sZiKC3NRrRxSkzv_u-xrdmZZ2LnhoR_nexIV2nDNEvYTNwjzS9qGSMHjdEtXiOTVlrOPxrORdutjuCLCCHM9Zo0_51Tx4_ohry0JbtCrO1-58w5MHAHApN-9LNpbXyP-ta_JXKfdjk3RgXMWN_e7IYf09p6eO6uvbDF_eOmQshKuL4Xzg"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative">
+<div class="w-6 h-6 bg-primary rounded-full animate-ping absolute inset-0 opacity-75"></div>
+<div class="w-6 h-6 bg-primary rounded-full relative border-4 border-on-primary"></div>
+</div>
+</div>
+<div class="absolute bottom-12 left-12 z-20 bg-stone-900 text-stone-50 p-10 max-w-sm">
+<h4 class="font-headline font-bold text-xl mb-4">Navštivte nás</h4>
+<p class="text-stone-400 text-sm leading-relaxed mb-6">
+                    Naše dílna v srdci Prahy 10 je vybavena nejmodernější diagnostikou a technologiemi pro zpracování kovů.
+                </p>
+<a class="inline-flex items-center gap-3 text-primary font-bold text-xs tracking-widest uppercase hover:gap-5 transition-all" href="https://maps.google.com/?q=Průmyslová+1402,+Praha+10">
+                    Navigovat do ateliéru
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-8 max-w-4xl mx-auto py-40">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-20 text-center">ČASTÉ DOTAZY</h2>
+<div class="space-y-16">
+<div class="group border-b border-stone-100 pb-16">
+<div class="flex gap-8">
+<span class="text-stone-300 font-headline font-bold text-4xl">01</span>
+<div>
+<h3 class="text-xl font-headline font-bold mb-4">Jak rychle přijedete při havárii?</h3>
+<p class="text-secondary leading-relaxed max-w-2xl">
+                                V rámci Prahy a okolí garantujeme příjezd do 60–90 minut od nahlášení havárie. Naše pohotovostní týmy jsou připraveny 24 hodin denně, 7 dní v týdnu.
+                            </p>
+</div>
+</div>
+</div>
+<div class="group border-b border-stone-100 pb-16">
+<div class="flex gap-8">
+<span class="text-stone-300 font-headline font-bold text-4xl">02</span>
+<div>
+<h3 class="text-xl font-headline font-bold mb-4">Poskytujete záruku na provedenou práci?</h3>
+<p class="text-secondary leading-relaxed max-w-2xl">
+                                Samozřejmě. Na veškeré instalatérské práce poskytujeme standardní záruku 24 měsíců, na kompletní nové rozvody v průmyslové kvalitě až 60 měsíců.
+                            </p>
+</div>
+</div>
+</div>
+<div class="group border-b border-stone-100 pb-16">
+<div class="flex gap-8">
+<span class="text-stone-300 font-headline font-bold text-4xl">03</span>
+<div>
+<h3 class="text-xl font-headline font-bold mb-4">Provádíte i drobné opravy v bytech?</h3>
+<p class="text-secondary leading-relaxed max-w-2xl">
+                                Ačkoliv se specializujeme na industriální a high-end projekty, náš servisní tým řeší i běžné opravy baterií, toalet nebo čištění odpadů s maximální pečlivostí.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full mt-0">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 max-w-7xl mx-auto">
+<div>
+<div class="text-lg font-bold text-stone-800 dark:text-stone-200 font-headline mb-6">THE INDUSTRIAL ATELIER</div>
+<p class="font-body text-sm tracking-wide text-stone-500 dark:text-stone-400 max-w-xs leading-relaxed">
+                    Mistrovské instalace a inženýrská řešení v oblasti vody, plynu a vytápění. Definujeme standard moderního řemesla.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-stone-900 dark:text-stone-100 font-semibold text-sm">Navigace</span>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="index.html">Domů</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="sluzby.html">Služby</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="portfolio.html">Portfolio</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="kontakt.html">Kontakt</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-stone-900 dark:text-stone-100 font-semibold text-sm">Právní</span>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="#">Obchodní podmínky</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="#">Ochrana údajů</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-orange-700 dark:hover:text-orange-500 transition-colors text-sm" href="#">Certifikace</a>
+</div>
+</div>
+<div>
+<span class="text-stone-900 dark:text-stone-100 font-semibold text-sm block mb-6">Kontakt</span>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-2">Průmyslová 1422, 102 00 Praha</p>
+<p class="text-stone-500 dark:text-stone-400 text-sm mb-2">+420 777 123 456</p>
+<p class="text-stone-500 dark:text-stone-400 text-sm">atelier@industrial.cz</p>
+</div>
+</div>
+<div class="border-t border-stone-200/50 dark:border-stone-800/50 px-12 py-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body text-sm tracking-wide text-stone-500 dark:text-stone-400">© 2024 The Industrial Atelier. Všechna práva vyhrazena.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer transition-colors" data-icon="hub">hub</span>
+<span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer transition-colors" data-icon="token">token</span>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

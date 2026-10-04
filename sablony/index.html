@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Šablony webů pro řemeslníky · Nikolas Bekera</title>
+  <meta name="description" content="Hotové šablony webových stránek pro řemeslníky — elektrikáře, instalatéry, truhláře a zedníky. Připravené k nasazení, upravené na míru vašemu oboru.">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="canonical" href="https://nikolasbekera.cz/sablony/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nikolasbekera.cz/sablony/">
+  <meta property="og:title" content="Šablony webů pro řemeslníky · Nikolas Bekera">
+  <meta property="og:description" content="Hotové šablony webových stránek pro řemeslníky — elektrikáře, instalatéry, truhláře a zedníky. Připravené k nasazení, upravené na míru vašemu oboru.">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Šablony webů pro řemeslníky · Nikolas Bekera">
+  <meta name="twitter:description" content="Hotové šablony webových stránek pro řemeslníky — elektrikáře, instalatéry, truhláře a zedníky. Připravené k nasazení, upravené na míru vašemu oboru.">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #0A0A0A;
+      --paper: #FAFAF7;
+      --concrete: #6B6B6B;
+      --signal: #FF4D1E;
+      --line: #E5E5E2;
+      --sans: 'Geist', system-ui, sans-serif;
+      --mono: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--signal); color: var(--paper); }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 247, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--line);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .logo span { color: var(--signal); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .nav-links a {
+      color: var(--concrete);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 8px 16px;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--signal); }
+
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 5rem 0 4rem;
+      border-bottom: 0.5px solid var(--line);
+    }
+
+    .breadcrumb {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+      margin-bottom: 28px;
+    }
+
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+
+    .page-header h1 {
+      font-size: clamp(36px, 5.5vw, 60px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 .accent { color: var(--signal); }
+
+    .page-header p {
+      font-size: 18px;
+      color: var(--concrete);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* INFO BAR */
+    .info-bar {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 0.5px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .info-item .label { color: var(--concrete); margin-bottom: 4px; }
+    .info-item .value { color: var(--ink); font-weight: 500; }
+
+    /* TEMPLATES GRID */
+    .templates-section { padding: 5rem 0 6rem; }
+
+    .templates-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 0.5px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .template-card {
+      background: var(--paper);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.2s;
+    }
+
+    .template-card:hover { background: #F4EFE5; }
+
+    /* PREVIEW WINDOW */
+    .preview-window {
+      position: relative;
+      height: 220px;
+      background-color: var(--ink);
+      background-size: cover;
+      background-position: center top;
+      overflow: hidden;
+      border-bottom: 0.5px solid var(--line);
+    }
+
+    /* Template-specific fallback colors (viditelné bez fotky) */
+    .card-elektrikar .preview-window { background-color: #1a0f00; }
+    .card-instalater .preview-window { background-color: #0d1117; }
+    .card-truhlar .preview-window { background-color: #1a1006; }
+    .card-zednik .preview-window { background-color: #0f0f0f; }
+
+    /* Tmavý overlay přes fotku — text zůstane čitelný */
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.52);
+      z-index: 1;
+    }
+
+    .preview-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 32px;
+      background: rgba(255,255,255,0.06);
+      border-bottom: 0.5px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 7px;
+      z-index: 2;
+    }
+
+    .preview-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .preview-url {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      margin-left: 8px;
+    }
+
+    .preview-content {
+      position: absolute;
+      top: 32px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .preview-headline {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    .preview-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+      max-width: 240px;
+    }
+
+    .preview-btn {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 7px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px;
+      width: fit-content;
+    }
+
+    .card-elektrikar .preview-btn { background: #a93800; color: #fff; }
+    .card-instalater .preview-btn { background: #a93800; color: #fff; }
+    .card-truhlar .preview-btn { background: #a93800; color: #fff; }
+    .card-zednik .preview-btn { background: #a93800; color: #fff; }
+
+    /* CARD BODY */
+    .card-body {
+      padding: 28px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .card-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--signal);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card-body h2 {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .card-body p {
+      font-size: 14px;
+      color: var(--concrete);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-pages {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .page-pill {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 4px 10px;
+      background: var(--line);
+      border-radius: 20px;
+      color: var(--concrete);
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 18px;
+      border-top: 0.5px solid var(--line);
+      margin-top: 8px;
+    }
+
+    .card-footer-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--concrete);
+    }
+
+    .btn-preview {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 10px 20px;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-preview:hover { background: var(--signal); }
+
+    @media (max-width: 860px) {
+      .templates-grid { grid-template-columns: 1fr; }
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 5rem 0 6rem;
+      border-top: 0.5px solid var(--line);
+    }
+
+    .cta-box {
+      background: var(--ink);
+      border-radius: 16px;
+      padding: 56px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--paper);
+      line-height: 1.2;
+    }
+
+    .cta-box h2 span { color: var(--signal); }
+
+    .cta-box p {
+      font-size: 15px;
+      color: rgba(250,250,247,0.55);
+      margin-top: 10px;
+      max-width: 460px;
+      line-height: 1.6;
+    }
+
+    .btn-cta {
+      font-family: var(--mono);
+      font-size: 13px;
+      padding: 14px 28px;
+      background: var(--signal);
+      color: var(--paper);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-cta:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      padding: 2.5rem 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--concrete);
+      border-top: 0.5px solid var(--line);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="./" class="active">šablony</a>
+        <a href="../blog/">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a> / šablony
+      </div>
+      <h1>Šablony pro<br>řemeslníky<span class="accent">.</span></h1>
+      <p>Hotové weby připravené k nasazení — vybrané pro konkrétní obory. Každá šablona je plně funkční a upravená na míru živnostníkovi.</p>
+
+      <div class="info-bar">
+        <div class="info-item">
+          <div class="label">počet šablon</div>
+          <div class="value">4 šablony</div>
+        </div>
+        <div class="info-item">
+          <div class="label">stránky v každé</div>
+          <div class="value">4 podstránky</div>
+        </div>
+        <div class="info-item">
+          <div class="label">úprava na míru</div>
+          <div class="value">texty + fotky</div>
+        </div>
+        <div class="info-item">
+          <div class="label">technologie</div>
+          <div class="value">HTML / CSS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="templates-section">
+    <div class="container">
+      <div class="templates-grid">
+
+        <!-- ELEKTRIKÁŘ -->
+        <div class="template-card card-elektrikar">
+          <div class="preview-window" style="background-image: url('img/preview-elektrikar.jpg')">
+            <div class="preview-overlay"></div>
+            <div class="preview-bar">
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <span class="preview-url">elektrikar/index.html</span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-headline">Elektroinstalace<br>Praha a okolí</div>
+              <div class="preview-sub">Rozvody, rekonstrukce, revize — bezpečně a spolehlivě</div>
+              <div class="preview-btn">Nezávazná poptávka</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">pro elektrikáře</div>
+            <h2>Šablona Elektrikář</h2>
+            <p>Přehledný web v teplých oranžových tónech. Důraz na bezpečnost, reference a rychlé spojení. Vhodný pro živnostníky i menší elektroinstalační firmy.</p>
+            <div class="card-pages">
+              <span class="page-pill">Domů</span>
+              <span class="page-pill">Služby</span>
+              <span class="page-pill">Portfolio</span>
+              <span class="page-pill">Kontakt</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-meta">4 stránky · světlý design</span>
+              <a href="elektrikar/index.html" class="btn-preview">prohlédnout →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSTALATÉR -->
+        <div class="template-card card-instalater">
+          <div class="preview-window" style="background-image: url('img/preview-instalater.jpg')">
+            <div class="preview-overlay"></div>
+            <div class="preview-bar">
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <span class="preview-url">instalater/index.html</span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-headline">Instalatérství<br>na míru</div>
+              <div class="preview-sub">Voda, plyn, topení — profesionální montáž a servis</div>
+              <div class="preview-btn">Kontaktovat</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">pro instalatéry</div>
+            <h2>Šablona Instalatér</h2>
+            <p>Industriální design s tmavým kontrastem a výraznou typografií. Silný vizuální dojem, který zákazníkovi hned řekne — tohle je profesionál.</p>
+            <div class="card-pages">
+              <span class="page-pill">Domů</span>
+              <span class="page-pill">Služby</span>
+              <span class="page-pill">Portfolio</span>
+              <span class="page-pill">Kontakt</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-meta">4 stránky · tmavý design</span>
+              <a href="instalater/index.html" class="btn-preview">prohlédnout →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRUHLÁŘ -->
+        <div class="template-card card-truhlar">
+          <div class="preview-window" style="background-image: url('img/preview-truhlar.jpg')">
+            <div class="preview-overlay"></div>
+            <div class="preview-bar">
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <span class="preview-url">truhlar/index.html</span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-headline">Nábytek<br>s duší dřeva</div>
+              <div class="preview-sub">Zakázková výroba nábytku z přírodních materiálů</div>
+              <div class="preview-btn">Zobrazit práce</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">pro truhláře</div>
+            <h2>Šablona Truhlář</h2>
+            <p>Přírodní elegance pro truhláře a výrobce nábytku. Teplé tóny a prostor pro fotogalerii — ideální pro prezentaci zakázkové práce.</p>
+            <div class="card-pages">
+              <span class="page-pill">Domů</span>
+              <span class="page-pill">Služby</span>
+              <span class="page-pill">Portfolio</span>
+              <span class="page-pill">Kontakt</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-meta">4 stránky · světlý design</span>
+              <a href="truhlar/index.html" class="btn-preview">prohlédnout →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZEDNÍK -->
+        <div class="template-card card-zednik">
+          <div class="preview-window" style="background-image: url('img/preview-zednik.jpg')">
+            <div class="preview-overlay"></div>
+            <div class="preview-bar">
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <div class="preview-dot"></div>
+              <span class="preview-url">zednik/index.html</span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-headline">Zednictví<br>Atelier</div>
+              <div class="preview-sub">Stavební práce, rekonstrukce a omítky na klíč</div>
+              <div class="preview-btn">Poptávka zdarma</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">pro zedníky</div>
+            <h2>Šablona Zedník</h2>
+            <p>Pevný, spolehlivý design pro stavební firmy a živnostníky. Tmavý styl s důrazem na realisace — zákazník vidí, co dostane.</p>
+            <div class="card-pages">
+              <span class="page-pill">Domů</span>
+              <span class="page-pill">Služby</span>
+              <span class="page-pill">Portfolio</span>
+              <span class="page-pill">Kontakt</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-meta">4 stránky · tmavý design</span>
+              <a href="zednik/index.html" class="btn-preview">prohlédnout →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Žádná šablona<br>vám nesedí<span>?</span></h2>
+          <p>Navrhnu web přesně pro váš obor — od nuly, podle vašich potřeb a vizuální identity. Cena od 8 000 Kč.</p>
+        </div>
+        <a href="../#kontakt" class="btn-cta">napište mi →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        <span>© 2026 Nikolas Bekera</span>
+        <span style="margin: 0 8px; color: var(--line);">·</span>
+        <span>IČO 09209620</span>
+      </div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="../index.html">zpět na hlavní stránku</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

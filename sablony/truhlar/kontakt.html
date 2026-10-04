@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb59b",
+                        "tertiary-fixed-dim": "#9acbff",
+                        "on-secondary-fixed": "#111d23",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-container": "#541800",
+                        "on-surface-variant": "#5b4137",
+                        "on-tertiary-container": "#002e4e",
+                        "tertiary-fixed": "#cfe5ff",
+                        "primary": "#a93800",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#313030",
+                        "inverse-primary": "#ffb59b",
+                        "on-primary-fixed": "#380d00",
+                        "outline": "#8f7066",
+                        "surface-bright": "#fcf9f8",
+                        "surface-tint": "#a93800",
+                        "primary-container": "#ff5e13",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#546067",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0edec",
+                        "secondary-fixed-dim": "#bbc8d0",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf9f8",
+                        "tertiary-container": "#0099f2",
+                        "surface-container-high": "#ebe7e7",
+                        "secondary-container": "#d7e4ec",
+                        "on-tertiary-fixed-variant": "#004a78",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-background": "#1c1b1b",
+                        "tertiary": "#00629e",
+                        "on-primary-fixed-variant": "#812900",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-container": "#5a666d",
+                        "outline-variant": "#e4beb2",
+                        "on-secondary-fixed-variant": "#3c494f",
+                        "on-tertiary-fixed": "#001d34",
+                        "secondary-fixed": "#d7e4ec",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdbcf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift { background-color: rgba(252, 249, 248, 0.8); }
+        .no-border-rule { border: none !important; }
+        .glass-card { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.7); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-md no-border bg-gradient-to-b from-[#e5e2e1]/20 to-transparent">
+<div class="flex justify-between items-center px-8 py-6 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#1c1b1b] dark:text-[#fcf9f8] font-headline uppercase">
+                TRUHLÁŘSTVÍ
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#546067] dark:text-[#e5e2e1] hover:text-[#a93800]" href="index.html">Domů</a>
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#546067] dark:text-[#e5e2e1] hover:text-[#a93800]" href="sluzby.html">Služby</a>
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#546067] dark:text-[#e5e2e1] hover:text-[#a93800]" href="portfolio.html">Portfolio</a>
+<a class="font-headline font-bold tracking-tighter uppercase transition-colors text-[#a93800] dark:text-[#ff5e13] border-b-2 border-[#a93800] pb-1" href="kontakt.html">Kontakt</a>
+</div>
+<button class="hidden md:inline-flex bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-3 font-headline font-bold tracking-tighter uppercase rounded hover:scale-105 transition-transform duration-300 active:scale-95 active:duration-100 shadow-lg shadow-primary/20">
+                Poptat projekt
+            </button>
+<button id="navBurger" class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 z-[101]" aria-label="Menu"><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span><span style="display:block;width:22px;height:1.5px;background:currentColor;border-radius:2px;"></span></button>
+</div>
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#fcf9f8;z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+  <a href="index.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Domů</a>
+  <a href="sluzby.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Služby</a>
+  <a href="portfolio.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Portfolio</a>
+  <a href="kontakt.html" style="font-family:ui-monospace,monospace;font-size:22px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;letter-spacing:-0.02em;">Kontakt</a>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-12 mb-32 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<h1 class="font-headline text-7xl md:text-8xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+                    Pojďme tvořit <span class="text-primary">společně</span>
+</h1>
+<p class="text-xl text-secondary max-w-2xl font-light leading-relaxed">
+                    Každý kus dřeva má svůj příběh. My mu dáváme formu, vy mu dáváte život. Navrhněte s námi interiér, který přetrvá generace.
+                </p>
+</div>
+<div class="lg:col-span-4 hidden lg:block">
+<div class="relative group overflow-hidden rounded-xl">
+<img class="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Detail of a craftsman's hand touching a smooth oak wood surface with soft atmospheric light in a workshop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBudrQWMyfAoQAPwvAzWwS5bo5H28NMO3aeTghdqpeTLxCpy1ier0hZw5CIiRZvk7q_b0VGHrGM2wxLvp6bcCnSKxlLbSdSs4n3Qe-yLsdpm6UMrlFVtXuSUhdyZ_RC9TPL1G_2jiOIVVHF__1EDuOxPWidvMNqPltb9B5VnlrkugOz3QIj1nYxqd8wYFedrueXH4R8MKNwNJdehhZtpoqyNL3RaF6XPihV2HVmOe5jaAjmHbHxJD9E-hGec3RUtX6auaksWkGyf9Q"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+</section>
+<!-- Form & Details Section -->
+<section class="px-12 max-w-7xl mx-auto mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Poptávkový formulář -->
+<div class="lg:col-span-7 bg-surface-container-low p-12 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rounded-full blur-3xl"></div>
+<h2 class="font-headline text-3xl font-bold mb-12 flex items-center gap-4">
+<span class="w-8 h-[2px] bg-primary"></span>
+                        Konfigurace projektu
+                    </h2>
+<form class="space-y-10" onsubmit="event.preventDefault();alert(\'Toto je ukázková šablona — formulář není funkční.\');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="block text-[10px] uppercase tracking-widest text-secondary mb-2 font-bold">Jméno a příjmení</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary transition-colors py-2 outline-none font-body" placeholder="Jan Novák" type="text"/>
+</div>
+<div class="relative group">
+<label class="block text-[10px] uppercase tracking-widest text-secondary mb-2 font-bold">E-mail</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary transition-colors py-2 outline-none font-body" placeholder="jan@priklad.cz" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="block text-[10px] uppercase tracking-widest text-secondary mb-2 font-bold">Typ projektu</label>
+<select class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary transition-colors py-2 outline-none font-body appearance-none">
+<option>Zakázkový nábytek</option>
+<option>Kompletní interiér</option>
+<option>Restaurování</option>
+<option>Dveře a schodiště</option>
+</select>
+</div>
+<div class="relative group">
+<label class="block text-[10px] uppercase tracking-widest text-secondary mb-2 font-bold">Předpokládaný rozpočet</label>
+<select class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary transition-colors py-2 outline-none font-body appearance-none">
+<option>Do 50 000 Kč</option>
+<option>50 000 - 200 000 Kč</option>
+<option>200 000 - 500 000 Kč</option>
+<option>500 000 Kč +</option>
+</select>
+</div>
+</div>
+<div class="relative group">
+<label class="block text-[10px] uppercase tracking-widest text-secondary mb-2 font-bold">Popis Vaší vize</label>
+<textarea class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary transition-colors py-2 outline-none font-body resize-none" placeholder="Popište nám Vaše představy, materiály nebo specifické požadavky..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-outline-variant/50 rounded-lg cursor-pointer hover:bg-surface-container-high transition-all group">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors mb-2">cloud_upload</span>
+<p class="text-xs text-secondary"><span class="font-bold">Nahrát přílohy</span> (nákresy, fotky prostoru)</p>
+</div>
+<input class="hidden" type="file"/>
+</label>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-sm hover:scale-[1.01] active:scale-[0.99] transition-all shadow-xl shadow-primary/20" type="submit">
+                            Odeslat poptávku
+                        </button>
+</form>
+</div>
+<!-- Kontaktní údaje -->
+<div class="lg:col-span-5 flex flex-col justify-between py-8">
+<div>
+<h2 class="font-headline text-3xl font-bold mb-12">Přímé spojení</h2>
+<div class="space-y-12">
+<div class="group flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full group-hover:bg-primary transition-colors group-hover:text-white">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">Telefon</p>
+<a class="text-xl font-headline font-bold text-on-surface hover:text-primary transition-colors" href="tel:+420777888999">+420 777 888 999</a>
+</div>
+</div>
+<div class="group flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full group-hover:bg-primary transition-colors group-hover:text-white">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">Email</p>
+<a class="text-xl font-headline font-bold text-on-surface hover:text-primary transition-colors" href="mailto:info@truhlarstvi.cz">dilna@truhlarstvi.cz</a>
+</div>
+</div>
+<div class="group flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full group-hover:bg-primary transition-colors group-hover:text-white">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">Dílna &amp; Showroom</p>
+<p class="text-xl font-headline font-bold text-on-surface">Řemeslná 124, 150 00 Praha 5</p>
+<p class="text-sm text-secondary mt-1">Po-Pá: 08:00 – 17:00 (nebo dle domluvy)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-24">
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-6">Sledujte naši tvorbu</p>
+<div class="flex gap-4">
+<a class="px-6 py-3 border border-outline-variant/30 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all" href="#">Instagram</a>
+<a class="px-6 py-3 border border-outline-variant/30 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all" href="#">LinkedIn</a>
+<a class="px-6 py-3 border border-outline-variant/30 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:border-primary hover:text-primary transition-all" href="#">Facebook</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mapa Section -->
+<section class="px-12 mb-32">
+<div class="max-w-7xl mx-auto h-[500px] rounded-2xl overflow-hidden relative shadow-2xl shadow-black/10">
+<div class="absolute inset-0 bg-secondary/10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Stylized top-down architectural map visualization of an industrial district in Prague showing minimalist layout with clean lines" data-location="Prague" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD50x0YkoApsz11BQD9GIVjR5qRjBhlqLV-sRu7QzLu35NWPW5dzUbYz-3KjF1irXr7IDNKz_wpdHmTDbzKdCgcUcnY-7_LCjxjNiqgbt6NTKQxY5PE7X7bL1lIzOJ7lyV9nLmvlbdODGgqCfzAoIcLu-7xdvEbulPGnrWblCC4yalhPop7wtJsQzH9HivCrGKaTuESYbv2xI3wO-2zsEOsP1G_rzQAydbEK45O02Tgo0-SzKl-G4RmfaJlUIZ6zywGoKOfUraH9pY"/>
+<div class="absolute bottom-12 left-12 glass-card p-8 rounded-xl border border-white/20 shadow-2xl">
+<h3 class="font-headline font-bold text-2xl mb-2">Navštivte nás</h3>
+<p class="text-secondary text-sm mb-4">Parkování je zajištěno přímo před vchodem do dílny.</p>
+<button class="bg-primary text-white px-6 py-3 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">directions</span>
+                        Navigovat
+                    </button>
+</div>
+</div>
+</section>
+<!-- FAQ Section (Asymmetric Bento) -->
+<section class="px-12 max-w-7xl mx-auto mb-32">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="font-headline text-5xl font-black tracking-tighter mb-4">Časté dotazy</h2>
+<p class="text-secondary font-light max-w-md">Vše, co potřebujete vědět, než začneme řezat do prvního kusu dřeva.</p>
+</div>
+<div class="w-24 h-[2px] bg-primary hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- FAQ Item 1 -->
+<div class="p-10 bg-surface-container-high rounded-xl hover:bg-surface-container transition-colors">
+<div class="text-primary font-headline font-black text-4xl opacity-20 mb-4">01</div>
+<h4 class="font-headline font-bold text-xl mb-4">Jak dlouho trvá výroba?</h4>
+<p class="text-secondary leading-relaxed">Standardní doba dodání je 8–12 týdnů od schválení finálního návrhu a zaplacení zálohy. Záleží na komplexnosti a dostupnosti vybraných dřevin.</p>
+</div>
+<!-- FAQ Item 2 -->
+<div class="p-10 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+<div class="text-primary font-headline font-black text-4xl opacity-20 mb-4">02</div>
+<h4 class="font-headline font-bold text-xl mb-4">Pracujete i s vlastním materiálem?</h4>
+<p class="text-secondary leading-relaxed">Ano, pokud má dřevo správnou vlhkost a kvalitu. Rádi zpracujeme i vaše dřevo s rodinnou historií, po provedení technické kontroly.</p>
+</div>
+<!-- FAQ Item 3 -->
+<div class="p-10 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+<div class="text-primary font-headline font-black text-4xl opacity-20 mb-4">03</div>
+<h4 class="font-headline font-bold text-xl mb-4">Zpracujete i 3D vizualizace?</h4>
+<p class="text-secondary leading-relaxed">Každé větší zakázce předchází detailní 3D modelování, abychom si s klientem potvrdili proporce a detaily dříve, než sáhnete do materiálu.</p>
+</div>
+<!-- FAQ Item 4 -->
+<div class="p-10 bg-surface-container-high rounded-xl hover:bg-surface-container transition-colors">
+<div class="text-primary font-headline font-black text-4xl opacity-20 mb-4">04</div>
+<h4 class="font-headline font-bold text-xl mb-4">Poskytujete záruční servis?</h4>
+<p class="text-secondary leading-relaxed">Na veškerou naši práci poskytujeme prodlouženou záruku 5 let. Dřevo je živý materiál a my stojíme za kvalitou našeho řemesla.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#e5e2e1] dark:bg-[#121111] w-full pt-24 pb-12 tonal-shift-bg-only">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 px-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="font-['Manrope'] font-black text-lg text-[#1c1b1b] dark:text-[#fcf9f8]">LUXUSNÍ TRUHLÁŘSTVÍ</div>
+<p class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] leading-loose">
+                    Precizní práce. <br/>Udržitelné materiály. <br/>Nadčasový design.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Zakázkový nábytek</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Interiéry</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Restaurování</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Instagram</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] hover:text-[#a93800] transition-all" href="#">Ochrana údajů</a>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end h-full">
+<div class="text-right">
+<p class="font-['Inter'] text-xs tracking-widest uppercase text-[#a93800] font-bold">Studio Praha</p>
+<p class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1]">Řemeslná 124, 150 00</p>
+</div>
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-[#546067] dark:text-[#a5a2a1] mt-12 opacity-80">
+                    © 2024 LUXUSNÍ TRUHLÁŘSTVÍ. ŘEMESLNÁ PRECIZNOST.
+                </div>
+</div>
+</div>
+</footer>
+<a href="../../sablony/" title="Zpět na nikolasbekera.cz" style="position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FAFAF7;font-family:ui-monospace,monospace;font-size:12px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.25);transition:background 0.15s,transform 0.15s;" onmouseover="this.style.background='#FF4D1E';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0A0A0A';this.style.transform='translateY(0)'">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1L1 7L6 13M1 7H13" stroke="#FAFAF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  nikolasbekera.cz
+</a>
+
+<script>
+  (function(){
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if(!burger || !menu) return;
+    // Move menu to body to escape backdrop-filter stacking context
+    document.body.appendChild(menu);
+    // Add close button
+    var closeBtn = document.createElement('button');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+    closeBtn.textContent = '×';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+    menu.insertBefore(closeBtn, menu.firstChild);
+    // Toggle on burger click
+    burger.addEventListener('click', function(){
+      menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.style.display='none'; });
+    });
+  })();
+</script>
+</body></html>

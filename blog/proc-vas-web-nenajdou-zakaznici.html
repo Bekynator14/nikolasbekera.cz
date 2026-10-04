@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proč váš web nenajdou zákazníci na Googlu? — Nikolas Bekera</title>
+  <meta name="description" content="Máte web, ale z Googlu nechodí nikdo? 5 nejčastějších důvodů a co s každým z nich udělat — bez nutnosti platit SEO specialistu.">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://nikolasbekera.cz/blog/proc-vas-web-nenajdou-zakaznici.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nikolasbekera.cz/blog/proc-vas-web-nenajdou-zakaznici.html">
+  <meta property="og:title" content="Proč váš web nenajdou zákazníci na Googlu? — Nikolas Bekera">
+  <meta property="og:description" content="Máte web, ale z Googlu nechodí nikdo? 5 nejčastějších důvodů a co s každým z nich udělat — bez nutnosti platit SEO specialistu.">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+  <meta property="article:published_time" content="2026-04-01">
+  <meta property="article:author" content="Nikolas Bekera">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Proč váš web nenajdou zákazníci na Googlu? — Nikolas Bekera">
+  <meta name="twitter:description" content="Máte web, ale z Googlu nechodí nikdo? 5 nejčastějších důvodů a co s každým z nich udělat — bez nutnosti platit SEO specialistu.">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --ink: #0A0A0A; --paper: #FAFAF7; --concrete: #6B6B6B; --signal: #FF4D1E; --line: #E5E5E2; --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--signal); color: var(--paper); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+    .logo { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; }
+    .nav-links a { color: var(--concrete); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-family: var(--mono); font-size: 12px; padding: 8px 16px; background: var(--ink); color: var(--paper); text-decoration: none; border-radius: 4px; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--signal); }
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+
+    .article-header { padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--line); max-width: 780px; }
+    .breadcrumb { font-family: var(--mono); font-size: 12px; color: var(--concrete); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 8px; }
+    .article-tag { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 20px; }
+    .article-header .lead { font-size: 18px; color: var(--concrete); line-height: 1.6; max-width: 620px; margin-bottom: 24px; }
+    .article-meta-bar { font-family: var(--mono); font-size: 12px; color: var(--concrete); display: flex; gap: 20px; flex-wrap: wrap; }
+
+    .article-body { padding: 3.5rem 0 5rem; }
+    .prose { max-width: 720px; }
+    .prose h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.025em; margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+    .prose h3 { font-size: 18px; font-weight: 500; letter-spacing: -0.01em; margin-top: 2rem; margin-bottom: 0.6rem; }
+    .prose p { margin-bottom: 1.2rem; font-size: 16px; line-height: 1.7; color: var(--ink); }
+    .prose p.muted { color: var(--concrete); }
+    .prose ul { margin: 0 0 1.2rem 1.2rem; }
+    .prose ul li { font-size: 16px; line-height: 1.65; margin-bottom: 6px; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: none; border-bottom: 0.5px solid currentColor; }
+
+    .reason-block { margin: 1.5rem 0; padding: 24px; border: 0.5px solid var(--line); border-radius: 10px; }
+    .reason-num { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; margin-bottom: 8px; }
+    .reason-block h3 { margin-top: 0; font-size: 18px; font-weight: 500; margin-bottom: 10px; }
+    .reason-block p { margin-bottom: 10px; font-size: 15px; line-height: 1.65; }
+    .reason-block .fix { font-size: 14px; color: var(--concrete); padding: 10px 14px; background: #F4EFE5; border-radius: 6px; margin-top: 10px; }
+    .reason-block .fix strong { color: var(--ink); }
+
+    .callout { margin: 2rem 0; padding: 20px 24px; background: #F4EFE5; border-radius: 10px; font-size: 15px; line-height: 1.65; }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 13px; font-family: var(--mono); letter-spacing: 0.5px; color: var(--concrete); text-transform: uppercase; }
+
+    .article-cta { margin-top: 3.5rem; padding: 36px; background: var(--ink); border-radius: 12px; color: var(--paper); }
+    .article-cta h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .article-cta p { color: rgba(250,250,247,0.65); font-size: 15px; margin-bottom: 20px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 6px; transition: all 0.2s; background: var(--signal); color: var(--paper); }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .article-cta .btn { color: var(--paper); }
+
+
+    .related-articles { margin-top: 3rem; padding-top: 2.5rem; border-top: 0.5px solid var(--line); }
+    .related-label { font-family: var(--mono); font-size: 11px; color: var(--concrete); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .related-links { display: grid; gap: 2px; }
+    .related-links a { display: block; padding: 13px 16px; border: 0.5px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; transition: background 0.15s; letter-spacing: -0.01em; }
+    .related-links a:hover { background: #F4EFE5; }
+    .related-links a span { color: var(--signal); font-family: var(--mono); }
+    footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 12px; color: var(--concrete); border-top: 0.5px solid var(--line); }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Proč váš web nenajdou zákazníci na Googlu?",
+    "description": "Máte web, ale z Googlu nechodí nikdo? 5 nejčastějších důvodů a co s každým z nich udělat — bez nutnosti platit SEO specialistu.",
+    "author": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nikolas Bekera",
+      "url": "https://nikolasbekera.cz"
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "url": "https://nikolasbekera.cz/blog/proc-vas-web-nenajdou-zakaznici.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nikolasbekera.cz/blog/proc-vas-web-nenajdou-zakaznici.html"
+    },
+    "inLanguage": "cs"
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="../sablony/">šablony</a>
+        <a href="index.html" class="active">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="article-header">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a><span>/</span>
+        <a href="index.html">blog</a><span>/</span>
+        proč web nenajdou zákazníci
+      </div>
+      <div class="article-tag">SEO &amp; viditelnost</div>
+      <h1>Proč váš web nenajdou zákazníci na Googlu?</h1>
+      <p class="lead">Máte web, ale z Googlu nechodí nikdo? Pět nejčastějších důvodů a co s každým z nich udělat — bez nutnosti platit SEO specialistu.</p>
+      <div class="article-meta-bar">
+        <span>Nikolas Bekera</span>
+        <span>·</span>
+        <span>Duben 2026</span>
+        <span>·</span>
+        <span>5 min čtení</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="prose">
+
+        <p>Mít web a být vidět na Googlu jsou dvě různé věci. Spousta živnostníků investuje do webu, a pak zjistí, že z organického vyhledávání nepřichází téměř nikdo. Proč?</p>
+
+        <p>Většinou za to může jeden nebo více z těchto pěti důvodů.</p>
+
+        <h2>Pět nejčastějších příčin</h2>
+
+        <div class="reason-block">
+          <div class="reason-num">— 01</div>
+          <h3>Web je příliš nový</h3>
+          <p>Google potřebuje čas, aby váš web objevil, proindexoval a ohodnotil. U nového webu to trvá 3–6 měsíců, než se začnete pohybovat ve výsledcích na relevantní dotazy.</p>
+          <div class="fix"><strong>Co s tím:</strong> přidejte web do Google Search Console (zdarma) a odešlete sitemap. Google pak web najde rychleji.</div>
+        </div>
+
+        <div class="reason-block">
+          <div class="reason-num">— 02</div>
+          <h3>Texty neobsahují slova, která zákazníci hledají</h3>
+          <p>Pokud váš web píše <em>"nabízíme komplexní řešení v oblasti instalatérství"</em> místo <em>"instalatér Hradec Králové"</em>, Google neví, pro jaké dotazy vás má zobrazit.</p>
+          <div class="fix"><strong>Co s tím:</strong> zapište si, co by zákazník napsal do Googlu, když vás hledá. Tato slova by měla být přirozeně v nadpisech a textech webu.</div>
+        </div>
+
+        <div class="reason-block">
+          <div class="reason-num">— 03</div>
+          <h3>Chybí title a description</h3>
+          <p>Každá stránka webu má mít vyplněný title (název v záložce prohlížeče) a meta description (popisek pod odkazem ve výsledcích). Pokud jsou prázdné nebo generické, Google si je doplní sám — a ne vždy dobře.</p>
+          <div class="fix"><strong>Co s tím:</strong> title by měl být "Co děláte + kde působíte", např. "Instalatér Hradec Králové — Jan Novák". Description pak 1–2 věty o tom, co nabízíte.</div>
+        </div>
+
+        <div class="reason-block">
+          <div class="reason-num">— 04</div>
+          <h3>Web je pomalý nebo nefunguje na mobilu</h3>
+          <p>Google od roku 2021 hodnotí weby primárně podle jejich mobilní verze a rychlosti. Pokud se web načítá pomalu nebo se na telefonu špatně ovládá, Google ho posune níž ve výsledcích.</p>
+          <div class="fix"><strong>Co s tím:</strong> otestujte web na PageSpeed Insights (zdarma od Googlu). Skóre pod 70 na mobilu je problém, který stojí za řešení.</div>
+        </div>
+
+        <div class="reason-block">
+          <div class="reason-num">— 05</div>
+          <h3>Není nastavený Google Business Profile</h3>
+          <p>Pro lokální firmy a živnostníky je Google Business Profile (dřív Google Moje firma) zásadní. Bez něj se neobjevíte v mapách ani v lokálních výsledcích — a právě tam zákazníci hledají řemeslníky nejčastěji.</p>
+          <div class="fix"><strong>Co s tím:</strong> zaregistrujte se na business.google.com, ověřte profil poštou nebo telefonem a vyplňte otevírací dobu, fotky a popis.</div>
+        </div>
+
+        <div class="callout">
+          <strong>Shrnutí</strong>
+          Základní SEO pro malou firmu nebo živnostníka není raketová věda — je to kombinace správných textů, technicky funkčního webu a aktivního Google Business Profile. Agentury to prodávají za tisíce měsíčně, ale základ si dokáže nastavit sám každý.
+        </div>
+
+        <h2>Kdy je čas zavolat odborníka?</h2>
+
+        <p>Výše popsané kroky vás dostanou na rozumnou základní úroveň. Pokud chcete víc — cílit na konkurenční dotazy, budovat zpětné odkazy nebo psát obsahovou strategii — pak dává smysl přemýšlet o profesionálním SEO.</p>
+
+        <p class="muted">Ale pro instalatéra, elektrikáře nebo tesaře z východních Čech je nejčastěji dostatečné základní technické SEO + Google Business Profile + pár lokálně zaměřených textů.</p>
+
+
+        <div class="related-articles">
+          <div class="related-label">Mohlo by vás zajímat</div>
+          <div class="related-links">
+            <a href="potrebuje-zivnostnik-web.html"><span>→</span> Potřebuje živnostník web v roce 2026?</a>
+            <a href="kolik-stoji-web-pro-remeslnika.html"><span>→</span> Kolik stojí web pro řemeslníka v roce 2026?</a>
+          </div>
+        </div>
+
+                <div class="article-cta">
+          <h3>Chcete web, který Google najde?</h3>
+          <p>Každý web, který stavím, obsahuje základní SEO nastavení — title, description, sitemap, rychlé načítání. Nepotřebujete to řešit zvlášť.</p>
+          <a href="../#kontakt" class="btn">nezávazně se zeptat →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Nikolas Bekera · IČO 09209620</div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="index.html">← zpět na blog</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

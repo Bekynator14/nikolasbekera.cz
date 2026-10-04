@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web pro truhláře a tesaře — co na něm nesmí chybět | Nikolas Bekera</title>
+  <meta name="description" content="Truhlář nebo tesař s galerií hotových prací na webu získá zákazníky dřív než konkurence. Co musí takový web obsahovat a jak ho nastavit pro Google?">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="canonical" href="https://nikolasbekera.cz/blog/web-pro-truhlare.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nikolasbekera.cz/blog/web-pro-truhlare.html">
+  <meta property="og:title" content="Web pro truhláře a tesaře — co na něm nesmí chybět — Nikolas Bekera">
+  <meta property="og:description" content="Truhlář nebo tesař s galerií hotových prací na webu získá zákazníky dřív než konkurence. Co musí takový web obsahovat a jak ho nastavit pro Google?">
+  <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="nikolas bekera.">
+  <meta property="article:published_time" content="2026-02-05">
+  <meta property="article:author" content="Nikolas Bekera">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web pro truhláře a tesaře — co na něm nesmí chybět — Nikolas Bekera">
+  <meta name="twitter:description" content="Truhlář nebo tesař s galerií hotových prací na webu získá zákazníky dřív než konkurence. Co musí takový web obsahovat?">
+  <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #0A0A0A; --paper: #FAFAF7; --concrete: #6B6B6B; --signal: #FF4D1E; --line: #E5E5E2; --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--signal); color: var(--paper); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--line); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+    .logo { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 28px; font-family: var(--mono); font-size: 12px; }
+    .nav-links a { color: var(--concrete); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-family: var(--mono); font-size: 12px; padding: 8px 16px; background: var(--ink); color: var(--paper); text-decoration: none; border-radius: 4px; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--signal); }
+    
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    @media (max-width: 720px) {
+      .nav-burger { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-cta { display: none; }
+      nav { background: var(--paper); }
+    }
+    .article-header { padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--line); max-width: 780px; }
+    .breadcrumb { font-family: var(--mono); font-size: 12px; color: var(--concrete); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--concrete); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 8px; }
+    .article-tag { font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 20px; }
+    .article-header .lead { font-size: 18px; color: var(--concrete); line-height: 1.6; max-width: 620px; margin-bottom: 24px; }
+    .article-meta-bar { font-family: var(--mono); font-size: 12px; color: var(--concrete); display: flex; gap: 20px; flex-wrap: wrap; }
+    .article-body { padding: 3.5rem 0 5rem; }
+    .prose { max-width: 720px; }
+    .prose h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.025em; margin-top: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+    .prose p { margin-bottom: 1.2rem; font-size: 16px; line-height: 1.7; color: var(--ink); }
+    .prose p.muted { color: var(--concrete); }
+    .prose ul { margin: 0 0 1.2rem 1.2rem; }
+    .prose ul li { font-size: 16px; line-height: 1.65; margin-bottom: 6px; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--signal); text-decoration: none; border-bottom: 0.5px solid currentColor; }
+    .checklist { list-style: none; margin: 1.5rem 0; padding: 0; display: grid; gap: 2px; background: var(--line); border: 0.5px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .checklist li { background: var(--paper); padding: 16px 20px 16px 48px; font-size: 15px; line-height: 1.5; position: relative; }
+    .checklist li::before { content: '—'; position: absolute; left: 20px; color: var(--signal); font-family: var(--mono); }
+    .checklist li strong { display: block; font-weight: 500; margin-bottom: 2px; }
+    .checklist li span { color: var(--concrete); font-size: 14px; }
+    .callout { margin: 2rem 0; padding: 20px 24px; background: #F4EFE5; border-radius: 10px; font-size: 15px; line-height: 1.65; }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 13px; font-family: var(--mono); letter-spacing: 0.5px; color: var(--concrete); text-transform: uppercase; }
+    .article-cta { margin-top: 3.5rem; padding: 36px; background: var(--ink); border-radius: 12px; color: var(--paper); }
+    .article-cta h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .article-cta p { color: rgba(250,250,247,0.65); font-size: 15px; margin-bottom: 20px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 6px; transition: all 0.2s; background: var(--signal); color: var(--paper); }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .article-cta .btn { color: var(--paper); }
+    .related-articles { margin-top: 3rem; padding-top: 2.5rem; border-top: 0.5px solid var(--line); }
+    .related-label { font-family: var(--mono); font-size: 11px; color: var(--concrete); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .related-links { display: grid; gap: 2px; }
+    .related-links a { display: block; padding: 13px 16px; border: 0.5px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; transition: background 0.15s; letter-spacing: -0.01em; }
+    .related-links a:hover { background: #F4EFE5; }
+    .related-links a span { color: var(--signal); font-family: var(--mono); }
+    footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 12px; color: var(--concrete); border-top: 0.5px solid var(--line); }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--concrete); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Web pro truhláře a tesaře — co na něm nesmí chybět",
+    "description": "Truhlář nebo tesař s galerií hotových prací na webu získá zákazníky dřív než konkurence. Co musí takový web obsahovat a jak ho nastavit pro Google?",
+    "author": { "@type": "Person", "name": "Nikolas Bekera", "url": "https://nikolasbekera.cz" },
+    "publisher": { "@type": "Person", "name": "Nikolas Bekera", "url": "https://nikolasbekera.cz" },
+    "datePublished": "2026-02-05",
+    "dateModified": "2026-02-05",
+    "url": "https://nikolasbekera.cz/blog/web-pro-truhlare.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nikolasbekera.cz/blog/web-pro-truhlare.html" },
+    "inLanguage": "cs"
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">nikolas bekera<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../#sluzby">služby</a>
+        <a href="../#proces">proces</a>
+        <a href="../#cenik">ceník</a>
+        <a href="../#realizace">realizace</a>
+        <a href="../sablony/">šablony</a>
+        <a href="index.html" class="active">blog</a>
+      </div>
+      <a href="../#kontakt" class="nav-cta">napište mi</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="article-header">
+      <div class="breadcrumb">
+        <a href="../index.html">nikolasbekera.cz</a><span>/</span>
+        <a href="index.html">blog</a><span>/</span>
+        web pro truhláře
+      </div>
+      <div class="article-tag">pro řemeslníky</div>
+      <h1>Web pro truhláře a tesaře — co na něm nesmí chybět</h1>
+      <p class="lead">Truhlářské a tesařské práce jsou vizuální řemeslo — zákazník chce vidět, co umíte, dřív než vám zavolá. Web s galerií hotových prací rozhoduje o tom, jestli zákazník osloví vás nebo konkurenci.</p>
+      <div class="article-meta-bar">
+        <span>Nikolas Bekera</span>
+        <span>·</span>
+        <span>Únor 2026</span>
+        <span>·</span>
+        <span>4 min čtení</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="prose">
+
+        <p>Zákazník, který hledá truhláře nebo tesaře, zadá do Googlu něco jako <em>"truhlář na míru Praha"</em> nebo <em>"výroba kuchyní na míru"</em>. Pokud váš web tato klíčová slova obsahuje a je technicky správně, Google vás zobrazí. A pokud web zároveň ukazuje fotky krásně odvedené práce, zákazník zavolá.</p>
+
+        <p>Web pro truhláře nemusí být složitý. Musí být přehledný a musí ukázat, co umíte.</p>
+
+        <h2>Co musí být na webu truhláře</h2>
+
+        <ul class="checklist">
+          <li>
+            <strong>Fotogalerie realizací — čím víc, tím lépe</strong>
+            <span>Kuchyně na míru, vestavěné skříně, schody, nábytek, pergoly — každá fotka je argument pro zákazníka. Focení po dokončení zakázky by mělo být samozřejmost.</span>
+          </li>
+          <li>
+            <strong>Přehled nabízených prací podle kategorií</strong>
+            <span>Kuchyňský nábytek, vestavěné skříně, schodiště, zahradní stavby — každá kategorie je samostatné klíčové slovo pro Google a zákazníkům usnadní orientaci.</span>
+          </li>
+          <li>
+            <strong>Oblast působení</strong>
+            <span>Truhláři a tesaři pracují lokálně. Zákazníci hledají "truhlář + město" — pokud váš web uvádí konkrétní regiony, zobrazíte se jim v relevantnějších výsledcích.</span>
+          </li>
+          <li>
+            <strong>Způsob objednání nebo poptávky</strong>
+            <span>Zakázky na míru vyžadují konzultaci. Jednoduchý formulář nebo telefonní číslo — ať zákazník ví, jak udělat první krok.</span>
+          </li>
+          <li>
+            <strong>Orientační ceny nebo způsob nacenění</strong>
+            <span>"Kuchyně na míru od 40 000 Kč — cena závisí na rozměrech a materiálu" nastaví správná očekávání a odfiltruje zákazníky, kteří hledají nejlevnější variantu.</span>
+          </li>
+          <li>
+            <strong>Reference od zákazníků</strong>
+            <span>Zakázky na míru jsou drahé — zákazník potřebuje důvěru. Citát od spokojené zákaznice nebo odkaz na Google recenze tuto důvěru buduje.</span>
+          </li>
+        </ul>
+
+        <h2>Jaká klíčová slova zákazníci hledají?</h2>
+
+        <p>Pro dobré umístění na Googlu je potřeba vědět, co zákazníci píší do vyhledávače. Pro truhláře a tesaře jsou to typicky:</p>
+
+        <ul>
+          <li><strong>Podle produktu:</strong> "kuchyně na míru", "vestavěná skříň na míru", "schodiště dřevěné", "pergola na zahradu"</li>
+          <li><strong>Podle lokace:</strong> "truhlář Brno", "tesař Praha a okolí", "výroba nábytku Hradec Králové"</li>
+          <li><strong>Podle materiálu:</strong> "masivní dřevo nábytek", "dubová kuchyně", "přírodní dřevo interiér"</li>
+        </ul>
+
+        <p>Tyto fráze by měly přirozeně zazní v textech vašeho webu — v nadpisech, popisech a seznamu služeb. Google pak ví, komu váš web zobrazit.</p>
+
+        <div class="callout">
+          <strong>Tip</strong>
+          Přidejte ke každé fotce v galerii krátký popis — materiál, rozměry, lokalita. "Dubová kuchyně na míru, Pardubice, 2025" — taková informace pomáhá Googlu i zákazníkům lépe chápat, co nabízíte.
+        </div>
+
+        <h2>Proč nestačí jen Instagram nebo Facebook?</h2>
+
+        <p>Spousta truhlářů sdílí fotky prací na Instagramu — a to je skvělé. Ale Instagram má jednu zásadní nevýhodu: zákazníci, kteří hledají truhláře na Googlu, Instagram nevidí. Google indexuje weby, ne Instagram profily.</p>
+
+        <p class="muted">Web a Instagram se vzájemně doplňují. Instagram buduje komunitu a doslov, web přivádí zákazníky z Google vyhledávání. Ideální varianta je mít obojí — propojené.</p>
+
+        <div class="related-articles">
+          <div class="related-label">Mohlo by vás zajímat</div>
+          <div class="related-links">
+            <a href="web-pro-malire.html"><span>→</span> Web pro malíře a lakýrníka — co na něm nesmí chybět</a>
+            <a href="web-pro-stavebni-firmu.html"><span>→</span> Web pro stavební firmu nebo zedníka</a>
+            <a href="jak-napsat-texty-na-web.html"><span>→</span> Jak napsat texty na web sám?</a>
+          </div>
+        </div>
+
+        <div class="article-cta">
+          <h3>Jste truhlář nebo tesař a chcete více zákazníků z Googlu?</h3>
+          <p>Napište mi — postavím vám web s galerií, který zákazníci najdou na Googlu a který ukáže vaši práci v tom nejlepším světle.</p>
+          <a href="../#kontakt" class="btn">nezávazně se zeptat →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Nikolas Bekera · IČO 09209620</div>
+      <div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
+        <span style="margin: 0 12px; color: var(--line);">·</span>
+        <a href="index.html">← zpět na blog</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var burger = document.getElementById('navBurger');
+      var navLinks = document.getElementById('navLinks');
+      if(!burger || !navLinks) return;
+      var menu = document.createElement('div');
+      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
+      var closeBtn = document.createElement('button');
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
+      closeBtn.textContent = '×';
+      closeBtn.setAttribute('aria-label', 'Zavrit menu');
+      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
+      menu.appendChild(closeBtn);
+      navLinks.querySelectorAll('a').forEach(function(a){
+        var clone = a.cloneNode(true);
+        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
+        clone.addEventListener('click', function(){ menu.style.display='none'; });
+        menu.appendChild(clone);
+      });
+      document.body.appendChild(menu);
+      burger.addEventListener('click', function(){
+        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
+    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
+      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
+      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {anonymize_ip: true});
+    }
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookieBanner');
+    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
+    if(consent === 'declined'){ banner.style.display='none'; return; }
+    banner.style.display = 'flex';
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','accepted');
+      banner.style.display = 'none';
+      loadGA();
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('cookie_consent','declined');
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>
