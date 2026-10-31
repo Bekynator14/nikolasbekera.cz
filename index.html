@@ -4,1092 +4,519 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tvorba webů & rezervačních systémů | Nikolas Bekera — Webový developer</title>
+  <title>Tvorba webových stránek na míru | Nikolas Bekera</title>
   <meta name="description"
-    content="Tvorba webových stránek a rezervačních nebo objednávkových systémů pro řemeslníky a malé firmy. Rychlé, ručně kódované weby od 5 000 Kč. Hotovo za 14 dní. Žádné měsíční paušály.">
+    content="Tvorba webových stránek pro firmy, živnostníky, restaurace, ubytování i osobní projekty. Rychlé weby na míru od 5 000 Kč, pevná cena předem, hotovo zhruba za 14 dní a žádné měsíční paušály.">
   <link rel="canonical" href="https://nikolasbekera.cz/">
 
-  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#FF4D1E">
+  <meta name="theme-color" content="#FAFAF7">
   <meta name="format-detection" content="telephone=no">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nikolasbekera.cz/">
-  <meta property="og:title" content="Tvorba webů & rezervačních systémů | Nikolas Bekera — Královéhradecký kraj">
-  <meta property="og:description" content="Freelance web developer z Mlázovic. Weby, rezervační a objednávkové systémy od 5 000 Kč.">
+  <meta property="og:title" content="Tvorba webových stránek na míru | Nikolas Bekera">
+  <meta property="og:description" content="Rychlé weby na míru pro firmy, živnostníky i projekty. Od 5 000 Kč, pevná cena předem, žádné paušály.">
   <meta property="og:image" content="https://nikolasbekera.cz/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:site_name" content="nikolas bekera.">
 
-  <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nikolas Bekera — weby a rezervační systémy">
-  <meta name="twitter:description" content="Freelance web developer z Mlázovic. Weby, rezervační a objednávkové systémy od 5 000 Kč.">
+  <meta name="twitter:title" content="Nikolas Bekera | tvorba webových stránek na míru">
+  <meta name="twitter:description" content="Rychlé weby na míru pro firmy, živnostníky i projekty. Od 5 000 Kč, pevná cena předem, žádné paušály.">
   <meta name="twitter:image" content="https://nikolasbekera.cz/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+  <script>document.documentElement.classList.add('js');</script>
 
   <style>
     :root {
       --ink: #0A0A0A;
       --paper: #FAFAF7;
-      --concrete: #6B6B6B;
+      --card: #FFFFFF;
+      --muted: #5C5C58;
+      --soft: #F1F1EC;
+      --line: #E5E5E0;
       --signal: #FF4D1E;
-      --line: #E5E5E2;
-      --line-strong: #1C1C1A;
+      --signal-ink: #C2330C;
+      --ok: #1F7A3A;
+      --err: #B42318;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1);
       --sans: 'Geist', system-ui, sans-serif;
       --mono: 'Geist Mono', ui-monospace, monospace;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
     body {
       font-family: var(--sans);
       background: var(--paper);
       color: var(--ink);
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 24px;
       -webkit-font-smoothing: antialiased;
-      font-feature-settings: "ss01", "cv11";
+      overflow-x: hidden;
     }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; text-wrap: balance; }
+    p, li, dd { text-wrap: pretty; }
+    ::selection { background: var(--signal); color: #fff; }
+    :focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; border-radius: 4px; }
 
-    ::selection {
-      background: var(--signal);
-      color: var(--paper);
+    .skip {
+      position: absolute; left: 16px; top: -64px; z-index: 300;
+      background: var(--ink); color: #fff; padding: 8px 12px; border-radius: 8px;
+      font-size: 14px; line-height: 20px; font-weight: 600; text-decoration: none;
+      transition: top 300ms var(--ease);
     }
+    .skip:focus { top: 16px; }
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 28px;
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+
+    section { padding: 64px 0; }
+    @media (min-width: 900px) { section { padding: 96px 0; } }
+
+    .eyebrow {
+      font-family: var(--mono); font-size: 12px; line-height: 16px; font-weight: 500;
+      color: var(--signal-ink); text-transform: lowercase; letter-spacing: 0.02em;
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
     }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 9999px; background: var(--signal); }
+    .h2 { font-size: 30px; line-height: 36px; max-width: 680px; }
+    @media (min-width: 768px) { .h2 { font-size: 36px; line-height: 40px; } }
+    .lead { font-size: 18px; line-height: 28px; color: var(--muted); max-width: 640px; margin-top: 16px; }
+    .sec-head { margin-bottom: 48px; }
 
-    /* ===== NAV ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(250, 250, 247, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid var(--line);
-    }
-
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 18px;
-      padding-bottom: 18px;
-    }
-
-    .logo {
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .logo span {
-      color: var(--signal);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-family: var(--mono);
-      font-size: 12px;
-    }
-
-    .nav-links a {
-      color: var(--concrete);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
-    .nav-cta {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 8px 16px;
-      background: var(--ink);
-      color: var(--paper);
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.15s;
-    }
-
-    .nav-cta:hover {
-      background: var(--signal);
-    }
-
-    .nav-burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 101;
-    }
-
-    .nav-burger span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--ink);
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-
-    @media (max-width: 720px) {
-      .nav-burger { display: flex; }
-      .nav-links { display: none !important; }
-      .nav-cta { display: none; }
-      nav { background: var(--paper); }
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      padding: 3.5rem 0 5rem;
-      border-bottom: 0.5px solid var(--line);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--line) 0.5px, transparent 0.5px),
-        linear-gradient(90deg, var(--line) 0.5px, transparent 0.5px);
-      background-size: 64px 64px;
-      opacity: 0.5;
-      mask-image: radial-gradient(ellipse at 70% 30%, black, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero .container {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 60px;
-      align-items: end;
-    }
-
-    .status-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--concrete);
-      margin-bottom: 36px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--signal);
-      box-shadow: 0 0 0 3px rgba(255, 77, 30, 0.15);
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 3px rgba(255, 77, 30, 0.15);
-      }
-
-      50% {
-        box-shadow: 0 0 0 7px rgba(255, 77, 30, 0.05);
-      }
-    }
-
-    h1.display {
-      font-size: clamp(44px, 7vw, 88px);
-      font-weight: 500;
-      letter-spacing: -0.045em;
-      line-height: 0.96;
-      margin-bottom: 28px;
-    }
-
-    h1.display .accent {
-      color: var(--signal);
-    }
-
-    h1.display em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--concrete);
-    }
-
-    .hero-lead {
-      font-size: 18px;
-      color: var(--concrete);
-      max-width: 520px;
-      margin-bottom: 40px;
-      line-height: 1.55;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
+    /* ===== Buttons ===== */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font: inherit; font-size: 16px; line-height: 24px; font-weight: 600;
+      padding: 8px 12px; border-radius: 9999px; border: 1px solid var(--ink);
+      background: var(--ink); color: #fff; text-decoration: none; cursor: pointer;
+      transition: transform 500ms var(--ease), background-color 500ms var(--ease), border-color 500ms var(--ease), color 500ms var(--ease);
+    }
+    .btn .ph { font-size: 20px; transition: transform 500ms var(--ease); }
+    .btn:hover { background: var(--signal-ink); border-color: var(--signal-ink); transform: translateY(-2px); }
+    .btn:hover .ph-arrow-right { transform: translateX(4px); }
+    .btn:active { transform: scale(0.98); }
+    .btn[disabled] { opacity: 0.6; cursor: progress; transform: none; }
+    .btn-lg { padding: 12px 24px; }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn-ghost:hover { background: var(--card); color: var(--ink); border-color: var(--ink); }
+    .btn-sm { font-size: 14px; line-height: 20px; padding: 8px 12px; }
+
+    .link {
+      display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none;
+      border-bottom: 1px solid var(--line); padding-bottom: 2px;
+      transition: border-color 500ms var(--ease), color 500ms var(--ease);
+    }
+    .link:hover { border-color: var(--ink); }
+    .link .ph { transition: transform 500ms var(--ease); }
+    .link:hover .ph { transform: translate(2px, -2px); }
+
+    /* ===== Island nav ===== */
+    .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: center; padding: 0 16px; pointer-events: none; }
+    .nav {
+      pointer-events: auto; margin-top: 24px; width: max-content; max-width: 100%;
+      display: flex; align-items: center; gap: 24px;
+      padding: 8px 8px 8px 24px; border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(10, 10, 10, 0.08);
+      backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      box-shadow: 0 8px 32px rgba(10, 10, 10, 0.06);
+      transition: box-shadow 700ms var(--ease), margin 700ms var(--ease);
+    }
+    .nav.is-scrolled { margin-top: 16px; box-shadow: 0 12px 40px rgba(10, 10, 10, 0.1); }
+    .logo { font-weight: 600; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+    .logo span { color: var(--signal); }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a {
+      display: block; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 8px 12px; border-radius: 9999px;
+      transition: color 500ms var(--ease), background-color 500ms var(--ease);
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--soft); }
+    .nav-links a.is-active { color: var(--ink); background: var(--soft); }
+    .burger {
+      display: none; position: relative; width: 40px; height: 40px; border-radius: 9999px;
+      border: 0; background: var(--ink); cursor: pointer; z-index: 2;
+    }
+    .burger span {
+      position: absolute; left: 12px; width: 16px; height: 2px; border-radius: 2px; background: #fff;
+      transition: transform 700ms var(--ease), top 700ms var(--ease);
+    }
+    .burger span:nth-child(1) { top: 16px; }
+    .burger span:nth-child(2) { top: 22px; }
+    .menu-open .burger span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+    .menu-open .burger span:nth-child(2) { top: 19px; transform: rotate(-45deg); }
+
+    .overlay {
+      position: fixed; inset: 0; z-index: 150; display: flex; flex-direction: column; justify-content: center;
+      padding: 96px 24px 48px; background: rgba(250, 250, 247, 0.8);
+      backdrop-filter: blur(64px); -webkit-backdrop-filter: blur(64px);
+      opacity: 0; visibility: hidden; transition: opacity 700ms var(--ease), visibility 0s linear 700ms;
+    }
+    .menu-open .overlay { opacity: 1; visibility: visible; transition: opacity 700ms var(--ease), visibility 0s; }
+    .overlay ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .overlay li { overflow: hidden; }
+    .overlay a.ov-link {
+      display: block; font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.03em;
+      text-decoration: none; padding: 8px 0; transform: translateY(48px); opacity: 0;
+      transition: transform 800ms var(--ease), opacity 800ms var(--ease);
+    }
+    .menu-open .overlay a.ov-link { transform: translateY(0); opacity: 1; }
+    .overlay li:nth-child(1) a { transition-delay: 100ms; }
+    .overlay li:nth-child(2) a { transition-delay: 150ms; }
+    .overlay li:nth-child(3) a { transition-delay: 200ms; }
+    .overlay li:nth-child(4) a { transition-delay: 250ms; }
+    .overlay li:nth-child(5) a { transition-delay: 300ms; }
+    .overlay li:nth-child(6) a { transition-delay: 350ms; }
+    .overlay .ov-cta { margin-top: 32px; opacity: 0; transform: translateY(48px); transition: transform 800ms var(--ease) 400ms, opacity 800ms var(--ease) 400ms; }
+    .menu-open .overlay .ov-cta { opacity: 1; transform: none; }
+
+    @media (max-width: 899px) {
+      .nav { width: 100%; justify-content: space-between; padding: 8px 8px 8px 24px; }
+      .nav-links, .nav .nav-cta { display: none; }
+      .burger { display: block; }
     }
 
-    .btn-primary {
-      background: var(--ink);
-      color: var(--paper);
+    /* ===== Hero ===== */
+    .hero { padding: 144px 0 64px; }
+    @media (min-width: 900px) { .hero { padding: 176px 0 96px; } }
+    .hero-grid { display: grid; gap: 48px; align-items: center; }
+    @media (min-width: 1000px) { .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 64px; } }
+    .status {
+      display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono);
+      font-size: 12px; line-height: 16px; color: var(--muted); padding: 4px 12px;
+      border: 1px solid var(--line); border-radius: 9999px; background: var(--card); margin-bottom: 24px;
     }
-
-    .btn-primary:hover {
-      background: var(--signal);
-      transform: translateY(-1px);
+    .status i { width: 8px; height: 8px; border-radius: 9999px; background: #22A04B; box-shadow: 0 0 0 4px rgba(34, 160, 75, 0.15); }
+    .hero h1 {
+      font-size: 36px; line-height: 40px; max-width: 680px;
+      background: linear-gradient(90deg, #000000, #666666);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-
-    .btn-primary .arrow {
-      transition: transform 0.2s;
+    @media (min-width: 600px) { .hero h1 { font-size: 48px; line-height: 1; } }
+    @media (min-width: 1100px) { .hero h1 { font-size: 60px; line-height: 1; } }
+    .hero .sub { font-size: 18px; line-height: 28px; color: var(--muted); max-width: 680px; margin-top: 24px; }
+    .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 32px; }
+    .hero-cta small { font-size: 14px; line-height: 20px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+    .hero-cta small .ph { color: var(--ok); font-size: 16px; }
+    .facts {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 48px;
+      padding-top: 24px; border-top: 1px solid var(--line); max-width: 560px;
     }
+    @media (min-width: 600px) { .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .facts dt { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); }
+    .facts dd { font-size: 18px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; }
 
-    .btn-primary:hover .arrow {
-      transform: translateX(3px);
+    .showcase { position: relative; padding-bottom: 48px; }
+    .frame { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 8px; box-shadow: 0 24px 64px rgba(10, 10, 10, 0.08); }
+    .frame-bar { display: flex; align-items: center; gap: 4px; padding: 4px 8px 12px; }
+    .frame-bar i { width: 8px; height: 8px; border-radius: 9999px; background: var(--line); }
+    .frame-bar span { margin-left: 8px; font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); }
+    .frame img { border-radius: 8px; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+    .frame-b { position: absolute; width: 58%; right: -8px; bottom: 0; transform: rotate(2deg); }
+    .frame-a { width: 88%; }
+    @media (max-width: 599px) { .frame-b { right: 0; width: 64%; } .frame-a { width: 100%; } }
+    .sticker {
+      position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: #fff; font-size: 14px; line-height: 20px; font-weight: 600;
+      padding: 8px 12px; border-radius: 9999px;
     }
+    .sticker .ph { font-size: 16px; color: var(--signal); }
 
-    .btn-ghost {
-      color: var(--ink);
-      border-bottom: 0.5px solid var(--ink);
-      border-radius: 0;
-      padding: 14px 4px;
+    /* ===== Audience strip ===== */
+    .who { padding: 48px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--card); }
+    .who-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+    .who p { font-size: 14px; line-height: 20px; color: var(--muted); font-weight: 500; margin-right: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .chips li {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 20px; font-weight: 500;
+      padding: 8px 12px; border-radius: 9999px; background: var(--paper); border: 1px solid var(--line);
     }
+    .chips .ph { font-size: 16px; color: var(--signal-ink); }
 
-    .btn-ghost:hover {
-      color: var(--signal);
-      border-color: var(--signal);
+    /* ===== Cards / grids ===== */
+    .grid-4 { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .grid-3 { display: grid; gap: 16px; }
+    @media (min-width: 700px) { .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1000px) { .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+      transition: transform 700ms var(--ease), border-color 700ms var(--ease), box-shadow 700ms var(--ease);
     }
-
-    .hero-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 24px;
-      background: var(--ink);
-      color: var(--paper);
-      border-radius: 8px;
-      font-family: var(--mono);
-      font-size: 12px;
+    .card:hover { transform: translateY(-4px); border-color: #CFCFC8; box-shadow: 0 16px 40px rgba(10, 10, 10, 0.06); }
+    .icon {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--soft); font-size: 24px; margin-bottom: 24px;
     }
+    .card h3 { font-size: 18px; line-height: 28px; letter-spacing: -0.02em; }
+    .card p { font-size: 16px; line-height: 24px; color: var(--muted); margin-top: 8px; }
+    .card .tag { display: inline-block; margin-top: 16px; font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); }
 
-    .hero-meta-row {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 16px;
-      border-bottom: 0.5px solid rgba(250, 250, 247, 0.12);
+    /* ===== Tagline reveal ===== */
+    .tagline { padding: 96px 0; }
+    @media (min-width: 900px) { .tagline { padding: 128px 0; } }
+    .tagline p {
+      font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.03em; max-width: 880px; text-wrap: balance;
     }
+    @media (min-width: 768px) { .tagline p { font-size: 48px; line-height: 1.05; } }
+    .tagline .w { color: rgba(10, 10, 10, 0.28); transition: color 700ms var(--ease); }
+    .tagline .w.on { color: var(--ink); }
+    .tagline .w.accent.on { color: var(--signal-ink); }
 
-    .hero-meta-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+    /* ===== Work ===== */
+    .work { display: grid; gap: 24px; }
+    @media (min-width: 900px) { .work { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .case { display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 8px; transition: transform 700ms var(--ease), box-shadow 700ms var(--ease); }
+    .case:hover { transform: translateY(-4px); box-shadow: 0 24px 56px rgba(10, 10, 10, 0.08); }
+    .case-img { border-radius: 16px; overflow: hidden; background: var(--soft); }
+    .case-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform 1200ms var(--ease); }
+    .case:hover .case-img img { transform: scale(1.03); }
+    .case-body { padding: 24px 16px 16px; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+    .case-body h3 { font-size: 20px; line-height: 28px; letter-spacing: -0.02em; }
+    .case-body p { color: var(--muted); margin-top: 4px; }
+    .case-meta { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); margin-bottom: 8px; display: block; }
+    .case-arrow { flex: none; width: 40px; height: 40px; border-radius: 9999px; display: grid; place-items: center; background: var(--soft); font-size: 20px; transition: background-color 500ms var(--ease), color 500ms var(--ease), transform 500ms var(--ease); }
+    .case:hover .case-arrow { background: var(--ink); color: #fff; transform: rotate(-45deg); }
 
-    .hero-meta-label {
-      color: rgba(250, 250, 247, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    .demos-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin: 64px 0 24px; }
+    .demos-head h3 { font-size: 24px; line-height: 32px; }
+    .demos-head p { color: var(--muted); margin-top: 4px; max-width: 520px; }
+    .demos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    @media (min-width: 900px) { .demos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .demo { display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 8px; transition: transform 700ms var(--ease), border-color 700ms var(--ease); }
+    .demo:hover { transform: translateY(-4px); border-color: var(--ink); }
+    .demo img { border-radius: 8px; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; width: 100%; }
+    .live { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--soft); }
+    .live iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: 0 0; pointer-events: none; }
+    .demo span { display: flex; justify-content: space-between; align-items: center; padding: 12px 8px 4px; font-size: 14px; line-height: 20px; font-weight: 600; }
 
-    .hero-meta-value {
-      font-weight: 500;
-    }
+    /* ===== Process ===== */
+    .steps { display: grid; gap: 16px; list-style: none; counter-reset: s; }
+    @media (min-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .step { counter-increment: s; }
+    .step::before { content: "0" counter(s); display: block; font-family: var(--mono); font-size: 14px; line-height: 20px; color: var(--signal-ink); margin-bottom: 24px; }
+    .step .dur { display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); padding: 4px 8px; border-radius: 9999px; background: var(--soft); }
 
-    .hero-meta-value .sig {
-      color: var(--signal);
-    }
+    /* ===== Pricing ===== */
+    .prices { display: grid; gap: 16px; align-items: stretch; }
+    @media (min-width: 900px) { .prices { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .price { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px 24px 24px; position: relative; }
+    .price.featured { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .price.featured p, .price.featured li { color: #C9C9C3; }
+    .price.featured .ph-check { color: var(--signal); }
+    .badge { position: absolute; top: 24px; right: 24px; font-family: var(--mono); font-size: 12px; line-height: 16px; padding: 4px 8px; border-radius: 9999px; background: var(--signal); color: #fff; }
+    .price h3 { font-size: 18px; line-height: 28px; }
+    .price .amount { font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+    .price .amount small { font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0; }
+    .price .amount .from { display: block; font-family: var(--mono); font-size: 12px; line-height: 16px; font-weight: 400; color: inherit; opacity: 0.7; margin-bottom: 4px; }
+    .price > p { color: var(--muted); margin-top: 12px; }
+    .price ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 24px 0 32px; flex: 1; }
+    .price li { display: flex; gap: 8px; align-items: flex-start; color: var(--muted); }
+    .price li .ph { font-size: 20px; color: var(--ok); flex: none; margin-top: 2px; }
+    .price .btn { width: 100%; }
+    .price.featured .btn { background: #fff; color: var(--ink); border-color: #fff; }
+    .price.featured .btn:hover { background: var(--signal); border-color: var(--signal); color: #fff; }
+    .price-note { margin-top: 24px; display: flex; gap: 12px; align-items: flex-start; padding: 16px 24px; border-radius: 16px; background: var(--soft); color: var(--muted); }
+    .price-note .ph { font-size: 24px; color: var(--ink); flex: none; }
 
-    @media (max-width: 900px) {
-      .hero {
-        padding: 2.5rem 0 3.5rem;
-      }
+    /* ===== About ===== */
+    .about { display: grid; gap: 48px; align-items: start; }
+    @media (min-width: 900px) { .about { grid-template-columns: 1.2fr 1fr; gap: 64px; } }
+    .about p + p { margin-top: 16px; }
+    .about .body p { font-size: 18px; line-height: 28px; color: var(--muted); }
+    .about .body p strong { color: var(--ink); font-weight: 600; }
+    .kv { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 8px 24px; }
+    .kv div { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .kv div:last-child { border-bottom: 0; }
+    .kv dt { font-family: var(--mono); font-size: 12px; line-height: 20px; color: var(--muted); }
+    .kv dd { font-size: 14px; line-height: 20px; font-weight: 500; text-align: right; }
 
-      .hero .container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .hero-meta {
-        max-width: 320px;
-      }
-    }
-
-    /* ===== SECTION HEADERS ===== */
-    .section {
-      padding: 6rem 0;
-      border-bottom: 0.5px solid var(--line);
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 3.5rem;
-      padding-bottom: 20px;
-      border-bottom: 0.5px solid var(--line);
-    }
-
-    .section-label {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--concrete);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .section-label::before {
-      content: '— ';
-      color: var(--signal);
-      margin-right: 4px;
-    }
-
-    .section-count {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--concrete);
-    }
-
-    h2 {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-
-    /* ===== SLUŽBY ===== */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .service {
-      padding: 32px;
-      border-bottom: 0.5px solid var(--line);
-      border-right: 0.5px solid var(--line);
-      background: var(--paper);
-      transition: background 0.2s;
-    }
-
-    .service:hover {
-      background: #F4EFE5;
-    }
-
-    .service:nth-child(2n) {
-      border-right: none;
-    }
-
-    .service:nth-last-child(-n+2) {
-      border-bottom: none;
-    }
-
-    .service-num {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--signal);
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
-
-    .service h3 {
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .service p {
-      color: var(--concrete);
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    @media (max-width: 720px) {
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .service {
-        border-right: none !important;
-      }
-
-      .service:nth-last-child(1) {
-        border-bottom: none;
-      }
-
-      .service:nth-last-child(2) {
-        border-bottom: 0.5px solid var(--line);
-      }
-    }
-
-    /* ===== PROCES ===== */
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      counter-reset: step;
-    }
-
-    .step {
-      position: relative;
-      padding-top: 32px;
-      border-top: 1px solid var(--ink);
-    }
-
-    .step::before {
-      counter-increment: step;
-      content: counter(step, decimal-leading-zero);
-      position: absolute;
-      top: -14px;
-      left: 0;
-      background: var(--paper);
-      padding-right: 12px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--signal);
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-
-    .step h4 {
-      font-size: 17px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      font-size: 14px;
-      color: var(--concrete);
-      line-height: 1.55;
-    }
-
-    .step .step-dur {
-      display: block;
-      margin-top: 14px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--concrete);
-    }
-
-    @media (max-width: 900px) {
-      .process {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .process {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ===== CENÍK ===== */
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .plan {
-      padding: 32px 28px;
-      background: var(--paper);
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
+    .mono-av {
+      flex: none; width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--ink); color: #fff; font-weight: 600; font-size: 16px; line-height: 24px; letter-spacing: -0.02em;
       position: relative;
     }
+    .mono-av::after { content: ""; position: absolute; right: -4px; bottom: -4px; width: 12px; height: 12px; border-radius: 9999px; background: var(--signal); border: 2px solid var(--card); }
+    .mono-lg { width: 64px; height: 64px; border-radius: 16px; font-size: 20px; line-height: 28px; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #22A04B; box-shadow: 0 0 0 4px rgba(34, 160, 75, 0.15); }
+    .profile { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 8px; }
+    .profile-top { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 16px; }
+    .profile-top strong { display: block; font-size: 18px; line-height: 28px; letter-spacing: -0.02em; }
+      .profile-top div span { font-size: 14px; line-height: 20px; color: var(--muted); }
+    .profile-top span.pill { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--ink); padding: 4px 12px; border-radius: 9999px; background: var(--soft); }
+    .profile .kv { border: 0; background: var(--paper); border-radius: 16px; }
 
-    .plan.featured {
-      background: var(--ink);
-      color: var(--paper);
-      border-color: var(--ink);
-    }
-
-    .plan-badge {
-      position: absolute;
-      top: -11px;
-      left: 24px;
-      font-family: var(--mono);
-      font-size: 11px;
-      padding: 4px 10px;
-      background: var(--signal);
-      color: var(--paper);
-      border-radius: 4px;
-      letter-spacing: 1px;
-    }
-
-    .plan-name {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--concrete);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .plan.featured .plan-name {
-      color: rgba(250, 250, 247, 0.55);
-    }
-
-    .plan-price {
-      font-size: 30px;
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      margin-bottom: 4px;
-      white-space: nowrap;
-    }
-
-    .plan-price .currency {
-      font-size: 17px;
-      color: var(--concrete);
-    }
-
-    .plan.featured .plan-price .currency {
-      color: rgba(250, 250, 247, 0.55);
-    }
-
-    .plan-price .period {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--concrete);
-      letter-spacing: 0;
-      margin-left: 4px;
-    }
-
-    .plan-price a, .plan-price a:visited,
-    .hero-meta-value a, .hero-meta-value a:visited {
-      color: inherit;
-      text-decoration: none;
-      pointer-events: none;
-      cursor: default;
-    }
-
-    .plan-desc {
-      font-size: 14px;
-      color: var(--concrete);
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 0.5px solid var(--line);
-      line-height: 1.55;
-    }
-
-    .plan.featured .plan-desc {
-      border-color: rgba(250, 250, 247, 0.12);
-    }
-
-    .plan-features {
-      list-style: none;
-      margin-bottom: 28px;
-      flex: 1;
-    }
-
-    .plan-features li {
-      font-size: 14px;
-      padding: 8px 0 8px 22px;
-      position: relative;
-    }
-
-    .plan-features li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 14px;
-      width: 10px;
-      height: 1.5px;
-      background: var(--signal);
-    }
-
-    .plan .btn {
-      justify-content: center;
-      width: 100%;
-    }
-
-    .plan.featured .btn-primary {
-      background: var(--signal);
-    }
-
-    .plan.featured .btn-primary:hover {
-      background: var(--paper);
-      color: var(--ink);
-    }
-
-    .plan.outline .btn-primary {
-      background: transparent;
-      color: var(--ink);
-      border: 0.5px solid var(--ink);
-    }
-
-    .plan.outline .btn-primary:hover {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    @media (max-width: 900px) {
-      .pricing {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ===== REALIZACE ===== */
-    .works {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px 28px;
-    }
-
-    .work {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .work-preview {
-      aspect-ratio: 4 / 3;
-      background: var(--ink);
-      border-radius: 10px;
-      margin-bottom: 18px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .work-preview img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .work:hover .work-preview {
-      transform: translateY(-3px);
-    }
-
-    .work-preview::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 10, 0.6) 100%);
-      border-radius: 10px;
-      pointer-events: none;
-    }
-
-    .work-preview-label {
-      position: absolute;
-      bottom: 18px;
-      left: 20px;
-      right: 20px;
-      color: var(--paper);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 1px;
-      opacity: 0.85;
-      z-index: 2;
-    }
-
-    .work-meta {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--concrete);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .work h4 {
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
-
-    .work p {
-      font-size: 14px;
-      color: var(--concrete);
-      line-height: 1.5;
-    }
-
-    @media (max-width: 720px) {
-      .works {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ===== O MNĚ ===== */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 17px;
-      line-height: 1.65;
-      color: var(--ink);
-      margin-bottom: 18px;
-      max-width: 480px;
-    }
-
-    .about-text p.muted {
-      color: var(--concrete);
-    }
-
-    .about-stack {
-      display: grid;
-      gap: 16px;
-      padding: 28px;
-      background: #F4EFE5;
-      border-radius: 10px;
-      font-family: var(--mono);
-      font-size: 13px;
-    }
-
-    .stack-row {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 14px;
-      border-bottom: 0.5px solid rgba(10, 10, 10, 0.1);
-    }
-
-    .stack-row:last-child {
-      border: none;
-      padding-bottom: 0;
-    }
-
-    .stack-label {
-      color: var(--concrete);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 11px;
-    }
-
-    .stack-value {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    @media (max-width: 900px) {
-      .about {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
+    .faq-side { align-self: start; }
+    @media (min-width: 900px) { .faq-side { position: sticky; top: 112px; } }
+    .ask { margin-top: 32px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+    .ask-top { display: flex; align-items: center; gap: 16px; }
+    .ask-top strong { display: block; font-size: 18px; line-height: 28px; letter-spacing: -0.02em; }
+      .ask-top div span { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; line-height: 20px; color: var(--muted); }
+    .ask p { color: var(--muted); margin-top: 16px; }
+    .ask-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .mini-facts { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+    .mini-facts li { background: var(--soft); border-radius: 16px; padding: 16px; }
+    .mini-facts strong { display: block; font-size: 18px; line-height: 28px; letter-spacing: -0.02em; }
+    .mini-facts span { display: block; font-size: 12px; line-height: 16px; color: var(--muted); margin-top: 4px; }
 
     /* ===== FAQ ===== */
-    .faq {
-      max-width: 780px;
+    .faq-grid { display: grid; gap: 48px; }
+    @media (min-width: 900px) { .faq-grid { grid-template-columns: 1fr 1.6fr; gap: 64px; } }
+    .faq { display: flex; flex-direction: column; gap: 8px; }
+    .faq details { background: var(--card); border: 1px solid var(--line); border-radius: 16px; transition: border-color 500ms var(--ease); }
+    .faq details[open] { border-color: #CFCFC8; }
+    .faq summary {
+      list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 16px 24px; font-weight: 600; font-size: 16px; line-height: 24px; border-radius: 16px;
     }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .ph { font-size: 20px; flex: none; transition: transform 700ms var(--ease); }
+    .faq details[open] summary .ph { transform: rotate(45deg); }
+    .faq .ans { padding: 0 24px 24px; color: var(--muted); }
 
-    details {
-      padding: 22px 0;
-      border-bottom: 0.5px solid var(--line);
-      cursor: pointer;
-    }
+    /* ===== Blog ===== */
+    .posts { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .posts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .post { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; text-decoration: none; }
+    .post h3 { font-size: 18px; line-height: 28px; }
+    .post .cat { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); display: block; margin-bottom: 8px; }
+    .post .more { font-size: 14px; line-height: 20px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
 
-    details summary {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
+    /* ===== Contact ===== */
+    .contact { background: var(--ink); color: #fff; border-radius: 32px; padding: 48px 24px; }
+    @media (min-width: 900px) { .contact { padding: 64px; } }
+    .contact-grid { display: grid; gap: 48px; }
+    @media (min-width: 1000px) { .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 64px; } }
+    .contact .eyebrow { color: #FF8A66; }
+    .contact h2 { font-size: 36px; line-height: 40px; max-width: 680px; }
+    @media (min-width: 768px) { .contact h2 { font-size: 48px; line-height: 1; } }
+    .contact .lead { color: #B5B5AE; }
+    .reassure { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .reassure li { display: flex; gap: 12px; align-items: flex-start; color: #DADAD4; }
+    .reassure .ph { font-size: 20px; color: var(--signal); flex: none; margin-top: 2px; }
+    .direct { display: flex; flex-direction: column; gap: 8px; margin-top: 40px; }
+    .direct a {
+      display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 12px 16px; border-radius: 16px;
+      border: 1px solid #313131; transition: background-color 500ms var(--ease), border-color 500ms var(--ease);
     }
+    .direct a:hover { background: #1F1F1F; border-color: #4A4A4A; }
+    .direct .ph { font-size: 20px; color: var(--signal); }
+    .direct small { margin-left: auto; font-family: var(--mono); font-size: 12px; line-height: 16px; color: #8C8C86; }
 
-    details summary::-webkit-details-marker {
-      display: none;
+    .form { background: #fff; color: var(--ink); border-radius: 24px; padding: 24px; }
+    @media (min-width: 768px) { .form { padding: 32px; } }
+    .form h3 { font-size: 20px; line-height: 28px; }
+    .form > p { color: var(--muted); font-size: 14px; line-height: 20px; margin-top: 4px; margin-bottom: 24px; }
+    .row { display: grid; gap: 16px; }
+    @media (min-width: 600px) { .row.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .field label { font-size: 14px; line-height: 20px; font-weight: 600; }
+    .field label em { font-style: normal; color: var(--muted); font-weight: 400; }
+    .field input, .field textarea, .field select {
+      font: inherit; font-size: 16px; line-height: 24px; color: var(--ink); background: var(--paper);
+      border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; width: 100%;
+      transition: border-color 500ms var(--ease), box-shadow 500ms var(--ease), background-color 500ms var(--ease);
     }
+    .field textarea { min-height: 128px; resize: vertical; }
+    .field input:hover, .field textarea:hover, .field select:hover { border-color: #CFCFC8; }
+    .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--ink); background: #fff; box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.06); }
+    .field.invalid input, .field.invalid textarea { border-color: var(--err); }
+    .field .err { display: none; font-size: 14px; line-height: 20px; color: var(--err); }
+    .field.invalid .err { display: flex; align-items: center; gap: 4px; }
+    .types { display: flex; flex-wrap: wrap; gap: 8px; border: 0; margin-bottom: 16px; }
+    .types legend { font-size: 14px; line-height: 20px; font-weight: 600; margin-bottom: 8px; }
+    .types label { position: relative; cursor: pointer; }
+    .types input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+    .types span {
+      display: inline-block; font-size: 14px; line-height: 20px; font-weight: 500; padding: 8px 12px; border-radius: 9999px;
+      border: 1px solid var(--line); background: var(--paper);
+      transition: background-color 500ms var(--ease), color 500ms var(--ease), border-color 500ms var(--ease);
+    }
+    .types label:hover span { border-color: var(--ink); }
+    .types input:checked + span { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .types input:focus-visible + span { outline: 2px solid var(--signal); outline-offset: 2px; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-foot { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+    .form-foot .btn { width: 100%; }
+    .form-foot small { font-size: 12px; line-height: 16px; color: var(--muted); }
+    .form-msg { display: none; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 12px; font-size: 14px; line-height: 20px; margin-top: 16px; }
+    .form-msg .ph { font-size: 20px; flex: none; }
+    .form-msg.ok { display: flex; background: #EAF5EC; color: var(--ok); }
+    .form-msg.bad { display: flex; background: #FDECEA; color: var(--err); }
+    .spin { width: 16px; height: 16px; border-radius: 9999px; border: 2px solid rgba(255, 255, 255, 0.35); border-top-color: #fff; display: none; animation: r 800ms linear infinite; }
+    .loading .spin { display: inline-block; }
+    .loading .ph-paper-plane-right { display: none; }
+    @keyframes r { to { transform: rotate(360deg); } }
 
-    details summary::after {
-      content: '+';
-      font-family: var(--mono);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--signal);
-      transition: transform 0.2s;
-    }
+    /* ===== Footer ===== */
+    footer { padding: 48px 0 32px; }
+    .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; font-size: 14px; line-height: 20px; color: var(--muted); }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 16px 24px; }
+    .foot a { text-decoration: none; transition: color 500ms var(--ease); }
+    .foot a:hover { color: var(--ink); }
 
-    details[open] summary::after {
-      content: '−';
+    /* ===== Cookie ===== */
+    .cookie {
+      position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 250; max-width: 560px; margin: 0 auto;
+      display: none; flex-wrap: wrap; align-items: center; gap: 16px; justify-content: space-between;
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px;
+      box-shadow: 0 16px 48px rgba(10, 10, 10, 0.12); font-size: 14px; line-height: 20px; color: var(--muted);
     }
+    .cookie p { flex: 1 1 260px; }
+    .cookie div { display: flex; gap: 8px; }
 
-    details p {
-      margin-top: 14px;
-      color: var(--concrete);
-      font-size: 15px;
-      line-height: 1.65;
-    }
+    /* ===== Scroll reveal ===== */
+    .js .rv { opacity: 0; transform: translateY(64px); filter: blur(12px); transition: opacity 900ms var(--ease), transform 900ms var(--ease), filter 900ms var(--ease); }
+    .js .rv.in { opacity: 1; transform: none; filter: blur(0); }
+    .js .rv.d1 { transition-delay: 100ms; } .js .rv.d2 { transition-delay: 200ms; } .js .rv.d3 { transition-delay: 300ms; }
 
-    /* ===== KONTAKT CTA ===== */
-    .cta-block {
-      padding: 6rem 0;
-      background: var(--ink);
-      color: var(--paper);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-block::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(250, 250, 247, 0.03) 0.5px, transparent 0.5px),
-        linear-gradient(90deg, rgba(250, 250, 247, 0.03) 0.5px, transparent 0.5px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(ellipse at 30% 50%, black, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-block .container {
-      position: relative;
-    }
-
-    .cta-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .cta-block h2 {
-      color: var(--paper);
-      font-size: clamp(32px, 5vw, 56px);
-    }
-
-    .cta-block h2 .accent {
-      color: var(--signal);
-    }
-
-    .cta-channels {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      background: rgba(250, 250, 247, 0.08);
-      border-radius: 10px;
-      padding: 2px;
-    }
-
-    .cta-channel {
-      padding: 20px 24px;
-      background: var(--ink);
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-decoration: none;
-      color: var(--paper);
-      transition: background 0.15s;
-    }
-
-    .cta-channel:hover {
-      background: #1C1C1A;
-    }
-
-    .cta-channel-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: rgba(250, 250, 247, 0.55);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .cta-channel-value {
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .cta-channel-arrow {
-      font-family: var(--mono);
-      color: var(--signal);
-      transition: transform 0.2s;
-    }
-
-    .cta-channel:hover .cta-channel-arrow {
-      transform: translate(3px, -3px);
-    }
-
-    @media (max-width: 900px) {
-      .cta-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
-
-    /* ===== BLOG PREVIEW ===== */
-    .blog-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: var(--line);
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    @media (max-width: 720px) {
-      .blog-preview-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 2.5rem 0;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--concrete);
-    }
-
-    footer .container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    footer a {
-      color: var(--concrete);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--ink);
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; transition-delay: 0ms !important; }
+      .js .rv { opacity: 1; transform: none; filter: none; }
+      html { scroll-behavior: auto; }
     }
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Jak dlouho bude trvat, než bude web hotový?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "U balíčku Start počítejte se 7–14 dny od podpisu poptávky. U vícestránkového webu obvykle 2–3 týdny. Přesný termín se dozvíte v cenové nabídce — a drží."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Můžu si web sám upravovat?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Záleží na variantě. U statických webů vyměňuji texty a fotky za vás na základě vaší zprávy. U varianty Pro můžu nastavit jednoduchý admin, kde si upravíte, co potřebujete."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Co se stane, když budu chtít později změnu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Napíšete mi. Menší úpravy (texty, fotky, nová sekce) řeším rychle a na faktury za reálně odpracované hodiny. Žádné předplacené balíčky, které musíte utratit."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Musím mít vlastní doménu a hosting?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ne nutně. Pokud ještě nic nemáte, pomůžu s výběrem a registrací. Pokud máte starou doménu a chcete ji přenést, zařídím to taky."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Funguje to i pro firmy mimo Královéhradecký kraj?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ano. Drtivá většina komunikace probíhá mailem nebo přes video hovor. Osobní schůzka není nutná — ale pokud jste z východních Čech, rád se stavím."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Nikolas Bekera — tvorba webových stránek",
-    "description": "Tvorba webových stránek pro řemeslníky a malé firmy v Královéhradeckém kraji. Rychlé, ručně kódované weby od 5 000 Kč.",
+    "name": "Nikolas Bekera | tvorba webových stránek",
+    "description": "Tvorba webových stránek na míru pro firmy, živnostníky, restaurace, ubytování i osobní projekty. Rychlé weby od 5 000 Kč.",
     "url": "https://nikolasbekera.cz",
+    "image": "https://nikolasbekera.cz/og-image.png",
     "telephone": "+420731212219",
     "email": "nik.bekera@gmail.com",
-    "priceRange": "5000–20000 Kč",
+    "priceRange": "5000–40000 Kč",
     "currenciesAccepted": "CZK",
     "paymentAccepted": "Bankovní převod",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Náměstí 54",
       "addressLocality": "Mlázovice",
       "addressRegion": "Královéhradecký kraj",
       "addressCountry": "CZ"
     },
     "areaServed": [
-      {
-        "@type": "AdministrativeArea",
-        "name": "Královéhradecký kraj"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Česká republika"
-      }
+      { "@type": "AdministrativeArea", "name": "Královéhradecký kraj" },
+      { "@type": "Country", "name": "Česká republika" }
     ],
     "sameAs": [
       "https://www.instagram.com/nikolasbekera.cz/",
@@ -1098,532 +525,658 @@
     "serviceType": [
       "Tvorba webových stránek",
       "Webdesign",
+      "Redesign webu",
+      "Landing page",
       "SEO optimalizace",
-      "Weby pro řemeslníky",
-      "Weby pro malé firmy",
       "Rezervační systémy",
       "Objednávkové systémy"
     ],
     "openingHours": "Mo-Fr 08:00-17:00"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Kolik stojí webová stránka?", "acceptedAnswer": { "@type": "Answer", "text": "Jednostránkový web začíná na 5 000 Kč, vícestránkový firemní web na 8 000 Kč a web na míru s rezervacemi nebo objednávkami na 15 000 Kč. Přesnou a pevnou cenu dostanete předem v nabídce." } },
+      { "@type": "Question", "name": "Jak dlouho trvá tvorba webu?", "acceptedAnswer": { "@type": "Answer", "text": "Jednostránkový web bývá hotový za 7 až 14 dní, vícestránkový za 2 až 3 týdny. Termín najdete v nabídce a drží." } },
+      { "@type": "Question", "name": "Platím nějaké měsíční poplatky?", "acceptedAnswer": { "@type": "Answer", "text": "Mně ne. Platíte jen hosting a doménu přímo u poskytovatele, obvykle několik stovek korun ročně. Web patří vám." } },
+      { "@type": "Question", "name": "Co od vás budu potřebovat?", "acceptedAnswer": { "@type": "Answer", "text": "Pár informací o vaší firmě nebo projektu, fotky a logo, pokud je máte. S texty pomůžu, nemusíte nic psát sami." } },
+      { "@type": "Question", "name": "Můžu si web upravovat sám?", "acceptedAnswer": { "@type": "Answer", "text": "Záleží na variantě. U jednoduchých webů změny udělám já podle vaší zprávy. U webu na míru můžu nastavit jednoduchou administraci, kde si texty a fotky upravíte sami." } },
+      { "@type": "Question", "name": "Co když budu později chtít změnu?", "acceptedAnswer": { "@type": "Answer", "text": "Napíšete mi. Menší úpravy řeším rychle a fakturuji jen skutečně odpracovaný čas. Žádné předplacené balíčky." } },
+      { "@type": "Question", "name": "Musím mít vlastní doménu a hosting?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Pomůžu s výběrem a registrací domény i hostingu. Pokud už doménu máte, převedu ji." } },
+      { "@type": "Question", "name": "Uděláte i rezervační nebo objednávkový systém?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Například pro restauraci U Koblížků jsem postavil objednávky obědů s rozvozem na týden dopředu." } },
+      { "@type": "Question", "name": "Pracujete i mimo Královéhradecký kraj?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, po celé republice. Domluvíme se mailem, telefonem nebo přes videohovor. Ve východních Čechách se rád stavím osobně." } }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip" href="#main">Přeskočit na obsah</a>
 
-  <nav>
-    <div class="container">
-      <a href="#" class="logo">nikolas bekera<span>.</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="#sluzby">služby</a>
-        <a href="#proces">proces</a>
-        <a href="#cenik">ceník</a>
-        <a href="#realizace">realizace</a>
-        <a href="sablony/">šablony</a>
-        <a href="blog/index.html">blog</a>
-      </div>
-      <a href="#kontakt" class="nav-cta">napište mi</a>
-      <button class="nav-burger" id="navBurger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <!-- ===== NAV ===== -->
+  <div class="nav-shell">
+    <nav class="nav" id="nav" aria-label="Hlavní navigace">
+      <a href="#top" class="logo" aria-label="Nikolas Bekera, úvod">nikolas bekera<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#realizace">Realizace</a></li>
+        <li><a href="sablony/">Ukázky</a></li>
+        <li><a href="#cenik">Ceník</a></li>
+        <li><a href="#faq">Otázky</a></li>
+        <li><a href="blog/">Blog</a></li>
+      </ul>
+      <a href="#kontakt" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
+    </nav>
+  </div>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="container">
-      <div>
-        <div class="status-chip">
-          <span class="status-dot"></span>
-          <span>k dispozici pro nové projekty · 2026</span>
-        </div>
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <ul>
+      <li><a class="ov-link" href="#sluzby">Služby</a></li>
+      <li><a class="ov-link" href="#realizace">Realizace</a></li>
+      <li><a class="ov-link" href="sablony/">Ukázky</a></li>
+      <li><a class="ov-link" href="#cenik">Ceník</a></li>
+      <li><a class="ov-link" href="#faq">Otázky</a></li>
+      <li><a class="ov-link" href="blog/">Blog</a></li>
+    </ul>
+    <a href="#kontakt" class="btn btn-lg ov-cta ov-link-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
+  </div>
 
-        <h1 class="display">
-          Rychlé, čisté,<br>
-          ručně kódované<br>
-          weby<span class="accent">.</span>
-        </h1>
-
-        <p class="hero-lead">
-          Freelance web developer z Mlázovic v Královéhradeckém kraji. Stavím weby, rezervační a objednávkové systémy pro řemeslníky a malé firmy, které
-          chtějí vypadat moderně a nechtějí platit agenturu. Žádné šablony z Webnode, žádné paušály navždy.
-        </p>
-
-        <div class="hero-ctas">
-          <a href="#kontakt" class="btn btn-primary">
-            <span>domluvit nezávaznou schůzku</span>
-            <span class="arrow">→</span>
-          </a>
-          <a href="#realizace" class="btn btn-ghost">podívat se na realizace</a>
-        </div>
-      </div>
-
-      <div class="hero-meta">
-        <div class="hero-meta-row">
-          <span class="hero-meta-label">stack</span>
-          <span class="hero-meta-value">HTML · CSS · JS</span>
-        </div>
-        <div class="hero-meta-row">
-          <span class="hero-meta-label">doba</span>
-          <span class="hero-meta-value">~ 2 týdny</span>
-        </div>
-        <div class="hero-meta-row">
-          <span class="hero-meta-label">cena od</span>
-          <span class="hero-meta-value"><span class="sig">5 000 Kč</span></span>
-        </div>
-        <div class="hero-meta-row">
-          <span class="hero-meta-label">lokace</span>
-          <span class="hero-meta-value">Mlázovice · CZ</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SLUŽBY ============ -->
-  <section class="section" id="sluzby">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">co dělám</span>
-        <span class="section-count">01 / 05</span>
-      </div>
-
-      <div style="margin-bottom: 4rem; max-width: 680px;">
-        <h2>Weby, které vypadají, že za nimi <em
-            style="color: var(--concrete); font-style: italic; font-weight: 400;">stojí někdo, kdo tomu rozumí</em>.
-        </h2>
-      </div>
-
-      <div class="services">
-        <div class="service">
-          <div class="service-num">— 01</div>
-          <h3>Firemní prezentace</h3>
-          <p>Jednostránkový nebo vícestránkový web pro řemeslníky, hotely, advokáty nebo kohokoliv, kdo potřebuje
-            profesionální vizitku na internetu. Responsivní, rychlý, SEO-friendly.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">— 02</div>
-          <h3>Redesign zastaralého webu</h3>
-          <p>Máte Webnode z roku 2014 a víte, že to takhle dál nejde? Udělám moderní verzi vašeho webu na vlastním
-            hostingu, bez cizích šablon a bez omezení.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">— 03</div>
-          <h3>Rezervační & objednávkové systémy</h3>
-          <p>Potřebujete, aby si zákazníci sami rezervovali termín, objednali jídlo nebo vybrali službu online? Postavím
-            vám systém přesně na míru — přehledný pro zákazníka, pohodlný pro vás.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">— 04</div>
-          <h3>Úpravy a doplnění</h3>
-          <p>Potřebujete později přidat sekci, vyměnit fotky nebo upravit texty? Menší úpravy řeším rychle a za férové
-            hodinové sazby. Žádné vázání smlouvou.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">— 05</div>
-          <h3>Hosting a doména</h3>
-          <p>Pomůžu s registrací domény, nastavením hostingu u Wedosu nebo Forpsi, SSL certifikátem a mailovými
-            schránkami. Kompletně na klíč.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROCES ============ -->
-  <section class="section" id="proces">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">jak to probíhá</span>
-        <span class="section-count">02 / 05</span>
-      </div>
-
-      <div style="margin-bottom: 4rem; max-width: 680px;">
-        <h2>Od poptávky k hotovému webu za <em style="color: var(--signal); font-style: italic; font-weight: 500;">14
-            dní</em>.</h2>
-      </div>
-
-      <div class="process">
-        <div class="step">
-          <h4>Úvodní kontakt</h4>
-          <p>Zjistíme, co potřebujete a jak Vám můžu pomoct. Můžeme si krátce zavolat, napsat e-mail, nebo se i potkat u
-            kafe.</p>
-          <span class="step-dur">30 minut</span>
-        </div>
-        <div class="step">
-          <h4>Návrh a cenovka</h4>
-          <p>Dostanete strukturu webu, barevné a typografické varianty a pevnou cenu. Žádné skryté položky.</p>
-          <span class="step-dur">2–3 dny</span>
-        </div>
-        <div class="step">
-          <h4>Kódování</h4>
-          <p>Stavím web ručně od nuly. Během práce dostáváte průběžné náhledy a můžete připomínkovat.</p>
-          <span class="step-dur">7–10 dní</span>
-        </div>
-        <div class="step">
-          <h4>Spuštění</h4>
-          <p>Nasadím web na váš hosting, nastavím domény, SSL, Google business a předám vám klíče.</p>
-          <span class="step-dur">1 den</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CENÍK ============ -->
-  <section class="section" id="cenik">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">ceník</span>
-        <span class="section-count">03 / 05</span>
-      </div>
-
-      <div style="margin-bottom: 4rem; max-width: 680px;">
-        <h2>Tři varianty podle toho, <em style="color: var(--concrete); font-style: italic; font-weight: 400;">kolik
-            webu potřebujete</em>.</h2>
-        <p style="color: var(--concrete); font-size: 16px; margin-top: 12px;">Vyberte si variantu, která sedí vašim
-          potřebám. Konkrétní cenu v rámci rozsahu domluvíme podle rozsahu projektu.</p>
-      </div>
-
-      <div class="pricing">
-        <div class="plan outline">
-          <div class="plan-name">Základní vizitka</div>
-          <div class="plan-price">5 000 – 12 000 <span class="currency">Kč</span></div>
-          <div class="plan-desc">Nejlevnější varianta pro řemeslníky a drobné živnostníky, kteří potřebují profesionální
-            vizitku na internetu.</div>
-          <ul class="plan-features">
-            <li>Jednostránkový web</li>
-            <li>Jednoduchý vizuál</li>
-            <li>Základní SEO s AI</li>
-          </ul>
-          <a href="#kontakt" class="btn btn-primary">mám zájem</a>
-        </div>
-
-        <div class="plan featured">
-          <div class="plan-badge">DOPORUČUJI</div>
-          <div class="plan-name">Basic+</div>
-          <div class="plan-price">8 000 – 20 000 <span class="currency">Kč</span></div>
-          <div class="plan-desc">Vícestránkový web pro firmy, které potřebují víc než úvodku — sekce, galerie, ceník,
-            kontakty.</div>
-          <ul class="plan-features">
-            <li>2–3 podstránky</li>
-            <li>Jednoduchý design</li>
-            <li>SEO optimalizace</li>
-          </ul>
-          <a href="#kontakt" class="btn btn-primary">mám zájem</a>
-        </div>
-
-        <div class="plan outline">
-          <div class="plan-name">Pro</div>
-          <div class="plan-price">15 000 – 40 000 <span class="currency">Kč</span></div>
-          <div class="plan-desc">Robustnější prezentace s propracovaným designem a rozšířeným SEO pro firmy, které
-            chtějí maximum.</div>
-          <ul class="plan-features">
-            <li>Vícestránkový web</li>
-            <li>Rozšířený design</li>
-            <li>Rozšířené SEO &amp; texty s AI</li>
-          </ul>
-          <a href="#kontakt" class="btn btn-primary">mám zájem</a>
-        </div>
-      </div>
-
-      <div
-        style="margin-top: 3rem; padding: 24px; background: #F4EFE5; border-radius: 10px; font-size: 14px; color: var(--concrete); font-family: var(--mono); line-height: 1.7;">
-        <strong style="color: var(--ink); font-weight: 500;">// poznámka:</strong> konečná cena vždy zohledňuje rozsah a
-        složitost projektu · domluvíme ji v rámci nezávazné konzultace
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ REALIZACE ============ -->
-  <section class="section" id="realizace">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">vybrané realizace</span>
-        <span class="section-count">04 / 05</span>
-      </div>
-
-      <div style="margin-bottom: 4rem; max-width: 680px;">
-        <h2>Weby, které žijí a pracují pro své majitele.</h2>
-      </div>
-
-      <div class="works">
-        <a href="https://ukoblizku.cz" target="_blank" rel="noopener" class="work">
-          <div class="work-preview" style="background-color: #F5F0EB;">
-            <img src="obrazky/ukoblizku.jpg" alt="U Koblížků — rezervační systém obědů s rozvozem, tvorba webových stránek Nikolas Bekera" loading="lazy">
-            <div class="work-preview-label">ukoblizku.cz</div>
-          </div>
-          <div class="work-meta">
-            <span>2026</span>
-            <span>restaurace · rozvoz</span>
-          </div>
-          <h4>U Koblížků</h4>
-          <p>Rezervační systém obědů s rozvozem pro českou restauraci. Přehledný jídelníček, objednávky na týden dopředu a catering.</p>
-        </a>
-
-        <a href="https://hotelhradec.eu" target="_blank" rel="noopener" class="work">
-          <div class="work-preview" style="background-color: #3A4A3E;">
-            <img src="obrazky/hotelhradec.jpg" alt="Hotel Hradec Mlázovice — web pro rodinný hotel v Královéhradeckém kraji, tvorba webových stránek Nikolas Bekera" loading="lazy">
-            <div class="work-preview-label">hotelhradec.eu</div>
-          </div>
-          <div class="work-meta">
-            <span>2025</span>
-            <span>ubytování · služby</span>
-          </div>
-          <h4>Hotel Hradec Mlázovice</h4>
-          <p>Web pro rodinný hotel v Českém ráji. Galerie pokojů, ceník, kontakty a prezentace okolí jako výletní
-            destinace.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ O MNĚ ============ -->
-  <section class="section" id="o-mne">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">o mně</span>
-        <span class="section-count">05 / 05</span>
-      </div>
-
-      <div class="about">
-        <div class="about-text">
-          <h2 style="margin-bottom: 28px;">Nikolas Bekera<span class="accent" style="color: var(--signal);">.</span>
-          </h2>
-          <p>Jsem freelance web developer z Mlázovic v Královéhradeckém kraji. Věnuji se tvorbě moderních webových
-            stránek a rezervačních nebo objednávkových systémů pro řemeslníky, malé firmy a živnostníky v celé České republice.</p>
-          <p>Weby stavím ručně — HTML, CSS a JavaScript. Žádné WordPress šablony, žádné Webnode. Výsledkem je web, který
-            načítá pod sekundu, vypadá přesně tak, jak si to představujete, a je 100 % váš.</p>
-        </div>
-
-        <div class="about-stack">
-          <div class="stack-row">
-            <span class="stack-label">lokace</span>
-            <span class="stack-value">Mlázovice · CZ</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-label">specializace</span>
-            <span class="stack-value">static sites · landing pages · rezervační systémy</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-label">stack</span>
-            <span class="stack-value">HTML · CSS · JS · Git</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-label">hosting</span>
-            <span class="stack-value">Wedos · Forpsi · Netlify</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-label">jazyky</span>
-            <span class="stack-value">čeština · angličtina</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-label">ičo</span>
-            <span class="stack-value">09209620</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="section" style="padding-top: 4rem;">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">časté otázky</span>
-        <span class="section-count">+</span>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Jak dlouho bude trvat, než bude web hotový?</summary>
-          <p>U balíčku Start počítejte se 7–14 dny od podpisu poptávky. U vícestránkového webu obvykle 2–3 týdny. Přesný
-            termín se dozvíte v cenové nabídce — a drží.</p>
-        </details>
-        <details>
-          <summary>Můžu si web sám upravovat?</summary>
-          <p>Záleží na variantě. U statických webů vyměňuji texty a fotky za vás na základě vaší zprávy. U varianty Pro
-            můžu nastavit jednoduchý admin, kde si upravíte, co potřebujete.</p>
-        </details>
-        <details>
-          <summary>Co se stane, když budu chtít později změnu?</summary>
-          <p>Napíšete mi. Menší úpravy (texty, fotky, nová sekce) řeším rychle a na faktury za reálně odpracované
-            hodiny. Žádné předplacené balíčky, které musíte utratit.</p>
-        </details>
-        <details>
-          <summary>Musím mít vlastní doménu a hosting?</summary>
-          <p>Ne nutně. Pokud ještě nic nemáte, pomůžu s výběrem a registrací. Pokud máte starou doménu a chcete ji
-            přenést, zařídím to taky.</p>
-        </details>
-        <details>
-          <summary>Funguje to i pro firmy mimo Královéhradecký kraj?</summary>
-          <p>Ano. Drtivá většina komunikace probíhá mailem nebo přes video hovor. Osobní schůzka není nutná — ale pokud
-            jste z východních Čech, rád se stavím.</p>
-        </details>
-        <details>
-          <summary>Děláte i rezervační nebo objednávkové systémy?</summary>
-          <p>Ano. Pokud potřebujete, aby si zákazníci sami rezervovali termín, objednali jídlo nebo vybrali službu online, postavím vám systém přesně na míru. Cena se odvíjí od složitosti — domluvíme v rámci nezávazné konzultace.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BLOG ============ -->
-  <section class="section" id="blog" style="padding: 4rem 0;">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-label">blog</span>
-        <a href="blog/index.html" style="font-family: var(--mono); font-size: 12px; color: var(--concrete); text-decoration: none;">všechny články →</a>
-      </div>
-      <div class="blog-preview-grid">
-        <a href="blog/kolik-stoji-web-pro-remeslnika.html" style="background: var(--paper); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#F4EFE5'" onmouseout="this.style.background='var(--paper)'">
-          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase;">ceník &amp; ceny</span>
-          <strong style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3;">Kolik stojí web pro řemeslníka v roce 2026?</strong>
-          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); margin-top: auto; padding-top: 14px; border-top: 0.5px solid var(--line);">číst →</span>
-        </a>
-        <a href="blog/webnode-vs-web-na-miru.html" style="background: var(--paper); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#F4EFE5'" onmouseout="this.style.background='var(--paper)'">
-          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase;">srovnání</span>
-          <strong style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3;">Webnode vs. web na míru — co se vyplatí?</strong>
-          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); margin-top: auto; padding-top: 14px; border-top: 0.5px solid var(--line);">číst →</span>
-        </a>
-        <a href="blog/proc-vas-web-nenajdou-zakaznici.html" style="background: var(--paper); padding: 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#F4EFE5'" onmouseout="this.style.background='var(--paper)'">
-          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); letter-spacing: 1px; text-transform: uppercase;">SEO &amp; viditelnost</span>
-          <strong style="font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3;">Proč váš web nenajdou zákazníci na Googlu?</strong>
-          <span style="font-family: var(--mono); font-size: 11px; color: var(--signal); margin-top: auto; padding-top: 14px; border-top: 0.5px solid var(--line);">číst →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ KONTAKT ============ -->
-  <section class="cta-block" id="kontakt">
-    <div class="container">
-      <div class="cta-inner">
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="top">
+      <div class="wrap hero-grid">
         <div>
-          <div class="section-label" style="color: var(--signal); margin-bottom: 24px;">začneme<span
-              style="color: rgba(250, 250, 247, 0.4);"> · </span>kontakt</div>
-          <h2>Máte projekt? <span class="accent">Napište mi</span> a obvykle se ozvu do 24 hodin.</h2>
-          <p
-            style="color: rgba(250, 250, 247, 0.6); font-size: 16px; line-height: 1.6; margin-top: 20px; max-width: 440px;">
-            Stačí pár vět o tom, co potřebujete. Ozvu se zpět a navrhnu jednoduchý postup + odhad.</p>
+          <span class="status rv"><i></i>Volné kapacity pro nové weby</span>
+          <h1 class="rv d1">Web, který vám<br>přivede zákazníky.</h1>
+          <p class="sub rv d2">Navrhnu a postavím rychlý web pro vaši firmu, živnost nebo projekt. Pevná cena předem, hotovo zhruba za 14 dní a žádné měsíční paušály.</p>
+          <div class="hero-cta rv d3">
+            <a href="#kontakt" class="btn btn-lg">Chci nezávaznou nabídku <i class="ph ph-arrow-right"></i></a>
+            <small><i class="ph ph-check-circle"></i>Ozvu se do 24 hodin</small>
+          </div>
+          <dl class="facts rv d3">
+            <div><dt>cena od</dt><dd>5 000 Kč</dd></div>
+            <div><dt>hotovo za</dt><dd>~14 dní</dd></div>
+            <div><dt>paušál</dt><dd>0 Kč</dd></div>
+            <div><dt>web patří</dt><dd>vám</dd></div>
+          </dl>
         </div>
 
-        <div class="cta-channels">
-          <a href="mailto:nik.bekera@gmail.com" class="cta-channel">
-            <div>
-              <div class="cta-channel-label">email</div>
-              <div class="cta-channel-value">nik.bekera@gmail.com</div>
-            </div>
-            <span class="cta-channel-arrow">↗</span>
-          </a>
-          <a href="tel:+420731212219" class="cta-channel">
-            <div>
-              <div class="cta-channel-label">telefon</div>
-              <div class="cta-channel-value">+420 731 212 219</div>
-            </div>
-            <span class="cta-channel-arrow">↗</span>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener" class="cta-channel">
-            <div>
-              <div class="cta-channel-label">facebook</div>
-              <div class="cta-channel-value">Nikolas Bekera</div>
-            </div>
-            <span class="cta-channel-arrow">↗</span>
-          </a>
-          <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener" class="cta-channel">
-            <div>
-              <div class="cta-channel-label">instagram</div>
-              <div class="cta-channel-value">@nikolasbekera.cz</div>
-            </div>
-            <span class="cta-channel-arrow">↗</span>
-          </a>
+        <div class="showcase rv d2" aria-label="Ukázky realizovaných webů">
+          <figure class="frame frame-a">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>hotelhradec.eu</span></div>
+            <img src="obrazky/hotelhradec.jpg" width="1200" height="760" alt="Web Hotelu Hradec Mlázovice s galerií pokojů a ceníkem" fetchpriority="high">
+          </figure>
+          <figure class="frame frame-b">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>ukoblizku.cz</span></div>
+            <img src="obrazky/ukoblizku.jpg" width="1024" height="578" alt="Web restaurace U Koblížků s objednávkou obědů s rozvozem">
+          </figure>
+          <span class="sticker"><i class="ph ph-seal-check"></i>Skutečné weby klientů</span>
         </div>
       </div>
+    </header>
+
+    <!-- ===== PRO KOHO ===== -->
+    <div class="who">
+      <div class="wrap who-inner rv">
+        <p>Weby stavím pro</p>
+        <ul class="chips">
+          <li><i class="ph ph-briefcase"></i>Firmy a živnostníky</li>
+          <li><i class="ph ph-hammer"></i>Řemeslníky</li>
+          <li><i class="ph ph-fork-knife"></i>Restaurace a kavárny</li>
+          <li><i class="ph ph-bed"></i>Hotely a penziony</li>
+          <li><i class="ph ph-scissors"></i>Salony a služby</li>
+          <li><i class="ph ph-scales"></i>Kanceláře a poradce</li>
+          <li><i class="ph ph-users-three"></i>Spolky a akce</li>
+          <li><i class="ph ph-user-circle"></i>Osobní weby a portfolia</li>
+        </ul>
+      </div>
     </div>
-  </section>
+
+    <!-- ===== PROČ ===== -->
+    <section id="proc" aria-labelledby="proc-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow rv">proč se mnou</span>
+          <h2 class="h2 rv d1" id="proc-h">Profesionální web bez agenturních cen a bez starostí</h2>
+          <p class="lead rv d2">Většina lidí nechce řešit technologie. Chtějí web, který vypadá dobře, najde se na Googlu a přivádí poptávky. Přesně to dodám.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card rv">
+            <div class="icon"><i class="ph ph-device-mobile"></i></div>
+            <h3>Rychlý na mobilu</h3>
+            <p>Většina návštěvníků přijde z telefonu. Web se načte během chvilky a funguje na každém displeji.</p>
+          </article>
+          <article class="card rv d1">
+            <div class="icon"><i class="ph ph-magnifying-glass"></i></div>
+            <h3>Najdou vás na Googlu</h3>
+            <p>Každý web dostane základní SEO a pomůžu i s Google profilem firmy, aby vás lidé našli v okolí.</p>
+          </article>
+          <article class="card rv d2">
+            <div class="icon"><i class="ph ph-receipt"></i></div>
+            <h3>Pevná cena předem</h3>
+            <p>Cenu znáte před začátkem práce. Žádné skryté položky a žádné měsíční paušály navždy.</p>
+          </article>
+          <article class="card rv d3">
+            <div class="icon"><i class="ph ph-handshake"></i></div>
+            <h3>Jeden člověk na vše</h3>
+            <p>Komunikujete přímo se mnou od prvního hovoru po spuštění. Žádné přeposílání mezi odděleními.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAGLINE ===== -->
+    <section class="tagline" aria-label="Moje filozofie">
+      <div class="wrap">
+        <p id="tagline">Dobrý web není vizitka, kterou nikdo nečte. Je to <span data-accent>obchodník</span>, který pro vás pracuje <span data-accent>každý den.</span></p>
+      </div>
+    </section>
+
+    <!-- ===== SLUŽBY ===== -->
+    <section id="sluzby" aria-labelledby="sluzby-h" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow rv">co pro vás udělám</span>
+          <h2 class="h2 rv d1" id="sluzby-h">Ať potřebujete jednoduchou vizitku nebo web s objednávkami</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card rv">
+            <div class="icon"><i class="ph ph-buildings"></i></div>
+            <h3>Firemní web</h3>
+            <p>Prezentace vaší firmy se službami, referencemi, galerií a kontakty. Jedna stránka nebo víc podstránek.</p>
+            <span class="tag">od 5 000 Kč</span>
+          </article>
+          <article class="card rv d1">
+            <div class="icon"><i class="ph ph-calendar-check"></i></div>
+            <h3>Rezervace a objednávky</h3>
+            <p>Online objednávky jídla, rezervace termínů nebo poptávkové formuláře, které vám šetří telefonování.</p>
+            <span class="tag">od 15 000 Kč</span>
+          </article>
+          <article class="card rv d2">
+            <div class="icon"><i class="ph ph-arrows-clockwise"></i></div>
+            <h3>Redesign starého webu</h3>
+            <p>Máte web z doby, kdy se na něj ještě nekoukalo z mobilu? Udělám moderní verzi a obsah převedu.</p>
+            <span class="tag">od 5 000 Kč</span>
+          </article>
+          <article class="card rv">
+            <div class="icon"><i class="ph ph-rocket-launch"></i></div>
+            <h3>Landing page</h3>
+            <p>Jedna stránka pro jednu akci, produkt nebo kampaň. Ideální na reklamu, události a nové služby.</p>
+            <span class="tag">od 5 000 Kč</span>
+          </article>
+          <article class="card rv d1">
+            <div class="icon"><i class="ph ph-user-focus"></i></div>
+            <h3>Osobní web a portfolio</h3>
+            <p>Pro fotografy, lektory, umělce, trenéry nebo kohokoliv, kdo chce ukázat svou práci.</p>
+            <span class="tag">od 5 000 Kč</span>
+          </article>
+          <article class="card rv d2">
+            <div class="icon"><i class="ph ph-globe-hemisphere-east"></i></div>
+            <h3>Doména, hosting a Google</h3>
+            <p>Zařídím doménu, hosting, SSL, firemní maily i Google profil firmy. Vše na klíč, nic neřešíte.</p>
+            <span class="tag">součást každého webu</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REALIZACE ===== -->
+    <section id="realizace" aria-labelledby="real-h" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow rv">realizace</span>
+          <h2 class="h2 rv d1" id="real-h">Weby, které už pracují pro své majitele</h2>
+        </div>
+        <div class="work">
+          <a class="case rv" href="https://ukoblizku.cz" target="_blank" rel="noopener">
+            <div class="case-img"><img src="obrazky/ukoblizku.jpg" width="1024" height="578" loading="lazy" alt="Web restaurace U Koblížků s jídelníčkem a objednávkou obědů"></div>
+            <div class="case-body">
+              <div>
+                <span class="case-meta">2026 · restaurace · objednávkový systém</span>
+                <h3>U Koblížků</h3>
+                <p>Jídelníček, objednávky obědů s rozvozem na týden dopředu a catering.</p>
+              </div>
+              <span class="case-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
+          </a>
+          <a class="case rv d1" href="https://hotelhradec.eu" target="_blank" rel="noopener">
+            <div class="case-img"><img src="obrazky/hotelhradec.jpg" width="1200" height="760" loading="lazy" alt="Web Hotelu Hradec Mlázovice s galerií pokojů a okolím"></div>
+            <div class="case-body">
+              <div>
+                <span class="case-meta">2025 · ubytování · firemní web</span>
+                <h3>Hotel Hradec Mlázovice</h3>
+                <p>Rodinný hotel v Českém ráji. Pokoje, ceník, kontakty a tipy na výlety v okolí.</p>
+              </div>
+              <span class="case-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Sem později doplň recenze klientů, např.:
+        <figure class="card"><blockquote>„…“</blockquote><figcaption>Jméno, firma</figcaption></figure>
+        -->
+
+        <div class="demos-head">
+          <div class="rv">
+            <h3>Ukázkové weby pro různé obory</h3>
+            <p>Hotové návrhy, které si můžete proklikat. Podobný web upravím na míru přímo pro vás.</p>
+          </div>
+          <a href="sablony/" class="link rv d1">Všechny ukázky <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+        <div class="demos">
+          <a class="demo rv" href="sablony/elektrikar/"><div class="live"><iframe src="sablony/elektrikar/index.html" title="Ukázkový web pro elektrikáře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Elektrikář <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d1" href="sablony/instalater/"><div class="live"><iframe src="sablony/instalater/index.html" title="Ukázkový web pro instalatéra" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Instalatér <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d2" href="sablony/truhlar/"><div class="live"><iframe src="sablony/truhlar/index.html" title="Ukázkový web pro truhláře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Truhlář <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d3" href="sablony/zednik/"><div class="live"><iframe src="sablony/zednik/index.html" title="Ukázkový web pro zedníka" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Zedník <i class="ph ph-arrow-up-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCES ===== -->
+    <section id="proces" aria-labelledby="proces-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow rv">jak to probíhá</span>
+          <h2 class="h2 rv d1" id="proces-h">Od první zprávy k hotovému webu za zhruba 14 dní</h2>
+          <p class="lead rv d2">Nemusíte nic umět ani nic připravovat. Stačí mi říct, co děláte a koho chcete oslovit.</p>
+        </div>
+        <ol class="steps">
+          <li class="card step rv">
+            <h3>Domluvíme se</h3>
+            <p>Krátký hovor, mail nebo kafe. Zjistím, co potřebujete, a pošlu vám pevnou cenu a termín.</p>
+            <span class="dur"><i class="ph ph-clock"></i>30 minut</span>
+          </li>
+          <li class="card step rv d1">
+            <h3>Navrhnu a postavím</h3>
+            <p>Dostanete návrh, průběžně vidíte, jak web vzniká, a můžete cokoliv připomínkovat.</p>
+            <span class="dur"><i class="ph ph-clock"></i>7 až 12 dní</span>
+          </li>
+          <li class="card step rv d2">
+            <h3>Spustím a předám</h3>
+            <p>Web nasadím na doménu, nastavím SSL, Google a předám vám všechny přístupy. Je celý váš.</p>
+            <span class="dur"><i class="ph ph-clock"></i>1 den</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== CENÍK ===== -->
+    <section id="cenik" aria-labelledby="cenik-h" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow rv">ceník</span>
+          <h2 class="h2 rv d1" id="cenik-h">Jasné ceny, žádná překvapení na faktuře</h2>
+          <p class="lead rv d2">Vyberte si, kolik webu potřebujete. Přesnou cenu vám řeknu po krátké domluvě a pak už se nemění.</p>
+        </div>
+        <div class="prices">
+          <article class="price rv">
+            <h3>Vizitka</h3>
+            <div class="amount"><span class="from">od</span>5 000 <small>Kč</small></div>
+            <p>Pro živnostníky, osobní weby a jednoduché prezentace.</p>
+            <ul>
+              <li><i class="ph ph-check"></i>Jednostránkový web</li>
+              <li><i class="ph ph-check"></i>Verze pro mobily</li>
+              <li><i class="ph ph-check"></i>Kontaktní formulář a mapa</li>
+              <li><i class="ph ph-check"></i>Základní SEO</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-ghost" data-plan="Vizitka">Chci vizitku</a>
+          </article>
+          <article class="price featured rv d1">
+            <span class="badge">nejčastější volba</span>
+            <h3>Firemní web</h3>
+            <div class="amount"><span class="from">od</span>8 000 <small>Kč</small></div>
+            <p>Pro firmy a služby, které chtějí ukázat víc než jednu stránku.</p>
+            <ul>
+              <li><i class="ph ph-check"></i>Až 5 podstránek</li>
+              <li><i class="ph ph-check"></i>Galerie, ceník, reference</li>
+              <li><i class="ph ph-check"></i>SEO optimalizace</li>
+              <li><i class="ph ph-check"></i>Nastavení Google profilu firmy</li>
+              <li><i class="ph ph-check"></i>Pomoc s texty</li>
+            </ul>
+            <a href="#kontakt" class="btn" data-plan="Firemní web">Chci firemní web</a>
+          </article>
+          <article class="price rv d2">
+            <h3>Web na míru</h3>
+            <div class="amount"><span class="from">od</span>15 000 <small>Kč</small></div>
+            <p>Pro restaurace, ubytování a projekty s rezervacemi nebo objednávkami.</p>
+            <ul>
+              <li><i class="ph ph-check"></i>Neomezeně podstránek</li>
+              <li><i class="ph ph-check"></i>Rezervace nebo objednávky</li>
+              <li><i class="ph ph-check"></i>Jednoduchá administrace</li>
+              <li><i class="ph ph-check"></i>Rozšířené SEO a texty</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-ghost" data-plan="Web na míru">Chci web na míru</a>
+          </article>
+        </div>
+        <div class="price-note rv">
+          <i class="ph ph-shield-check"></i>
+          <p><strong style="color:var(--ink)">Bez rizika.</strong> Konzultace i cenová nabídka jsou zdarma a nezávazné. Platíte jen za to, na čem se domluvíme, a žádné měsíční poplatky mi neplatíte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== O MNĚ ===== -->
+    <section id="o-mne" aria-labelledby="omne-h" style="padding-top:0">
+      <div class="wrap about">
+        <div class="body">
+          <span class="eyebrow rv">kdo za tím stojí</span>
+          <h2 class="h2 rv d1" id="omne-h">Ahoj, jsem Nikolas</h2>
+          <div class="rv d2" style="margin-top:24px">
+            <p>Jsem webový developer z Mlázovic v Královéhradeckém kraji. Stavím weby pro firmy, živnostníky, restaurace, ubytování i lidi s vlastním projektem po celé republice.</p>
+            <p>Každý web dělám <strong>ručně a na míru</strong>, žádné hromadné šablony z konstruktorů. Díky tomu je rychlý, vypadá přesně tak, jak chcete, a <strong>patří celý vám</strong>.</p>
+            <p>Učím informatiku, takže umím věci vysvětlit lidsky. Žádná technická hantýrka.</p>
+          </div>
+        </div>
+        <div class="profile rv d2">
+          <div class="profile-top">
+            <span class="mono-av mono-lg" aria-hidden="true">NB</span>
+            <div>
+              <strong>Nikolas Bekera</strong>
+              <span>Webový developer · Mlázovice</span>
+            </div>
+            <span class="pill"><i class="dot"></i>Přijímám zakázky</span>
+          </div>
+        <dl class="kv">
+          <div><dt>působím</dt><dd>Celá ČR, osobně východní Čechy</dd></div>
+          <div><dt>odpovídám</dt><dd>Do 24 hodin</dd></div>
+          <div><dt>hosting</dt><dd>Wedos, Forpsi, Netlify</dd></div>
+          <div><dt>jazyky</dt><dd>Čeština, angličtina</dd></div>
+          <div><dt>fakturace</dt><dd>IČO 09209620</dd></div>
+        </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" aria-labelledby="faq-h" style="padding-top:0">
+      <div class="wrap faq-grid">
+        <div class="faq-side">
+          <span class="eyebrow rv">časté otázky</span>
+          <h2 class="h2 rv d1" id="faq-h">Na co se lidé ptají nejčastěji</h2>
+          <p class="lead rv d2">Krátké odpovědi na to, co klienty zajímá ještě před začátkem spolupráce.</p>
+          <div class="ask rv d3">
+            <div class="ask-top">
+              <span class="mono-av" aria-hidden="true">NB</span>
+              <div>
+                <strong>Máte jinou otázku?</strong>
+                <span><i class="dot"></i>Odpovídám do 24 hodin</span>
+              </div>
+            </div>
+            <p>Zeptejte se rovnou mě. Poradím vám zdarma, i když se nakonec pro web nerozhodnete.</p>
+            <div class="ask-btns">
+              <a href="tel:+420731212219" class="btn"><i class="ph ph-phone"></i>731 212 219</a>
+              <a href="#kontakt" class="btn btn-ghost">Napsat zprávu</a>
+            </div>
+          </div>
+          <ul class="mini-facts rv d3">
+            <li><strong>24 h</strong><span>odpověď na dotaz</span></li>
+            <li><strong>14 dní</strong><span>běžná doba tvorby</span></li>
+            <li><strong>0 Kč</strong><span>měsíční paušál</span></li>
+          </ul>
+        </div>
+        <div class="faq rv d1">
+          <details><summary>Kolik stojí webová stránka?<i class="ph ph-plus"></i></summary><div class="ans">Jednostránkový web začíná na 5 000 Kč, vícestránkový firemní web na 8 000 Kč a web na míru s rezervacemi nebo objednávkami na 15 000 Kč. Přesnou a pevnou cenu dostanete předem v nabídce.</div></details>
+          <details><summary>Jak dlouho trvá tvorba webu?<i class="ph ph-plus"></i></summary><div class="ans">Jednostránkový web bývá hotový za 7 až 14 dní, vícestránkový za 2 až 3 týdny. Termín najdete v nabídce a drží.</div></details>
+          <details><summary>Platím nějaké měsíční poplatky?<i class="ph ph-plus"></i></summary><div class="ans">Mně ne. Platíte jen hosting a doménu přímo u poskytovatele, obvykle několik stovek korun ročně. Web patří vám.</div></details>
+          <details><summary>Co od vás budu potřebovat?<i class="ph ph-plus"></i></summary><div class="ans">Pár informací o vaší firmě nebo projektu, fotky a logo, pokud je máte. S texty pomůžu, nemusíte nic psát sami.</div></details>
+          <details><summary>Můžu si web upravovat sám?<i class="ph ph-plus"></i></summary><div class="ans">Záleží na variantě. U jednoduchých webů změny udělám já podle vaší zprávy. U webu na míru můžu nastavit jednoduchou administraci, kde si texty a fotky upravíte sami.</div></details>
+          <details><summary>Co když budu později chtít změnu?<i class="ph ph-plus"></i></summary><div class="ans">Napíšete mi. Menší úpravy řeším rychle a fakturuji jen skutečně odpracovaný čas. Žádné předplacené balíčky.</div></details>
+          <details><summary>Musím mít vlastní doménu a hosting?<i class="ph ph-plus"></i></summary><div class="ans">Ne. Pomůžu s výběrem a registrací domény i hostingu. Pokud už doménu máte, převedu ji.</div></details>
+          <details><summary>Uděláte i rezervační nebo objednávkový systém?<i class="ph ph-plus"></i></summary><div class="ans">Ano. Například pro restauraci U Koblížků jsem postavil objednávky obědů s rozvozem na týden dopředu.</div></details>
+          <details><summary>Pracujete i mimo Královéhradecký kraj?<i class="ph ph-plus"></i></summary><div class="ans">Ano, po celé republice. Domluvíme se mailem, telefonem nebo přes videohovor. Ve východních Čechách se rád stavím osobně.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section id="blog" aria-labelledby="blog-h" style="padding-top:0">
+      <div class="wrap">
+        <div class="demos-head" style="margin-top:0">
+          <div>
+            <span class="eyebrow rv">blog</span>
+            <h2 class="h2 rv d1" id="blog-h">Rady, než si necháte udělat web</h2>
+          </div>
+          <a href="blog/" class="link rv d1">Všechny články <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+        <div class="posts">
+          <a class="card post rv" href="blog/kolik-stoji-web-pro-remeslnika.html"><div><span class="cat">ceny</span><h3>Kolik stojí webová stránka v roce 2026?</h3></div><span class="more">Číst článek <i class="ph ph-arrow-right"></i></span></a>
+          <a class="card post rv d1" href="blog/webnode-vs-web-na-miru.html"><div><span class="cat">srovnání</span><h3>Webnode, nebo web na míru? Co se vyplatí víc</h3></div><span class="more">Číst článek <i class="ph ph-arrow-right"></i></span></a>
+          <a class="card post rv d2" href="blog/proc-vas-web-nenajdou-zakaznici.html"><div><span class="cat">SEO</span><h3>Proč váš web zákazníci na Googlu nenajdou</h3></div><span class="more">Číst článek <i class="ph ph-arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KONTAKT ===== -->
+    <section id="kontakt" aria-labelledby="kontakt-h" style="padding-top:0">
+      <div class="wrap">
+        <div class="contact">
+          <div class="contact-grid">
+            <div>
+              <span class="eyebrow rv">nezávazná poptávka</span>
+              <h2 class="rv d1" id="kontakt-h">Pojďme vám udělat web, který prodává</h2>
+              <p class="lead rv d2">Napište pár vět o tom, co potřebujete. Do 24 hodin se ozvu s návrhem postupu a cenou.</p>
+              <ul class="reassure rv d2">
+                <li><i class="ph ph-check-circle"></i>Konzultace a nabídka zdarma</li>
+                <li><i class="ph ph-check-circle"></i>Pevná cena a termín předem</li>
+                <li><i class="ph ph-check-circle"></i>Žádné měsíční paušály</li>
+              </ul>
+              <div class="direct rv d3">
+                <a href="tel:+420731212219"><i class="ph ph-phone"></i>+420 731 212 219<small>volat</small></a>
+                <a href="mailto:nik.bekera@gmail.com"><i class="ph ph-envelope-simple"></i>nik.bekera@gmail.com<small>napsat</small></a>
+                <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>@nikolasbekera.cz<small>instagram</small></a>
+                <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i>Nikolas Bekera<small>facebook</small></a>
+              </div>
+            </div>
+
+            <form class="form rv d1" id="form" novalidate>
+              <h3>Poptávka webu</h3>
+              <p>Zabere to minutu. Povinné jsou jen jméno a kontakt.</p>
+
+              <fieldset class="types">
+                <legend>Co potřebujete?</legend>
+                <label><input type="radio" name="typ" value="Nový web" checked><span>Nový web</span></label>
+                <label><input type="radio" name="typ" value="Redesign webu"><span>Redesign webu</span></label>
+                <label><input type="radio" name="typ" value="Rezervace nebo objednávky"><span>Rezervace či objednávky</span></label>
+                <label><input type="radio" name="typ" value="Jiné"><span>Něco jiného</span></label>
+              </fieldset>
+
+              <div class="row two">
+                <div class="field" id="f-name">
+                  <label for="name">Jméno</label>
+                  <input id="name" name="jmeno" type="text" autocomplete="name" required>
+                  <span class="err"><i class="ph ph-warning-circle"></i>Napište prosím své jméno.</span>
+                </div>
+                <div class="field" id="f-contact">
+                  <label for="contact">Email nebo telefon</label>
+                  <input id="contact" name="kontakt" type="text" autocomplete="email" required>
+                  <span class="err"><i class="ph ph-warning-circle"></i>Zadejte platný email nebo telefon.</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="msg">Pár slov o projektu <em>(nepovinné)</em></label>
+                <textarea id="msg" name="zprava" placeholder="Např. mám kavárnu v Jičíně a chci web s menu a rezervací stolů."></textarea>
+              </div>
+              <input type="hidden" name="balicek" id="plan" value="">
+              <div class="hp" aria-hidden="true"><label>Nevyplňujte <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+              <div class="form-foot">
+                <button class="btn btn-lg" type="submit" id="submit"><span class="spin" aria-hidden="true"></span><span class="lbl">Odeslat poptávku</span><i class="ph ph-paper-plane-right"></i></button>
+                <small>Odesláním souhlasíte se zpracováním údajů podle <a href="/zasady-ochrany-osobnich-udaju.html" class="link" style="font-weight:500">zásad ochrany osobních údajů</a>.</small>
+              </div>
+              <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div class="container">
-      <div>
-        <span>© 2026 Nikolas Bekera</span>
-        <span style="margin: 0 8px; color: var(--line);">·</span>
-        <span>IČO 09209620</span>
-        <span style="margin: 0 8px; color: var(--line);">·</span>
-        <span>Mlázovice, Náměstí 54</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap;">
-        <a href="https://www.instagram.com/nikolasbekera.cz/" target="_blank" rel="noopener">instagram</a>
-        <span style="margin: 0 12px; color: var(--line);">·</span>
-        <a href="https://www.facebook.com/profile.php?id=61583860717752" target="_blank" rel="noopener">facebook</a>
-        <span style="margin: 0 12px; color: var(--line);">·</span>
-        <a href="/zasady-ochrany-osobnich-udaju.html">zásady ochrany osobních údajů</a>
-        <span style="margin: 0 12px; color: var(--line);">·</span>
-        <span>v2.0 — 04.2026</span>
-      </div>
+    <div class="wrap foot">
+      <span>© 2026 Nikolas Bekera · IČO 09209620 · Mlázovice, Náměstí 54</span>
+      <nav aria-label="Patička">
+        <a href="blog/">Blog</a>
+        <a href="sablony/">Ukázkové weby</a>
+        <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+        <a href="#top">Nahoru</a>
+      </nav>
     </div>
   </footer>
 
-  <script>
-    (function(){
-      var burger = document.getElementById('navBurger');
-      var navLinks = document.getElementById('navLinks');
-      if(!burger || !navLinks) return;
-      var menu = document.createElement('div');
-      menu.style.cssText = 'display:none;position:fixed;inset:0;background:#FAFAF7;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:4px;';
-      var closeBtn = document.createElement('button');
-      closeBtn.style.cssText = 'position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:32px;color:#0A0A0A;line-height:1;padding:4px;';
-      closeBtn.textContent = '×';
-      closeBtn.setAttribute('aria-label', 'Zavrit menu');
-      closeBtn.addEventListener('click', function(){ menu.style.display='none'; });
-      menu.appendChild(closeBtn);
-      navLinks.querySelectorAll('a').forEach(function(a){
-        var clone = a.cloneNode(true);
-        clone.style.cssText = 'font-size:24px;color:#0A0A0A;text-decoration:none;padding:12px 28px;font-family:inherit;letter-spacing:-0.025em;font-weight:500;';
-        clone.addEventListener('click', function(){ menu.style.display='none'; });
-        menu.appendChild(clone);
-      });
-      document.body.appendChild(menu);
-      burger.addEventListener('click', function(){
-        menu.style.display = menu.style.display==='flex' ? 'none' : 'flex';
-      });
-    })();
-  </script>
-
-  <!-- Cookie Banner -->
-  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#0A0A0A;color:#FAFAF7;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #1C1C1C;">
-    <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#A0A0A0;max-width:600px;line-height:1.5;margin:0;">
-      Používáme analytické cookies (Google Analytics) ke zlepšování webu. Více info v <a href="/zasady-ochrany-osobnich-udaju.html" style="color:#FAFAF7;text-underline-offset:3px;">zásadách ochrany osobních údajů</a>.
-    </p>
-    <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button id="cookieDecline" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:0.5px solid #444;border-radius:4px;background:none;color:#A0A0A0;cursor:pointer;">Odmítnout</button>
-      <button id="cookieAccept" style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;padding:9px 18px;border:none;border-radius:4px;background:#FF4D1E;color:#FAFAF7;cursor:pointer;">Přijmout</button>
+  <div class="cookie" id="cookieBanner" role="dialog" aria-label="Souhlas s cookies">
+    <p>Používám analytické cookies (Google Analytics), abych web zlepšoval. Více v <a href="/zasady-ochrany-osobnich-udaju.html" class="link" style="font-weight:500">zásadách</a>.</p>
+    <div>
+      <button class="btn btn-sm btn-ghost" id="cookieDecline">Odmítnout</button>
+      <button class="btn btn-sm" id="cookieAccept">Přijmout</button>
     </div>
   </div>
+
   <script>
-  (function(){
-    var GA_ID = 'G-LQ87FJETDW';
-    function loadGA(){
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id='+GA_ID;
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', GA_ID, {anonymize_ip: true});
+  (function () {
+    /* ---------- Nav: menu, scroll state, current section ---------- */
+    var body = document.body, burger = document.getElementById('burger'), overlay = document.getElementById('overlay'), nav = document.getElementById('nav');
+    function setMenu(open) {
+      body.classList.toggle('menu-open', open);
+      burger.setAttribute('aria-expanded', open);
+      burger.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+      overlay.setAttribute('aria-hidden', !open);
+      body.style.overflow = open ? 'hidden' : '';
     }
-    var consent = localStorage.getItem('cookie_consent');
-    var banner = document.getElementById('cookieBanner');
-    if(consent === 'accepted'){ loadGA(); banner.style.display='none'; return; }
-    if(consent === 'declined'){ banner.style.display='none'; return; }
-    banner.style.display = 'flex';
-    document.getElementById('cookieAccept').addEventListener('click', function(){
-      localStorage.setItem('cookie_consent','accepted');
-      banner.style.display = 'none';
-      loadGA();
+    burger.addEventListener('click', function () { setMenu(!body.classList.contains('menu-open')); });
+    overlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+    var top = document.getElementById('top');
+    new IntersectionObserver(function (en) { nav.classList.toggle('is-scrolled', !en[0].isIntersecting); }, { rootMargin: '-120px 0px 0px 0px' }).observe(top);
+
+    var links = document.querySelectorAll('.nav-links a[href^="#"]');
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (l) {
+          var on = l.getAttribute('href') === '#' + e.target.id;
+          l.classList.toggle('is-active', on);
+          if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['sluzby', 'realizace', 'cenik', 'faq'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+
+    /* ---------- Scroll reveal ---------- */
+    var rv = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.rv').forEach(function (el) { rv.observe(el); });
+
+    /* ---------- Tagline word reveal ---------- */
+    var tl = document.getElementById('tagline');
+    if (tl) {
+      var html = '';
+      tl.childNodes.forEach(function (n) {
+        var accent = n.nodeType === 1 && n.hasAttribute('data-accent');
+        var text = n.textContent;
+        text.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { html += ' '; return; }
+          html += '<span class="w' + (accent ? ' accent' : '') + '">' + part + '</span>';
+        });
+      });
+      tl.innerHTML = html;
+      var words = tl.querySelectorAll('.w');
+      var wo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var below = e.boundingClientRect.top > (e.rootBounds ? e.rootBounds.bottom : innerHeight * 0.62);
+          e.target.classList.toggle('on', e.isIntersecting || !below);
+        });
+      }, { rootMargin: '0px 0px -38% 0px', threshold: 1 });
+      words.forEach(function (w) { wo.observe(w); });
+    }
+
+    /* ---------- Live template previews ---------- */
+    document.querySelectorAll('.live').forEach(function (el) {
+      var f = el.querySelector('iframe');
+      if (!f || !window.ResizeObserver) return;
+      new ResizeObserver(function () { f.style.transform = 'scale(' + el.clientWidth / 1280 + ')'; }).observe(el);
     });
-    document.getElementById('cookieDecline').addEventListener('click', function(){
-      localStorage.setItem('cookie_consent','declined');
-      banner.style.display = 'none';
+
+    /* ---------- Plan buttons prefill form ---------- */
+    document.querySelectorAll('[data-plan]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.getElementById('plan').value = b.getAttribute('data-plan');
+        var m = document.getElementById('msg');
+        if (!m.value) m.value = 'Mám zájem o variantu ' + b.getAttribute('data-plan') + '. ';
+      });
     });
+
+    /* ---------- Form ---------- */
+    var form = document.getElementById('form'), btn = document.getElementById('submit'), msg = document.getElementById('formMsg');
+    var fName = document.getElementById('name'), fContact = document.getElementById('contact'), fMsg = document.getElementById('msg');
+    var ENDPOINT = 'https://formsubmit.co/ajax/nik.bekera@gmail.com';
+    function validContact(v) {
+      v = v.trim();
+      var email = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      var phone = /^\+?[\d\s]{9,16}$/.test(v);
+      return email || phone;
+    }
+    function check(id, ok) { document.getElementById(id).classList.toggle('invalid', !ok); return ok; }
+    fName.addEventListener('blur', function () { if (fName.value) check('f-name', fName.value.trim().length > 1); });
+    fContact.addEventListener('blur', function () { if (fContact.value) check('f-contact', validContact(fContact.value)); });
+    function show(type, text, icon) { msg.className = 'form-msg ' + type; msg.innerHTML = '<i class="ph ' + icon + '"></i><span>' + text + '</span>'; }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var a = check('f-name', fName.value.trim().length > 1);
+      var b = check('f-contact', validContact(fContact.value));
+      if (!a || !b) { (a ? fContact : fName).focus(); return; }
+      if (form._honey.value) return;
+
+      var data = {
+        _subject: 'Nová poptávka webu: ' + form.typ.value,
+        _template: 'table',
+        typ: form.typ.value,
+        jmeno: fName.value.trim(),
+        kontakt: fContact.value.trim(),
+        balicek: form.balicek.value || 'neuvedeno',
+        zprava: fMsg.value.trim() || 'bez zprávy'
+      };
+      btn.disabled = true; btn.classList.add('loading'); btn.querySelector('.lbl').textContent = 'Odesílám';
+      msg.className = 'form-msg';
+      fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (String(d.success) !== 'true') { console.warn('FormSubmit:', d.message); throw new Error(d.message || 'fail'); }
+          form.reset();
+          show('ok', 'Díky, poptávka dorazila. Ozvu se vám do 24 hodin.', 'ph-check-circle');
+          try { window.gtag && gtag('event', 'generate_lead', { method: 'form' }); } catch (x) {}
+        })
+        .catch(function () {
+          show('bad', 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu, nebo mi zavolejte na 731 212 219.', 'ph-warning-circle');
+        })
+        .finally(function () { btn.disabled = false; btn.classList.remove('loading'); btn.querySelector('.lbl').textContent = 'Odeslat poptávku'; });
+    });
+
+    /* ---------- Cookies + GA ---------- */
+    var GA_ID = 'G-LQ87FJETDW';
+    function loadGA() {
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true });
+    }
+    function getC() { try { return localStorage.getItem('cookie_consent'); } catch (x) { return null; } }
+    function setC(v) { try { localStorage.setItem('cookie_consent', v); } catch (x) {} }
+    var banner = document.getElementById('cookieBanner'), consent = getC();
+    if (consent === 'accepted') { loadGA(); }
+    else if (consent !== 'declined') {
+      banner.style.display = 'flex';
+      document.getElementById('cookieAccept').addEventListener('click', function () { setC('accepted'); banner.style.display = 'none'; loadGA(); });
+      document.getElementById('cookieDecline').addEventListener('click', function () { setC('declined'); banner.style.display = 'none'; });
+    }
   })();
   </script>
 </body>
