@@ -305,6 +305,8 @@
     .demo img { border-radius: 8px; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; width: 100%; }
     .live { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--soft); }
     .live iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: 0 0; pointer-events: none; }
+    .demo .dn { display: flex; flex-direction: column; align-items: flex-start; padding: 0 !important; gap: 0; }
+    .demo .dn small { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--muted); }
     .demo span { display: flex; justify-content: space-between; align-items: center; padding: 12px 8px 4px; font-size: 14px; line-height: 20px; font-weight: 600; }
 
     /* ===== Process ===== */
@@ -762,16 +764,16 @@
 
         <div class="demos-head">
           <div class="rv">
-            <h3>Ukázkové weby pro různé obory</h3>
-            <p>Hotové návrhy, které si můžete proklikat. Podobný web upravím na míru přímo pro vás.</p>
+            <h3>Čtyři ukázky, čtyři úplně jiné styly</h3>
+            <p>Proklikejte si, jak různě může web vypadat. Vybraný styl upravím na míru přímo pro vás.</p>
           </div>
           <a href="sablony/" class="link rv d1">Všechny ukázky <i class="ph ph-arrow-up-right"></i></a>
         </div>
         <div class="demos">
-          <a class="demo rv" href="sablony/elektrikar/"><div class="live"><iframe src="sablony/elektrikar/index.html" title="Ukázkový web pro elektrikáře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Elektrikář <i class="ph ph-arrow-up-right"></i></span></a>
-          <a class="demo rv d1" href="sablony/instalater/"><div class="live"><iframe src="sablony/instalater/index.html" title="Ukázkový web pro instalatéra" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Instalatér <i class="ph ph-arrow-up-right"></i></span></a>
-          <a class="demo rv d2" href="sablony/truhlar/"><div class="live"><iframe src="sablony/truhlar/index.html" title="Ukázkový web pro truhláře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Truhlář <i class="ph ph-arrow-up-right"></i></span></a>
-          <a class="demo rv d3" href="sablony/zednik/"><div class="live"><iframe src="sablony/zednik/index.html" title="Ukázkový web pro zedníka" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Zedník <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv" href="sablony/elektrikar/"><div class="live"><iframe src="sablony/elektrikar/index.html" title="Ukázkový web pro elektrikáře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><span class="dn">Elektrikář<small>Apple styl</small></span><i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d1" href="sablony/instalater/"><div class="live"><iframe src="sablony/instalater/index.html" title="Ukázkový web pro instalatéra" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><span class="dn">Instalatér<small>technický</small></span><i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d2" href="sablony/truhlar/"><div class="live"><iframe src="sablony/truhlar/index.html" title="Ukázkový web pro truhláře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><span class="dn">Truhlář<small>editorial</small></span><i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d3" href="sablony/zednik/"><div class="live"><iframe src="sablony/zednik/index.html" title="Ukázkový web pro zedníka" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><span class="dn">Zedník<small>brutalistní</small></span><i class="ph ph-arrow-up-right"></i></span></a>
         </div>
       </div>
     </section>
