@@ -37,7 +37,16 @@ h1, h2, h3 { text-wrap: balance; }
 /* Ribbon that links back to Nikolas */
 .demo-pill { position: fixed; left: 16px; bottom: 16px; z-index: 300; display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; border-radius: 9999px; background: #0A0A0A; color: #fff; font: 500 14px/20px 'Geist', system-ui, sans-serif; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); max-width: calc(100% - 32px); }
 .demo-pill span { color: #B5B5AE; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.demo-pill a { flex: none; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none; padding: 4px 12px; border-radius: 9999px; background: #FF4D1E; color: #fff; }
+.demo-pill { padding: 6px; gap: 8px; }
+.demo-pill span { padding: 0 4px; }
+.demo-pill a { flex: none; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none; padding: 4px 12px; border-radius: 9999px; transition: background-color 200ms, transform 160ms cubic-bezier(0.32, 0.72, 0, 1); }
+.demo-pill a:active { transform: scale(0.95); }
+.demo-pill .back { background: #2A2A2A; color: #fff; padding: 4px 10px 4px 8px; }
+.demo-pill .back:hover { background: #3A3A3A; }
+.demo-pill .back b { font-weight: 600; }
+.demo-pill .go { background: #FF4D1E; color: #fff; }
+.demo-pill .go:hover { background: #E8400F; }
+@media (max-width: 520px) { .demo-pill span { display: none; } }
 .in-frame .demo-pill, .in-frame .mbar { display: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
