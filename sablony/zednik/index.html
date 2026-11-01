@@ -3,123 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stavby Moravec | Brno</title>
+  <title>Stavby Moravec | stavební firma Brno</title>
   <meta name="description" content="Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Pevná cena, jasný harmonogram a jeden mistr na stavbě.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/zednik.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-zednik">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a>
-      <ul class="nav-links"><li><a href="index.html" aria-current="page">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html" aria-current="page">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="hdr">
+    <a href="index.html" class="logo"><span class="sq"><i class="ph-bold ph-wall"></i></span>MORAVEC<small>stavby</small></a>
+    <nav class="links" aria-label="Hlavní navigace"><a href="index.html" aria-current="page">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+    <a href="kontakt.html" class="hcta press">Poptávka <i class="ph-bold ph-arrow-right"></i></a>
+    <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <div class="slab" id="menu" aria-hidden="true"><nav><a href="index.html" aria-current="page">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav><a href="tel:+420739482160" class="slab-tel">+420 739 482 160</a></div>
+  </header>
   <main id="main">
-    <header class="hero bleed">
-      <div class="bg"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1d8wicyY2WWeslsiV7wd-jyRYQWID36BpYIlsJlGsUjr-ZH2WQslzTyG8BXuBt1J_jSxVQ_1BZHofip3MHwkiQF23mpdtwbpcklO_3-aqrZ7zk86w7-Eu3_FroOdkorT5Q_jS2m11gBzCXsfgSPvlDF5pe46SF5IHVwIKqHgFra_w9_QRA-3UwikA4g7H6-l0X0bNBae89l9kOdg5oZsQmu8961nAGewTSiZQMi0bReQB3CyW_VqxanR8dHLHUvSvMRoCWENTKyM" alt="Stavby Moravec při práci"  referrerpolicy="no-referrer"></div>
-      <div class="wrap">
-        <span class="status rv"><i></i>Přijímáme zakázky na jaro 2027</span>
-        <h1 class="grad rv d1">Stavíme poctivě.<br>Od základů po fasádu.</h1>
-        <p class="sub rv d2">Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Pevná cena, jasný harmonogram a jeden mistr na stavbě.</p>
-        <div class="hero-cta rv d3">
-          <a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-          <a href="tel:+420739482160" class="tel" style="color:#fff"><i class="ph ph-phone" style="background:rgba(255,255,255,0.12)"></i><span><small style="color:#D2D2CC">Zavolejte nám</small>+420 739 482 160</span></a>
-        </div>
-      </div>
-    </header>
-    <div class="strip alt"><div class="wrap facts"><div class="rv"><strong>22 let</strong><span>na stavbách</span></div><div class="rv d1"><strong>180+</strong><span>dokončených staveb</span></div><div class="rv d2"><strong>12</strong><span>zedníků v partě</span></div><div class="rv d3"><strong>5 let</strong><span>záruka na dílo</span></div></div></div>
-    <section aria-labelledby="sv">
-      <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">co děláme</span><h2 class="h2 rv d1" id="sv">S čím vám pomůžeme</h2></div><a href="sluzby.html" class="link rv">Všechny služby <i class="ph ph-arrow-right"></i></a></div>
-        <div class="grid-4">
-          <article class="card rv">
-            <div class="icon"><i class="ph ph-buildings"></i></div>
-            <h3>Hrubé stavby</h3><p>Základy, zdivo, stropy a věnce pro rodinné domy i menší objekty.</p>
-            <ul><li><i class="ph ph-check"></i>Certifikované systémy</li><li><i class="ph ph-check"></i>Statický dozor</li><li><i class="ph ph-check"></i>Pevný harmonogram</li></ul>
-          </article>
-          <article class="card rv d1">
-            <div class="icon"><i class="ph ph-wall"></i></div>
-            <h3>Fasády a zateplení</h3><p>Kontaktní zateplení, omítky a obnova historických fasád.</p>
-            <ul><li><i class="ph ph-check"></i>Zateplení ETICS</li><li><i class="ph ph-check"></i>Silikonové omítky</li><li><i class="ph ph-check"></i>Pomoc s dotací</li></ul>
-          </article>
-          <article class="card rv d2">
-            <div class="icon"><i class="ph ph-paint-roller"></i></div>
-            <h3>Rekonstrukce</h3><p>Přestavby bytů a domů, příčky, omítky, podlahy a koupelny.</p>
-            <ul><li><i class="ph ph-check"></i>Byty i domy</li><li><i class="ph ph-check"></i>Sádrokartony</li><li><i class="ph ph-check"></i>Úklid po stavbě</li></ul>
-          </article>
-          <article class="card rv d3">
-            <div class="icon"><i class="ph ph-mountains"></i></div>
-            <h3>Terénní úpravy</h3><p>Opěrné zdi, dlažby, betonová schodiště a ploty.</p>
-            <ul><li><i class="ph ph-check"></i>Opěrné zdi</li><li><i class="ph ph-check"></i>Zámková dlažba</li><li><i class="ph ph-check"></i>Oplocení</li></ul>
-          </article>
+    <section class="hero">
+      <h1 class="mega rv">Stavíme<br>poctivě<span>.</span></h1>
+      <div class="hero-grid">
+        <figure class="hframe rv d1"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1d8wicyY2WWeslsiV7wd-jyRYQWID36BpYIlsJlGsUjr-ZH2WQslzTyG8BXuBt1J_jSxVQ_1BZHofip3MHwkiQF23mpdtwbpcklO_3-aqrZ7zk86w7-Eu3_FroOdkorT5Q_jS2m11gBzCXsfgSPvlDF5pe46SF5IHVwIKqHgFra_w9_QRA-3UwikA4g7H6-l0X0bNBae89l9kOdg5oZsQmu8961nAGewTSiZQMi0bReQB3CyW_VqxanR8dHLHUvSvMRoCWENTKyM" alt="Zedník při zdění základů" referrerpolicy="no-referrer"><span class="stamp">od roku 2004</span></figure>
+        <div class="hbox rv d2">
+          <p>Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Pevná cena, jasný harmonogram a jeden mistr na stavbě.</p>
+          <a href="kontakt.html" class="blk orange press">Nezávazná poptávka <i class="ph-bold ph-arrow-right"></i></a>
+          <a href="tel:+420739482160" class="blk press"><i class="ph-bold ph-phone"></i>+420 739 482 160</a>
         </div>
       </div>
     </section>
-    <section class="tagline" aria-label="Naše filozofie" style="padding-top:32px"><div class="wrap"><p id="tagline">Stavba se dělá jednou. Proto ji děláme <span data-accent>pořádně</span> a <span data-accent>na generace.</span></p></div></section>
-    <section class="alt" aria-labelledby="wk">
-      <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">realizace</span><h2 class="h2 rv d1" id="wk">Podívejte se na naši práci</h2></div><a href="portfolio.html" class="link rv">Všechny realizace <i class="ph ph-arrow-right"></i></a></div>
-        <div class="works three">
-          <a class="work rv" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0" alt="Rodinná vila" loading="lazy" referrerpolicy="no-referrer"><div class="cap"><span>Novostavby · Brno Žebětín</span><strong>Rodinná vila</strong></div></a>
-          <a class="work rv d1" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVgaTGaYVh3w4hFdwjlhZzDxjWrmaV8qxyTbSVPEpJq9zkQMVvAj2l4qGTMVROPHZIlZwrKaXWg3ba6XwF2LkY4ZFa6UmSvuCBmLHOYSuFYXcoctFkRIzYUWRys3NnYxiyPBz-Q-XgFmqLW5C-_3gf__OT1PCY78hOb7GDEBEFKNU4eJG7PCT52fz3eywBguZFnDG1fLNbHnN_EuerhyVCZHqVNTfaAbBfpaPVdWJ2JdMK5zXIUr-oGyPAL-HiXraYamNUWNZwPE" alt="Historická fasáda" loading="lazy" referrerpolicy="no-referrer"><div class="cap"><span>Fasády · Brno střed</span><strong>Historická fasáda</strong></div></a>
-          <a class="work rv d2" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArgSl3EOtiazd9dyo0ekLOisx_bOOl-Hl0XGJ1D4_svENc79nstUDK5Oam3tX1-Nuhh10zKogQUlOCtnWL8rkY3CeijaHkUMlz2OhEArBCp4XvA_8xwn1Yzjj2rnt4wSuEH2_GkUws3mBILiMQW6iaxGIBDdDgX8pGju2q6rJXR0zwKCS7FF_-G8Bbn-Z3dXtfvSfGYc-9NnKXyVtod0WDJn_uQYZHURYPsEnUljORIxs0EV28IxdP4vh62ceSrkDV2Y8Y00YU3Ms" alt="Rekonstrukce bytu" loading="lazy" referrerpolicy="no-referrer"><div class="cap"><span>Rekonstrukce · Brno Královo Pole</span><strong>Rekonstrukce bytu</strong></div></a>
-        </div>
-      </div>
+    <div class="ticker" aria-hidden="true"><div class="tk" data-marquee><span>Hrubé stavby</span><i class="ph-fill ph-asterisk"></i><span>Fasády</span><i class="ph-fill ph-asterisk"></i><span>Zateplení</span><i class="ph-fill ph-asterisk"></i><span>Rekonstrukce</span><i class="ph-fill ph-asterisk"></i><span>Opěrné zdi</span><i class="ph-fill ph-asterisk"></i><span>Dlažby</span><i class="ph-fill ph-asterisk"></i><span>Ploty</span><i class="ph-fill ph-asterisk"></i></div></div>
+    <section class="stats"><div class="cell rv"><strong>22 let</strong><span>na stavbách</span></div><div class="cell rv d1"><strong>180+</strong><span>dokončených staveb</span></div><div class="cell rv d2"><strong>12</strong><span>zedníků v partě</span></div><div class="cell rv d3"><strong>5 let</strong><span>záruka na dílo</span></div></section>
+    <section class="sec">
+      <div class="sh"><h2 class="rv">Co<br>stavíme</h2><a href="sluzby.html" class="blk press rv">Všechny služby <i class="ph-bold ph-arrow-right"></i></a></div>
+      <div class="blocks"><a href="sluzby.html" class="block rv"><span class="bn">01</span><h3>Hrubé stavby</h3><p>Základy, zdivo, stropy a věnce pro rodinné domy i menší objekty.</p><span class="bp">od 1,2 mil. Kč <i class="ph-bold ph-arrow-up-right"></i></span></a><a href="sluzby.html" class="block rv d1"><span class="bn">02</span><h3>Fasády a zateplení</h3><p>Kontaktní zateplení, omítky a obnova historických fasád.</p><span class="bp">od 1 450 Kč za m² <i class="ph-bold ph-arrow-up-right"></i></span></a><a href="sluzby.html" class="block rv"><span class="bn">03</span><h3>Rekonstrukce</h3><p>Přestavby bytů a domů, příčky, omítky, podlahy a koupelny.</p><span class="bp">od 6 500 Kč za m² <i class="ph-bold ph-arrow-up-right"></i></span></a><a href="sluzby.html" class="block rv d1"><span class="bn">04</span><h3>Terénní úpravy</h3><p>Opěrné zdi, dlažby, betonová schodiště a ploty.</p><span class="bp">cena dle projektu <i class="ph-bold ph-arrow-up-right"></i></span></a></div>
     </section>
-    <section aria-labelledby="pr">
-      <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">jak to probíhá</span><h2 class="h2 rv d1" id="pr">Tři kroky a máte hotovo</h2></div></div>
-        <ol class="steps">
-          <li class="card rv"><h3>Ozvete se</h3><p>Zavoláte nebo vyplníte poptávku. Do 24 hodin se vám ozveme a domluvíme prohlídku.</p></li>
-          <li class="card rv d1"><h3>Dostanete nabídku</h3><p>Po prohlídce zdarma pošleme jasnou cenu a termín. Žádné skryté položky.</p></li>
-          <li class="card rv d2"><h3>Uděláme to</h3><p>Pracujeme čistě a podle domluvy. Na konci vše předáme a vysvětlíme.</p></li>
-        </ol>
-      </div>
+    <section class="sec dark">
+      <div class="sh"><h2 class="rv">Hotové<br>stavby</h2><a href="portfolio.html" class="blk light press rv">Všechny realizace <i class="ph-bold ph-arrow-right"></i></a></div>
+      <div class="wks"><a href="portfolio.html" class="wk rv"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0" alt="Rodinná vila" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Novostavby</span><h3>Rodinná vila</h3><small>Brno Žebětín</small></div></a><a href="portfolio.html" class="wk rv d1"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVgaTGaYVh3w4hFdwjlhZzDxjWrmaV8qxyTbSVPEpJq9zkQMVvAj2l4qGTMVROPHZIlZwrKaXWg3ba6XwF2LkY4ZFa6UmSvuCBmLHOYSuFYXcoctFkRIzYUWRys3NnYxiyPBz-Q-XgFmqLW5C-_3gf__OT1PCY78hOb7GDEBEFKNU4eJG7PCT52fz3eywBguZFnDG1fLNbHnN_EuerhyVCZHqVNTfaAbBfpaPVdWJ2JdMK5zXIUr-oGyPAL-HiXraYamNUWNZwPE" alt="Historická fasáda" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Fasády</span><h3>Historická fasáda</h3><small>Brno střed</small></div></a><a href="portfolio.html" class="wk rv d2"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArgSl3EOtiazd9dyo0ekLOisx_bOOl-Hl0XGJ1D4_svENc79nstUDK5Oam3tX1-Nuhh10zKogQUlOCtnWL8rkY3CeijaHkUMlz2OhEArBCp4XvA_8xwn1Yzjj2rnt4wSuEH2_GkUws3mBILiMQW6iaxGIBDdDgX8pGju2q6rJXR0zwKCS7FF_-G8Bbn-Z3dXtfvSfGYc-9NnKXyVtod0WDJn_uQYZHURYPsEnUljORIxs0EV28IxdP4vh62ceSrkDV2Y8Y00YU3Ms" alt="Rekonstrukce bytu" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Rekonstrukce</span><h3>Rekonstrukce bytu</h3><small>Brno Královo Pole</small></div></a></div>
     </section>
-    <section style="padding-top:0" aria-labelledby="rw">
-      <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">reference</span><h2 class="h2 rv d1" id="rw">Co říkají naši zákazníci</h2></div></div>
-        <div class="reviews">
-          <figure class="card review rv"><div class="stars" aria-label="5 z 5 hvězd"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div><blockquote>„Dům postavili přesně podle harmonogramu. Stavbyvedoucí byl vždy k zastižení.“</blockquote><figcaption><span class="av">JN</span><span><b>Jan Novotný</b>novostavba, Kuřim</span></figcaption></figure>
-          <figure class="card review rv d1"><div class="stars" aria-label="5 z 5 hvězd"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div><blockquote>„Rekonstrukce bytu za šest týdnů, bez skrytých víceprací. A uklizeno.“</blockquote><figcaption><span class="av">PS</span><span><b>Petra Svobodová</b>rekonstrukce, Brno</span></figcaption></figure>
-          <figure class="card review rv d2"><div class="stars" aria-label="5 z 5 hvězd"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div><blockquote>„Fasáda vypadá skvěle a pomohli nám i s papíry k dotaci na zateplení.“</blockquote><figcaption><span class="av">TD</span><span><b>Tomáš Dvořák</b>zateplení, Modřice</span></figcaption></figure>
-        </div>
-      </div>
+    <section class="sec">
+      <div class="sh"><h2 class="rv">Jak<br>to jde</h2></div>
+      <ol class="steps"><li class="rv"><b>01</b><h3>Prohlídka</h3><p>Přijedeme na pozemek, probereme projekt a rozpočet.</p></li><li class="rv d1"><b>02</b><h3>Smlouva</h3><p>Pevná cena a harmonogram černé na bílém.</p></li><li class="rv d2"><b>03</b><h3>Stavba</h3><p>Jeden stavbyvedoucí, každý týden report s fotkami.</p></li></ol>
     </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Máte projekt? Ozvěte se nám.</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420739482160" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 739 482 160</a></div>
-        </div>
+    <section class="sec">
+      <div class="sh"><h2 class="rv">Řekli<br>o nás</h2></div>
+      <div class="rboxes"><figure class="rbox rv"><blockquote>„Dům postavili přesně podle harmonogramu. Stavbyvedoucí byl vždy k zastižení.“</blockquote><figcaption>Jan Novotný<span>novostavba, Kuřim</span></figcaption></figure><figure class="rbox rv d1"><blockquote>„Rekonstrukce bytu za šest týdnů, bez skrytých víceprací. A uklizeno.“</blockquote><figcaption>Petra Svobodová<span>rekonstrukce, Brno</span></figcaption></figure><figure class="rbox rv d2"><blockquote>„Fasáda vypadá skvěle a pomohli nám i s papíry k dotaci na zateplení.“</blockquote><figcaption>Tomáš Dvořák<span>zateplení, Modřice</span></figcaption></figure></div>
+    </section>
+    <section class="callout">
+      <div class="co-in rv">
+        <p>Plánujete stavbu?<br>Zavolejte stavbyvedoucímu.</p>
+        <a href="tel:+420739482160" class="co-num press">739 482 160</a>
+        <a href="kontakt.html" class="blk press">Nebo napište poptávku <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </section>
   </main>
-  <footer class="tf">
-    <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a><p>Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Brno a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li style="color:var(--muted)">Vídeňská 214, Brno</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Stavby Moravec</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+  <footer class="ft">
+    <div class="ft-big">MORAVEC<span>stavby</span></div>
+    <div class="ft-grid">
+      <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li>Vídeňská 214, Brno</li></ul></div>
+      <div><h3>Kde stavíme</h3><ul><li>Brno</li><li>Kuřim</li><li>Modřice</li><li>Šlapanice</li><li>Blansko</li><li>Vyškov</li></ul></div>
     </div>
+    <p class="fine">© 2026 Stavby Moravec · Ukázkový web, firma i údaje jsou smyšlené.</p>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

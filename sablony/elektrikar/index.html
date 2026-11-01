@@ -3,128 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elektro Kratochvíl | Hradec Králové</title>
+  <title>Elektro Kratochvíl | elektrikář Hradec Králové</title>
   <meta name="description" content="Rozvody v domech a bytech, chytrá domácnost i revize. Pracujeme čistě, termíny držíme a po sobě uklidíme.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/elektrikar.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-elektrikar">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-lightning" aria-hidden="true"></i>Elektro Kratochvíl</a>
-      <ul class="nav-links"><li><a href="index.html" aria-current="page">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html" aria-current="page">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="bar">
+    <div class="bar-in">
+      <a href="index.html" class="logo"><i class="ph-fill ph-lightning"></i>Elektro Kratochvíl</a>
+      <nav class="links" aria-label="Hlavní navigace"><a href="index.html" aria-current="page">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <a href="kontakt.html" class="bar-cta press">Poptat</a>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+    <div class="sheet" id="menu" aria-hidden="true"><div class="sheet-in"><nav><a href="index.html" aria-current="page">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav><a href="kontakt.html" class="btn press">Nezávazná poptávka</a></div></div>
+  </header>
   <main id="main">
-    <header class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="status rv"><i></i>Volné termíny od 18. listopadu</span>
-          <h1 class="grad rv d1">Elektroinstalace,<br>na které se můžete spolehnout</h1>
-          <p class="sub rv d2">Rozvody v domech a bytech, chytrá domácnost i revize. Pracujeme čistě, termíny držíme a po sobě uklidíme.</p>
-          <div class="hero-cta rv d3">
-            <a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-            <a href="tel:+420774318902" class="tel"><i class="ph ph-phone"></i><span><small>Zavolejte nám</small>+420 774 318 902</span></a>
-          </div>
-        </div>
-        <div class="hero-media rv d2">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoQwkJlTI-AA3MlF1SKo6N0ZAM1T-ClgwIwUnnd2HU_HopDGEwq6ztQxzA_n35nCQEvyryhS8MMqQAJoqf8tHz0Ls1zaASKRLsEo72rPwsCmzVGuxkByryq32ac-kLV7zVWY2_jScajMZDFkJsDGJNcEj42-O3EaCAQZ0yUGuiCLnH7xlPo5Ls3g2j2hZY3Vl6fbKdggoJF5VsFqhu4dOh3v7TX-55EsyMoEXkPBv6lpBRcRaVdzw5lQgNh7H_yZg_Se0fAAnvacQ" alt="Elektro Kratochvíl při práci"  referrerpolicy="no-referrer">
-          <div class="badge-float"><i class="ph ph-seal-check"></i><div><strong>Certifikovaný revizní technik</strong><span>Revize dle platných norem</span></div></div>
-        </div>
-      </div>
-    </header>
-    <div class="strip alt"><div class="wrap facts"><div class="rv"><strong>17 let</strong><span>praxe v oboru</span></div><div class="rv d1"><strong>600+</strong><span>dokončených zakázek</span></div><div class="rv d2"><strong>24 h</strong><span>na odpověď k poptávce</span></div><div class="rv d3"><strong>5 let</strong><span>záruka na práci</span></div></div></div>
-    <section aria-labelledby="sv">
+    <section class="hero">
       <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">co děláme</span><h2 class="h2 rv d1" id="sv">S čím vám pomůžeme</h2></div><a href="sluzby.html" class="link rv">Všechny služby <i class="ph ph-arrow-right"></i></a></div>
-        <div class="grid-4">
-          <article class="card rv">
-            <div class="icon"><i class="ph ph-house-line"></i></div>
-            <h3>Domy a byty</h3><p>Nové rozvody i rekonstrukce, od projektu po osazení vypínačů.</p>
-            <ul><li><i class="ph ph-check"></i>Novostavby i rekonstrukce</li><li><i class="ph ph-check"></i>Rozvaděče a jističe</li><li><i class="ph ph-check"></i>Bleskosvody a uzemnění</li></ul>
-          </article>
-          <article class="card rv d1">
-            <div class="icon"><i class="ph ph-cpu"></i></div>
-            <h3>Chytrá domácnost</h3><p>Světla, stínění a topení ovládané z mobilu. Pohodlí a nižší účty za energie.</p>
-            <ul><li><i class="ph ph-check"></i>Systémy Loxone a KNX</li><li><i class="ph ph-check"></i>Ovládání z mobilu</li><li><i class="ph ph-check"></i>Úspora energie</li></ul>
-          </article>
-          <article class="card rv d2">
-            <div class="icon"><i class="ph ph-factory"></i></div>
-            <h3>Firmy a provozy</h3><p>Rozvody v halách, dílnách a kancelářích bez zbytečných odstávek.</p>
-            <ul><li><i class="ph ph-check"></i>Výroba rozvaděčů</li><li><i class="ph ph-check"></i>Slaboproud a data</li><li><i class="ph ph-check"></i>Servis a údržba</li></ul>
-          </article>
-          <article class="card rv d3">
-            <div class="icon"><i class="ph ph-shield-check"></i></div>
-            <h3>Revize elektro</h3><p>Výchozí i pravidelné revize elektroinstalace a hromosvodů s protokolem.</p>
-            <ul><li><i class="ph ph-check"></i>Revizní zpráva do 3 dnů</li><li><i class="ph ph-check"></i>Revize hromosvodů</li><li><i class="ph ph-check"></i>Kontrola spotřebičů</li></ul>
-          </article>
+        <p class="kicker rv">Elektro Kratochvíl · Hradec Králové</p>
+        <h1 class="rv d1">Elektřina,<br>která prostě funguje.</h1>
+        <p class="sub rv d2">Rozvody v domech a bytech, chytrá domácnost i revize. Pracujeme čistě, termíny držíme a po sobě uklidíme.</p>
+        <div class="acts rv d3"><a href="kontakt.html" class="btn press">Nezávazná poptávka</a><a href="tel:+420774318902" class="more">Zavolat 774 318 902 <i class="ph ph-caret-right"></i></a></div>
+      </div>
+      <div class="hero-img rv d2"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoQwkJlTI-AA3MlF1SKo6N0ZAM1T-ClgwIwUnnd2HU_HopDGEwq6ztQxzA_n35nCQEvyryhS8MMqQAJoqf8tHz0Ls1zaASKRLsEo72rPwsCmzVGuxkByryq32ac-kLV7zVWY2_jScajMZDFkJsDGJNcEj42-O3EaCAQZ0yUGuiCLnH7xlPo5Ls3g2j2hZY3Vl6fbKdggoJF5VsFqhu4dOh3v7TX-55EsyMoEXkPBv6lpBRcRaVdzw5lQgNh7H_yZg_Se0fAAnvacQ" alt="Elektrikář montuje designové svítidlo" referrerpolicy="no-referrer"></div>
+    </section>
+    <section class="facts"><div class="wrap facts-in"><div class="rv"><strong>17 let</strong><span>praxe v oboru</span></div><div class="rv d1"><strong>600+</strong><span>dokončených zakázek</span></div><div class="rv d2"><strong>24 h</strong><span>na odpověď k poptávce</span></div><div class="rv d3"><strong>5 let</strong><span>záruka na práci</span></div></div></section>
+    <section class="bento-sec">
+      <div class="wrap">
+        <h2 class="h2 rv">Všechno kolem elektřiny.<br><span>Od jedné zásuvky po chytrý dům.</span></h2>
+        <div class="bento">
+          <a href="sluzby.html" class="tile t-img rv"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdCoesvTxiOf4Vh8aiUl4vjYoZI7zCV1xD4XHjH-JHIUGkqcDjC_UCKFQPPO5sLknQEhvAit6Yd4FzuPOjDhck1e_j9DUHVb-ZoBNL207YhuDDGaD-vVHEbgyFTnyt-4RHnEO_P1gzmswh5ANJwCizu_HECY5dFASUtp26NbPMWxhR2DkVajqxR1ha9IsfLFbdgCeH64F3yK8dr1LaMJ7TAO11uSkAv7psr4P7cXs_Ktxp-crHAGvnhV9OX7nS08j5NjB1l62EZY" alt="Chytrá domácnost" loading="lazy" referrerpolicy="no-referrer"><div class="tile-txt"><span class="eyebrow">Chytrá domácnost</span><h3>Světla, stínění a topení z mobilu.</h3></div></a>
+          <a href="sluzby.html" class="tile t-dark rv d1"><span class="eyebrow">Revize elektro</span><strong class="big">3 dny</strong><p>Revizní zpráva s protokolem, rychle a bez starostí.</p></a>
+          <a href="sluzby.html" class="tile rv"><i class="ph ph-house-line"></i><h3>Domy a byty</h3><p>Nové rozvody i rekonstrukce, od projektu po osazení vypínačů.</p></a>
+          <a href="sluzby.html" class="tile rv d1"><i class="ph ph-factory"></i><h3>Firmy a provozy</h3><p>Rozvody v halách, dílnách a kancelářích bez zbytečných odstávek.</p></a>
+          <a href="kontakt.html" class="tile t-amber rv d2"><i class="ph-fill ph-siren"></i><h3>Havárie nonstop</h3><p>Výpadek proudu? Přijedeme ještě dnes.</p></a>
         </div>
       </div>
     </section>
-    <section class="tagline" aria-label="Naše filozofie" style="padding-top:32px"><div class="wrap"><p id="tagline">Dobrá elektroinstalace není vidět. Je jen <span data-accent>bezpečná</span> a <span data-accent>funguje roky.</span></p></div></section>
-    <section class="alt" aria-labelledby="wk">
+    <section class="work-sec">
       <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">realizace</span><h2 class="h2 rv d1" id="wk">Podívejte se na naši práci</h2></div><a href="portfolio.html" class="link rv">Všechny realizace <i class="ph ph-arrow-right"></i></a></div>
-        <div class="works three">
-          <a class="work rv" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtSBal6NSVF2Dqy-k9zGSOpYIiYjWdUxYnrK4UbBmHZclukQ9B0lbep3fRCVAn6WhXzuGwHlmqlRygaZQRTVoW-utp5Eripzm8Ou-WTkOBeJHdy1nEWhzFACSHDhWwThXgL56v8W0hId-Vms29Jg7NwgUBW9RnXWvbb21L-TjTSQH7dVGphpADxUE9cgC1V5gsDyMi2v2Sh7gG0llBz6gukSMlCOPa9Djsdn9steSHy5hDXBGdkov1ovnps_gAJPzNukQB1cYH-IQ" alt="Smart home v rodinné vile" loading="lazy" referrerpolicy="no-referrer"><div class="cap"><span>Rodinné domy · Hradec Králové</span><strong>Smart home v rodinné vile</strong></div></a>
-          <a class="work rv d1" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_TOZyv5SFULhmOd_VY5axhTNko7znsNLGfM10CT7MiNzyZyZFI_x4PhATrnsQcXW-0rkRRjW_VAPeKnr-z2lOo83DwoP-maR7DpXk9c40fqSOn0g-WfPO14WDWhoFYVO3fMSMdxeXlPprwlMPVWpIEXpILr8lBjq8yzL_K1ehHwOcE_LWgVHx4jI1of0Jm681NIp3UPGNJAdUz4EVxgwBPI1myUFaKvX6H-3_QYbfpQmBLLtOSj5MLF3qxyBgHaYSAHlmq8bZKpE" alt="Administrativní budova" loading="lazy" referrerpolicy="no-referrer"><div class="cap"><span>Firmy · Pardubice</span><strong>Administrativní budova</strong></div></a>
-          <a class="work rv d2" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbZrhbobe1YDSaAMbekTYkRz-JmWJX59ySHJs16rFzxpUfZWliuqmfe9hLMaqZ6mtCj4QMyo91OBaSqp6gwrWAo4v0JCdSD4jVWwhxfcgBdP32wttx8Ge2MSAl1e5xQqSHgXNFqZrdldA6_9Z_sZygRAXuTdqd34Jai6wbiF3wJIiLwaTbip8sOl3RFJxfenGjTVuHstyMmib5JsRybxafNOkJSHf9h8BrML2IKB3b83vsWXMqOqgL7v8SPaPWD30RiCpZC5bW5hg" alt="Revize výrobního areálu" loading="lazy" referrerpolicy="no-referrer"><div class="cap"><span>Revize · Jaroměř</span><strong>Revize výrobního areálu</strong></div></a>
-        </div>
+        <div class="row-head"><h2 class="h2 rv">Naše realizace.</h2><div class="arrows"><button class="arrow press" data-car-prev="car" aria-label="Předchozí"><i class="ph ph-caret-left"></i></button><button class="arrow press" data-car-next="car" aria-label="Další"><i class="ph ph-caret-right"></i></button></div></div>
       </div>
+      <div class="car rv" id="car" data-car tabindex="0" aria-label="Realizace, táhněte do stran"><div class="car-track"><a class="slide" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtSBal6NSVF2Dqy-k9zGSOpYIiYjWdUxYnrK4UbBmHZclukQ9B0lbep3fRCVAn6WhXzuGwHlmqlRygaZQRTVoW-utp5Eripzm8Ou-WTkOBeJHdy1nEWhzFACSHDhWwThXgL56v8W0hId-Vms29Jg7NwgUBW9RnXWvbb21L-TjTSQH7dVGphpADxUE9cgC1V5gsDyMi2v2Sh7gG0llBz6gukSMlCOPa9Djsdn9steSHy5hDXBGdkov1ovnps_gAJPzNukQB1cYH-IQ" alt="Smart home v rodinné vile" loading="lazy" referrerpolicy="no-referrer"><span class="cat">Rodinné domy</span><strong>Smart home v rodinné vile</strong><span class="place">Hradec Králové</span></a><a class="slide" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_TOZyv5SFULhmOd_VY5axhTNko7znsNLGfM10CT7MiNzyZyZFI_x4PhATrnsQcXW-0rkRRjW_VAPeKnr-z2lOo83DwoP-maR7DpXk9c40fqSOn0g-WfPO14WDWhoFYVO3fMSMdxeXlPprwlMPVWpIEXpILr8lBjq8yzL_K1ehHwOcE_LWgVHx4jI1of0Jm681NIp3UPGNJAdUz4EVxgwBPI1myUFaKvX6H-3_QYbfpQmBLLtOSj5MLF3qxyBgHaYSAHlmq8bZKpE" alt="Administrativní budova" loading="lazy" referrerpolicy="no-referrer"><span class="cat">Firmy</span><strong>Administrativní budova</strong><span class="place">Pardubice</span></a><a class="slide" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbZrhbobe1YDSaAMbekTYkRz-JmWJX59ySHJs16rFzxpUfZWliuqmfe9hLMaqZ6mtCj4QMyo91OBaSqp6gwrWAo4v0JCdSD4jVWwhxfcgBdP32wttx8Ge2MSAl1e5xQqSHgXNFqZrdldA6_9Z_sZygRAXuTdqd34Jai6wbiF3wJIiLwaTbip8sOl3RFJxfenGjTVuHstyMmib5JsRybxafNOkJSHf9h8BrML2IKB3b83vsWXMqOqgL7v8SPaPWD30RiCpZC5bW5hg" alt="Revize výrobního areálu" loading="lazy" referrerpolicy="no-referrer"><span class="cat">Revize</span><strong>Revize výrobního areálu</strong><span class="place">Jaroměř</span></a><a class="slide" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdCoesvTxiOf4Vh8aiUl4vjYoZI7zCV1xD4XHjH-JHIUGkqcDjC_UCKFQPPO5sLknQEhvAit6Yd4FzuPOjDhck1e_j9DUHVb-ZoBNL207YhuDDGaD-vVHEbgyFTnyt-4RHnEO_P1gzmswh5ANJwCizu_HECY5dFASUtp26NbPMWxhR2DkVajqxR1ha9IsfLFbdgCeH64F3yK8dr1LaMJ7TAO11uSkAv7psr4P7cXs_Ktxp-crHAGvnhV9OX7nS08j5NjB1l62EZY" alt="Byt s chytrým osvětlením" loading="lazy" referrerpolicy="no-referrer"><span class="cat">Rodinné domy</span><strong>Byt s chytrým osvětlením</strong><span class="place">Hradec Králové</span></a><a class="slide" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYPlLmcy2NvJa8076O4SX0jlhhijmH81uzyEmdl5R6DT5VU1237DQ0zIVR9R0zTW8hZnFWqsE7fankEZ94_f5w6w6rwdO7-X2Mbtr86uS2YEMiludxgQ4LES-wAtjv0nsxKLYKyABUw-J35Ke69wX5uzQ4wCfxLJmC5uw1d22iwHpVPn5kxlM_JQkQP4KWGvxcuNBPUUtanqjIALGmCpMi6VZJJ6fJPJiMBMW1xSZp6LaZvWyj0-K1nXjJ2JERYtmVLuXA0L9mc6I" alt="Rozvody výrobní haly" loading="lazy" referrerpolicy="no-referrer"><span class="cat">Firmy</span><strong>Rozvody výrobní haly</strong><span class="place">Náchod</span></a><a class="slide" href="portfolio.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJU1Ul2jMhq7-OkSanSZI9pE8gEdUDcjLXslSuEwR_u21fIlfUim28hxvZ9lcDpv_7kKPjQukO5AaHhWnsHTHpK13nSOjJ-eGCAxR7c2AntHih2IC4wg5A1t3-s6UjxE32YZzzIJJG9wc1xSb9-4-H8bqpXqY1R-vilfsgrZFlVGIT93wuOCcTh9NdFaDpH_YXA0rFVDEwOMBnfHh-APFs--N9rmxHdIAwhR1bTFzUtN7NqMYH85l6kCYUThhPOgTCuLKNHvO6RkE" alt="Designové vypínače" loading="lazy" referrerpolicy="no-referrer"><span class="cat">Rodinné domy</span><strong>Designové vypínače</strong><span class="place">Jičín</span></a></div></div>
     </section>
-    <section aria-labelledby="pr">
-      <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">jak to probíhá</span><h2 class="h2 rv d1" id="pr">Tři kroky a máte hotovo</h2></div></div>
-        <ol class="steps">
-          <li class="card rv"><h3>Ozvete se</h3><p>Zavoláte nebo vyplníte poptávku. Do 24 hodin se vám ozveme a domluvíme prohlídku.</p></li>
-          <li class="card rv d1"><h3>Dostanete nabídku</h3><p>Po prohlídce zdarma pošleme jasnou cenu a termín. Žádné skryté položky.</p></li>
-          <li class="card rv d2"><h3>Uděláme to</h3><p>Pracujeme čistě a podle domluvy. Na konci vše předáme a vysvětlíme.</p></li>
-        </ol>
-      </div>
+    <section class="reviews">
+      <div class="wrap"><h2 class="h2 rv">Co o nás říkají.</h2><div class="rq-grid"><figure class="rq rv"><blockquote>„Elektriku v celém domě nám udělali za týden. Vše čisté, popsané a vysvětlené. Doporučuji.“</blockquote><figcaption><b>Lucie Holubová</b> · rekonstrukce domu, Třebechovice</figcaption></figure><figure class="rq rv d1"><blockquote>„Konečně firma, která přijde, kdy slíbí. Revizi jsme měli hotovou do tří dnů i s protokolem.“</blockquote><figcaption><b>Martin Šťastný</b> · revize, Hradec Králové</figcaption></figure><figure class="rq rv d2"><blockquote>„Chytrou domácnost nám nastavili tak, že ji ovládají i rodiče. Účty za topení šly dolů.“</blockquote><figcaption><b>Ondřej Bartoš</b> · smart home, Nový Bydžov</figcaption></figure></div></div>
     </section>
-    <section style="padding-top:0" aria-labelledby="rw">
+    <section class="cta">
       <div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow rv">reference</span><h2 class="h2 rv d1" id="rw">Co říkají naši zákazníci</h2></div></div>
-        <div class="reviews">
-          <figure class="card review rv"><div class="stars" aria-label="5 z 5 hvězd"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div><blockquote>„Elektriku v celém domě nám udělali za týden. Vše čisté, popsané a vysvětlené. Doporučuji.“</blockquote><figcaption><span class="av">LH</span><span><b>Lucie Holubová</b>rekonstrukce domu, Třebechovice</span></figcaption></figure>
-          <figure class="card review rv d1"><div class="stars" aria-label="5 z 5 hvězd"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div><blockquote>„Konečně firma, která přijde, kdy slíbí. Revizi jsme měli hotovou do tří dnů i s protokolem.“</blockquote><figcaption><span class="av">MŠ</span><span><b>Martin Šťastný</b>revize, Hradec Králové</span></figcaption></figure>
-          <figure class="card review rv d2"><div class="stars" aria-label="5 z 5 hvězd"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div><blockquote>„Chytrou domácnost nám nastavili tak, že ji ovládají i rodiče. Účty za topení šly dolů.“</blockquote><figcaption><span class="av">OB</span><span><b>Ondřej Bartoš</b>smart home, Nový Bydžov</span></figcaption></figure>
-        </div>
-      </div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Máte projekt? Ozvěte se nám.</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420774318902" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 774 318 902</a></div>
-        </div>
+        <h2 class="rv">Bezpečná elektřina začíná<br>jedním telefonátem.</h2>
+        <p class="rv d1">Prohlídka a cenová nabídka zdarma. Ozveme se do 24 hodin.</p>
+        <div class="acts rv d2"><a href="kontakt.html" class="btn press">Nezávazná poptávka</a><a href="tel:+420774318902" class="more">Zavolat 774 318 902 <i class="ph ph-caret-right"></i></a></div>
       </div>
     </section>
   </main>
-  <footer class="tf">
+  <footer class="foot">
     <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-lightning" aria-hidden="true"></i>Elektro Kratochvíl</a><p>Rozvody v domech a bytech, chytrá domácnost i revize. Hradec Králové a okolí.</p></div>
+      <div class="foot-grid">
+        <div><strong>Elektro Kratochvíl</strong><p>Elektroinstalace, chytrá domácnost a revize. Hradec Králové a okolí.</p></div>
         <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420774318902">+420 774 318 902</a></li><li><a href="mailto:info@elektrokratochvil.cz">info@elektrokratochvil.cz</a></li><li style="color:var(--muted)">Pražská 1182, Hradec Králové</li></ul></div>
+        <div><h3>Kontakt</h3><ul><li><a href="tel:+420774318902">+420 774 318 902</a></li><li><a href="mailto:info@elektrokratochvil.cz">info@elektrokratochvil.cz</a></li><li>Pražská 1182, Hradec Králové</li></ul></div>
       </div>
-      <div class="tf-bottom"><span>© 2026 Elektro Kratochvíl</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+      <p class="fine">© 2026 Elektro Kratochvíl · Ukázkový web, firma i údaje jsou smyšlené.</p>
     </div>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

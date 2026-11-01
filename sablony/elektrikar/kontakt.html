@@ -9,70 +9,54 @@
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/elektrikar.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-elektrikar">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-lightning" aria-hidden="true"></i>Elektro Kratochvíl</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="bar">
+    <div class="bar-in">
+      <a href="index.html" class="logo"><i class="ph-fill ph-lightning"></i>Elektro Kratochvíl</a>
+      <nav class="links" aria-label="Hlavní navigace"><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav>
+      <a href="kontakt.html" class="bar-cta press">Poptat</a>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+    <div class="sheet" id="menu" aria-hidden="true"><div class="sheet-in"><nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav><a href="kontakt.html" class="btn press">Nezávazná poptávka</a></div></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">kontakt</span>
-        <h1 class="grad rv d1">Napište nám,<br>ozveme se do 24 hodin</h1>
-        <p class="sub rv d2">Prohlídka i cenová nabídka jsou zdarma. Stačí pár vět o tom, co potřebujete.</p>
+    <section class="phero"><div class="wrap"><p class="kicker rv">Kontakt</p><h1 class="rv d1">Napište nám.<br>Ozveme se do 24 hodin.</h1></div></section>
+    <section class="contact"><div class="wrap contact-in">
+      <form class="card form rv" id="demoForm" novalidate>
+        <h2>Nezávazná poptávka</h2>
+        <fieldset class="pills"><legend>O co máte zájem?</legend><label><input type="radio" name="sluzba" value="Domy a byty" checked><span>Domy a byty</span></label><label><input type="radio" name="sluzba" value="Chytrá domácnost"><span>Chytrá domácnost</span></label><label><input type="radio" name="sluzba" value="Firmy a provozy"><span>Firmy a provozy</span></label><label><input type="radio" name="sluzba" value="Revize elektro"><span>Revize elektro</span></label></fieldset>
+        <div class="two"><div class="field"><label for="n">Jméno</label><input id="n" required autocomplete="name"><span class="err">Vyplňte jméno.</span></div><div class="field"><label for="p">Telefon</label><input id="p" type="tel" required autocomplete="tel"><span class="err">Zadejte platný telefon.</span></div></div>
+        <div class="field"><label for="m">Zpráva</label><textarea id="m" rows="4" placeholder="Co potřebujete a kde?"></textarea></div>
+        <button class="btn press" type="submit">Odeslat poptávku</button>
+        <div class="form-msg msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
+      </form>
+      <div class="side">
+        <ul class="group rv d1"><li><a href="tel:+420774318902"><i class="ph-fill ph-phone"></i><span>Telefon<b>+420 774 318 902</b></span><i class="ph ph-caret-right chev"></i></a></li><li><a href="mailto:info@elektrokratochvil.cz"><i class="ph-fill ph-envelope-simple"></i><span>Email<b>info@elektrokratochvil.cz</b></span><i class="ph ph-caret-right chev"></i></a></li><li><div><i class="ph-fill ph-map-pin"></i><span>Adresa<b>Pražská 1182, Hradec Králové</b></span></div></li></ul>
+        <ul class="group hours rv d2"><li><span>Po až Pá</span><b>7:00 až 17:00</b></li><li><span>Sobota</span><b>po domluvě</b></li><li><span>Havárie</span><b>nonstop</b></li></ul>
+        <p class="area rv d3">Jezdíme po celém okolí: Hradec Králové, Pardubice, Jičín, Náchod, Jaroměř, Nový Bydžov.</p>
       </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap contact-grid">
-        <form class="form rv" id="demoForm" novalidate>
-          <h2>Nezávazná poptávka</h2>
-          <p>Povinné jsou jen jméno a telefon.</p>
-          <div class="f2">
-            <div class="field"><label for="n">Jméno</label><input id="n" type="text" autocomplete="name" required><span class="err">Vyplňte prosím jméno.</span></div>
-            <div class="field"><label for="p">Telefon</label><input id="p" type="tel" autocomplete="tel" required><span class="err">Zadejte platný telefon.</span></div>
-          </div>
-          <div class="field"><label for="s">O co máte zájem?</label><select id="s"><option>Domy a byty</option><option>Chytrá domácnost</option><option>Firmy a provozy</option><option>Revize elektro</option><option>Něco jiného</option></select></div>
-          <div class="field"><label for="m">Zpráva</label><textarea id="m" placeholder="Popište stručně, co potřebujete a kde."></textarea></div>
-          <button class="btn btn-lg" type="submit">Odeslat poptávku <i class="ph ph-paper-plane-right"></i></button>
-          <div class="form-msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
-        </form>
-        <div class="info">
-          <div class="info-card rv d1">
-            <a href="tel:+420774318902"><i class="ph ph-phone"></i><span><small>Telefon</small><b>+420 774 318 902</b></span></a>
-            <a href="mailto:info@elektrokratochvil.cz"><i class="ph ph-envelope-simple"></i><span><small>Email</small><b>info@elektrokratochvil.cz</b></span></a>
-            <div class="it"><i class="ph ph-map-pin"></i><span><small>Adresa</small><b>Pražská 1182, Hradec Králové</b></span></div>
-          </div>
-          <div class="info-card rv d2"><div class="it"><i class="ph ph-clock"></i><span><small>Otevírací doba</small><b>Kdy nás zastihnete</b></span></div><ul class="hours"><li><b>Po až Pá</b><span>7:00 až 17:00</span></li><li><b>Sobota</b><span>po domluvě</span></li><li><b>Havárie</b><span>nonstop</span></li></ul></div>
-          <div class="info-card rv d3"><div class="it"><i class="ph ph-navigation-arrow"></i><span><small>Kde působíme</small><b>Hradec Králové a okolí</b></span></div><ul class="chips"><li>Hradec Králové</li><li>Pardubice</li><li>Jičín</li><li>Náchod</li><li>Jaroměř</li><li>Nový Bydžov</li></ul></div>
-        </div>
-      </div>
-    </section>
+    </div></section>
   </main>
-  <footer class="tf">
+  <footer class="foot">
     <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-lightning" aria-hidden="true"></i>Elektro Kratochvíl</a><p>Rozvody v domech a bytech, chytrá domácnost i revize. Hradec Králové a okolí.</p></div>
+      <div class="foot-grid">
+        <div><strong>Elektro Kratochvíl</strong><p>Elektroinstalace, chytrá domácnost a revize. Hradec Králové a okolí.</p></div>
         <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420774318902">+420 774 318 902</a></li><li><a href="mailto:info@elektrokratochvil.cz">info@elektrokratochvil.cz</a></li><li style="color:var(--muted)">Pražská 1182, Hradec Králové</li></ul></div>
+        <div><h3>Kontakt</h3><ul><li><a href="tel:+420774318902">+420 774 318 902</a></li><li><a href="mailto:info@elektrokratochvil.cz">info@elektrokratochvil.cz</a></li><li>Pražská 1182, Hradec Králové</li></ul></div>
       </div>
-      <div class="tf-bottom"><span>© 2026 Elektro Kratochvíl</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+      <p class="fine">© 2026 Elektro Kratochvíl · Ukázkový web, firma i údaje jsou smyšlené.</p>
     </div>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

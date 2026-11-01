@@ -4,75 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt | Beneš Voda Topení</title>
-  <meta name="description" content="Kontakt a nezávazná poptávka.">
+  <meta name="description" content="Kontakt a havarijní služba.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/instalater.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-instalater">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-drop" aria-hidden="true"></i>Beneš Voda Topení</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
-  <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">kontakt</span>
-        <h1 class="grad rv d1">Napište nám,<br>ozveme se do 24 hodin</h1>
-        <p class="sub rv d2">Prohlídka i cenová nabídka jsou zdarma. Stačí pár vět o tom, co potřebujete.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap contact-grid">
-        <form class="form rv" id="demoForm" novalidate>
-          <h2>Nezávazná poptávka</h2>
-          <p>Povinné jsou jen jméno a telefon.</p>
-          <div class="f2">
-            <div class="field"><label for="n">Jméno</label><input id="n" type="text" autocomplete="name" required><span class="err">Vyplňte prosím jméno.</span></div>
-            <div class="field"><label for="p">Telefon</label><input id="p" type="tel" autocomplete="tel" required><span class="err">Zadejte platný telefon.</span></div>
-          </div>
-          <div class="field"><label for="s">O co máte zájem?</label><select id="s"><option>Topení a kotelny</option><option>Koupelny na klíč</option><option>Čištění odpadů</option><option>Diagnostika poruch</option><option>Něco jiného</option></select></div>
-          <div class="field"><label for="m">Zpráva</label><textarea id="m" placeholder="Popište stručně, co potřebujete a kde."></textarea></div>
-          <button class="btn btn-lg" type="submit">Odeslat poptávku <i class="ph ph-paper-plane-right"></i></button>
-          <div class="form-msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
-        </form>
-        <div class="info">
-          <div class="info-card rv d1">
-            <a href="tel:+420736204518"><i class="ph ph-phone"></i><span><small>Telefon</small><b>+420 736 204 518</b></span></a>
-            <a href="mailto:info@benes-voda.cz"><i class="ph ph-envelope-simple"></i><span><small>Email</small><b>info@benes-voda.cz</b></span></a>
-            <div class="it"><i class="ph ph-map-pin"></i><span><small>Adresa</small><b>Průmyslová 1472, Praha 10</b></span></div>
-          </div>
-          <div class="info-card rv d2"><div class="it"><i class="ph ph-clock"></i><span><small>Otevírací doba</small><b>Kdy nás zastihnete</b></span></div><ul class="hours"><li><b>Po až Pá</b><span>7:00 až 18:00</span></li><li><b>Sobota</b><span>8:00 až 12:00</span></li><li><b>Havárie</b><span>nonstop</span></li></ul></div>
-          <div class="info-card rv d3"><div class="it"><i class="ph ph-navigation-arrow"></i><span><small>Kde působíme</small><b>Praha a okolí</b></span></div><ul class="chips"><li>Praha</li><li>Říčany</li><li>Průhonice</li><li>Černošice</li><li>Brandýs nad Labem</li><li>Beroun</li></ul></div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="tf">
-    <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-drop" aria-hidden="true"></i>Beneš Voda Topení</a><p>Rozvody vody a plynu, kotelny, koupelny na klíč i čištění odpadů. Praha a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420736204518">+420 736 204 518</a></li><li><a href="mailto:info@benes-voda.cz">info@benes-voda.cz</a></li><li style="color:var(--muted)">Průmyslová 1472, Praha 10</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Beneš Voda Topení</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+  <div class="alert"><span class="pulse"></span>Havarijní služba nonstop · Praha do 60 minut · <a href="tel:+420736204518">+420 736 204 518</a></div>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="index.html" class="logo"><span class="mark"><i class="ph-fill ph-drop"></i></span><span>BENEŠ<small>voda · topení · plyn</small></span></a>
+      <nav class="links" aria-label="Hlavní navigace"><a href="index.html"><em>01</em>Domů</a><a href="sluzby.html"><em>02</em>Služby</a><a href="portfolio.html"><em>03</em>Realizace</a><a href="kontakt.html" aria-current="page"><em>04</em>Kontakt</a></nav>
+      <a href="tel:+420736204518" class="phone press"><i class="ph ph-phone-call"></i>736 204 518</a>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
+  </header>
+  <div class="drawer" id="menu" aria-hidden="true"><nav><a href="index.html"><em>01</em>Domů</a><a href="sluzby.html"><em>02</em>Služby</a><a href="portfolio.html"><em>03</em>Realizace</a><a href="kontakt.html" aria-current="page"><em>04</em>Kontakt</a></nav></div>
+  <main id="main">
+    <section class="phero"><div class="wrap"><p class="label rv">[ 04 ] kontakt</p><h1 class="rv d1">Popište problém.<br><span>Zbytek vyřešíme my.</span></h1></div></section>
+    <section style="padding-top:0"><div class="wrap kgrid">
+      <form class="panel form rv" id="demoForm" novalidate>
+        <p class="label">[ formulář ] poptávka</p>
+        <div class="field"><label for="s">01 · typ práce</label><select id="s"><option>Topení a kotelny</option><option>Koupelny na klíč</option><option>Čištění odpadů</option><option>Diagnostika poruch</option><option>Něco jiného</option></select></div>
+        <div class="two"><div class="field"><label for="n">02 · jméno</label><input id="n" required autocomplete="name"><span class="err">vyplňte jméno</span></div><div class="field"><label for="p">03 · telefon</label><input id="p" type="tel" required autocomplete="tel"><span class="err">neplatný telefon</span></div></div>
+        <div class="field"><label for="m">04 · popis</label><textarea id="m" rows="5" placeholder="Co se děje a kde?"></textarea></div>
+        <button class="btn press" type="submit">Odeslat poptávku <i class="ph ph-arrow-right"></i></button>
+        <div class="form-msg msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
+      </form>
+      <div class="kside">
+        <a href="tel:+420736204518" class="sos-card rv d1 press"><span class="pulse"></span><small>havárie nonstop</small><b>+420 736 204 518</b></a>
+        <div class="panel rv d2"><p class="label">[ data ]</p><table class="kt"><tr><th>email</th><td><a href="mailto:info@benes-voda.cz">info@benes-voda.cz</a></td></tr><tr><th>dílna</th><td>Průmyslová 1472, Praha 10</td></tr><tr><th>Po až Pá</th><td>7:00 až 18:00</td></tr><tr><th>Sobota</th><td>8:00 až 12:00</td></tr><tr><th>Havárie</th><td>nonstop</td></tr><tr><th>oblast</th><td>Praha, Říčany, Průhonice, Černošice, Brandýs nad Labem, Beroun</td></tr></table></div>
+      </div>
+    </div></section>
+  </main>
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div><span class="logo"><span class="mark"><i class="ph-fill ph-drop"></i></span><span>BENEŠ<small>voda · topení · plyn</small></span></span><p>Instalatérské práce, topení a koupelny. Praha a okolí.</p></div>
+      <div><h3>// stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h3>// kontakt</h3><ul><li><a href="tel:+420736204518">+420 736 204 518</a></li><li><a href="mailto:info@benes-voda.cz">info@benes-voda.cz</a></li><li>Průmyslová 1472, Praha 10</li></ul></div>
+    </div>
+    <div class="wrap fine"><span>© 2026 Beneš Voda Topení</span><span>Ukázkový web · firma i údaje jsou smyšlené</span></div>
   </footer>
+  <div class="mbar"><a href="tel:+420736204518" class="press"><i class="ph-fill ph-phone"></i>Zavolat</a><a href="kontakt.html" class="press">Poptávka</a></div>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

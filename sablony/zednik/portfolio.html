@@ -4,92 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Realizace | Stavby Moravec</title>
-  <meta name="description" content="Ukázky naší práce.">
+  <meta name="description" content="Hotové stavby.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/zednik.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-zednik">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html" aria-current="page">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html" aria-current="page">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="hdr">
+    <a href="index.html" class="logo"><span class="sq"><i class="ph-bold ph-wall"></i></span>MORAVEC<small>stavby</small></a>
+    <nav class="links" aria-label="Hlavní navigace"><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html" aria-current="page">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+    <a href="kontakt.html" class="hcta press">Poptávka <i class="ph-bold ph-arrow-right"></i></a>
+    <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <div class="slab" id="menu" aria-hidden="true"><nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html" aria-current="page">Realizace</a><a href="kontakt.html">Kontakt</a></nav><a href="tel:+420739482160" class="slab-tel">+420 739 482 160</a></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">realizace</span>
-        <h1 class="grad rv d1">Naše práce mluví<br>sama za sebe</h1>
-        <p class="sub rv d2">Výběr zakázek z posledních let. Rádi vám ukážeme i další a domluvíme prohlídku hotové stavby.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="filters rv" role="group" aria-label="Filtr realizací"><button type="button" data-f="vse" aria-pressed="true">Vše</button><button type="button" data-f="novostavby" aria-pressed="false">Novostavby</button><button type="button" data-f="fasády" aria-pressed="false">Fasády</button><button type="button" data-f="rekonstrukce" aria-pressed="false">Rekonstrukce</button><button type="button" data-f="terénní-úpravy" aria-pressed="false">Terénní úpravy</button></div>
-        <div class="works three">
-          <article class="work-card rv" data-cat="novostavby">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0" alt="Rodinná vila" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Novostavby</b><span>Brno Žebětín</span></div><h3>Rodinná vila</h3><p>Hrubá stavba a vnitřní omítky dvoupodlažní vily.</p></div>
-          </article>
-          <article class="work-card rv d1" data-cat="fasády">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVgaTGaYVh3w4hFdwjlhZzDxjWrmaV8qxyTbSVPEpJq9zkQMVvAj2l4qGTMVROPHZIlZwrKaXWg3ba6XwF2LkY4ZFa6UmSvuCBmLHOYSuFYXcoctFkRIzYUWRys3NnYxiyPBz-Q-XgFmqLW5C-_3gf__OT1PCY78hOb7GDEBEFKNU4eJG7PCT52fz3eywBguZFnDG1fLNbHnN_EuerhyVCZHqVNTfaAbBfpaPVdWJ2JdMK5zXIUr-oGyPAL-HiXraYamNUWNZwPE" alt="Historická fasáda" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Fasády</b><span>Brno střed</span></div><h3>Historická fasáda</h3><p>Obnova štukové fasády činžovního domu.</p></div>
-          </article>
-          <article class="work-card rv d2" data-cat="rekonstrukce">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArgSl3EOtiazd9dyo0ekLOisx_bOOl-Hl0XGJ1D4_svENc79nstUDK5Oam3tX1-Nuhh10zKogQUlOCtnWL8rkY3CeijaHkUMlz2OhEArBCp4XvA_8xwn1Yzjj2rnt4wSuEH2_GkUws3mBILiMQW6iaxGIBDdDgX8pGju2q6rJXR0zwKCS7FF_-G8Bbn-Z3dXtfvSfGYc-9NnKXyVtod0WDJn_uQYZHURYPsEnUljORIxs0EV28IxdP4vh62ceSrkDV2Y8Y00YU3Ms" alt="Rekonstrukce bytu" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Rekonstrukce</b><span>Brno Královo Pole</span></div><h3>Rekonstrukce bytu</h3><p>Nové příčky, rozvody, omítky a koupelna.</p></div>
-          </article>
-          <article class="work-card rv" data-cat="terénní-úpravy">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJdUhJB-WP30em9sr6yPxG1lBEdkLVvo9IofqXReS4vlxHZay2iwfoev9VYx0j_ERLwqcGJglb-2Zw6nFNFsBIAvq14S7PHKwiklydWnKhzog21QH3O02wYR5yfrN2EdCAbsDtJrzOynYYVwLPlysgv_Spy6KHxC-O-NIcOcWpdumKqATLN_xxMP1X4-2WZDedIfmUAWJx0i57kkPnVFO-SDnkgY1TgYVT-deQv0agSX4yK32lqyvfNF-NjLB-BciKGe8tV0eIE80" alt="Opěrné zdi ve svahu" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Terénní úpravy</b><span>Kuřim</span></div><h3>Opěrné zdi ve svahu</h3><p>Betonáž masivních opěrných zdí pro rozlehlý pozemek.</p></div>
-          </article>
-          <article class="work-card rv d1" data-cat="fasády">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9uqmzsYS_D2FNWfZ_L2dn4AMDVFvWXY-KH41MFcSZFOqIQPHmmulYdFLuiBShkE0kJ7uWBSU1l9Tkdb6KSxDVcLX9dJOKIllvg7s-2J7MXdx7hy1zVB-7liiWM72tsjDXcZ24TnBdenCVcWmgEAuFjJgsFLi48Lol53dkxRwma7OPZS5YPziNcajr_1z1glyrHGcpW3sg6ksLTv0B4R93cioQAA1Zncdbq8wIjB1mJs-qfJo-XgnWcMzl1ZlcoZXNYWdrVJbPksw" alt="Cihlová fasáda" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Fasády</b><span>Modřice</span></div><h3>Cihlová fasáda</h3><p>Lícové zdivo a strukturální vyzdívka.</p></div>
-          </article>
-          <article class="work-card rv d2" data-cat="rekonstrukce">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe3zc2xZFbSyPP6HGuToEB1c7VjJzDDQaVZrBPcqTQ2NmN1867_Bmzw6ds6QWxrSLa3MavsRPaWrTeXB7HXsDdssiLdXqQiG-Fhb3XGc23jrrtABAZWZZeBbb4rc8MHXhcEtjCaZ92zFuR1KmBDOYJavqQJTK6HpoQJhkdQEYv4IlgFDhH4rVx2OlPRrJ13TB9yDr7BWQ0CaipEc14IxtFP41_-08mm_1swqCsbjDQ6f8uIjAFSJyoG1Cqmi7zWb0VxZh_aXsHBnc" alt="Průmyslový loft" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Rekonstrukce</b><span>Brno Zábrdovice</span></div><h3>Průmyslový loft</h3><p>Obnova nosného zdiva bývalé továrny.</p></div>
-          </article>
-        </div>
-      </div>
+    <section class="ptitle"><h1 class="mega rv">Stavby<span>.</span></h1><p class="rv d1">Vybrané zakázky z Brna a okolí. Rádi vás vezmeme na prohlídku hotového domu.</p></section>
+    <section class="sec">
+      <div class="tags rv" data-filter="wks" role="group" aria-label="Filtr realizací"><button type="button" data-f="vse" aria-pressed="true">Vše</button><button type="button" data-f="novostavby" aria-pressed="false">Novostavby</button><button type="button" data-f="fasády" aria-pressed="false">Fasády</button><button type="button" data-f="rekonstrukce" aria-pressed="false">Rekonstrukce</button><button type="button" data-f="terénní-úpravy" aria-pressed="false">Terénní úpravy</button></div>
+      <div class="wks" id="wks"><article class="wk rv" data-cat="novostavby"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0" alt="Rodinná vila" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Novostavby</span><h3>Rodinná vila</h3><small>Brno Žebětín · Hrubá stavba a vnitřní omítky dvoupodlažní vily.</small></div></article><article class="wk rv d1" data-cat="fasády"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVgaTGaYVh3w4hFdwjlhZzDxjWrmaV8qxyTbSVPEpJq9zkQMVvAj2l4qGTMVROPHZIlZwrKaXWg3ba6XwF2LkY4ZFa6UmSvuCBmLHOYSuFYXcoctFkRIzYUWRys3NnYxiyPBz-Q-XgFmqLW5C-_3gf__OT1PCY78hOb7GDEBEFKNU4eJG7PCT52fz3eywBguZFnDG1fLNbHnN_EuerhyVCZHqVNTfaAbBfpaPVdWJ2JdMK5zXIUr-oGyPAL-HiXraYamNUWNZwPE" alt="Historická fasáda" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Fasády</span><h3>Historická fasáda</h3><small>Brno střed · Obnova štukové fasády činžovního domu.</small></div></article><article class="wk rv d2" data-cat="rekonstrukce"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArgSl3EOtiazd9dyo0ekLOisx_bOOl-Hl0XGJ1D4_svENc79nstUDK5Oam3tX1-Nuhh10zKogQUlOCtnWL8rkY3CeijaHkUMlz2OhEArBCp4XvA_8xwn1Yzjj2rnt4wSuEH2_GkUws3mBILiMQW6iaxGIBDdDgX8pGju2q6rJXR0zwKCS7FF_-G8Bbn-Z3dXtfvSfGYc-9NnKXyVtod0WDJn_uQYZHURYPsEnUljORIxs0EV28IxdP4vh62ceSrkDV2Y8Y00YU3Ms" alt="Rekonstrukce bytu" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Rekonstrukce</span><h3>Rekonstrukce bytu</h3><small>Brno Královo Pole · Nové příčky, rozvody, omítky a koupelna.</small></div></article><article class="wk rv" data-cat="terénní-úpravy"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJdUhJB-WP30em9sr6yPxG1lBEdkLVvo9IofqXReS4vlxHZay2iwfoev9VYx0j_ERLwqcGJglb-2Zw6nFNFsBIAvq14S7PHKwiklydWnKhzog21QH3O02wYR5yfrN2EdCAbsDtJrzOynYYVwLPlysgv_Spy6KHxC-O-NIcOcWpdumKqATLN_xxMP1X4-2WZDedIfmUAWJx0i57kkPnVFO-SDnkgY1TgYVT-deQv0agSX4yK32lqyvfNF-NjLB-BciKGe8tV0eIE80" alt="Opěrné zdi ve svahu" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Terénní úpravy</span><h3>Opěrné zdi ve svahu</h3><small>Kuřim · Betonáž masivních opěrných zdí pro rozlehlý pozemek.</small></div></article><article class="wk rv d1" data-cat="fasády"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9uqmzsYS_D2FNWfZ_L2dn4AMDVFvWXY-KH41MFcSZFOqIQPHmmulYdFLuiBShkE0kJ7uWBSU1l9Tkdb6KSxDVcLX9dJOKIllvg7s-2J7MXdx7hy1zVB-7liiWM72tsjDXcZ24TnBdenCVcWmgEAuFjJgsFLi48Lol53dkxRwma7OPZS5YPziNcajr_1z1glyrHGcpW3sg6ksLTv0B4R93cioQAA1Zncdbq8wIjB1mJs-qfJo-XgnWcMzl1ZlcoZXNYWdrVJbPksw" alt="Cihlová fasáda" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Fasády</span><h3>Cihlová fasáda</h3><small>Modřice · Lícové zdivo a strukturální vyzdívka.</small></div></article><article class="wk rv d2" data-cat="rekonstrukce"><div class="wk-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe3zc2xZFbSyPP6HGuToEB1c7VjJzDDQaVZrBPcqTQ2NmN1867_Bmzw6ds6QWxrSLa3MavsRPaWrTeXB7HXsDdssiLdXqQiG-Fhb3XGc23jrrtABAZWZZeBbb4rc8MHXhcEtjCaZ92zFuR1KmBDOYJavqQJTK6HpoQJhkdQEYv4IlgFDhH4rVx2OlPRrJ13TB9yDr7BWQ0CaipEc14IxtFP41_-08mm_1swqCsbjDQ6f8uIjAFSJyoG1Cqmi7zWb0VxZh_aXsHBnc" alt="Průmyslový loft" loading="lazy" referrerpolicy="no-referrer"></div><div class="wk-cap"><span>Rekonstrukce</span><h3>Průmyslový loft</h3><small>Brno Zábrdovice · Obnova nosného zdiva bývalé továrny.</small></div></article></div>
     </section>
-    <section style="padding-top:0">
-      <div class="wrap"><figure class="quote rv"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKMfu4RFs6MQEJa9PAgAPHHn4y3KY2xuAKgaeXIpJJhae0kzHu7hGk2Kul-9w2PremThdnzO_EYZxshCMNiN2GGZBFxlMjst4lXVbcfrMt0SLoqhRWfRbpu4loH5eKDQJKr_kgSYd81Ac96pVB7cdXy1wfDeynC_Tp15mcneQdAJ71KRK0XVDF0NpolEoNKZ35HpwKx-18iuj-PKFy50I3L-_OG6H1GeMnVL_gt46RSrGaFgg8t1vsHG7vFUaHVWWL1X1YvJWkdxI" alt="Detail naší práce" loading="lazy" referrerpolicy="no-referrer"><blockquote>„Naše zdivo není jen o vzhledu. Stavíme konstrukce, které vydrží desítky let a nebudete se o ně muset starat.“<span>Radek Moravec, stavbyvedoucí</span></blockquote></figure></div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Chcete podobný výsledek?</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420739482160" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 739 482 160</a></div>
-        </div>
+    <section class="sec"><figure class="qbox rv"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKMfu4RFs6MQEJa9PAgAPHHn4y3KY2xuAKgaeXIpJJhae0kzHu7hGk2Kul-9w2PremThdnzO_EYZxshCMNiN2GGZBFxlMjst4lXVbcfrMt0SLoqhRWfRbpu4loH5eKDQJKr_kgSYd81Ac96pVB7cdXy1wfDeynC_Tp15mcneQdAJ71KRK0XVDF0NpolEoNKZ35HpwKx-18iuj-PKFy50I3L-_OG6H1GeMnVL_gt46RSrGaFgg8t1vsHG7vFUaHVWWL1X1YvJWkdxI" alt="Detail zdiva" loading="lazy" referrerpolicy="no-referrer"><blockquote>„Naše zdivo není jen o vzhledu. Stavíme konstrukce, které vydrží desítky let a nebudete se o ně muset starat.“<span>Radek Moravec, stavbyvedoucí</span></blockquote></figure></section>
+    <section class="callout">
+      <div class="co-in rv">
+        <p>Plánujete stavbu?<br>Zavolejte stavbyvedoucímu.</p>
+        <a href="tel:+420739482160" class="co-num press">739 482 160</a>
+        <a href="kontakt.html" class="blk press">Nebo napište poptávku <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </section>
   </main>
-  <footer class="tf">
-    <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a><p>Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Brno a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li style="color:var(--muted)">Vídeňská 214, Brno</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Stavby Moravec</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+  <footer class="ft">
+    <div class="ft-big">MORAVEC<span>stavby</span></div>
+    <div class="ft-grid">
+      <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li>Vídeňská 214, Brno</li></ul></div>
+      <div><h3>Kde stavíme</h3><ul><li>Brno</li><li>Kuřim</li><li>Modřice</li><li>Šlapanice</li><li>Blansko</li><li>Vyškov</li></ul></div>
     </div>
+    <p class="fine">© 2026 Stavby Moravec · Ukázkový web, firma i údaje jsou smyšlené.</p>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

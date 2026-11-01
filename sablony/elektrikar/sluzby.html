@@ -9,99 +9,71 @@
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/elektrikar.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-elektrikar">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-lightning" aria-hidden="true"></i>Elektro Kratochvíl</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html" aria-current="page">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html" aria-current="page">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="bar">
+    <div class="bar-in">
+      <a href="index.html" class="logo"><i class="ph-fill ph-lightning"></i>Elektro Kratochvíl</a>
+      <nav class="links" aria-label="Hlavní navigace"><a href="index.html">Domů</a><a href="sluzby.html" aria-current="page">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <a href="kontakt.html" class="bar-cta press">Poptat</a>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+    <div class="sheet" id="menu" aria-hidden="true"><div class="sheet-in"><nav><a href="index.html">Domů</a><a href="sluzby.html" aria-current="page">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav><a href="kontakt.html" class="btn press">Nezávazná poptávka</a></div></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">služby</span>
-        <h1 class="grad rv d1">Všechno, co potřebujete,<br>od jedné firmy</h1>
-        <p class="sub rv d2">Od první prohlídky po předání hotové práce. Hradec Králové a okolí, pevná cena a jasný termín.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap"><div class="rows">
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK7Xn_1H-r6gQ8A7VpE48E_9FoF_qek7iDsHU7Zia_ITzpqb8RmZDd9J8blC-gNNUYqgtF5vru_l1pX-vR7V7-qVrn_TYFRTgFxhF5Gt3VtWKxPp6ZOynf5I-XCxTNn21_ZSvD3j5DFLdtDnm9brfFQ6CnN6beioEcgdm3N_cLVet343POHlqFKtc9KDofEIS6W2N79mLuEPfohVz2hhO9kNr06MDmKoiufEkwgJGbQ4bt1lipxjECqV4h1bGGr8AiweXU79WKkso" alt="Domy a byty" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">01</span>
-              <h3>Domy a byty</h3><p>Nové rozvody i rekonstrukce, od projektu po osazení vypínačů.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Novostavby i rekonstrukce</li><li><i class="ph ph-check-circle"></i>Rozvaděče a jističe</li><li><i class="ph ph-check-circle"></i>Bleskosvody a uzemnění</li></ul>
-              <span class="price">od 18 000 Kč</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdCoesvTxiOf4Vh8aiUl4vjYoZI7zCV1xD4XHjH-JHIUGkqcDjC_UCKFQPPO5sLknQEhvAit6Yd4FzuPOjDhck1e_j9DUHVb-ZoBNL207YhuDDGaD-vVHEbgyFTnyt-4RHnEO_P1gzmswh5ANJwCizu_HECY5dFASUtp26NbPMWxhR2DkVajqxR1ha9IsfLFbdgCeH64F3yK8dr1LaMJ7TAO11uSkAv7psr4P7cXs_Ktxp-crHAGvnhV9OX7nS08j5NjB1l62EZY" alt="Chytrá domácnost" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">02</span>
-              <h3>Chytrá domácnost</h3><p>Světla, stínění a topení ovládané z mobilu. Pohodlí a nižší účty za energie.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Systémy Loxone a KNX</li><li><i class="ph ph-check-circle"></i>Ovládání z mobilu</li><li><i class="ph ph-check-circle"></i>Úspora energie</li></ul>
-              <span class="price">od 35 000 Kč</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdxz_aIe37pzs1QDHoazW3FZ8YYt792of5wwUSBeG7G0v2zRhLpGLDcFjKkH6OqKuCXVumr93kTNk_MQfGmiG-Mbdn5cbwNgGGzm8udwwPsK1uAtx-lXsyaj0STYpJDgvJ_GAaq--lDmmc-NDkd9WaDfObhjY4ppdgwTs9U_GADfM6ltaNZNmlu5liv4uxAMMg-s17rwVVULcp7rCAnAsiVH1MZ0lU1IbkGeChGK5eoYjT2V0s6gPy5_XGWkXqrdv6nLNMwwJAouY" alt="Firmy a provozy" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">03</span>
-              <h3>Firmy a provozy</h3><p>Rozvody v halách, dílnách a kancelářích bez zbytečných odstávek.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Výroba rozvaděčů</li><li><i class="ph ph-check-circle"></i>Slaboproud a data</li><li><i class="ph ph-check-circle"></i>Servis a údržba</li></ul>
-              <span class="price">cena dle projektu</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnuWOq5Rg7DTrAJLgfYEzu8MOQKPB1jprkTOTFpVtuhD_KV7R8CzH_RifxsnU9uQtx4BNhvlxbZp1RQBTD2j50IkEHH3ebi2mG3YCwyb6cfembLoAQ9-_4ElXd4W70JNVxb-mdIogQeL0ifDP5E0CUmV4TiC8Y4-FpB_MwHaj08-AQGWSbG0JwBQv86F-VgI0ttWJ5hMuSpNeaD26FxRNx5OiSzi0tK5w_6nCIrJ40xYRKg5KMJW1iLowC9gbgrHnE9vrNqdmksGs" alt="Revize elektro" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">04</span>
-              <h3>Revize elektro</h3><p>Výchozí i pravidelné revize elektroinstalace a hromosvodů s protokolem.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Revizní zpráva do 3 dnů</li><li><i class="ph ph-check-circle"></i>Revize hromosvodů</li><li><i class="ph ph-check-circle"></i>Kontrola spotřebičů</li></ul>
-              <span class="price">od 2 900 Kč</span>
-            </div>
-          </article>
-      </div></div>
-    </section>
-    <section style="padding-top:0" aria-labelledby="fq">
-      <div class="wrap faq-grid">
-        <div><span class="eyebrow rv">časté otázky</span><h2 class="h2 rv d1" id="fq">Než se nám ozvete</h2><p class="lead rv d2">Nenašli jste odpověď? Zavolejte na <a class="link" href="tel:+420774318902">+420 774 318 902</a>.</p></div>
-        <div class="faq rv d1"><details><summary>Kolik stojí elektroinstalace v bytě?<i class="ph ph-plus"></i></summary><div class="ans">Kompletní rozvody v bytě 2+kk vycházejí zhruba od 45 000 Kč podle počtu okruhů a vybavení. Přesnou cenu dostanete po prohlídce zdarma.</div></details><details><summary>Jak rychle můžete přijet?<i class="ph ph-plus"></i></summary><div class="ans">Na běžné zakázky obvykle do 14 dnů. Havárie řešíme ještě týž den v Hradci Králové a okolí do 30 km.</div></details><details><summary>Děláte i revize pro pojišťovnu nebo kolaudaci?<i class="ph ph-plus"></i></summary><div class="ans">Ano. Revizní zprávu vystavuje certifikovaný revizní technik a dostanete ji do tří pracovních dnů.</div></details><details><summary>Dáváte na práci záruku?<i class="ph ph-plus"></i></summary><div class="ans">Na všechny práce dáváme záruku 5 let, na materiál podle výrobce.</div></details></div>
+    <section class="phero"><div class="wrap"><p class="kicker rv">Služby</p><h1 class="rv d1">Jedna firma.<br>Všechny elektro práce.</h1><p class="sub rv d2">Od první prohlídky po revizní zprávu. Pevná cena předem a záruka 5 let.</p></div></section>
+    <section class="feature">
+      <div class="wrap feature-in">
+        <div class="ft rv"><span class="eyebrow">01</span><h2>Domy a byty</h2><p>Nové rozvody i rekonstrukce, od projektu po osazení vypínačů.</p><ul><li><i class="ph ph-check"></i>Novostavby i rekonstrukce</li><li><i class="ph ph-check"></i>Rozvaděče a jističe</li><li><i class="ph ph-check"></i>Bleskosvody a uzemnění</li></ul><span class="price">od 18 000 Kč</span></div>
+        <div class="fi rv d1"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK7Xn_1H-r6gQ8A7VpE48E_9FoF_qek7iDsHU7Zia_ITzpqb8RmZDd9J8blC-gNNUYqgtF5vru_l1pX-vR7V7-qVrn_TYFRTgFxhF5Gt3VtWKxPp6ZOynf5I-XCxTNn21_ZSvD3j5DFLdtDnm9brfFQ6CnN6beioEcgdm3N_cLVet343POHlqFKtc9KDofEIS6W2N79mLuEPfohVz2hhO9kNr06MDmKoiufEkwgJGbQ4bt1lipxjECqV4h1bGGr8AiweXU79WKkso" alt="Domy a byty" loading="lazy" referrerpolicy="no-referrer"></div>
       </div>
     </section>
-    <section style="padding-top:0">
+    <section class="feature alt">
+      <div class="wrap feature-in">
+        <div class="ft rv"><span class="eyebrow">02</span><h2>Chytrá domácnost</h2><p>Světla, stínění a topení ovládané z mobilu. Pohodlí a nižší účty za energie.</p><ul><li><i class="ph ph-check"></i>Systémy Loxone a KNX</li><li><i class="ph ph-check"></i>Ovládání z mobilu</li><li><i class="ph ph-check"></i>Úspora energie</li></ul><span class="price">od 35 000 Kč</span></div>
+        <div class="fi rv d1"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdCoesvTxiOf4Vh8aiUl4vjYoZI7zCV1xD4XHjH-JHIUGkqcDjC_UCKFQPPO5sLknQEhvAit6Yd4FzuPOjDhck1e_j9DUHVb-ZoBNL207YhuDDGaD-vVHEbgyFTnyt-4RHnEO_P1gzmswh5ANJwCizu_HECY5dFASUtp26NbPMWxhR2DkVajqxR1ha9IsfLFbdgCeH64F3yK8dr1LaMJ7TAO11uSkAv7psr4P7cXs_Ktxp-crHAGvnhV9OX7nS08j5NjB1l62EZY" alt="Chytrá domácnost" loading="lazy" referrerpolicy="no-referrer"></div>
+      </div>
+    </section>
+    <section class="feature">
+      <div class="wrap feature-in">
+        <div class="ft rv"><span class="eyebrow">03</span><h2>Firmy a provozy</h2><p>Rozvody v halách, dílnách a kancelářích bez zbytečných odstávek.</p><ul><li><i class="ph ph-check"></i>Výroba rozvaděčů</li><li><i class="ph ph-check"></i>Slaboproud a data</li><li><i class="ph ph-check"></i>Servis a údržba</li></ul><span class="price">cena dle projektu</span></div>
+        <div class="fi rv d1"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdxz_aIe37pzs1QDHoazW3FZ8YYt792of5wwUSBeG7G0v2zRhLpGLDcFjKkH6OqKuCXVumr93kTNk_MQfGmiG-Mbdn5cbwNgGGzm8udwwPsK1uAtx-lXsyaj0STYpJDgvJ_GAaq--lDmmc-NDkd9WaDfObhjY4ppdgwTs9U_GADfM6ltaNZNmlu5liv4uxAMMg-s17rwVVULcp7rCAnAsiVH1MZ0lU1IbkGeChGK5eoYjT2V0s6gPy5_XGWkXqrdv6nLNMwwJAouY" alt="Firmy a provozy" loading="lazy" referrerpolicy="no-referrer"></div>
+      </div>
+    </section>
+    <section class="feature alt">
+      <div class="wrap feature-in">
+        <div class="ft rv"><span class="eyebrow">04</span><h2>Revize elektro</h2><p>Výchozí i pravidelné revize elektroinstalace a hromosvodů s protokolem.</p><ul><li><i class="ph ph-check"></i>Revizní zpráva do 3 dnů</li><li><i class="ph ph-check"></i>Revize hromosvodů</li><li><i class="ph ph-check"></i>Kontrola spotřebičů</li></ul><span class="price">od 2 900 Kč</span></div>
+        <div class="fi rv d1"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnuWOq5Rg7DTrAJLgfYEzu8MOQKPB1jprkTOTFpVtuhD_KV7R8CzH_RifxsnU9uQtx4BNhvlxbZp1RQBTD2j50IkEHH3ebi2mG3YCwyb6cfembLoAQ9-_4ElXd4W70JNVxb-mdIogQeL0ifDP5E0CUmV4TiC8Y4-FpB_MwHaj08-AQGWSbG0JwBQv86F-VgI0ttWJ5hMuSpNeaD26FxRNx5OiSzi0tK5w_6nCIrJ40xYRKg5KMJW1iLowC9gbgrHnE9vrNqdmksGs" alt="Revize elektro" loading="lazy" referrerpolicy="no-referrer"></div>
+      </div>
+    </section>
+    <section class="faq-sec"><div class="wrap narrow"><h2 class="h2 rv">Časté otázky.</h2><div class="faq"><details class="rv"><summary>Kolik stojí elektroinstalace v bytě?<i class="ph ph-plus"></i></summary><p>Kompletní rozvody v bytě 2+kk vycházejí zhruba od 45 000 Kč podle počtu okruhů a vybavení. Přesnou cenu dostanete po prohlídce zdarma.</p></details><details class="rv"><summary>Jak rychle můžete přijet?<i class="ph ph-plus"></i></summary><p>Na běžné zakázky obvykle do 14 dnů. Havárie řešíme ještě týž den v Hradci Králové a okolí do 30 km.</p></details><details class="rv"><summary>Děláte i revize pro pojišťovnu nebo kolaudaci?<i class="ph ph-plus"></i></summary><p>Ano. Revizní zprávu vystavuje certifikovaný revizní technik a dostanete ji do tří pracovních dnů.</p></details><details class="rv"><summary>Dáváte na práci záruku?<i class="ph ph-plus"></i></summary><p>Na všechny práce dáváme záruku 5 let, na materiál podle výrobce.</p></details></div></div></section>
+    <section class="cta">
       <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Nevíte si rady? Poradíme zdarma.</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420774318902" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 774 318 902</a></div>
-        </div>
+        <h2 class="rv">Bezpečná elektřina začíná<br>jedním telefonátem.</h2>
+        <p class="rv d1">Prohlídka a cenová nabídka zdarma. Ozveme se do 24 hodin.</p>
+        <div class="acts rv d2"><a href="kontakt.html" class="btn press">Nezávazná poptávka</a><a href="tel:+420774318902" class="more">Zavolat 774 318 902 <i class="ph ph-caret-right"></i></a></div>
       </div>
     </section>
   </main>
-  <footer class="tf">
+  <footer class="foot">
     <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-lightning" aria-hidden="true"></i>Elektro Kratochvíl</a><p>Rozvody v domech a bytech, chytrá domácnost i revize. Hradec Králové a okolí.</p></div>
+      <div class="foot-grid">
+        <div><strong>Elektro Kratochvíl</strong><p>Elektroinstalace, chytrá domácnost a revize. Hradec Králové a okolí.</p></div>
         <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420774318902">+420 774 318 902</a></li><li><a href="mailto:info@elektrokratochvil.cz">info@elektrokratochvil.cz</a></li><li style="color:var(--muted)">Pražská 1182, Hradec Králové</li></ul></div>
+        <div><h3>Kontakt</h3><ul><li><a href="tel:+420774318902">+420 774 318 902</a></li><li><a href="mailto:info@elektrokratochvil.cz">info@elektrokratochvil.cz</a></li><li>Pražská 1182, Hradec Králové</li></ul></div>
       </div>
-      <div class="tf-bottom"><span>© 2026 Elektro Kratochvíl</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+      <p class="fine">© 2026 Elektro Kratochvíl · Ukázkový web, firma i údaje jsou smyšlené.</p>
     </div>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

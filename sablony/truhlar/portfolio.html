@@ -3,93 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realizace | Truhlářství Hájek</title>
-  <meta name="description" content="Ukázky naší práce.">
+  <title>Portfolio | Truhlářství Hájek</title>
+  <meta name="description" content="Naše práce.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/truhlar.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-truhlar">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-tree" aria-hidden="true"></i>Truhlářství Hájek</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html" aria-current="page">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html" aria-current="page">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="mast">
+    <div class="topline wrap"><span>Rodinné truhlářství od roku 1998</span><span>Nádražní 812, Turnov</span><a href="tel:+420605917344">+420 605 917 344</a></div>
+    <div class="wrap mast-in">
+      <nav class="ml" aria-label="Navigace vlevo"><a href="index.html">Domů</a><a href="sluzby.html">Služby</a></nav>
+      <a href="index.html" class="wordmark">Hájek<small>truhlářství · Turnov</small></a>
+      <nav class="mr" aria-label="Navigace vpravo"><a href="portfolio.html" aria-current="page">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+    <div class="paper-menu" id="menu" aria-hidden="true"><nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html" aria-current="page">Realizace</a><a href="kontakt.html">Kontakt</a></nav></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">realizace</span>
-        <h1 class="grad rv d1">Naše práce mluví<br>sama za sebe</h1>
-        <p class="sub rv d2">Výběr zakázek z posledních let. Rádi vám ukážeme i další a domluvíme prohlídku hotové stavby.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="filters rv" role="group" aria-label="Filtr realizací"><button type="button" data-f="vse" aria-pressed="true">Vše</button><button type="button" data-f="kuchyně" aria-pressed="false">Kuchyně</button><button type="button" data-f="ložnice" aria-pressed="false">Ložnice</button><button type="button" data-f="kanceláře" aria-pressed="false">Kanceláře</button><button type="button" data-f="nábytek" aria-pressed="false">Nábytek</button><button type="button" data-f="interiéry" aria-pressed="false">Interiéry</button><button type="button" data-f="renovace" aria-pressed="false">Renovace</button></div>
-        <div class="works three">
-          <article class="work-card rv" data-cat="kuchyně">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14JH1uviAt7LzKYV9uo0TKSfQfUbB4MrspMF1TyVPFkAwsu8TbXJUElqTlz68XdO6LfaSm_XMHAS1NkJfsELNzy7L0-XDQeMU29S-Vz4iHgIuhcB3zNjPVK-s-nRxwIOrGpBXS0vvvS4DIS-LfF4VQ7wODldly2l7yEcYLgS9WuweK6wHWNUWVIg-_fp6ihlfsMWTSGuleeMSSeU33bmM8ysBosjlTaMurU9YZfBQu6H_HFUGE9ODa_x2lb1Rh8uZ3nngrrrkDSo" alt="Kuchyně v kouřovém dubu" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Kuchyně</b><span>Liberec</span></div><h3>Kuchyně v kouřovém dubu</h3><p>Bezúchytková kuchyně s ostrůvkem a kamennou deskou.</p></div>
-          </article>
-          <article class="work-card rv d1" data-cat="ložnice">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZmYzLh0qj_ETwX9llOP_3LP7zQheolNu2-QELn3RkZbnWzcWcOZpj2Kcq57ngQHd1t3aAkwQGsQ8ZioQCa4j06hoM5ytaJQEDCmdsAB63YhAr6e411LuNvPCTLN8wcH2rNMR1YY9U_MWXUSM6Wuh19Onp9ZLdwRgNCnNiLbqPL2MNUxt0_CwdwUZxi4Rt7XNzs3gOhx39I9ZrYcaBq40HG2e47JOuPrt9ootNgwIAdnUKhs4S65fzazgzSdAvHKaI_kez71YvPu4" alt="Ložnice v ořechu" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Ložnice</b><span>Turnov</span></div><h3>Ložnice v ořechu</h3><p>Skryté úložné prostory a integrované osvětlení.</p></div>
-          </article>
-          <article class="work-card rv d2" data-cat="kanceláře">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSSV04Ge5959jga8NKUPXst7YmfCCAFbBgkFz5k7KTUf6z4lzC7w-agayGBfHSbi0COZLudtlXawOaqe6MuhRK1HHet_3KSszQHOuWYVnIfSi4NajiwaIXF6DBbrSJHDOezbzSP0ROFFor-sUT5aObwyA8xJxgGAE3LFm5GL3RRO-fkyP7PvTw7WmYz0vgZbWF5bHNMT1YvodQSRS4fT38EvsD2tW6jsAkYUxS9dEfGsnUg8DgsgqiafWeh_WtcTHJm50fPdfkso0" alt="Ateliér Karlín" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Kanceláře</b><span>Praha</span></div><h3>Ateliér Karlín</h3><p>Pracovní stoly a policové stěny pro architektonický ateliér.</p></div>
-          </article>
-          <article class="work-card rv" data-cat="nábytek">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpxIN4IRFneCudj0f7vPLT-bJLd45vF51heKhz2_1-jTJHqTu4aSNAz5W5O22DjlUt-BwDOgGcw6lUK02Kpg6jzfWukRGDNwQmM_9hCIa4MWrU6mIZMZDLL5U3ugPjMvTIWGjGwp1lJvoXx7BfSUjhbL3nMiCG51cMlSIBYeysatg7f_ufH_zvFUVbOO8Uh1xW2MZXM8yA2H95c4n-btZNl6hscUxZXz1i2EzFpbqJ2_XaOWRI_qw-UnO7QNRzxbRWT9ZyBzc5I0" alt="Jídelní stůl Solid" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Nábytek</b><span>Mladá Boleslav</span></div><h3>Jídelní stůl Solid</h3><p>Masivní dubový stůl pro osm lidí.</p></div>
-          </article>
-          <article class="work-card rv d1" data-cat="interiéry">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjniAcu92SefYIXEiz3OTsW76t1ZCPSvwWlwdS2hzKV1sFgQGlW8dWyMC_kx9ouqEs64qT4dmvuD85guuiSecwZ02GhaRWkJSqn7Io0RCSk-4WhpxdI7wzLGYkAdYMWpByAy6RIJFbxLoXO-ZDi2CKP20j3zXFQVw7GL0UZdB_cL6p52TrIRlCwSDbP18066U93Qr7OubVKsei4hz6Du7dsx5gyXx9o55q1NsHI1VgKUXFtZQo9aa9jUTlwyAdznSOl3JD3Kv9dY0" alt="Podkrovní byt na klíč" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Interiéry</b><span>Jablonec nad Nisou</span></div><h3>Podkrovní byt na klíč</h3><p>Obklady stěn, knihovna a vestavěné skříně.</p></div>
-          </article>
-          <article class="work-card rv d2" data-cat="renovace">
-            <div class="img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-bbHUnXuZ-JQBziGI-XklstcW9WXyp4YFs5-EFEYnEijOt4J1hV3bhQfPl6suWgm6YCG59xoqtcAwsMxnRha_2oLMkGdVratYJl3eVFJer-Tc3oLVcxvAp842aU2dpXfAZZiLE38l6gP8cbDaq99-wnLj1rVij6NeWz2yvumMiSayh87io7Sl-Ul91tzMSnlpVc99cI21BaKGcwjTuZ6lz9Nf0EuL_kbxBcS2QvRvgeu7ALhjoMuAqsPJYyanmIYdblj39Rw94A" alt="Renovace prababiččiny skříně" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="body"><div class="meta"><b>Renovace</b><span>Semily</span></div><h3>Renovace prababiččiny skříně</h3><p>Oprava spojů a nový šelakový povrch.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap"><figure class="quote rv"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4AXi-nz1JqmmkfryQ5ifBqptYQNW0THYJmnKzqNZ4XtjXaHSRbcDFIzIudJypcv2IWC9Zms25PGI3aVEraPmbeVEpgbQEaeWYg9XF69w1JaY7T0MfR2B_Q5B5cU7Uu24Mcg9A7aZzFd4uoQTgwc43RRE7gM0fp0HQusAheWz10MA6vC6CxsABOtQLjnIgYETt6H4FfFhz1KOyJrol25kmEJwF4HabIDMUnj-AsKIrt1OjQmdcI4C6EMUD0fQHmnCIBEvINY96Xn4" alt="Detail naší práce" loading="lazy" referrerpolicy="no-referrer"><blockquote>„Dřevo se nedá uspěchat. Každý kus necháváme vyschnout a každý spoj dotahujeme ručně.“<span>Josef Hájek, truhlář</span></blockquote></figure></div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Chcete podobný výsledek?</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420605917344" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 605 917 344</a></div>
-        </div>
-      </div>
+    <section class="ptitle"><div class="wrap"><p class="issue rv">Portfolio</p><h1 class="rv d1">Kus po kuse,<br><em>spoj po spoji.</em></h1></div></section>
+    <section class="sec" style="padding-top:0"><div class="wrap">
+      <div class="textfilter rv" data-filter="mason" role="group" aria-label="Filtr"><button type="button" data-f="vse" aria-pressed="true">Vše</button><button type="button" data-f="kuchyně" aria-pressed="false">Kuchyně</button><button type="button" data-f="ložnice" aria-pressed="false">Ložnice</button><button type="button" data-f="kanceláře" aria-pressed="false">Kanceláře</button><button type="button" data-f="nábytek" aria-pressed="false">Nábytek</button><button type="button" data-f="interiéry" aria-pressed="false">Interiéry</button><button type="button" data-f="renovace" aria-pressed="false">Renovace</button></div>
+      <div class="mason" id="mason"><figure class="mfig rv" data-cat="kuchyně"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14JH1uviAt7LzKYV9uo0TKSfQfUbB4MrspMF1TyVPFkAwsu8TbXJUElqTlz68XdO6LfaSm_XMHAS1NkJfsELNzy7L0-XDQeMU29S-Vz4iHgIuhcB3zNjPVK-s-nRxwIOrGpBXS0vvvS4DIS-LfF4VQ7wODldly2l7yEcYLgS9WuweK6wHWNUWVIg-_fp6ihlfsMWTSGuleeMSSeU33bmM8ysBosjlTaMurU9YZfBQu6H_HFUGE9ODa_x2lb1Rh8uZ3nngrrrkDSo" alt="Kuchyně v kouřovém dubu" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 1</b> <span>Kuchyně v kouřovém dubu</span> · Liberec<br><small>Bezúchytková kuchyně s ostrůvkem a kamennou deskou.</small></figcaption></figure><figure class="mfig rv" data-cat="ložnice"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZmYzLh0qj_ETwX9llOP_3LP7zQheolNu2-QELn3RkZbnWzcWcOZpj2Kcq57ngQHd1t3aAkwQGsQ8ZioQCa4j06hoM5ytaJQEDCmdsAB63YhAr6e411LuNvPCTLN8wcH2rNMR1YY9U_MWXUSM6Wuh19Onp9ZLdwRgNCnNiLbqPL2MNUxt0_CwdwUZxi4Rt7XNzs3gOhx39I9ZrYcaBq40HG2e47JOuPrt9ootNgwIAdnUKhs4S65fzazgzSdAvHKaI_kez71YvPu4" alt="Ložnice v ořechu" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 2</b> <span>Ložnice v ořechu</span> · Turnov<br><small>Skryté úložné prostory a integrované osvětlení.</small></figcaption></figure><figure class="mfig rv" data-cat="kanceláře"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSSV04Ge5959jga8NKUPXst7YmfCCAFbBgkFz5k7KTUf6z4lzC7w-agayGBfHSbi0COZLudtlXawOaqe6MuhRK1HHet_3KSszQHOuWYVnIfSi4NajiwaIXF6DBbrSJHDOezbzSP0ROFFor-sUT5aObwyA8xJxgGAE3LFm5GL3RRO-fkyP7PvTw7WmYz0vgZbWF5bHNMT1YvodQSRS4fT38EvsD2tW6jsAkYUxS9dEfGsnUg8DgsgqiafWeh_WtcTHJm50fPdfkso0" alt="Ateliér Karlín" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 3</b> <span>Ateliér Karlín</span> · Praha<br><small>Pracovní stoly a policové stěny pro architektonický ateliér.</small></figcaption></figure><figure class="mfig rv" data-cat="nábytek"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpxIN4IRFneCudj0f7vPLT-bJLd45vF51heKhz2_1-jTJHqTu4aSNAz5W5O22DjlUt-BwDOgGcw6lUK02Kpg6jzfWukRGDNwQmM_9hCIa4MWrU6mIZMZDLL5U3ugPjMvTIWGjGwp1lJvoXx7BfSUjhbL3nMiCG51cMlSIBYeysatg7f_ufH_zvFUVbOO8Uh1xW2MZXM8yA2H95c4n-btZNl6hscUxZXz1i2EzFpbqJ2_XaOWRI_qw-UnO7QNRzxbRWT9ZyBzc5I0" alt="Jídelní stůl Solid" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 4</b> <span>Jídelní stůl Solid</span> · Mladá Boleslav<br><small>Masivní dubový stůl pro osm lidí.</small></figcaption></figure><figure class="mfig rv" data-cat="interiéry"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjniAcu92SefYIXEiz3OTsW76t1ZCPSvwWlwdS2hzKV1sFgQGlW8dWyMC_kx9ouqEs64qT4dmvuD85guuiSecwZ02GhaRWkJSqn7Io0RCSk-4WhpxdI7wzLGYkAdYMWpByAy6RIJFbxLoXO-ZDi2CKP20j3zXFQVw7GL0UZdB_cL6p52TrIRlCwSDbP18066U93Qr7OubVKsei4hz6Du7dsx5gyXx9o55q1NsHI1VgKUXFtZQo9aa9jUTlwyAdznSOl3JD3Kv9dY0" alt="Podkrovní byt na klíč" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 5</b> <span>Podkrovní byt na klíč</span> · Jablonec nad Nisou<br><small>Obklady stěn, knihovna a vestavěné skříně.</small></figcaption></figure><figure class="mfig rv" data-cat="renovace"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-bbHUnXuZ-JQBziGI-XklstcW9WXyp4YFs5-EFEYnEijOt4J1hV3bhQfPl6suWgm6YCG59xoqtcAwsMxnRha_2oLMkGdVratYJl3eVFJer-Tc3oLVcxvAp842aU2dpXfAZZiLE38l6gP8cbDaq99-wnLj1rVij6NeWz2yvumMiSayh87io7Sl-Ul91tzMSnlpVc99cI21BaKGcwjTuZ6lz9Nf0EuL_kbxBcS2QvRvgeu7ALhjoMuAqsPJYyanmIYdblj39Rw94A" alt="Renovace prababiččiny skříně" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 6</b> <span>Renovace prababiččiny skříně</span> · Semily<br><small>Oprava spojů a nový šelakový povrch.</small></figcaption></figure></div>
+    </div></section>
+    <section class="pull"><div class="wrap"><blockquote class="rv">„Dřevo se nedá uspěchat. Každý kus necháváme vyschnout a každý spoj dotahujeme ručně.“</blockquote><p class="rv d1">Josef Hájek, truhlář</p></div></section>
+    <section class="invite">
+      <div class="wrap"><div class="invite-box rv">
+        <p class="sc">Pozvánka</p>
+        <h2>Přijďte se podívat<br>do naší dílny.</h2>
+        <p>Ukážeme vám dřevo, vzorky povrchů i rozpracované zakázky. Návrh a zaměření jsou zdarma.</p>
+        <a href="kontakt.html" class="ink-btn press">Domluvit návštěvu</a>
+      </div></div>
     </section>
   </main>
-  <footer class="tf">
+  <footer class="colophon">
     <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-tree" aria-hidden="true"></i>Truhlářství Hájek</a><p>Kuchyně, vestavné skříně a stoly z masivu. Turnov a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420605917344">+420 605 917 344</a></li><li><a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></li><li style="color:var(--muted)">Nádražní 812, Turnov</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Truhlářství Hájek</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+      <a href="index.html" class="wordmark">Hájek<small>truhlářství · Turnov</small></a>
+      <nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <p>Nádražní 812, Turnov · <a href="tel:+420605917344">+420 605 917 344</a> · <a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></p>
+      <p class="fine">© 2026 Truhlářství Hájek · Ukázkový web, firma i údaje jsou smyšlené.</p>
     </div>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

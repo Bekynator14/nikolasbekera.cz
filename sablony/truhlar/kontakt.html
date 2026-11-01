@@ -4,75 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt | Truhlářství Hájek</title>
-  <meta name="description" content="Kontakt a nezávazná poptávka.">
+  <meta name="description" content="Kontakt.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/truhlar.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-truhlar">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-tree" aria-hidden="true"></i>Truhlářství Hájek</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="mast">
+    <div class="topline wrap"><span>Rodinné truhlářství od roku 1998</span><span>Nádražní 812, Turnov</span><a href="tel:+420605917344">+420 605 917 344</a></div>
+    <div class="wrap mast-in">
+      <nav class="ml" aria-label="Navigace vlevo"><a href="index.html">Domů</a><a href="sluzby.html">Služby</a></nav>
+      <a href="index.html" class="wordmark">Hájek<small>truhlářství · Turnov</small></a>
+      <nav class="mr" aria-label="Navigace vpravo"><a href="portfolio.html">Realizace</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+    <div class="paper-menu" id="menu" aria-hidden="true"><nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">kontakt</span>
-        <h1 class="grad rv d1">Napište nám,<br>ozveme se do 24 hodin</h1>
-        <p class="sub rv d2">Prohlídka i cenová nabídka jsou zdarma. Stačí pár vět o tom, co potřebujete.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap contact-grid">
-        <form class="form rv" id="demoForm" novalidate>
-          <h2>Nezávazná poptávka</h2>
-          <p>Povinné jsou jen jméno a telefon.</p>
-          <div class="f2">
-            <div class="field"><label for="n">Jméno</label><input id="n" type="text" autocomplete="name" required><span class="err">Vyplňte prosím jméno.</span></div>
-            <div class="field"><label for="p">Telefon</label><input id="p" type="tel" autocomplete="tel" required><span class="err">Zadejte platný telefon.</span></div>
-          </div>
-          <div class="field"><label for="s">O co máte zájem?</label><select id="s"><option>Kuchyně a vestavby</option><option>Interiéry na klíč</option><option>Stoly a solitéry</option><option>Renovace nábytku</option><option>Něco jiného</option></select></div>
-          <div class="field"><label for="m">Zpráva</label><textarea id="m" placeholder="Popište stručně, co potřebujete a kde."></textarea></div>
-          <button class="btn btn-lg" type="submit">Odeslat poptávku <i class="ph ph-paper-plane-right"></i></button>
-          <div class="form-msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
-        </form>
-        <div class="info">
-          <div class="info-card rv d1">
-            <a href="tel:+420605917344"><i class="ph ph-phone"></i><span><small>Telefon</small><b>+420 605 917 344</b></span></a>
-            <a href="mailto:dilna@truhlarstvihajek.cz"><i class="ph ph-envelope-simple"></i><span><small>Email</small><b>dilna@truhlarstvihajek.cz</b></span></a>
-            <div class="it"><i class="ph ph-map-pin"></i><span><small>Adresa</small><b>Nádražní 812, Turnov</b></span></div>
-          </div>
-          <div class="info-card rv d2"><div class="it"><i class="ph ph-clock"></i><span><small>Otevírací doba</small><b>Kdy nás zastihnete</b></span></div><ul class="hours"><li><b>Po až Pá</b><span>7:00 až 16:00</span></li><li><b>Sobota</b><span>návštěvy po domluvě</span></li><li><b>Neděle</b><span>zavřeno</span></li></ul></div>
-          <div class="info-card rv d3"><div class="it"><i class="ph ph-navigation-arrow"></i><span><small>Kde působíme</small><b>Turnov a okolí</b></span></div><ul class="chips"><li>Turnov</li><li>Liberec</li><li>Jičín</li><li>Jablonec nad Nisou</li><li>Mladá Boleslav</li><li>Semily</li></ul></div>
-        </div>
-      </div>
-    </section>
+    <section class="ptitle"><div class="wrap"><p class="issue rv">Kontakt</p><h1 class="rv d1">Napište nám<br><em>pár řádků.</em></h1></div></section>
+    <section class="sec" style="padding-top:0"><div class="wrap kgrid">
+      <form class="letterform rv" id="demoForm" novalidate>
+        <p class="salut">Vážený pane Hájku,</p>
+        <p class="line">jmenuji se <span class="field inl"><input id="n" required aria-label="Vaše jméno" placeholder="vaše jméno" autocomplete="name"><span class="err">Doplňte prosím jméno.</span></span> a zajímá mě <span class="inl"><select id="s" aria-label="Služba"><option>Kuchyně a vestavby</option><option>Interiéry na klíč</option><option>Stoly a solitéry</option><option>Renovace nábytku</option><option>Něco jiného</option></select></span>.</p>
+        <p class="line">Ozvěte se mi prosím na telefon <span class="field inl"><input id="p" type="tel" required aria-label="Telefon" placeholder="777 000 000" autocomplete="tel"><span class="err">Zadejte platný telefon.</span></span>.</p>
+        <p class="line">Pár slov o tom, co si představuji:</p>
+        <textarea id="m" rows="4" aria-label="Zpráva" placeholder="Kuchyně do podkroví, světlé dřevo, ostrůvek…"></textarea>
+        <p class="sign">S pozdravem</p>
+        <button class="ink-btn press" type="submit">Odeslat dopis</button>
+        <div class="form-msg msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
+      </form>
+      <aside class="card-biz rv d1">
+        <p class="sc">Dílna</p>
+        <p class="wordmark small">Hájek<small>truhlářství · Turnov</small></p>
+        <p>Nádražní 812, Turnov<br><a href="tel:+420605917344">+420 605 917 344</a><br><a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></p>
+        <ul class="hours"><li><span>Po až Pá</span><b>7:00 až 16:00</b></li><li><span>Sobota</span><b>návštěvy po domluvě</b></li><li><span>Neděle</span><b>zavřeno</b></li></ul>
+        <p class="note">Montujeme po celých Čechách. Doprava do 50 km zdarma.</p>
+      </aside>
+    </div></section>
   </main>
-  <footer class="tf">
+  <footer class="colophon">
     <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-tree" aria-hidden="true"></i>Truhlářství Hájek</a><p>Kuchyně, vestavné skříně a stoly z masivu. Turnov a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420605917344">+420 605 917 344</a></li><li><a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></li><li style="color:var(--muted)">Nádražní 812, Turnov</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Truhlářství Hájek</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+      <a href="index.html" class="wordmark">Hájek<small>truhlářství · Turnov</small></a>
+      <nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <p>Nádražní 812, Turnov · <a href="tel:+420605917344">+420 605 917 344</a> · <a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></p>
+      <p class="fine">© 2026 Truhlářství Hájek · Ukázkový web, firma i údaje jsou smyšlené.</p>
     </div>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

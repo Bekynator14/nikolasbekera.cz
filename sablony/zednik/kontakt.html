@@ -4,75 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt | Stavby Moravec</title>
-  <meta name="description" content="Kontakt a nezávazná poptávka.">
+  <meta name="description" content="Kontakt.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/zednik.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-zednik">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="hdr">
+    <a href="index.html" class="logo"><span class="sq"><i class="ph-bold ph-wall"></i></span>MORAVEC<small>stavby</small></a>
+    <nav class="links" aria-label="Hlavní navigace"><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav>
+    <a href="kontakt.html" class="hcta press">Poptávka <i class="ph-bold ph-arrow-right"></i></a>
+    <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <div class="slab" id="menu" aria-hidden="true"><nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav><a href="tel:+420739482160" class="slab-tel">+420 739 482 160</a></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">kontakt</span>
-        <h1 class="grad rv d1">Napište nám,<br>ozveme se do 24 hodin</h1>
-        <p class="sub rv d2">Prohlídka i cenová nabídka jsou zdarma. Stačí pár vět o tom, co potřebujete.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap contact-grid">
-        <form class="form rv" id="demoForm" novalidate>
-          <h2>Nezávazná poptávka</h2>
-          <p>Povinné jsou jen jméno a telefon.</p>
-          <div class="f2">
-            <div class="field"><label for="n">Jméno</label><input id="n" type="text" autocomplete="name" required><span class="err">Vyplňte prosím jméno.</span></div>
-            <div class="field"><label for="p">Telefon</label><input id="p" type="tel" autocomplete="tel" required><span class="err">Zadejte platný telefon.</span></div>
-          </div>
-          <div class="field"><label for="s">O co máte zájem?</label><select id="s"><option>Hrubé stavby</option><option>Fasády a zateplení</option><option>Rekonstrukce</option><option>Terénní úpravy</option><option>Něco jiného</option></select></div>
-          <div class="field"><label for="m">Zpráva</label><textarea id="m" placeholder="Popište stručně, co potřebujete a kde."></textarea></div>
-          <button class="btn btn-lg" type="submit">Odeslat poptávku <i class="ph ph-paper-plane-right"></i></button>
-          <div class="form-msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
-        </form>
-        <div class="info">
-          <div class="info-card rv d1">
-            <a href="tel:+420739482160"><i class="ph ph-phone"></i><span><small>Telefon</small><b>+420 739 482 160</b></span></a>
-            <a href="mailto:info@stavbymoravec.cz"><i class="ph ph-envelope-simple"></i><span><small>Email</small><b>info@stavbymoravec.cz</b></span></a>
-            <div class="it"><i class="ph ph-map-pin"></i><span><small>Adresa</small><b>Vídeňská 214, Brno</b></span></div>
-          </div>
-          <div class="info-card rv d2"><div class="it"><i class="ph ph-clock"></i><span><small>Otevírací doba</small><b>Kdy nás zastihnete</b></span></div><ul class="hours"><li><b>Po až Pá</b><span>6:30 až 16:30</span></li><li><b>Sobota</b><span>po domluvě</span></li><li><b>Kancelář</b><span>8:00 až 15:00</span></li></ul></div>
-          <div class="info-card rv d3"><div class="it"><i class="ph ph-navigation-arrow"></i><span><small>Kde působíme</small><b>Brno a okolí</b></span></div><ul class="chips"><li>Brno</li><li>Kuřim</li><li>Modřice</li><li>Šlapanice</li><li>Blansko</li><li>Vyškov</li></ul></div>
-        </div>
+    <section class="ptitle"><h1 class="mega rv">Kontakt<span>.</span></h1><p class="rv d1">Napište nám, co plánujete. Do 24 hodin se ozve stavbyvedoucí.</p></section>
+    <section class="sec kgrid">
+      <form class="kform rv" id="demoForm" novalidate>
+        <h2>Poptávka</h2>
+        <div class="field"><label for="s">Co stavíte?</label><select id="s"><option>Hrubé stavby</option><option>Fasády a zateplení</option><option>Rekonstrukce</option><option>Terénní úpravy</option><option>Něco jiného</option></select></div>
+        <div class="two"><div class="field"><label for="n">Jméno</label><input id="n" required autocomplete="name"><span class="err">Vyplňte jméno.</span></div><div class="field"><label for="p">Telefon</label><input id="p" type="tel" required autocomplete="tel"><span class="err">Neplatný telefon.</span></div></div>
+        <div class="field"><label for="m">Popis</label><textarea id="m" rows="5" placeholder="Typ stavby, lokalita, termín…"></textarea></div>
+        <button class="blk orange press" type="submit">Odeslat poptávku <i class="ph-bold ph-arrow-right"></i></button>
+        <div class="form-msg msg" id="formMsg" role="status" aria-live="polite"><i class="ph ph-info"></i><span>Toto je ukázkový formulář. Na skutečném webu by poptávka dorazila rovnou majiteli do emailu.</span></div>
+      </form>
+      <div class="kinfo">
+        <a href="tel:+420739482160" class="kbig rv d1 press"><span>Telefon</span>+420 739 482 160</a>
+        <a href="mailto:info@stavbymoravec.cz" class="kbox rv d2"><span>Email</span>info@stavbymoravec.cz</a>
+        <div class="kbox rv d2"><span>Kancelář</span>Vídeňská 214, Brno</div>
+        <div class="kbox rv d3"><span>Pracovní doba</span><ul><li><span>Po až Pá</span><b>6:30 až 16:30</b></li><li><span>Sobota</span><b>po domluvě</b></li><li><span>Kancelář</span><b>8:00 až 15:00</b></li></ul></div>
       </div>
     </section>
   </main>
-  <footer class="tf">
-    <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a><p>Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Brno a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li style="color:var(--muted)">Vídeňská 214, Brno</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Stavby Moravec</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+  <footer class="ft">
+    <div class="ft-big">MORAVEC<span>stavby</span></div>
+    <div class="ft-grid">
+      <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li>Vídeňská 214, Brno</li></ul></div>
+      <div><h3>Kde stavíme</h3><ul><li>Brno</li><li>Kuřim</li><li>Modřice</li><li>Šlapanice</li><li>Blansko</li><li>Vyškov</li></ul></div>
     </div>
+    <p class="fine">© 2026 Stavby Moravec · Ukázkový web, firma i údaje jsou smyšlené.</p>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

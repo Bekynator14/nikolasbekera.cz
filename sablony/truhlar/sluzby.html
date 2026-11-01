@@ -9,99 +9,73 @@
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/truhlar.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-truhlar">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-tree" aria-hidden="true"></i>Truhlářství Hájek</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html" aria-current="page">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html" aria-current="page">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="mast">
+    <div class="topline wrap"><span>Rodinné truhlářství od roku 1998</span><span>Nádražní 812, Turnov</span><a href="tel:+420605917344">+420 605 917 344</a></div>
+    <div class="wrap mast-in">
+      <nav class="ml" aria-label="Navigace vlevo"><a href="index.html">Domů</a><a href="sluzby.html" aria-current="page">Služby</a></nav>
+      <a href="index.html" class="wordmark">Hájek<small>truhlářství · Turnov</small></a>
+      <nav class="mr" aria-label="Navigace vpravo"><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+    <div class="paper-menu" id="menu" aria-hidden="true"><nav><a href="index.html">Domů</a><a href="sluzby.html" aria-current="page">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">služby</span>
-        <h1 class="grad rv d1">Všechno, co potřebujete,<br>od jedné firmy</h1>
-        <p class="sub rv d2">Od první prohlídky po předání hotové práce. Turnov a okolí, pevná cena a jasný termín.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap"><div class="rows">
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14JH1uviAt7LzKYV9uo0TKSfQfUbB4MrspMF1TyVPFkAwsu8TbXJUElqTlz68XdO6LfaSm_XMHAS1NkJfsELNzy7L0-XDQeMU29S-Vz4iHgIuhcB3zNjPVK-s-nRxwIOrGpBXS0vvvS4DIS-LfF4VQ7wODldly2l7yEcYLgS9WuweK6wHWNUWVIg-_fp6ihlfsMWTSGuleeMSSeU33bmM8ysBosjlTaMurU9YZfBQu6H_HFUGE9ODa_x2lb1Rh8uZ3nngrrrkDSo" alt="Kuchyně a vestavby" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">01</span>
-              <h3>Kuchyně a vestavby</h3><p>Kuchyně, šatny a skříně, které využijí každý centimetr prostoru.</p>
-              <ul><li><i class="ph ph-check-circle"></i>3D návrh zdarma</li><li><i class="ph ph-check-circle"></i>Kvalitní kování Blum</li><li><i class="ph ph-check-circle"></i>Montáž v ceně</li></ul>
-              <span class="price">od 85 000 Kč</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjniAcu92SefYIXEiz3OTsW76t1ZCPSvwWlwdS2hzKV1sFgQGlW8dWyMC_kx9ouqEs64qT4dmvuD85guuiSecwZ02GhaRWkJSqn7Io0RCSk-4WhpxdI7wzLGYkAdYMWpByAy6RIJFbxLoXO-ZDi2CKP20j3zXFQVw7GL0UZdB_cL6p52TrIRlCwSDbP18066U93Qr7OubVKsei4hz6Du7dsx5gyXx9o55q1NsHI1VgKUXFtZQo9aa9jUTlwyAdznSOl3JD3Kv9dY0" alt="Interiéry na klíč" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">02</span>
-              <h3>Interiéry na klíč</h3><p>Celé místnosti od návrhu po montáž. Koordinujeme vše, vy se jen nastěhujete.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Obklady stěn</li><li><i class="ph ph-check-circle"></i>Integrované osvětlení</li><li><i class="ph ph-check-circle"></i>Jeden dodavatel</li></ul>
-              <span class="price">cena dle projektu</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpxIN4IRFneCudj0f7vPLT-bJLd45vF51heKhz2_1-jTJHqTu4aSNAz5W5O22DjlUt-BwDOgGcw6lUK02Kpg6jzfWukRGDNwQmM_9hCIa4MWrU6mIZMZDLL5U3ugPjMvTIWGjGwp1lJvoXx7BfSUjhbL3nMiCG51cMlSIBYeysatg7f_ufH_zvFUVbOO8Uh1xW2MZXM8yA2H95c4n-btZNl6hscUxZXz1i2EzFpbqJ2_XaOWRI_qw-UnO7QNRzxbRWT9ZyBzc5I0" alt="Stoly a solitéry" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">03</span>
-              <h3>Stoly a solitéry</h3><p>Jídelní stoly, komody a postele z masivního dubu, ořechu nebo jasanu.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Masivní dřevo</li><li><i class="ph ph-check-circle"></i>Olejované povrchy</li><li><i class="ph ph-check-circle"></i>Na rozměr</li></ul>
-              <span class="price">od 24 000 Kč</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-bbHUnXuZ-JQBziGI-XklstcW9WXyp4YFs5-EFEYnEijOt4J1hV3bhQfPl6suWgm6YCG59xoqtcAwsMxnRha_2oLMkGdVratYJl3eVFJer-Tc3oLVcxvAp842aU2dpXfAZZiLE38l6gP8cbDaq99-wnLj1rVij6NeWz2yvumMiSayh87io7Sl-Ul91tzMSnlpVc99cI21BaKGcwjTuZ6lz9Nf0EuL_kbxBcS2QvRvgeu7ALhjoMuAqsPJYyanmIYdblj39Rw94A" alt="Renovace nábytku" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">04</span>
-              <h3>Renovace nábytku</h3><p>Vrátíme život starožitnému i rodinnému nábytku původními postupy.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Šelakové povrchy</li><li><i class="ph ph-check-circle"></i>Oprava spojů</li><li><i class="ph ph-check-circle"></i>Výměna kování</li></ul>
-              <span class="price">od 6 000 Kč</span>
-            </div>
-          </article>
+    <section class="ptitle"><div class="wrap"><p class="issue rv">Služby</p><h1 class="rv d1">Od skici<br>po poslední <em>hoblík.</em></h1></div></section>
+    <section class="sec" style="padding-top:0"><div class="wrap stories">
+      <article class="story rv">
+        <figure><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14JH1uviAt7LzKYV9uo0TKSfQfUbB4MrspMF1TyVPFkAwsu8TbXJUElqTlz68XdO6LfaSm_XMHAS1NkJfsELNzy7L0-XDQeMU29S-Vz4iHgIuhcB3zNjPVK-s-nRxwIOrGpBXS0vvvS4DIS-LfF4VQ7wODldly2l7yEcYLgS9WuweK6wHWNUWVIg-_fp6ihlfsMWTSGuleeMSSeU33bmM8ysBosjlTaMurU9YZfBQu6H_HFUGE9ODa_x2lb1Rh8uZ3nngrrrkDSo" alt="Kuchyně a vestavby" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 1</b> Kuchyně a vestavby</figcaption></figure>
+        <div class="story-txt"><span class="sn">I.</span><h2>Kuchyně a vestavby</h2><p class="drop">Kuchyně, šatny a skříně, které využijí každý centimetr prostoru. Každou zakázku navrhujeme přímo pro váš prostor a vyrábíme ji ve vlastní dílně v Turnově.</p><ul><li>3D návrh zdarma</li><li>Kvalitní kování Blum</li><li>Montáž v ceně</li></ul></div>
+      </article>
+      <article class="story rv">
+        <figure><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjniAcu92SefYIXEiz3OTsW76t1ZCPSvwWlwdS2hzKV1sFgQGlW8dWyMC_kx9ouqEs64qT4dmvuD85guuiSecwZ02GhaRWkJSqn7Io0RCSk-4WhpxdI7wzLGYkAdYMWpByAy6RIJFbxLoXO-ZDi2CKP20j3zXFQVw7GL0UZdB_cL6p52TrIRlCwSDbP18066U93Qr7OubVKsei4hz6Du7dsx5gyXx9o55q1NsHI1VgKUXFtZQo9aa9jUTlwyAdznSOl3JD3Kv9dY0" alt="Interiéry na klíč" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 2</b> Interiéry na klíč</figcaption></figure>
+        <div class="story-txt"><span class="sn">II.</span><h2>Interiéry na klíč</h2><p class="drop">Celé místnosti od návrhu po montáž. Koordinujeme vše, vy se jen nastěhujete. Každou zakázku navrhujeme přímo pro váš prostor a vyrábíme ji ve vlastní dílně v Turnově.</p><ul><li>Obklady stěn</li><li>Integrované osvětlení</li><li>Jeden dodavatel</li></ul></div>
+      </article>
+      <article class="story rv">
+        <figure><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpxIN4IRFneCudj0f7vPLT-bJLd45vF51heKhz2_1-jTJHqTu4aSNAz5W5O22DjlUt-BwDOgGcw6lUK02Kpg6jzfWukRGDNwQmM_9hCIa4MWrU6mIZMZDLL5U3ugPjMvTIWGjGwp1lJvoXx7BfSUjhbL3nMiCG51cMlSIBYeysatg7f_ufH_zvFUVbOO8Uh1xW2MZXM8yA2H95c4n-btZNl6hscUxZXz1i2EzFpbqJ2_XaOWRI_qw-UnO7QNRzxbRWT9ZyBzc5I0" alt="Stoly a solitéry" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 3</b> Stoly a solitéry</figcaption></figure>
+        <div class="story-txt"><span class="sn">III.</span><h2>Stoly a solitéry</h2><p class="drop">Jídelní stoly, komody a postele z masivního dubu, ořechu nebo jasanu. Každou zakázku navrhujeme přímo pro váš prostor a vyrábíme ji ve vlastní dílně v Turnově.</p><ul><li>Masivní dřevo</li><li>Olejované povrchy</li><li>Na rozměr</li></ul></div>
+      </article>
+      <article class="story rv">
+        <figure><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-bbHUnXuZ-JQBziGI-XklstcW9WXyp4YFs5-EFEYnEijOt4J1hV3bhQfPl6suWgm6YCG59xoqtcAwsMxnRha_2oLMkGdVratYJl3eVFJer-Tc3oLVcxvAp842aU2dpXfAZZiLE38l6gP8cbDaq99-wnLj1rVij6NeWz2yvumMiSayh87io7Sl-Ul91tzMSnlpVc99cI21BaKGcwjTuZ6lz9Nf0EuL_kbxBcS2QvRvgeu7ALhjoMuAqsPJYyanmIYdblj39Rw94A" alt="Renovace nábytku" loading="lazy" referrerpolicy="no-referrer"><figcaption><b>Obr. 4</b> Renovace nábytku</figcaption></figure>
+        <div class="story-txt"><span class="sn">IV.</span><h2>Renovace nábytku</h2><p class="drop">Vrátíme život starožitnému i rodinnému nábytku původními postupy. Každou zakázku navrhujeme přímo pro váš prostor a vyrábíme ji ve vlastní dílně v Turnově.</p><ul><li>Šelakové povrchy</li><li>Oprava spojů</li><li>Výměna kování</li></ul></div>
+      </article>
+    </div></section>
+    <section class="sec tint"><div class="wrap narrow">
+      <header class="sh rv"><span class="sn">§</span><h2>Orientační ceník</h2><span class="rule"></span></header>
+      <ul class="pricelist rv"><li><span>Kuchyně a vestavby</span><i></i><b>od 85 000 Kč</b></li><li><span>Interiéry na klíč</span><i></i><b>cena dle projektu</b></li><li><span>Stoly a solitéry</span><i></i><b>od 24 000 Kč</b></li><li><span>Renovace nábytku</span><i></i><b>od 6 000 Kč</b></li></ul>
+      <p class="note rv">Přesnou cenu dostanete po zaměření spolu s 3D návrhem. Obojí je zdarma.</p>
+    </div></section>
+    <section class="sec"><div class="wrap narrow">
+      <header class="sh rv"><span class="sn">?</span><h2>Otázky a odpovědi</h2><span class="rule"></span></header>
+      <div class="qa rv"><h3>Jak dlouho trvá výroba kuchyně?</h3><p>Od schválení návrhu obvykle 6 až 8 týdnů. Montáž samotná zabere 2 až 3 dny.</p></div><div class="qa rv"><h3>Je návrh opravdu zdarma?</h3><p>Ano. Přijedeme, zaměříme a připravíme 3D návrh s cenou. Za návrh nic neplatíte, ani když se nedomluvíme.</p></div><div class="qa rv"><h3>Z jakého dřeva vyrábíte?</h3><p>Nejčastěji z dubu, ořechu a jasanu z českých pil. Na korpusy používáme kvalitní dýhované desky.</p></div><div class="qa rv"><h3>Jezdíte i mimo Liberecký kraj?</h3><p>Ano, montujeme po celých Čechách. Doprava do 50 km od Turnova je zdarma.</p></div>
+    </div></section>
+    <section class="invite">
+      <div class="wrap"><div class="invite-box rv">
+        <p class="sc">Pozvánka</p>
+        <h2>Přijďte se podívat<br>do naší dílny.</h2>
+        <p>Ukážeme vám dřevo, vzorky povrchů i rozpracované zakázky. Návrh a zaměření jsou zdarma.</p>
+        <a href="kontakt.html" class="ink-btn press">Domluvit návštěvu</a>
       </div></div>
     </section>
-    <section style="padding-top:0" aria-labelledby="fq">
-      <div class="wrap faq-grid">
-        <div><span class="eyebrow rv">časté otázky</span><h2 class="h2 rv d1" id="fq">Než se nám ozvete</h2><p class="lead rv d2">Nenašli jste odpověď? Zavolejte na <a class="link" href="tel:+420605917344">+420 605 917 344</a>.</p></div>
-        <div class="faq rv d1"><details><summary>Jak dlouho trvá výroba kuchyně?<i class="ph ph-plus"></i></summary><div class="ans">Od schválení návrhu obvykle 6 až 8 týdnů. Montáž samotná zabere 2 až 3 dny.</div></details><details><summary>Je návrh opravdu zdarma?<i class="ph ph-plus"></i></summary><div class="ans">Ano. Přijedeme, zaměříme a připravíme 3D návrh s cenou. Za návrh nic neplatíte, ani když se nedomluvíme.</div></details><details><summary>Z jakého dřeva vyrábíte?<i class="ph ph-plus"></i></summary><div class="ans">Nejčastěji z dubu, ořechu a jasanu z českých pil. Na korpusy používáme kvalitní dýhované desky.</div></details><details><summary>Jezdíte i mimo Liberecký kraj?<i class="ph ph-plus"></i></summary><div class="ans">Ano, montujeme po celých Čechách. Doprava do 50 km od Turnova je zdarma.</div></details></div>
-      </div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Nevíte si rady? Poradíme zdarma.</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420605917344" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 605 917 344</a></div>
-        </div>
-      </div>
-    </section>
   </main>
-  <footer class="tf">
+  <footer class="colophon">
     <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-tree" aria-hidden="true"></i>Truhlářství Hájek</a><p>Kuchyně, vestavné skříně a stoly z masivu. Turnov a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420605917344">+420 605 917 344</a></li><li><a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></li><li style="color:var(--muted)">Nádražní 812, Turnov</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Truhlářství Hájek</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+      <a href="index.html" class="wordmark">Hájek<small>truhlářství · Turnov</small></a>
+      <nav><a href="index.html">Domů</a><a href="sluzby.html">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+      <p>Nádražní 812, Turnov · <a href="tel:+420605917344">+420 605 917 344</a> · <a href="mailto:dilna@truhlarstvihajek.cz">dilna@truhlarstvihajek.cz</a></p>
+      <p class="fine">© 2026 Truhlářství Hájek · Ukázkový web, firma i údaje jsou smyšlené.</p>
     </div>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>

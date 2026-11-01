@@ -9,99 +9,63 @@
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Geist:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
   <link rel="stylesheet" href="../assets/tpl.css">
+  <link rel="stylesheet" href="../assets/zednik.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="t-zednik">
   <a class="skip" href="#main">Přeskočit na obsah</a>
-  <div class="nav-shell">
-    <nav class="nav" id="nav" aria-label="Hlavní navigace">
-      <a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a>
-      <ul class="nav-links"><li><a href="index.html">Domů</a></li><li><a href="sluzby.html" aria-current="page">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <a href="kontakt.html" class="btn btn-sm nav-cta">Nezávazná poptávka</a>
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="overlay"><span></span><span></span></button>
-    </nav>
-  </div>
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <ul><li><a class="ov" href="index.html">Domů</a></li><li><a class="ov" href="sluzby.html" aria-current="page">Služby</a></li><li><a class="ov" href="portfolio.html">Realizace</a></li><li><a class="ov" href="kontakt.html">Kontakt</a></li></ul>
-    <a href="kontakt.html" class="btn btn-lg ov-cta">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a>
-  </div>
+  <header class="hdr">
+    <a href="index.html" class="logo"><span class="sq"><i class="ph-bold ph-wall"></i></span>MORAVEC<small>stavby</small></a>
+    <nav class="links" aria-label="Hlavní navigace"><a href="index.html">Domů</a><a href="sluzby.html" aria-current="page">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav>
+    <a href="kontakt.html" class="hcta press">Poptávka <i class="ph-bold ph-arrow-right"></i></a>
+    <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <div class="slab" id="menu" aria-hidden="true"><nav><a href="index.html">Domů</a><a href="sluzby.html" aria-current="page">Služby</a><a href="portfolio.html">Realizace</a><a href="kontakt.html">Kontakt</a></nav><a href="tel:+420739482160" class="slab-tel">+420 739 482 160</a></div>
+  </header>
   <main id="main">
-    <header class="phero">
-      <div class="wrap">
-        <span class="eyebrow rv">služby</span>
-        <h1 class="grad rv d1">Všechno, co potřebujete,<br>od jedné firmy</h1>
-        <p class="sub rv d2">Od první prohlídky po předání hotové práce. Brno a okolí, pevná cena a jasný termín.</p>
-      </div>
-    </header>
-    <section style="padding-top:0">
-      <div class="wrap"><div class="rows">
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0" alt="Hrubé stavby" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">01</span>
-              <h3>Hrubé stavby</h3><p>Základy, zdivo, stropy a věnce pro rodinné domy i menší objekty.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Certifikované systémy</li><li><i class="ph ph-check-circle"></i>Statický dozor</li><li><i class="ph ph-check-circle"></i>Pevný harmonogram</li></ul>
-              <span class="price">od 1,2 mil. Kč</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOODPhMWDDaHA8TkTp0Kw1MX2w-Y_rVDjiu2ozRI_8314KOqidj0JLjW_WDT3_Ch6nt3Pb3H8DLA0zr8ir8Df5Q79nzMbcAmzm6-QAfwGbKdach_bqSNSQPGHkBvREGJrKhvu2wy6oOLNVqlHgtoYKXYMdzGj4htXYNJoX-XZalEew1vmjasfeLdTAcBuO5zCvx5zJ7S5yl8oD88li9eFnM4wH-Dq14wdydpR6xfDalbSwT2qouG-viXLTuHaHQ6pK0FtTMlMLsOc" alt="Fasády a zateplení" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">02</span>
-              <h3>Fasády a zateplení</h3><p>Kontaktní zateplení, omítky a obnova historických fasád.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Zateplení ETICS</li><li><i class="ph ph-check-circle"></i>Silikonové omítky</li><li><i class="ph ph-check-circle"></i>Pomoc s dotací</li></ul>
-              <span class="price">od 1 450 Kč za m²</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYlxpwRcxQ0XwwUxav3HOh5VjcctPH_ElqizOS7_S6cSRcAi9XcLtLsG_A6qAzYu_Id5MBAELvwBJqiAwL4zi5Hs6J7tdhLu76g0ZDlI7ESxpFQJaR8hnIzSn4y6FYQ-xdEdKUYu2YkBY85hpvUYaa7IBRduJ7Rlt41CodYQ-7GicsKaBJanMoQw-nGk6bOh7GpWIT9LYAvpqGADuEWDhpkh_4eJhHVx0--C9tuxdbKkaNfMdDI075CMyI_FSBGtFQMyY79Im3enE" alt="Rekonstrukce" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">03</span>
-              <h3>Rekonstrukce</h3><p>Přestavby bytů a domů, příčky, omítky, podlahy a koupelny.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Byty i domy</li><li><i class="ph ph-check-circle"></i>Sádrokartony</li><li><i class="ph ph-check-circle"></i>Úklid po stavbě</li></ul>
-              <span class="price">od 6 500 Kč za m²</span>
-            </div>
-          </article>
-          <article class="row rv">
-            <div class="row-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB_ljfABYfj0uRfnGHL6N6x9BJWqNyy-nPowiq-M5j6IFPxMF_jrjMDK05UMDzp0YKPAetJemMkoFfgCPsIDDrZ0pjafzY7L7h1Y5PdgOPy-r-OHYO37kKj_vS7fpB118tADhQXkz66GLKONvNAYSPLchgY34uwn_Li2E1F0j7IXntsFxXnGCngRaVhalPUFnbKpouWpYequkIRgRPjekqaH0U1pW6BAeBKrj7V-uSmq3mNP8D8S5yO7UbcTYE5mfsXU6lLiavUY0" alt="Terénní úpravy" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="row-body">
-              <span class="num">04</span>
-              <h3>Terénní úpravy</h3><p>Opěrné zdi, dlažby, betonová schodiště a ploty.</p>
-              <ul><li><i class="ph ph-check-circle"></i>Opěrné zdi</li><li><i class="ph ph-check-circle"></i>Zámková dlažba</li><li><i class="ph ph-check-circle"></i>Oplocení</li></ul>
-              <span class="price">cena dle projektu</span>
-            </div>
-          </article>
-      </div></div>
+    <section class="ptitle"><h1 class="mega rv">Služby<span>.</span></h1><p class="rv d1">Od výkopu základů po poslední vrstvu omítky. Všechno pod jednou střechou a s jedním zodpovědným člověkem.</p></section>
+    <div class="ticker" aria-hidden="true"><div class="tk" data-marquee><span>Pevná cena</span><i class="ph-fill ph-asterisk"></i><span>Harmonogram ve smlouvě</span><i class="ph-fill ph-asterisk"></i><span>Záruka 5 let</span><i class="ph-fill ph-asterisk"></i><span>Pomoc s dotacemi</span><i class="ph-fill ph-asterisk"></i></div></div>
+    <section class="sec srows">
+      <article class="srow rv">
+        <div class="sr-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn36WwzNyUl96ggprziO70_gDjeHLy6GhJi0ahuTteIUQ2cdVZuuEDxytcOYEGzDu4s8z9OaV4heHOLeee3tBowF17-8FB-c88bZ5UCGdzOBoERSKqRzQEG4GeCujRNvGPvsIgnAgaVZcGzNI2ORUDkfumrSmHihn62ibPCJVnIxDzJFxwMq4pO4akvAyl-ZGqeZ6BUb975SvSLWD8KLKZnG1ded1e7bCP5xg_7my44eEkBLWmE2CnBSNwlel58nec_3I2eFMmQG0" alt="Hrubé stavby" loading="lazy" referrerpolicy="no-referrer"><span class="sr-no">01</span></div>
+        <div class="sr-body"><h2>Hrubé stavby</h2><p>Základy, zdivo, stropy a věnce pro rodinné domy i menší objekty.</p><ul><li><i class="ph-bold ph-check"></i>Certifikované systémy</li><li><i class="ph-bold ph-check"></i>Statický dozor</li><li><i class="ph-bold ph-check"></i>Pevný harmonogram</li></ul><span class="tagprice">od 1,2 mil. Kč</span></div>
+      </article>
+      <article class="srow rv">
+        <div class="sr-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOODPhMWDDaHA8TkTp0Kw1MX2w-Y_rVDjiu2ozRI_8314KOqidj0JLjW_WDT3_Ch6nt3Pb3H8DLA0zr8ir8Df5Q79nzMbcAmzm6-QAfwGbKdach_bqSNSQPGHkBvREGJrKhvu2wy6oOLNVqlHgtoYKXYMdzGj4htXYNJoX-XZalEew1vmjasfeLdTAcBuO5zCvx5zJ7S5yl8oD88li9eFnM4wH-Dq14wdydpR6xfDalbSwT2qouG-viXLTuHaHQ6pK0FtTMlMLsOc" alt="Fasády a zateplení" loading="lazy" referrerpolicy="no-referrer"><span class="sr-no">02</span></div>
+        <div class="sr-body"><h2>Fasády a zateplení</h2><p>Kontaktní zateplení, omítky a obnova historických fasád.</p><ul><li><i class="ph-bold ph-check"></i>Zateplení ETICS</li><li><i class="ph-bold ph-check"></i>Silikonové omítky</li><li><i class="ph-bold ph-check"></i>Pomoc s dotací</li></ul><span class="tagprice">od 1 450 Kč za m²</span></div>
+      </article>
+      <article class="srow rv">
+        <div class="sr-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYlxpwRcxQ0XwwUxav3HOh5VjcctPH_ElqizOS7_S6cSRcAi9XcLtLsG_A6qAzYu_Id5MBAELvwBJqiAwL4zi5Hs6J7tdhLu76g0ZDlI7ESxpFQJaR8hnIzSn4y6FYQ-xdEdKUYu2YkBY85hpvUYaa7IBRduJ7Rlt41CodYQ-7GicsKaBJanMoQw-nGk6bOh7GpWIT9LYAvpqGADuEWDhpkh_4eJhHVx0--C9tuxdbKkaNfMdDI075CMyI_FSBGtFQMyY79Im3enE" alt="Rekonstrukce" loading="lazy" referrerpolicy="no-referrer"><span class="sr-no">03</span></div>
+        <div class="sr-body"><h2>Rekonstrukce</h2><p>Přestavby bytů a domů, příčky, omítky, podlahy a koupelny.</p><ul><li><i class="ph-bold ph-check"></i>Byty i domy</li><li><i class="ph-bold ph-check"></i>Sádrokartony</li><li><i class="ph-bold ph-check"></i>Úklid po stavbě</li></ul><span class="tagprice">od 6 500 Kč za m²</span></div>
+      </article>
+      <article class="srow rv">
+        <div class="sr-img"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB_ljfABYfj0uRfnGHL6N6x9BJWqNyy-nPowiq-M5j6IFPxMF_jrjMDK05UMDzp0YKPAetJemMkoFfgCPsIDDrZ0pjafzY7L7h1Y5PdgOPy-r-OHYO37kKj_vS7fpB118tADhQXkz66GLKONvNAYSPLchgY34uwn_Li2E1F0j7IXntsFxXnGCngRaVhalPUFnbKpouWpYequkIRgRPjekqaH0U1pW6BAeBKrj7V-uSmq3mNP8D8S5yO7UbcTYE5mfsXU6lLiavUY0" alt="Terénní úpravy" loading="lazy" referrerpolicy="no-referrer"><span class="sr-no">04</span></div>
+        <div class="sr-body"><h2>Terénní úpravy</h2><p>Opěrné zdi, dlažby, betonová schodiště a ploty.</p><ul><li><i class="ph-bold ph-check"></i>Opěrné zdi</li><li><i class="ph-bold ph-check"></i>Zámková dlažba</li><li><i class="ph-bold ph-check"></i>Oplocení</li></ul><span class="tagprice">cena dle projektu</span></div>
+      </article>
     </section>
-    <section style="padding-top:0" aria-labelledby="fq">
-      <div class="wrap faq-grid">
-        <div><span class="eyebrow rv">časté otázky</span><h2 class="h2 rv d1" id="fq">Než se nám ozvete</h2><p class="lead rv d2">Nenašli jste odpověď? Zavolejte na <a class="link" href="tel:+420739482160">+420 739 482 160</a>.</p></div>
-        <div class="faq rv d1"><details><summary>Jak dlouho trvá hrubá stavba rodinného domu?<i class="ph ph-plus"></i></summary><div class="ans">Obvykle 3 až 4 měsíce podle velikosti domu a počasí. Přesný harmonogram je součástí smlouvy.</div></details><details><summary>Můžu se spolehnout na cenu?<i class="ph ph-plus"></i></summary><div class="ans">Ano. Cenu máte pevně ve smlouvě a vícepráce děláme jen po vaší písemné domluvě.</div></details><details><summary>Pomůžete s dotací na zateplení?<i class="ph ph-plus"></i></summary><div class="ans">Ano, připravíme podklady pro program Nová zelená úsporám a doložíme vše potřebné.</div></details><details><summary>Kde všude stavíte?<i class="ph ph-plus"></i></summary><div class="ans">V Brně a okolí do 50 km. Větší zakázky i po celé jižní Moravě.</div></details></div>
-      </div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="cta rv">
-          <div><h2>Nevíte si rady? Poradíme zdarma.</h2><p>Prohlídka a cenová nabídka jsou zdarma a nezávazné. Ozveme se do 24 hodin.</p></div>
-          <div class="acts"><a href="kontakt.html" class="btn btn-lg">Nezávazná poptávka <i class="ph ph-arrow-right"></i></a><a href="tel:+420739482160" class="btn btn-lg btn-ghost"><i class="ph ph-phone"></i>+420 739 482 160</a></div>
-        </div>
+    <section class="sec"><div class="sh"><h2 class="rv">Časté<br>otázky</h2></div><div class="faq"><details class="rv"><summary>Jak dlouho trvá hrubá stavba rodinného domu?<i class="ph-bold ph-plus"></i></summary><p>Obvykle 3 až 4 měsíce podle velikosti domu a počasí. Přesný harmonogram je součástí smlouvy.</p></details><details class="rv"><summary>Můžu se spolehnout na cenu?<i class="ph-bold ph-plus"></i></summary><p>Ano. Cenu máte pevně ve smlouvě a vícepráce děláme jen po vaší písemné domluvě.</p></details><details class="rv"><summary>Pomůžete s dotací na zateplení?<i class="ph-bold ph-plus"></i></summary><p>Ano, připravíme podklady pro program Nová zelená úsporám a doložíme vše potřebné.</p></details><details class="rv"><summary>Kde všude stavíte?<i class="ph-bold ph-plus"></i></summary><p>V Brně a okolí do 50 km. Větší zakázky i po celé jižní Moravě.</p></details></div></section>
+    <section class="callout">
+      <div class="co-in rv">
+        <p>Plánujete stavbu?<br>Zavolejte stavbyvedoucímu.</p>
+        <a href="tel:+420739482160" class="co-num press">739 482 160</a>
+        <a href="kontakt.html" class="blk press">Nebo napište poptávku <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </section>
   </main>
-  <footer class="tf">
-    <div class="wrap">
-      <div class="tf-grid">
-        <div><a href="index.html" class="brand"><i class="ph ph-wall" aria-hidden="true"></i>Stavby Moravec</a><p>Hrubé stavby, rekonstrukce, fasády a terénní úpravy v Brně a okolí. Brno a okolí.</p></div>
-        <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-        <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li style="color:var(--muted)">Vídeňská 214, Brno</li></ul></div>
-      </div>
-      <div class="tf-bottom"><span>© 2026 Stavby Moravec</span><span>Ukázkový web, firma i údaje jsou smyšlené</span></div>
+  <footer class="ft">
+    <div class="ft-big">MORAVEC<span>stavby</span></div>
+    <div class="ft-grid">
+      <div><h3>Stránky</h3><ul><li><a href="index.html">Domů</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="portfolio.html">Realizace</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h3>Kontakt</h3><ul><li><a href="tel:+420739482160">+420 739 482 160</a></li><li><a href="mailto:info@stavbymoravec.cz">info@stavbymoravec.cz</a></li><li>Vídeňská 214, Brno</li></ul></div>
+      <div><h3>Kde stavíme</h3><ul><li>Brno</li><li>Kuřim</li><li>Modřice</li><li>Šlapanice</li><li>Blansko</li><li>Vyškov</li></ul></div>
     </div>
+    <p class="fine">© 2026 Stavby Moravec · Ukázkový web, firma i údaje jsou smyšlené.</p>
   </footer>
+
   <div class="demo-pill" role="note"><span>Ukázkový web od Nikolase Bekery</span><a href="../../index.html#kontakt">Chci podobný <i class="ph ph-arrow-up-right"></i></a></div>
   <script src="../assets/tpl.js"></script>
 </body>
