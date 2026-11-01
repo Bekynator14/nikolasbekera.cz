@@ -1151,7 +1151,7 @@
           if (String(d.success) !== 'true') { console.warn('FormSubmit:', d.message); throw new Error(d.message || 'fail'); }
           form.reset();
           show('ok', 'Díky, poptávka dorazila. Ozvu se vám do 24 hodin.', 'ph-check-circle');
-          try { window.gtag && gtag('event', 'generate_lead', { method: 'form' }); } catch (x) {}
+          try { window.gtag && gtag('event', 'generate_lead', { method: 'form', transport_type: 'beacon' }); } catch (x) {}
         })
         .catch(function () {
           show('bad', 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu, nebo mi zavolejte na 731 212 219.', 'ph-warning-circle');
