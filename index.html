@@ -1152,6 +1152,7 @@
           form.reset();
           show('ok', 'Díky, poptávka dorazila. Ozvu se vám do 24 hodin.', 'ph-check-circle');
           try { window.gtag && gtag('event', 'generate_lead', { method: 'form', transport_type: 'beacon' }); } catch (x) {}
+          try { window.gtag && gtag('event', 'conversion', { send_to: 'AW-18549324297/905kCMmJ9bAdEIn0gI1F', transport_type: 'beacon' }); } catch (x) {}
         })
         .catch(function () {
           show('bad', 'Poptávku se nepodařilo odeslat. Zkuste to prosím znovu, nebo mi zavolejte na 731 212 219.', 'ph-warning-circle');
@@ -1166,7 +1167,7 @@
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s);
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { dataLayer.push(arguments); };
-      gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true });
+      gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true }); gtag('config', 'AW-18549324297');
     }
     function getC() { try { return localStorage.getItem('cookie_consent'); } catch (x) { return null; } }
     function setC(v) { try { localStorage.setItem('cookie_consent', v); } catch (x) {} }
