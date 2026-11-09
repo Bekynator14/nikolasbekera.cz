@@ -289,10 +289,6 @@
     .case-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform 1200ms var(--ease); }
     .case:hover .case-img img { transform: scale(1.03); }
     .case-body { position: relative; z-index: 1; background: var(--soft); border-radius: 0 20px 16px 16px; padding: 24px 16px 16px; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; transition: transform 900ms var(--ease), background-color 600ms var(--ease); }
-    /* záložka „složky“ nad panelem s textem */
-    .case-body::before { content: ""; position: absolute; left: 0; bottom: calc(100% - 1px); width: 180px; height: 28px; background: inherit; pointer-events: none;
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") no-repeat;
-              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") no-repeat; }
     /* na počítači: panel překrývá spodek náhledu, po najetí myší sjede dolů */
     @media (hover: hover) and (pointer: fine) {
       .case { overflow: hidden; }
@@ -317,10 +313,6 @@
     .live { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--soft); }
     .live iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: 0 0; pointer-events: none; }
     .demo span { position: relative; z-index: 1; background: var(--soft); border-radius: 0 12px 8px 8px; display: flex; justify-content: space-between; align-items: center; padding: 12px 12px 10px; font-size: 14px; line-height: 20px; font-weight: 600; transition: transform 900ms var(--ease), background-color 600ms var(--ease); }
-    /* záložka „složky“ nad štítkem ukázky */
-    .demo span::before { content: ""; position: absolute; left: 0; bottom: calc(100% - 1px); width: 116px; height: 18px; background: inherit; pointer-events: none;
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
-              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat; }
     @media (hover: hover) and (pointer: fine) {
       .demo { overflow: hidden; }
       .demo span { margin-top: -48px; padding-bottom: 36px; }
@@ -328,10 +320,15 @@
     }
     @media (prefers-reduced-motion: reduce) { .demo span { transition: none; } }
     /* oranžová tečka na záložce a oranžová složka po najetí myší */
-    .case-body::after, .demo span::after { content: ""; position: absolute; left: 20px; bottom: calc(100% + 9px); width: 8px; height: 8px; border-radius: 9999px; background: var(--signal); transition: background-color 600ms var(--ease); }
-    .demo span::after { left: 14px; bottom: calc(100% + 6px); width: 6px; height: 6px; }
     .case:hover .case-body, .case:focus-visible .case-body, .demo:hover span, .demo:focus-visible span { background: var(--signal); }
-    .case:hover .case-body::after, .case:focus-visible .case-body::after, .demo:hover span::after, .demo:focus-visible span::after { background: var(--ink); }
+    /* záložka složky s doménou */
+    .fold-tab { position: absolute; left: 0; bottom: calc(100% - 1px); height: 26px; display: inline-flex; align-items: center; padding: 0 2px 0 16px; border-radius: 14px 0 0 0; background: inherit; font-family: var(--mono); font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; color: var(--muted); white-space: nowrap; pointer-events: none; transition: color 600ms var(--ease); }
+    .fold-tab::after { content: ""; position: absolute; left: calc(100% - 1px); bottom: 0; width: 28px; height: 26px; background: inherit;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='26'%3E%3Cpath d='M0 0C14 0 14 26 28 26H0Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='26'%3E%3Cpath d='M0 0C14 0 14 26 28 26H0Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat; }
+    .demo .fold-tab { height: 20px; font-size: 10px; padding-left: 12px; border-radius: 10px 0 0 0; }
+    .demo .fold-tab::after { width: 22px; height: 20px; }
+    .case:hover .fold-tab, .case:focus-visible .fold-tab, .demo:hover .fold-tab, .demo:focus-visible .fold-tab { color: var(--ink); }
     .case-body p, .case-meta { transition: color 600ms var(--ease); }
     .case:hover .case-body p, .case:hover .case-meta, .case:focus-visible .case-body p, .case:focus-visible .case-meta { color: rgba(10, 10, 10, 0.72); }
 
@@ -762,7 +759,7 @@
         <div class="work">
           <a class="case rv" href="https://ukoblizku.cz" target="_blank" rel="noopener">
             <div class="case-img"><img src="obrazky/ukoblizku.jpg?v=20261105" width="1200" height="677" loading="lazy" alt="Web restaurace U Koblížků s jídelníčkem a objednávkou obědů"></div>
-            <div class="case-body">
+            <div class="case-body"><small class="fold-tab" aria-hidden="true">ukoblizku.cz</small>
               <div>
                 <span class="case-meta">2026 · restaurace · objednávkový systém</span>
                 <h3>U Koblížků</h3>
@@ -773,7 +770,7 @@
           </a>
           <a class="case rv d1" href="https://bekynator14.github.io/Ubytovac--kniha/index.html" target="_blank" rel="noopener">
             <div class="case-img"><img src="obrazky/hotelhradec.jpg?v=20261109" width="1200" height="678" loading="lazy" alt="Web Hotelu Hradec Mlázovice s galerií pokojů a okolím"></div>
-            <div class="case-body">
+            <div class="case-body"><small class="fold-tab" aria-hidden="true">hotelhradec.eu</small>
               <div>
                 <span class="case-meta">2025 · ubytování · firemní web</span>
                 <h3>Hotel Hradec Mlázovice</h3>
@@ -796,10 +793,10 @@
           <a href="sablony/" class="link rv d1">Všechny ukázky <i class="ph ph-arrow-up-right"></i></a>
         </div>
         <div class="demos">
-          <a class="demo rv" href="sablony/elektrikar/"><div class="live"><iframe src="sablony/elektrikar/index.html?v=20261101" title="Ukázkový web pro elektrikáře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Elektrikář <i class="ph ph-arrow-up-right"></i></span></a>
-          <a class="demo rv d1" href="sablony/instalater/"><div class="live"><iframe src="sablony/instalater/index.html?v=20261101" title="Ukázkový web pro instalatéra" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Instalatér <i class="ph ph-arrow-up-right"></i></span></a>
-          <a class="demo rv d2" href="sablony/truhlar/"><div class="live"><iframe src="sablony/truhlar/index.html?v=20261101" title="Ukázkový web pro truhláře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Truhlář <i class="ph ph-arrow-up-right"></i></span></a>
-          <a class="demo rv d3" href="sablony/zednik/"><div class="live"><iframe src="sablony/zednik/index.html?v=20261101" title="Ukázkový web pro zedníka" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span>Zedník <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv" href="sablony/elektrikar/"><div class="live"><iframe src="sablony/elektrikar/index.html?v=20261101" title="Ukázkový web pro elektrikáře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><small class="fold-tab" aria-hidden="true">elektrikar.cz</small>Elektrikář <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d1" href="sablony/instalater/"><div class="live"><iframe src="sablony/instalater/index.html?v=20261101" title="Ukázkový web pro instalatéra" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><small class="fold-tab" aria-hidden="true">instalater.cz</small>Instalatér <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d2" href="sablony/truhlar/"><div class="live"><iframe src="sablony/truhlar/index.html?v=20261101" title="Ukázkový web pro truhláře" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><small class="fold-tab" aria-hidden="true">truhlar.cz</small>Truhlář <i class="ph ph-arrow-up-right"></i></span></a>
+          <a class="demo rv d3" href="sablony/zednik/"><div class="live"><iframe src="sablony/zednik/index.html?v=20261101" title="Ukázkový web pro zedníka" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div><span><small class="fold-tab" aria-hidden="true">zednik.cz</small>Zedník <i class="ph ph-arrow-up-right"></i></span></a>
         </div>
       </div>
     </section>
