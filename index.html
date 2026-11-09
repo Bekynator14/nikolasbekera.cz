@@ -517,6 +517,26 @@
       .js .rv { opacity: 1; transform: none; filter: none; }
       html { scroll-behavior: auto; }
     }
+    /* ===== Akce: web zdarma (do 30. 11. 2026) ===== */
+    .promo {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 15px; line-height: 20px; font-weight: 500;
+      color: #fff; background: var(--signal); padding: 10px 18px 10px 14px; border-radius: 9999px; margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(255, 77, 30, 0.25);
+      text-decoration: none; transition: background-color 500ms var(--ease);
+    }
+    .promo:hover { background: var(--signal-ink); }
+    .promo .ph { font-size: 20px; flex: none; }
+    .promo b { font-weight: 600; }
+    .akce-on .status { display: none; }
+    .promo-box { margin-top: 32px; border: 1px solid var(--signal); border-radius: 20px; padding: 20px; background: rgba(255, 77, 30, 0.08); }
+    .promo-box strong { display: flex; align-items: center; gap: 8px; font-size: 18px; line-height: 26px; color: #fff; }
+    .promo-box strong .ph { color: var(--signal); font-size: 22px; }
+    .promo-box p { color: #DADAD4; font-size: 15px; line-height: 22px; margin-top: 8px; }
+    .promo-box a { color: #FF8A66; }
+    .lottery { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 20px; margin: 4px 0 16px; padding: 12px 14px; border-radius: 14px; background: #FFF1EC; cursor: pointer; }
+    .lottery input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--signal); flex: none; }
+    .lottery a { color: var(--signal-ink); }
+    .akce[hidden] { display: none !important; }
   </style>
 
   <script type="application/ld+json">
@@ -615,6 +635,7 @@
     <header class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
+          <a href="#kontakt" class="promo akce rv"><i class="ph ph-gift"></i><span><b>Losuji 1 web zdarma</b> · stačí poslat poptávku do 30. 11.</span><i class="ph ph-arrow-right"></i></a>
           <span class="status rv"><i></i>Volné kapacity pro nové weby</span>
           <h1 class="rv d1">Web, který vám<br>přivede zákazníky.</h1>
           <p class="sub rv d2">Navrhnu a postavím rychlý web pro vaši firmu, živnost nebo projekt. Pevná cena předem, hotovo zhruba za 14 dní a žádné měsíční paušály.</p>
@@ -989,6 +1010,10 @@
                 <li><i class="ph ph-check-circle"></i>Pevná cena a termín předem</li>
                 <li><i class="ph ph-check-circle"></i>Žádné měsíční paušály</li>
               </ul>
+              <div class="promo-box akce rv d2" id="akce">
+                <strong><i class="ph ph-gift"></i>Losuji jeden web zdarma</strong>
+                <p>Ze všech poptávek odeslaných přes formulář do 30. 11. 2026 vylosuji jednu, které udělám web úplně zdarma. Losování proběhne 1. 12. 2026. <a href="akce-web-zdarma.html">Pravidla akce</a></p>
+              </div>
               <div class="direct rv d3">
                 <a href="tel:+420731212219"><i class="ph ph-phone"></i>+420 731 212 219<small>volat</small></a>
                 <a href="mailto:nik.bekera@gmail.com"><i class="ph ph-envelope-simple"></i>nik.bekera@gmail.com<small>napsat</small></a>
@@ -1027,6 +1052,8 @@
               </div>
               <input type="hidden" name="balicek" id="plan" value="">
               <div class="hp" aria-hidden="true"><label>Nevyplňujte <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+              <label class="lottery akce"><input type="checkbox" name="losovani" id="losovani" checked><span>Zařadit poptávku do losování o web zdarma (do 30. 11. 2026). <a href="akce-web-zdarma.html">Pravidla</a></span></label>
 
               <div class="form-foot">
                 <button class="btn btn-lg" type="submit" id="submit"><span class="spin" aria-hidden="true"></span><span class="lbl">Odeslat poptávku</span><i class="ph ph-paper-plane-right"></i></button>
@@ -1137,6 +1164,13 @@
       });
     });
 
+    /* ---------- Akce web zdarma: po 30. 11. 2026 23:59 se sama schová ---------- */
+    var AKCE_KONEC = new Date('2026-12-01T00:00:00+01:00');
+    var akceBezi = new Date() < AKCE_KONEC;
+    if (akceBezi) document.documentElement.classList.add('akce-on');
+    else document.querySelectorAll('.akce').forEach(function (el) { el.hidden = true; });
+    function losujeSe() { var c = document.getElementById('losovani'); return akceBezi && !!c && c.checked; }
+
     /* ---------- Form ---------- */
     var form = document.getElementById('form'), btn = document.getElementById('submit'), msg = document.getElementById('formMsg');
     var fName = document.getElementById('name'), fContact = document.getElementById('contact'), fMsg = document.getElementById('msg');
@@ -1160,13 +1194,14 @@
       if (form._honey.value) return;
 
       var data = {
-        _subject: 'Nová poptávka webu: ' + form.typ.value,
+        _subject: (losujeSe() ? '[LOSOVÁNÍ] ' : '') + 'Nová poptávka webu: ' + form.typ.value,
         _template: 'table',
         typ: form.typ.value,
         jmeno: fName.value.trim(),
         kontakt: fContact.value.trim(),
         balicek: form.balicek.value || 'neuvedeno',
-        zprava: fMsg.value.trim() || 'bez zprávy'
+        zprava: fMsg.value.trim() || 'bez zprávy',
+        losovani: losujeSe() ? 'ano' : 'ne'
       };
       btn.disabled = true; btn.classList.add('loading'); btn.querySelector('.lbl').textContent = 'Odesílám';
       msg.className = 'form-msg';
@@ -1175,6 +1210,7 @@
         .then(function (d) {
           if (String(d.success) !== 'true') { console.warn('FormSubmit:', d.message); throw new Error(d.message || 'fail'); }
           form.reset();
+          if (document.getElementById('losovani')) document.getElementById('losovani').checked = true;
           show('ok', 'Díky, poptávka dorazila. Ozvu se vám do 24 hodin.', 'ph-check-circle');
           try { window.gtag && gtag('event', 'generate_lead', { method: 'form', transport_type: 'beacon' }); } catch (x) {}
           try { window.gtag && gtag('event', 'conversion', { send_to: 'AW-18549324297/905kCMmJ9bAdEIn0gI1F', transport_type: 'beacon' }); } catch (x) {}
