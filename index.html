@@ -288,11 +288,22 @@
     .case-img { border-radius: 16px; overflow: hidden; background: var(--soft); }
     .case-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform 1200ms var(--ease); }
     .case:hover .case-img img { transform: scale(1.03); }
-    .case-body { padding: 24px 16px 16px; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+    .case-body { position: relative; z-index: 1; background: var(--soft); border-radius: 0 20px 16px 16px; padding: 24px 16px 16px; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; transition: transform 900ms var(--ease); }
+    /* záložka „složky“ nad panelem s textem */
+    .case-body::before { content: ""; position: absolute; left: 0; bottom: calc(100% - 1px); width: 180px; height: 28px; background: inherit; pointer-events: none;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") no-repeat; }
+    /* na počítači: panel překrývá spodek náhledu, po najetí myší sjede dolů */
+    @media (hover: hover) and (pointer: fine) {
+      .case { overflow: hidden; }
+      .case-body { margin-top: -96px; padding-bottom: 72px; }
+      .case:hover .case-body, .case:focus-visible .case-body { transform: translateY(56px); }
+    }
+    @media (prefers-reduced-motion: reduce) { .case-body { transition: none; } }
     .case-body h3 { font-size: 20px; line-height: 28px; letter-spacing: -0.02em; }
     .case-body p { color: var(--muted); margin-top: 4px; }
     .case-meta { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); margin-bottom: 8px; display: block; }
-    .case-arrow { flex: none; width: 40px; height: 40px; border-radius: 9999px; display: grid; place-items: center; background: var(--soft); font-size: 20px; transition: background-color 500ms var(--ease), color 500ms var(--ease), transform 500ms var(--ease); }
+    .case-arrow { flex: none; width: 40px; height: 40px; border-radius: 9999px; display: grid; place-items: center; background: var(--card); font-size: 20px; transition: background-color 500ms var(--ease), color 500ms var(--ease), transform 500ms var(--ease); }
     .case:hover .case-arrow { background: var(--ink); color: #fff; transform: rotate(-45deg); }
 
     .demos-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin: 64px 0 24px; }
