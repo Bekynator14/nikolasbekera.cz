@@ -288,7 +288,7 @@
     .case-img { border-radius: 16px; overflow: hidden; background: var(--soft); }
     .case-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform 1200ms var(--ease); }
     .case:hover .case-img img { transform: scale(1.03); }
-    .case-body { position: relative; z-index: 1; background: var(--soft); border-radius: 0 20px 16px 16px; padding: 24px 16px 16px; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; transition: transform 900ms var(--ease); }
+    .case-body { position: relative; z-index: 1; background: var(--soft); border-radius: 0 20px 16px 16px; padding: 24px 16px 16px; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; transition: transform 900ms var(--ease), background-color 600ms var(--ease); }
     /* záložka „složky“ nad panelem s textem */
     .case-body::before { content: ""; position: absolute; left: 0; bottom: calc(100% - 1px); width: 180px; height: 28px; background: inherit; pointer-events: none;
       -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") no-repeat;
@@ -316,7 +316,7 @@
     .demo img { border-radius: 8px; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; width: 100%; }
     .live { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--soft); }
     .live iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 960px; border: 0; transform-origin: 0 0; pointer-events: none; }
-    .demo span { position: relative; z-index: 1; background: var(--soft); border-radius: 0 12px 8px 8px; display: flex; justify-content: space-between; align-items: center; padding: 12px 12px 10px; font-size: 14px; line-height: 20px; font-weight: 600; transition: transform 900ms var(--ease); }
+    .demo span { position: relative; z-index: 1; background: var(--soft); border-radius: 0 12px 8px 8px; display: flex; justify-content: space-between; align-items: center; padding: 12px 12px 10px; font-size: 14px; line-height: 20px; font-weight: 600; transition: transform 900ms var(--ease), background-color 600ms var(--ease); }
     /* záložka „složky“ nad štítkem ukázky */
     .demo span::before { content: ""; position: absolute; left: 0; bottom: calc(100% - 1px); width: 116px; height: 18px; background: inherit; pointer-events: none;
       -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
@@ -327,6 +327,13 @@
       .demo:hover span, .demo:focus-visible span { transform: translateY(26px); }
     }
     @media (prefers-reduced-motion: reduce) { .demo span { transition: none; } }
+    /* oranžová tečka na záložce a oranžová složka po najetí myší */
+    .case-body::after, .demo span::after { content: ""; position: absolute; left: 20px; bottom: calc(100% + 9px); width: 8px; height: 8px; border-radius: 9999px; background: var(--signal); transition: background-color 600ms var(--ease); }
+    .demo span::after { left: 14px; bottom: calc(100% + 6px); width: 6px; height: 6px; }
+    .case:hover .case-body, .case:focus-visible .case-body, .demo:hover span, .demo:focus-visible span { background: var(--signal); }
+    .case:hover .case-body::after, .case:focus-visible .case-body::after, .demo:hover span::after, .demo:focus-visible span::after { background: var(--ink); }
+    .case-body p, .case-meta { transition: color 600ms var(--ease); }
+    .case:hover .case-body p, .case:hover .case-meta, .case:focus-visible .case-body p, .case:focus-visible .case-meta { color: rgba(10, 10, 10, 0.72); }
 
     /* ===== Process ===== */
     .steps { display: grid; gap: 16px; list-style: none; counter-reset: s; }

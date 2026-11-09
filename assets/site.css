@@ -311,7 +311,7 @@ footer.site { padding: 48px 0 32px; border-top: 1px solid var(--line); }
 .frame-bar i { width: 8px; height: 8px; border-radius: 9999px; background: #D6D6D0; }
 .frame-bar span { margin-left: 8px; font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--muted); }
 .tpl { overflow: hidden; }
-.tpl-body { position: relative; z-index: 1; background: var(--soft); border-radius: 0 20px 16px 16px; margin-top: 28px; padding: 24px 16px 16px; transition: transform 900ms var(--ease); }
+.tpl-body { position: relative; z-index: 1; background: var(--soft); border-radius: 0 20px 16px 16px; margin-top: 28px; padding: 24px 16px 16px; transition: transform 900ms var(--ease), background-color 600ms var(--ease); }
 /* záložka „složky“ nad panelem s popisem (stejně jako na úvodní stránce) */
 .tpl-body::before { content: ""; position: absolute; left: 0; bottom: calc(100% - 1px); width: 180px; height: 28px; background: inherit; pointer-events: none;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='28'%3E%3Cpath d='M0 28V20Q0 0 20 0H118C138 0 145 6 155 15C165 24 170 28 180 28Z'/%3E%3C/svg%3E") no-repeat;
@@ -322,6 +322,13 @@ footer.site { padding: 48px 0 32px; border-top: 1px solid var(--line); }
   .tpl:hover .tpl-body, .tpl:focus-within .tpl-body { transform: translateY(56px); }
 }
 @media (prefers-reduced-motion: reduce) { .tpl-body { transition: none; } }
+/* oranžová tečka na záložce a oranžová složka po najetí myší */
+.tpl-body::after { content: ""; position: absolute; left: 20px; bottom: calc(100% + 9px); width: 8px; height: 8px; border-radius: 9999px; background: var(--signal); transition: background-color 600ms var(--ease); }
+.tpl:hover .tpl-body, .tpl:focus-within .tpl-body { background: var(--signal); }
+.tpl:hover .tpl-body::after, .tpl:focus-within .tpl-body::after { background: var(--ink); }
+.tpl-body p, .tpl-foot { transition: color 600ms var(--ease), border-color 600ms var(--ease); }
+.tpl:hover .tpl-body p, .tpl:hover .tpl-foot, .tpl:focus-within .tpl-body p, .tpl:focus-within .tpl-foot { color: rgba(10, 10, 10, 0.72); border-top-color: rgba(10, 10, 10, 0.16); }
+.tpl:hover .tpl-body .tag, .tpl:focus-within .tpl-body .tag { background: #fff; }
 .tpl-body .tag { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--signal-ink); background: #FFF1EC; padding: 4px 8px; border-radius: 9999px; }
 .tpl-body h2 { font-size: 24px; line-height: 32px; margin-top: 16px; }
 .tpl-body p { color: var(--muted); margin-top: 8px; }
