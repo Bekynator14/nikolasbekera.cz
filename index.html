@@ -358,6 +358,26 @@
     .price .btn { width: 100%; }
     .price.featured .btn { background: #fff; color: var(--ink); border-color: #fff; }
     .price.featured .btn:hover { background: var(--signal); border-color: var(--signal); color: #fff; }
+    /* Ceník na mobilu: swipe karusel s tečkami (PC beze změny) */
+    .price-dots { display: none; }
+    @media (max-width: 899px) {
+      .price-stage { position: relative; margin: 0 -12px; border-radius: 28px; border: 1px solid var(--line); overflow: hidden; padding: 24px 0 20px;
+        background:
+          radial-gradient(55% 65% at 50% 35%, rgba(255, 77, 30, 0.13), transparent 70%),
+          radial-gradient(45% 55% at 8% 100%, rgba(194, 51, 12, 0.10), transparent 70%),
+          linear-gradient(180deg, var(--soft), #FBFBF8); }
+      .prices { position: relative; display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px 7% 20px; scrollbar-width: none; }
+      .prices::-webkit-scrollbar { display: none; }
+      .price { flex: 0 0 86%; scroll-snap-align: center; transition: opacity 700ms var(--ease), box-shadow 700ms var(--ease); }
+      .price .badge { position: static; align-self: flex-start; margin-bottom: 12px; }
+      .js .price { opacity: 0.55; }
+      .js .price.is-on { opacity: 1; box-shadow: 0 24px 48px -24px rgba(10, 10, 10, 0.35); }
+      .price-dots { display: flex; justify-content: center; gap: 8px; }
+      .price-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 9999px; background: #CFCFC8; cursor: pointer; transition: width 500ms var(--ease), background-color 500ms var(--ease); }
+      .price-dots button[aria-current="true"] { width: 32px; background: var(--signal); }
+      .price-dots button:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .price, .price-dots button { transition: none; } }
     .addons { margin-top: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
     .addons h3 { font-size: 18px; line-height: 28px; }
     .addons ul { list-style: none; display: grid; gap: 0 32px; margin-top: 8px; }
@@ -864,8 +884,9 @@
           <h2 class="h2 rv d1" id="cenik-h">Jasné ceny, žádná překvapení na faktuře</h2>
           <p class="lead rv d2">Vyberte si, kolik webu potřebujete. Přesnou cenu vám řeknu po krátké domluvě a pak už se nemění.</p>
         </div>
+        <div class="price-stage rv">
         <div class="prices">
-          <article class="price rv">
+          <article class="price">
             <h3>Vizitka</h3>
             <div class="amount"><span class="from">od</span>5 000 <small>Kč</small></div>
             <p>Pro živnostníky, osobní weby a jednoduché prezentace.</p>
@@ -878,7 +899,7 @@
             </ul>
             <a href="#kontakt" class="btn btn-ghost" data-plan="Vizitka">Chci vizitku</a>
           </article>
-          <article class="price featured rv d1">
+          <article class="price featured">
             <span class="badge">nejčastější volba</span>
             <h3>Firemní web</h3>
             <div class="amount"><span class="from">od</span>9 900 <small>Kč</small></div>
@@ -893,7 +914,7 @@
             </ul>
             <a href="#kontakt" class="btn" data-plan="Firemní web">Chci firemní web</a>
           </article>
-          <article class="price rv d2">
+          <article class="price">
             <h3>Web na míru</h3>
             <div class="amount"><span class="from">od</span>25 000 <small>Kč</small></div>
             <p>Pro restaurace, ubytování a projekty s rezervacemi nebo objednávkami.</p>
@@ -907,6 +928,12 @@
             </ul>
             <a href="#kontakt" class="btn btn-ghost" data-plan="Web na míru">Chci web na míru</a>
           </article>
+        </div>
+        <div class="price-dots" aria-label="Přepnout variantu">
+          <button type="button" aria-label="Vizitka"></button>
+          <button type="button" aria-label="Firemní web"></button>
+          <button type="button" aria-label="Web na míru"></button>
+        </div>
         </div>
         <div class="addons rv">
           <h3>Doplňky k jakékoli variantě</h3>
@@ -1189,6 +1216,37 @@
     if (akceBezi) document.documentElement.classList.add('akce-on');
     else document.querySelectorAll('.akce').forEach(function (el) { el.hidden = true; });
     function losujeSe() { var c = document.getElementById('losovani'); return akceBezi && !!c && c.checked; }
+
+    /* ---------- Ceník na mobilu: swipe s tečkami ---------- */
+    (function () {
+      var wrap = document.querySelector('.prices'); if (!wrap) return;
+      var cards = [].slice.call(wrap.querySelectorAll('.price'));
+      var dots = [].slice.call(document.querySelectorAll('.price-dots button'));
+      var home = 0; cards.forEach(function (c, i) { if (c.classList.contains('featured')) home = i; });
+      var mq = window.matchMedia('(min-width: 900px)');
+      function setOn(i) {
+        cards.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
+        dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+      }
+      function go(i, smooth) {
+        var c = cards[i];
+        wrap.scrollTo({ left: c.offsetLeft - (wrap.clientWidth - c.offsetWidth) / 2, behavior: smooth ? 'smooth' : 'auto' });
+      }
+      function nearest() {
+        var r = wrap.getBoundingClientRect(), mid = r.left + r.width / 2, best = 0, bd = Infinity;
+        cards.forEach(function (c, i) { var b = c.getBoundingClientRect(), d = Math.abs(b.left + b.width / 2 - mid); if (d < bd) { bd = d; best = i; } });
+        return best;
+      }
+      var raf;
+      wrap.addEventListener('scroll', function () {
+        if (mq.matches) return;
+        cancelAnimationFrame(raf); raf = requestAnimationFrame(function () { setOn(nearest()); });
+      }, { passive: true });
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i, true); }); });
+      function init() { setOn(home); if (!mq.matches) go(home, false); }
+      init();
+      if (mq.addEventListener) mq.addEventListener('change', init); else mq.addListener(init);
+    })();
 
     /* ---------- Form ---------- */
     var form = document.getElementById('form'), btn = document.getElementById('submit'), msg = document.getElementById('formMsg');
