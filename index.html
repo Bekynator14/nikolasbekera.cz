@@ -358,6 +358,12 @@
     .price .btn { width: 100%; }
     .price.featured .btn { background: #fff; color: var(--ink); border-color: #fff; }
     .price.featured .btn:hover { background: var(--signal); border-color: var(--signal); color: #fff; }
+    .addons { margin-top: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+    .addons h3 { font-size: 18px; line-height: 28px; }
+    .addons ul { list-style: none; display: grid; gap: 0 32px; margin-top: 8px; }
+    @media (min-width: 700px) { .addons ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .addons li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .addons b { color: var(--ink); font-weight: 600; white-space: nowrap; }
     .price-note { margin-top: 24px; display: flex; gap: 12px; align-items: flex-start; padding: 16px 24px; border-radius: 16px; background: var(--soft); color: var(--muted); }
     .price-note .ph { font-size: 24px; color: var(--ink); flex: none; }
 
@@ -584,12 +590,12 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Kolik stojí webová stránka?", "acceptedAnswer": { "@type": "Answer", "text": "Jednostránkový web začíná na 5 000 Kč, vícestránkový firemní web na 8 000 Kč a web na míru s rezervacemi nebo objednávkami na 15 000 Kč. Přesnou a pevnou cenu dostanete předem v nabídce." } },
+      { "@type": "Question", "name": "Kolik stojí webová stránka?", "acceptedAnswer": { "@type": "Answer", "text": "Jednostránkový web začíná na 5 000 Kč, vícestránkový firemní web na 9 900 Kč a web na míru s rezervacemi nebo objednávkami na 25 000 Kč. Přesnou a pevnou cenu dostanete předem v nabídce." } },
       { "@type": "Question", "name": "Jak dlouho trvá tvorba webu?", "acceptedAnswer": { "@type": "Answer", "text": "Jednostránkový web bývá hotový za 7 až 14 dní, vícestránkový za 2 až 3 týdny. Termín najdete v nabídce a drží." } },
       { "@type": "Question", "name": "Platím nějaké měsíční poplatky?", "acceptedAnswer": { "@type": "Answer", "text": "Mně ne. Platíte jen hosting a doménu přímo u poskytovatele, obvykle několik stovek korun ročně. Web patří vám." } },
-      { "@type": "Question", "name": "Co od vás budu potřebovat?", "acceptedAnswer": { "@type": "Answer", "text": "Pár informací o vaší firmě nebo projektu, fotky a logo, pokud je máte. S texty pomůžu, nemusíte nic psát sami." } },
+      { "@type": "Question", "name": "Co od vás budu potřebovat?", "acceptedAnswer": { "@type": "Answer", "text": "Pár informací o vaší firmě nebo projektu, fotky a logo, pokud je máte. U firemního webu a webu na míru pomůžu s texty, takže nemusíte nic psát sami. U vizitky stačí pár vět od vás, texty na míru můžu dopsat za příplatek." } },
       { "@type": "Question", "name": "Můžu si web upravovat sám?", "acceptedAnswer": { "@type": "Answer", "text": "Záleží na variantě. U jednoduchých webů změny udělám já podle vaší zprávy. U webu na míru můžu nastavit jednoduchou administraci, kde si texty a fotky upravíte sami." } },
-      { "@type": "Question", "name": "Co když budu později chtít změnu?", "acceptedAnswer": { "@type": "Answer", "text": "Napíšete mi. Menší úpravy řeším rychle a fakturuji jen skutečně odpracovaný čas. Žádné předplacené balíčky." } },
+      { "@type": "Question", "name": "Co když budu později chtít změnu?", "acceptedAnswer": { "@type": "Answer", "text": "Napíšete mi. Menší úpravy řeším rychle a fakturuji jen skutečně odpracovaný čas (500 Kč/h). Žádné předplacené balíčky." } },
       { "@type": "Question", "name": "Musím mít vlastní doménu a hosting?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Pomůžu s výběrem a registrací domény i hostingu. Pokud už doménu máte, převedu ji." } },
       { "@type": "Question", "name": "Uděláte i rezervační nebo objednávkový systém?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Například pro restauraci U Koblížků jsem postavil objednávky obědů s rozvozem na týden dopředu." } },
       { "@type": "Question", "name": "Pracujete i mimo Královéhradecký kraj?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, po celé republice. Domluvíme se mailem, telefonem nebo přes videohovor. Ve východních Čechách se rád stavím osobně." } }
@@ -740,7 +746,7 @@
             <div class="icon"><i class="ph ph-calendar-check"></i></div>
             <h3>Rezervace a objednávky</h3>
             <p>Online objednávky jídla, rezervace termínů nebo poptávkové formuláře, které vám šetří telefonování.</p>
-            <span class="tag">od 15 000 Kč</span>
+            <span class="tag">od 25 000 Kč</span>
           </article>
           <article class="card rv d2">
             <div class="icon"><i class="ph ph-arrows-clockwise"></i></div>
@@ -867,36 +873,49 @@
               <li><i class="ph ph-check"></i>Jednostránkový web</li>
               <li><i class="ph ph-check"></i>Verze pro mobily</li>
               <li><i class="ph ph-check"></i>Kontaktní formulář a mapa</li>
-              <li><i class="ph ph-check"></i>Základní SEO</li>
+              <li><i class="ph ph-check"></i>Z vašich textů a fotek</li>
+              <li><i class="ph ph-check"></i>1 kolo úprav</li>
             </ul>
             <a href="#kontakt" class="btn btn-ghost" data-plan="Vizitka">Chci vizitku</a>
           </article>
           <article class="price featured rv d1">
             <span class="badge">nejčastější volba</span>
             <h3>Firemní web</h3>
-            <div class="amount"><span class="from">od</span>8 000 <small>Kč</small></div>
+            <div class="amount"><span class="from">od</span>9 900 <small>Kč</small></div>
             <p>Pro firmy a služby, které chtějí ukázat víc než jednu stránku.</p>
             <ul>
               <li><i class="ph ph-check"></i>Až 5 podstránek</li>
               <li><i class="ph ph-check"></i>Galerie, ceník, reference</li>
-              <li><i class="ph ph-check"></i>SEO optimalizace</li>
+              <li><i class="ph ph-check"></i>Základní SEO a Search Console</li>
               <li><i class="ph ph-check"></i>Nastavení Google profilu firmy</li>
               <li><i class="ph ph-check"></i>Pomoc s texty</li>
+              <li><i class="ph ph-check"></i>2 kola úprav</li>
             </ul>
             <a href="#kontakt" class="btn" data-plan="Firemní web">Chci firemní web</a>
           </article>
           <article class="price rv d2">
             <h3>Web na míru</h3>
-            <div class="amount"><span class="from">od</span>15 000 <small>Kč</small></div>
+            <div class="amount"><span class="from">od</span>25 000 <small>Kč</small></div>
             <p>Pro restaurace, ubytování a projekty s rezervacemi nebo objednávkami.</p>
             <ul>
               <li><i class="ph ph-check"></i>Neomezeně podstránek</li>
               <li><i class="ph ph-check"></i>Rezervace nebo objednávky</li>
               <li><i class="ph ph-check"></i>Jednoduchá administrace</li>
-              <li><i class="ph ph-check"></i>Rozšířené SEO a texty</li>
+              <li><i class="ph ph-check"></i>Rozšířené SEO a Google profil</li>
+              <li><i class="ph ph-check"></i>Texty napíšu za vás</li>
+              <li><i class="ph ph-check"></i>3 kola úprav</li>
             </ul>
             <a href="#kontakt" class="btn btn-ghost" data-plan="Web na míru">Chci web na míru</a>
           </article>
+        </div>
+        <div class="addons rv">
+          <h3>Doplňky k jakékoli variantě</h3>
+          <ul>
+            <li><span>Texty na míru</span><b>+1 500 Kč</b></li>
+            <li><span>Nastavení Google profilu firmy</span><b>+1 000 Kč</b></li>
+            <li><span>Další podstránka</span><b>+1 000 Kč</b></li>
+            <li><span>Úpravy po spuštění</span><b>500 Kč/h</b></li>
+          </ul>
         </div>
         <div class="price-note rv">
           <i class="ph ph-shield-check"></i>
@@ -965,12 +984,12 @@
           </ul>
         </div>
         <div class="faq rv d1">
-          <details><summary>Kolik stojí webová stránka?<i class="ph ph-plus"></i></summary><div class="ans">Jednostránkový web začíná na 5 000 Kč, vícestránkový firemní web na 8 000 Kč a web na míru s rezervacemi nebo objednávkami na 15 000 Kč. Přesnou a pevnou cenu dostanete předem v nabídce.</div></details>
+          <details><summary>Kolik stojí webová stránka?<i class="ph ph-plus"></i></summary><div class="ans">Jednostránkový web začíná na 5 000 Kč, vícestránkový firemní web na 9 900 Kč a web na míru s rezervacemi nebo objednávkami na 25 000 Kč. Přesnou a pevnou cenu dostanete předem v nabídce.</div></details>
           <details><summary>Jak dlouho trvá tvorba webu?<i class="ph ph-plus"></i></summary><div class="ans">Jednostránkový web bývá hotový za 7 až 14 dní, vícestránkový za 2 až 3 týdny. Termín najdete v nabídce a drží.</div></details>
           <details><summary>Platím nějaké měsíční poplatky?<i class="ph ph-plus"></i></summary><div class="ans">Mně ne. Platíte jen hosting a doménu přímo u poskytovatele, obvykle několik stovek korun ročně. Web patří vám.</div></details>
-          <details><summary>Co od vás budu potřebovat?<i class="ph ph-plus"></i></summary><div class="ans">Pár informací o vaší firmě nebo projektu, fotky a logo, pokud je máte. S texty pomůžu, nemusíte nic psát sami.</div></details>
+          <details><summary>Co od vás budu potřebovat?<i class="ph ph-plus"></i></summary><div class="ans">Pár informací o vaší firmě nebo projektu, fotky a logo, pokud je máte. U firemního webu a webu na míru pomůžu s texty, takže nemusíte nic psát sami. U vizitky stačí pár vět od vás, texty na míru můžu dopsat za příplatek.</div></details>
           <details><summary>Můžu si web upravovat sám?<i class="ph ph-plus"></i></summary><div class="ans">Záleží na variantě. U jednoduchých webů změny udělám já podle vaší zprávy. U webu na míru můžu nastavit jednoduchou administraci, kde si texty a fotky upravíte sami.</div></details>
-          <details><summary>Co když budu později chtít změnu?<i class="ph ph-plus"></i></summary><div class="ans">Napíšete mi. Menší úpravy řeším rychle a fakturuji jen skutečně odpracovaný čas. Žádné předplacené balíčky.</div></details>
+          <details><summary>Co když budu později chtít změnu?<i class="ph ph-plus"></i></summary><div class="ans">Napíšete mi. Menší úpravy řeším rychle a fakturuji jen skutečně odpracovaný čas (500 Kč/h). Žádné předplacené balíčky.</div></details>
           <details><summary>Musím mít vlastní doménu a hosting?<i class="ph ph-plus"></i></summary><div class="ans">Ne. Pomůžu s výběrem a registrací domény i hostingu. Pokud už doménu máte, převedu ji.</div></details>
           <details><summary>Uděláte i rezervační nebo objednávkový systém?<i class="ph ph-plus"></i></summary><div class="ans">Ano. Například pro restauraci U Koblížků jsem postavil objednávky obědů s rozvozem na týden dopředu.</div></details>
           <details><summary>Pracujete i mimo Královéhradecký kraj?<i class="ph ph-plus"></i></summary><div class="ans">Ano, po celé republice. Domluvíme se mailem, telefonem nebo přes videohovor. Ve východních Čechách se rád stavím osobně.</div></details>
